@@ -1,0 +1,105 @@
+<?php
+/**
+ * Thankyou page
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/checkout/thankyou.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 8.1.0
+ *
+ * @var WC_Order $order
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+
+<div class="woocommerce-order">
+
+	<?php
+	if ( $order ) :
+
+		do_action( 'woocommerce_before_thankyou', $order->get_id() );
+		?>
+
+		<?php if ( $order->has_status( 'failed' ) ) : ?>
+
+			<p class="woocommerce-notice woocommerce-notice--error woocommerce-thankyou-order-failed"><?php esc_html_e( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'woocommerce' ); ?></p>
+
+			<p class="woocommerce-notice woocommerce-notice--error woocommerce-thankyou-order-failed-actions">
+				<a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="button pay"><?php esc_html_e( 'Pay', 'woocommerce' ); ?></a>
+				<?php if ( is_user_logged_in() ) : ?>
+					<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="button pay"><?php esc_html_e( 'My account', 'woocommerce' ); ?></a>
+				<?php endif; ?>
+			</p>
+
+		<?php else : ?>
+			<h1 class='order-received-title'>Order Confirmed!</h1>
+			<p class='order-received-text'>Thank you for your order. Please complete your payment using EFT or PayID below.</p>
+			<?php //wc_get_template( 'checkout/order-received.php', array( 'order' => $order ) ); ?>
+			
+			<div class='thankyou-order-review'>
+				<div class='row'>
+					<div class='col-md-6'>
+						<h3 class='woocommerce-order-details__title'>Payment Details</h3>
+						
+					</div>
+					<div class='col-md-6'>
+						<!--<div class='payment-logo'><img src='<?php bloginfo('template_directory'); ?>/images/payment-2.png' /></div>-->
+					</div>
+				</div>
+				<div class='payment-instruction'>
+					<p>PayID:</p>
+					<div class='payment-instruction-row'>
+						<label>PayID</label>
+						<div class='payment-value-wrapper'><div class='payment-value'><input id='payment-value-1' value='<?php the_field('payid','options')?>'></div><span class='btn-copy' data-id='1'>Copy <span class="copy-tooltip-text">Copied</span></span></div>
+					</div>
+					<div class='payment-instruction-row'>
+						<label>Amount to Send</label>
+						<div class='payment-value-wrapper'><div class='payment-value' style='color:#0A68D4;'>$<input id='payment-value-3' style='color:#0A68D4;' value='<?php echo $order->get_total();?>'></div><span class='btn-copy' data-id='3'>Copy <span class="copy-tooltip-text">Copied</span></span></div>
+					</div>
+					<p>Or use bank transfer:</p>
+					<div class='account-details'>
+						<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
+					</div>
+				</div>
+				
+				
+			</div>
+					
+				
+			</div>
+			<div class='thankyou-note-4'>
+				<header>Note</header>
+				<p>The average shipping time is 15-22 days. Please note that delivery may take up to 30 days from the date of dispatch due to potential disruptions in postal services caused by weather issues or natural disaster.</p>
+				<p><strong>DO NOT</strong> reference anything related to <strong>medicine</strong> or <strong>website</strong> name. Just mention your order number.</p>
+			</div>
+
+		<?php endif; ?>
+		
+		
+		
+		
+		<div class='order-sumary'>
+			<h3 class='woocommerce-order-details__title'>Order Summary</h3>
+			<div class='thankyou-order-review-details'>
+				<li><label>Order Number:</label> <span><?php echo $order->get_order_number(); ?></span></li>
+				<li><label>Date:</label> <span><?php echo wc_format_datetime( $order->get_date_created() );?></span></li>
+				<li><label>Payment Method:</label> <span><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></span></li>
+			</div>
+			<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
+			<a class='btn' href='<?php echo wc_get_page_permalink( 'shop' )?>'>Continue Shopping</a>
+		</div>
+	<?php else : ?>
+
+		<?php wc_get_template( 'checkout/order-received.php', array( 'order' => false ) ); ?>
+
+	<?php endif; ?>
+
+</div>
