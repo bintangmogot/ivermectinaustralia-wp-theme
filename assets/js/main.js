@@ -197,7 +197,7 @@ document.addEventListener('click', (event) => {
     card.querySelectorAll('.iva-qbtn').forEach((other) => other.setAttribute('aria-pressed', 'false'));
     button.setAttribute('aria-pressed', 'true');
     const output = card.querySelector('[data-iva-price]');
-    if (output && button.dataset.ivaPrice) output.innerHTML = button.dataset.ivaPrice;
+    if (output && button.dataset.ivaAmount) output.innerHTML = button.dataset.ivaAmount;
 });
 
 // Previous theme's FAQ accordions (content stored in the old "modules" field).

@@ -42,7 +42,7 @@ $topbar_center = trim((string) get_field('topbar_center', 'option'));
 <div class="bg-ink text-ink-foreground text-[13px]">
     <div class="container-site flex min-h-9 items-center justify-between gap-3 py-1.5 font-medium">
         <?php if ($topbar_left !== '') : ?>
-            <p class="flex min-w-0 items-center gap-2"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span><span class="truncate"><?= esc_html($topbar_left) ?></span></p>
+            <p class="flex min-w-0 items-center gap-2"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span><span class="leading-snug"><?= esc_html($topbar_left) ?></span></p>
         <?php endif; ?>
         <?php if ($topbar_center !== '') : ?>
             <p class="hidden items-center gap-2 md:flex"><?= ivermectin_icon('express_shipping', 'h-4 w-4') ?><span><?= esc_html($topbar_center) ?></span></p>

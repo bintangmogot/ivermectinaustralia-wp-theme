@@ -37,6 +37,6 @@ if (!$variations) {
             $label .= ' Tabs';
         }
         ?>
-        <button type="button" class="iva-qbtn" aria-pressed="<?= $index === 0 ? 'true' : 'false' ?>" data-iva-price="<?= esc_attr(wc_price($variation['display_price'])) ?>"><?= esc_html($label) ?></button>
+        <button type="button" class="iva-qbtn" aria-pressed="<?= $index === 0 ? 'true' : 'false' ?>" data-iva-amount="<?= esc_attr(wc_price($variation['display_price'])) ?>"><?= esc_html($label) ?></button>
     <?php endforeach; ?>
 </div>
