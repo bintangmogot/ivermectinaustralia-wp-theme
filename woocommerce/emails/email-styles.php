@@ -1,6 +1,6 @@
 <?php
 /**
- * Email Styles - Waklert Australia Bespoke Design
+ * Email Styles - Ivermectin Australia Bespoke Design
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails
@@ -9,12 +9,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// Waklert Australia Brand Colors
-$primary_navy   = '#0C4161';
-$primary_dark   = '#082A3F';
-$sky_blue       = '#0284C7';
-$sky_light      = '#E0F2FE';
-$sky_border     = '#BAE6FD';
+// Ivermectin Australia Brand Colors
+$primary_navy   = '#012c70';
+$primary_dark   = '#011d4c';
+$sky_blue       = '#0a68d4';
+$sky_light      = '#dbe8fb';
+$sky_border     = '#b7d0f4';
 $bg_canvas      = '#F1F5F9';
 $card_bg        = '#FFFFFF';
 $text_main      = '#0F172A';
@@ -84,7 +84,7 @@ body {
 }
 
 .email-subheading {
-	color: #BAE6FD !important;
+	color: #b7d0f4 !important;
 	font-family: <?php echo $font_family; ?> !important;
 	font-size: 14px !important;
 	font-weight: 500 !important;
@@ -152,7 +152,7 @@ a:hover {
 /* Clean divider */
 hr {
 	border: 0 !important;
-	border-top: 1px dashed <?php echo esc_attr( $border_color ); ?> !important;
+	border-top: 1px solid <?php echo esc_attr( $border_color ); ?> !important;
 	margin: 24px 0 !important;
 }
 

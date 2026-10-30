@@ -1,12 +1,12 @@
 {
-  "name": "waklertaustralia.com-wp",
+  "name": "ivermectinaustralia-wp",
   "version": "1.0.0",
-  "description": "Waklert Australia WordPress Theme",
+  "description": "Ivermectin Australia WordPress theme (ACF Pro + WooCommerce + Tailwind CSS 4)",
   "private": true,
   "scripts": {
     "build": "npx @tailwindcss/cli -i ./assets/css/source.css -o ./assets/css/main.css --minify",
     "tailwind": "npx @tailwindcss/cli -i ./assets/css/source.css -o ./assets/css/main.css --watch",
-    "sync": "browser-sync start --proxy \"http://waklertaustralia.com.test\" --files \"*.php, modules/**/*.php, template-parts/**/*.php, woocommerce/**/*.php, assets/css/main.css, assets/js/*.js\" --ignore \"node_modules/**/*\"",
+    "sync": "browser-sync start --proxy \"http://ivermectinaustralia.com.test\" --files \"*.php, modules/**/*.php, template-parts/**/*.php, woocommerce/**/*.php, assets/css/main.css, assets/js/*.js\" --ignore \"node_modules/**/*\"",
     "dev": "npm-run-all --parallel tailwind sync"
   },
   "devDependencies": {

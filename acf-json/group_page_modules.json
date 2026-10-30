@@ -3,9 +3,9 @@
     "title": "Page Modules",
     "fields": [
         {
-            "key": "field_modules",
-            "label": "Modules",
-            "name": "modules",
+            "key": "field_iva_page_modules",
+            "label": "Page Modules",
+            "name": "page_modules",
             "aria-label": "",
             "type": "flexible_content",
             "instructions": "Product pages use Product Summary and Product Description for the copy in the existing product intro and description areas. Their frontend styling and positions stay unchanged.",
@@ -138,7 +138,7 @@
                             "label": "Overlay Blend Color",
                             "name": "overlay_color",
                             "type": "text",
-                            "instructions": "Hex color code for the linear blend gradient (default: #0C4161)",
+                            "instructions": "Hex color code for the linear blend gradient (default: #012c70)",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -146,8 +146,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "#0C4161",
-                            "placeholder": "#0C4161",
+                            "default_value": "#012c70",
+                            "placeholder": "#012c70",
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
@@ -231,6 +231,32 @@
                             "maxlength": "",
                             "placeholder": "",
                             "rows": ""
+                        },
+                        {
+                            "key": "field_iva_hero_product",
+                            "label": "Quick Order Product",
+                            "name": "hero_product",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "Shown as the quick order panel (quantity buttons and price) in the hero.",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "taxonomy": [],
+                            "return_format": "id",
+                            "bidirectional_target": [],
+                            "default_value": "",
+                            "parent_layout": null,
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "ui": 1
                         },
                         {
                             "key": "field_hero_btn1_en",
@@ -390,20 +416,32 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                        "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                        "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel Guarantee / Reship or Refund",
+                                        "live_chat_support": "Phone and Chat Support",
+                                        "medical_rx_clarity": "Medicine Information / Schedule 4 and Prescription",
+                                        "aud_checkout": "AUD Checkout / PayID",
+                                        "express_shipping": "Express Shipping / Delivery Van",
+                                        "australia_delivery": "Australia-Wide Delivery",
+                                        "browse_catalogue": "Product Range / Blister Pack",
+                                        "listing_details": "Compare Strengths and Packs",
+                                        "returning_loyalty": "Returning Customers",
+                                        "discreet_sealed": "Discreet Plain Packaging",
+                                        "po_box_delivery": "PO Box and Parcel Locker Delivery",
+                                        "no_customs": "Domestic Dispatch / No Customs",
+                                        "affordable_value": "Affordable Pricing / Best Value",
+                                        "email_support": "Email Support",
+                                        "clock_hours": "Opening Hours / Response Time",
+                                        "bank_transfer": "Bank Transfer / EFT",
+                                        "secure_lock": "Secure Checkout / Encryption",
+                                        "track_parcel": "Track Your Parcel",
+                                        "verified_reviews": "Verified Reviews",
+                                        "pharmacist_advice": "Pharmacist Advice",
+                                        "faq_help": "FAQ / Help",
+                                        "shield_insurance": "Shipping Insurance",
+                                        "calendar_days": "Delivery Days / Calendar",
+                                        "location_pin": "Location / Address",
+                                        "health_check": "Health Information"
                                     },
                                     "default_value": "auto",
                                     "return_format": "value",
@@ -529,7 +567,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "MOST POPULAR in 2026",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -554,6 +592,27 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_iva_fp_description",
+                            "label": "Description",
+                            "name": "description",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "new_lines": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "rows": "",
+                            "parent_layout": null
                         },
                         {
                             "key": "field_fp_products",
@@ -583,6 +642,27 @@
                             "elements": [],
                             "return_format": "object",
                             "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_iva_fp_button",
+                            "label": "Button Text",
+                            "name": "button_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": null
                         }
                     ],
                     "min": "",
@@ -690,20 +770,32 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                        "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                        "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel Guarantee / Reship or Refund",
+                                        "live_chat_support": "Phone and Chat Support",
+                                        "medical_rx_clarity": "Medicine Information / Schedule 4 and Prescription",
+                                        "aud_checkout": "AUD Checkout / PayID",
+                                        "express_shipping": "Express Shipping / Delivery Van",
+                                        "australia_delivery": "Australia-Wide Delivery",
+                                        "browse_catalogue": "Product Range / Blister Pack",
+                                        "listing_details": "Compare Strengths and Packs",
+                                        "returning_loyalty": "Returning Customers",
+                                        "discreet_sealed": "Discreet Plain Packaging",
+                                        "po_box_delivery": "PO Box and Parcel Locker Delivery",
+                                        "no_customs": "Domestic Dispatch / No Customs",
+                                        "affordable_value": "Affordable Pricing / Best Value",
+                                        "email_support": "Email Support",
+                                        "clock_hours": "Opening Hours / Response Time",
+                                        "bank_transfer": "Bank Transfer / EFT",
+                                        "secure_lock": "Secure Checkout / Encryption",
+                                        "track_parcel": "Track Your Parcel",
+                                        "verified_reviews": "Verified Reviews",
+                                        "pharmacist_advice": "Pharmacist Advice",
+                                        "faq_help": "FAQ / Help",
+                                        "shield_insurance": "Shipping Insurance",
+                                        "calendar_days": "Delivery Days / Calendar",
+                                        "location_pin": "Location / Address",
+                                        "health_check": "Health Information"
                                     },
                                     "default_value": "auto",
                                     "return_format": "value",
@@ -850,7 +942,7 @@
                                 "id": ""
                             },
                             "post_type": [
-                                "review"
+                                "reviews"
                             ],
                             "taxonomy": [],
                             "min": 0,
@@ -908,7 +1000,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "FAQ",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -928,7 +1020,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Frequently Asked Questions",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -1034,7 +1126,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Full FAQ",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -1054,7 +1146,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "http://waklertaustralia.com.test/faq",
+                            "default_value": "",
                             "placeholder": ""
                         }
                     ],
@@ -1081,7 +1173,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Contact Us",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -1101,7 +1193,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "WhatsApp Us",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -1123,183 +1215,6 @@
                             },
                             "default_value": "",
                             "placeholder": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_comparison": {
-                    "key": "layout_comparison",
-                    "name": "comparison",
-                    "label": "Comparison Table",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_comp_tag_en",
-                            "label": "Tag",
-                            "name": "tag",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_comp_heading_en",
-                            "label": "Heading",
-                            "name": "heading",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_comp_desc_en",
-                            "label": "Desc",
-                            "name": "description",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "new_lines": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "rows": ""
-                        },
-                        {
-                            "key": "field_comp_rows",
-                            "label": "Rows",
-                            "name": "rows",
-                            "aria-label": "",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "min": 0,
-                            "max": 0,
-                            "rows_per_page": 20,
-                            "layout": "table",
-                            "button_label": "Add Row",
-                            "collapsed": "",
-                            "sub_fields": [
-                                {
-                                    "key": "field_comp_f_en",
-                                    "label": "Feature",
-                                    "name": "feature",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": false,
-                                    "conditional_logic": false,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_comp_rows"
-                                },
-                                {
-                                    "key": "field_comp_m_en",
-                                    "label": "Waklert",
-                                    "name": "modafinil",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": false,
-                                    "conditional_logic": false,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_comp_rows"
-                                },
-                                {
-                                    "key": "field_comp_c_en",
-                                    "label": "Coffee",
-                                    "name": "coffee",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": false,
-                                    "conditional_logic": false,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_comp_rows"
-                                },
-                                {
-                                    "key": "field_comp_e_en",
-                                    "label": "Energy Drink",
-                                    "name": "energy",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": false,
-                                    "conditional_logic": false,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_comp_rows"
-                                }
-                            ]
                         }
                     ],
                     "min": "",
@@ -1365,7 +1280,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Simple, transparent, and private. Ordering Armodafinil across Australia takes just 3 straightforward steps.",
+                            "default_value": "",
                             "rows": 2,
                             "new_lines": "",
                             "maxlength": "",
@@ -1407,20 +1322,32 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                        "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                        "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel Guarantee / Reship or Refund",
+                                        "live_chat_support": "Phone and Chat Support",
+                                        "medical_rx_clarity": "Medicine Information / Schedule 4 and Prescription",
+                                        "aud_checkout": "AUD Checkout / PayID",
+                                        "express_shipping": "Express Shipping / Delivery Van",
+                                        "australia_delivery": "Australia-Wide Delivery",
+                                        "browse_catalogue": "Product Range / Blister Pack",
+                                        "listing_details": "Compare Strengths and Packs",
+                                        "returning_loyalty": "Returning Customers",
+                                        "discreet_sealed": "Discreet Plain Packaging",
+                                        "po_box_delivery": "PO Box and Parcel Locker Delivery",
+                                        "no_customs": "Domestic Dispatch / No Customs",
+                                        "affordable_value": "Affordable Pricing / Best Value",
+                                        "email_support": "Email Support",
+                                        "clock_hours": "Opening Hours / Response Time",
+                                        "bank_transfer": "Bank Transfer / EFT",
+                                        "secure_lock": "Secure Checkout / Encryption",
+                                        "track_parcel": "Track Your Parcel",
+                                        "verified_reviews": "Verified Reviews",
+                                        "pharmacist_advice": "Pharmacist Advice",
+                                        "faq_help": "FAQ / Help",
+                                        "shield_insurance": "Shipping Insurance",
+                                        "calendar_days": "Delivery Days / Calendar",
+                                        "location_pin": "Location / Address",
+                                        "health_check": "Health Information"
                                     },
                                     "default_value": "auto",
                                     "return_format": "value",
@@ -1605,188 +1532,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_city_section": {
-                    "key": "layout_city_section",
-                    "name": "city_section",
-                    "label": "City Section",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_cs_theme_style",
-                            "label": "Theme Style",
-                            "name": "theme_style",
-                            "aria-label": "",
-                            "type": "select",
-                            "instructions": "Select brand styling for this section.",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "navy": "Pacific Navy (Signature Dark)",
-                                "light": "Clean Light (2-Tone Pattern)"
-                            },
-                            "default_value": "navy",
-                            "return_format": "value",
-                            "multiple": 0,
-                            "allow_null": 0,
-                            "ui": 1,
-                            "ajax": 0,
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_cs_tag",
-                            "label": "Tag",
-                            "name": "tag",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "Top pill tag (e.g. SHIPPING NATIONWIDE).",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "SHIPPING NATIONWIDE",
-                            "maxlength": "",
-                            "placeholder": "SHIPPING NATIONWIDE",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_cs_title",
-                            "label": "Title",
-                            "name": "title",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "Main headline.",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "Delivered Everywhere in Australia",
-                            "maxlength": "",
-                            "placeholder": "Delivered Everywhere in Australia",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_cs_desc",
-                            "label": "Description",
-                            "name": "description",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "Supporting text below the headline.",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "Metro cities, regional towns, or remote FIFO camps — we ship to your address.",
-                            "new_lines": "",
-                            "maxlength": "",
-                            "placeholder": "Metro cities, regional towns, or remote FIFO camps — we ship to your address.",
-                            "rows": 3
-                        },
-                        {
-                            "key": "field_cs_cities_list",
-                            "label": "Cities",
-                            "name": "cities_list",
-                            "aria-label": "",
-                            "type": "repeater",
-                            "instructions": "List of cities/regions to display as pill badges. If empty, default Australian cities display automatically.",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "table",
-                            "pagination": 0,
-                            "min": 0,
-                            "max": 0,
-                            "collapsed": "",
-                            "button_label": "Add City",
-                            "rows_per_page": 20,
-                            "sub_fields": [
-                                {
-                                    "key": "field_cs_city_name",
-                                    "label": "City Name",
-                                    "name": "city_name",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": false,
-                                    "conditional_logic": false,
-                                    "wrapper": {
-                                        "width": "75",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "e.g. Sydney NSW",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_cs_cities_list"
-                                },
-                                {
-                                    "key": "field_cs_has_checkmark",
-                                    "label": "Show Checkmark",
-                                    "name": "has_checkmark",
-                                    "aria-label": "",
-                                    "type": "true_false",
-                                    "instructions": "",
-                                    "required": false,
-                                    "conditional_logic": false,
-                                    "wrapper": {
-                                        "width": "25",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "",
-                                    "default_value": 0,
-                                    "ui": 1,
-                                    "ui_on_text": "",
-                                    "ui_off_text": "",
-                                    "parent_repeater": "field_cs_cities_list"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_cs_quick_cities",
-                            "label": "Quick Paste Cities",
-                            "name": "quick_cities",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "Optional: Paste multiple cities (one per line). Overrides the repeater above if populated.",
-                            "required": false,
-                            "conditional_logic": false,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "new_lines": "",
-                            "maxlength": "",
-                            "placeholder": "Sydney NSW\nMelbourne VIC\n...",
-                            "rows": 4
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_about_intro": {
                     "key": "layout_about_intro",
                     "name": "about_intro",
@@ -1798,21 +1543,21 @@
                             "label": "Tag",
                             "name": "tag",
                             "type": "text",
-                            "default_value": "About Us"
+                            "default_value": ""
                         },
                         {
                             "key": "field_f2349bf4f6724",
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Malaysia's Trusted Modafinil Supplier"
+                            "default_value": ""
                         },
                         {
                             "key": "field_c475fe4ca3274",
                             "label": "Desc",
                             "name": "desc",
                             "type": "textarea",
-                            "default_value": "ModafinilMY serves students, professionals, and shift workers across Malaysia — from Kuala Lumpur to Kota Kinabalu."
+                            "default_value": ""
                         }
                     ]
                 },
@@ -1827,7 +1572,7 @@
                             "label": "Mission Heading",
                             "name": "mission_heading",
                             "type": "text",
-                            "default_value": "Our Approach"
+                            "default_value": ""
                         },
                         {
                             "key": "field_483eab146da44",
@@ -1835,7 +1580,7 @@
                             "name": "mission_desc",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "We organise armodafinil product information so customers can compare brands, strengths and batch details with clarity."
+                            "default_value": ""
                         },
                         {
                             "key": "field_am_mission_icon_preset",
@@ -1852,20 +1597,32 @@
                                 "id": ""
                             },
                             "choices": {
-                                "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                "auto": "Auto-match from title and description (recommended)",
+                                "parcel_guarantee": "Parcel Guarantee / Reship or Refund",
+                                "live_chat_support": "Phone and Chat Support",
+                                "medical_rx_clarity": "Medicine Information / Schedule 4 and Prescription",
+                                "aud_checkout": "AUD Checkout / PayID",
+                                "express_shipping": "Express Shipping / Delivery Van",
+                                "australia_delivery": "Australia-Wide Delivery",
+                                "browse_catalogue": "Product Range / Blister Pack",
+                                "listing_details": "Compare Strengths and Packs",
+                                "returning_loyalty": "Returning Customers",
+                                "discreet_sealed": "Discreet Plain Packaging",
+                                "po_box_delivery": "PO Box and Parcel Locker Delivery",
+                                "no_customs": "Domestic Dispatch / No Customs",
+                                "affordable_value": "Affordable Pricing / Best Value",
+                                "email_support": "Email Support",
+                                "clock_hours": "Opening Hours / Response Time",
+                                "bank_transfer": "Bank Transfer / EFT",
+                                "secure_lock": "Secure Checkout / Encryption",
+                                "track_parcel": "Track Your Parcel",
+                                "verified_reviews": "Verified Reviews",
+                                "pharmacist_advice": "Pharmacist Advice",
+                                "faq_help": "FAQ / Help",
+                                "shield_insurance": "Shipping Insurance",
+                                "calendar_days": "Delivery Days / Calendar",
+                                "location_pin": "Location / Address",
+                                "health_check": "Health Information"
                             },
                             "default_value": "browse_catalogue",
                             "return_format": "value",
@@ -1905,7 +1662,7 @@
                             "label": "Vision Heading",
                             "name": "vision_heading",
                             "type": "text",
-                            "default_value": "Information First"
+                            "default_value": ""
                         },
                         {
                             "key": "field_b6b97d8f0f494",
@@ -1913,7 +1670,7 @@
                             "name": "vision_desc",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "We use plain English, state clearly that armodafinil is prescription-only in Australia, and encourage customers to speak to a doctor before ordering."
+                            "default_value": ""
                         },
                         {
                             "key": "field_am_vision_icon_preset",
@@ -1930,20 +1687,32 @@
                                 "id": ""
                             },
                             "choices": {
-                                "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                "auto": "Auto-match from title and description (recommended)",
+                                "parcel_guarantee": "Parcel Guarantee / Reship or Refund",
+                                "live_chat_support": "Phone and Chat Support",
+                                "medical_rx_clarity": "Medicine Information / Schedule 4 and Prescription",
+                                "aud_checkout": "AUD Checkout / PayID",
+                                "express_shipping": "Express Shipping / Delivery Van",
+                                "australia_delivery": "Australia-Wide Delivery",
+                                "browse_catalogue": "Product Range / Blister Pack",
+                                "listing_details": "Compare Strengths and Packs",
+                                "returning_loyalty": "Returning Customers",
+                                "discreet_sealed": "Discreet Plain Packaging",
+                                "po_box_delivery": "PO Box and Parcel Locker Delivery",
+                                "no_customs": "Domestic Dispatch / No Customs",
+                                "affordable_value": "Affordable Pricing / Best Value",
+                                "email_support": "Email Support",
+                                "clock_hours": "Opening Hours / Response Time",
+                                "bank_transfer": "Bank Transfer / EFT",
+                                "secure_lock": "Secure Checkout / Encryption",
+                                "track_parcel": "Track Your Parcel",
+                                "verified_reviews": "Verified Reviews",
+                                "pharmacist_advice": "Pharmacist Advice",
+                                "faq_help": "FAQ / Help",
+                                "shield_insurance": "Shipping Insurance",
+                                "calendar_days": "Delivery Days / Calendar",
+                                "location_pin": "Location / Address",
+                                "health_check": "Health Information"
                             },
                             "default_value": "medical_rx_clarity",
                             "return_format": "value",
@@ -1991,14 +1760,14 @@
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Products We Sell"
+                            "default_value": ""
                         },
                         {
                             "key": "field_9e5242778e824",
                             "label": "Desc",
                             "name": "desc",
                             "type": "textarea",
-                            "default_value": "We specialize in the two most trusted Modafinil brands globally:"
+                            "default_value": ""
                         },
                         {
                             "key": "field_1bfab0f22cce4",
@@ -2036,14 +1805,14 @@
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Delivery Across Malaysia"
+                            "default_value": ""
                         },
                         {
                             "key": "field_db0fe9dccbec4",
                             "label": "Desc",
                             "name": "desc",
                             "type": "textarea",
-                            "default_value": "We use Pos Malaysia for reliable delivery to all postcodes across Malaysia:"
+                            "default_value": ""
                         },
                         {
                             "key": "field_3da652fbdede4",
@@ -2067,20 +1836,32 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                        "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                        "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel Guarantee / Reship or Refund",
+                                        "live_chat_support": "Phone and Chat Support",
+                                        "medical_rx_clarity": "Medicine Information / Schedule 4 and Prescription",
+                                        "aud_checkout": "AUD Checkout / PayID",
+                                        "express_shipping": "Express Shipping / Delivery Van",
+                                        "australia_delivery": "Australia-Wide Delivery",
+                                        "browse_catalogue": "Product Range / Blister Pack",
+                                        "listing_details": "Compare Strengths and Packs",
+                                        "returning_loyalty": "Returning Customers",
+                                        "discreet_sealed": "Discreet Plain Packaging",
+                                        "po_box_delivery": "PO Box and Parcel Locker Delivery",
+                                        "no_customs": "Domestic Dispatch / No Customs",
+                                        "affordable_value": "Affordable Pricing / Best Value",
+                                        "email_support": "Email Support",
+                                        "clock_hours": "Opening Hours / Response Time",
+                                        "bank_transfer": "Bank Transfer / EFT",
+                                        "secure_lock": "Secure Checkout / Encryption",
+                                        "track_parcel": "Track Your Parcel",
+                                        "verified_reviews": "Verified Reviews",
+                                        "pharmacist_advice": "Pharmacist Advice",
+                                        "faq_help": "FAQ / Help",
+                                        "shield_insurance": "Shipping Insurance",
+                                        "calendar_days": "Delivery Days / Calendar",
+                                        "location_pin": "Location / Address",
+                                        "health_check": "Health Information"
                                     },
                                     "default_value": "auto",
                                     "return_format": "value",
@@ -2171,7 +1952,7 @@
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Have Questions? We Are Here."
+                            "default_value": ""
                         },
                         {
                             "key": "field_19334cb614cc4",
@@ -2179,7 +1960,7 @@
                             "name": "description",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "Our team speaks English and Australia. We usually reply within 30 minutes during business hours."
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_wa_title",
@@ -2194,7 +1975,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "WhatsApp (Fastest Option)"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_wa_number",
@@ -2209,7 +1990,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "+61 488 841 833"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_wa_url",
@@ -2224,7 +2005,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "https://wa.me/61488841833"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_email_title",
@@ -2239,7 +2020,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Email"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_email_address",
@@ -2254,7 +2035,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "orders@waklertaustralia.com.au"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_email_subtext",
@@ -2269,7 +2050,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Within 24 hours"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_hours_title",
@@ -2284,7 +2065,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "OPERATING HOURS"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_hours_mon_fri",
@@ -2299,7 +2080,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "8:00 AM – 8:00 PM AEST"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_hours_sat",
@@ -2314,7 +2095,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "9:00 AM – 5:00 PM AEST"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_hours_sun",
@@ -2329,7 +2110,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Limited (WhatsApp only)"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_address_title",
@@ -2344,7 +2125,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Visit us"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_address_line1",
@@ -2359,7 +2140,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "50 Holt St"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_address_line2",
@@ -2374,7 +2155,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Surry Hills NSW 2010"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_address_country",
@@ -2389,7 +2170,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Australia"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_directions_url",
@@ -2404,7 +2185,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "https://maps.google.com/?q=50+Holt+St,+Surry+Hills+NSW+2010,+Australia"
+                            "default_value": ""
                         },
                         {
                             "key": "field_contact_maps_url",
@@ -2419,7 +2200,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.729113645068!2d151.2091490757531!3d-33.88636402035985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae2183c50979%3A0x8e8334863e467d3c!2s50%20Holt%20St%2C%20Surry%20Hills%20NSW%202010%2C%20Australia!5e0!3m2!1sen!2sau!4v1728725700000!5m2!1sen!2sau"
+                            "default_value": ""
                         }
                     ]
                 },
@@ -2435,7 +2216,7 @@
                             "name": "eyebrow",
                             "type": "text",
                             "required": false,
-                            "default_value": "Full catalogue"
+                            "default_value": ""
                         },
                         {
                             "key": "field_page_hero_title_en",
@@ -2444,7 +2225,7 @@
                             "type": "text",
                             "instructions": "The main H1 heading for this page.",
                             "required": false,
-                            "default_value": "Shop Armodafinil Products in Australia"
+                            "default_value": ""
                         },
                         {
                             "key": "field_page_hero_subtitle_en",
@@ -2453,7 +2234,7 @@
                             "type": "textarea",
                             "rows": 3,
                             "required": false,
-                            "default_value": "Browse our current range of genuine Armodafinil tablets with fast delivery across Australia."
+                            "default_value": ""
                         },
                         {
                             "key": "field_page_hero_bullets",
@@ -2481,120 +2262,6 @@
                     "display": "block",
                     "sub_fields": []
                 },
-                "layout_product_guide": {
-                    "key": "layout_product_guide",
-                    "name": "product_guide",
-                    "label": "Product Guide",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_product_guide_heading_en",
-                            "label": "Heading",
-                            "name": "heading",
-                            "type": "text",
-                            "required": false,
-                            "default_value": "Choosing the Right Modafinil"
-                        },
-                        {
-                            "key": "field_product_guide_description_en",
-                            "label": "Description",
-                            "name": "description",
-                            "type": "textarea",
-                            "rows": 3,
-                            "required": false,
-                            "default_value": "With several brands and dosages available, the right product depends on your experience level, desired effects, and budget. Below is a comparison of our most popular options."
-                        },
-                        {
-                            "key": "field_product_guide_guide_items",
-                            "label": "Guide Items",
-                            "name": "guide_items",
-                            "type": "repeater",
-                            "required": false,
-                            "button_label": "Add Guide Item",
-                            "sub_fields": [
-                                {
-                                    "key": "field_guide_item_title_en",
-                                    "label": "Title",
-                                    "name": "title",
-                                    "type": "text",
-                                    "required": false
-                                },
-                                {
-                                    "key": "field_guide_item_description_en",
-                                    "label": "Description",
-                                    "name": "description",
-                                    "type": "textarea",
-                                    "rows": 3,
-                                    "required": false
-                                },
-                                {
-                                    "key": "field_guide_item_best_for_en",
-                                    "label": "Best For",
-                                    "name": "best_for",
-                                    "type": "text",
-                                    "required": false
-                                },
-                                {
-                                    "key": "field_guide_item_product_link",
-                                    "label": "Product Link",
-                                    "name": "product_link",
-                                    "type": "text",
-                                    "required": false
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "layout_seo_text": {
-                    "key": "layout_seo_text",
-                    "name": "seo_text",
-                    "label": "SEO Text with CTA",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_seo_text_content_en",
-                            "label": "Content",
-                            "name": "content",
-                            "type": "wysiwyg",
-                            "required": false,
-                            "default_value": "<h2>Ordering Modafinil in Malaysia</h2>\n<p>We've made the process of buying modafinil online as straightforward as possible. Here's what to expect when you place an order with ModafinilMY.</p>\n\n<h3>Delivery Timeframes</h3>\n<p>Semua pesanan dihantar dengan cepat ke seluruh Malaysia dengan penjejakan penuh. Bandar-bandar utama Semenanjung seperti KL, Selangor, Penang, dan Johor biasanya menerima pesanan dalam masa 7-12 hari bekerja. Sabah dan Sarawak mengambil 10-16 hari bekerja. Pesanan atas RM399 layak untuk penghantaran percuma.</p>\n\n<h3>Customs & Packaging</h3>\n<p>Every order is shipped in plain, unmarked packaging with no indication of the contents. There is no branding or product information visible on the outside. Our shipments are processed through international channels and we maintain a high delivery success rate across all Malaysian states and territories.</p>\n\n<h3>What to Expect After Ordering</h3>\n<p>Once your order is placed, you'll receive a confirmation email with your order details. Tracking information is provided within 1-2 business days. If you have any questions about your order at any point, our support team is available via our contact page.</p>"
-                        },
-                        {
-                            "key": "field_seo_text_show_cta",
-                            "label": "Show CTA?",
-                            "name": "show_cta",
-                            "type": "true_false",
-                            "default_value": 1,
-                            "ui": 1,
-                            "required": false
-                        },
-                        {
-                            "key": "field_seo_text_cta_title_en",
-                            "label": "CTA Title",
-                            "name": "cta_title",
-                            "type": "text",
-                            "required": false,
-                            "default_value": "Modafinil Dosage Guide"
-                        },
-                        {
-                            "key": "field_seo_text_cta_desc_en",
-                            "label": "CTA Description",
-                            "name": "cta_desc",
-                            "type": "textarea",
-                            "rows": 3,
-                            "required": false,
-                            "default_value": "Not sure which dose is right for you? Read our complete dosage guide with recommendations, timing tips, and brand comparisons."
-                        },
-                        {
-                            "key": "field_seo_text_cta_link",
-                            "label": "CTA Link",
-                            "name": "cta_link",
-                            "type": "text",
-                            "required": false,
-                            "default_value": "/dosage-guide"
-                        }
-                    ]
-                },
                 "layout_734b74e312bd4": {
                     "key": "layout_734b74e312bd4",
                     "name": "reviews",
@@ -2606,14 +2273,14 @@
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "What Malaysian Customers Say"
+                            "default_value": ""
                         },
                         {
                             "key": "field_6f47fd49d5334",
                             "label": "Description",
                             "name": "description",
                             "type": "text",
-                            "default_value": "Real testimonials from ModafinilMY users across Malaysia."
+                            "default_value": ""
                         }
                     ]
                 },
@@ -2636,14 +2303,14 @@
                             "label": "Badge Text",
                             "name": "badge_text",
                             "type": "text",
-                            "default_value": "Live Australia Post Tracking"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_heading",
                             "label": "Heading",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Track Your Parcel"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_description",
@@ -2651,7 +2318,7 @@
                             "name": "description",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "Follow your Waklert Australia delivery from our warehouse to your doorstep with real-time Australia Post tracking."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_intro_callout_p1",
@@ -2659,7 +2326,7 @@
                             "name": "intro_callout_p1",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "Welcome to the Waklert Australia order tracking page. Every parcel we dispatch is shipped with Australia Post and comes with a unique tracking number, so you can follow your delivery from our warehouse to your door."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_intro_callout_p2",
@@ -2667,7 +2334,7 @@
                             "name": "intro_callout_p2",
                             "type": "textarea",
                             "rows": 3,
-                            "default_value": "Your tracking number was emailed to you when your order was dispatched. Enter it below and we'll take you straight to the live Australia Post tracking results for your parcel."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_tab_form",
@@ -2682,7 +2349,7 @@
                             "label": "Tracking Form Heading",
                             "name": "form_heading",
                             "type": "text",
-                            "default_value": "Enter Your Tracking Number"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_form_instructions",
@@ -2690,21 +2357,21 @@
                             "name": "form_instructions",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "Tracking numbers are usually 10–23 characters long, e.g. 33ABC1234567. You can find yours in your dispatch confirmation email."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_input_placeholder",
                             "label": "Input Placeholder",
                             "name": "input_placeholder",
                             "type": "text",
-                            "default_value": "e.g. 33ABC1234567"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_btn_text",
                             "label": "Button Text",
                             "name": "track_btn_text",
                             "type": "text",
-                            "default_value": "Track My Order"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_redirect_notice",
@@ -2712,7 +2379,7 @@
                             "name": "redirect_notice",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "You'll be redirected to the official Australia Post tracking page (auspost.com.au), where your parcel's latest scan events are shown automatically."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_tab_banner",
@@ -2727,63 +2394,63 @@
                             "label": "Banner Partner Label",
                             "name": "banner_partner_label",
                             "type": "text",
-                            "default_value": "Official Partner"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_brand_badge",
                             "label": "Banner Brand Badge",
                             "name": "banner_brand_badge",
                             "type": "text",
-                            "default_value": "Waklert Australia"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_kicker",
                             "label": "Banner Subtitle / Kicker",
                             "name": "banner_kicker",
                             "type": "text",
-                            "default_value": "Direct Express Delivery"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_title_1",
                             "label": "Banner Headline Line 1",
                             "name": "banner_title_1",
                             "type": "text",
-                            "default_value": "JUST STAY AT HOME"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_title_2",
                             "label": "Banner Headline Line 2",
                             "name": "banner_title_2",
                             "type": "text",
-                            "default_value": "WE DELIVER!"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_safe_stamp",
                             "label": "Banner Safe Stamp Text",
                             "name": "banner_safe_stamp",
                             "type": "text",
-                            "default_value": "100% SAFE"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_button_text",
                             "label": "Banner Button Text",
                             "name": "banner_button_text",
                             "type": "text",
-                            "default_value": "ORDER NOW"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_button_link",
                             "label": "Banner Button Link",
                             "name": "banner_button_link",
                             "type": "text",
-                            "default_value": "/shop/"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_banner_domain",
                             "label": "Banner Domain Footer",
                             "name": "banner_domain",
                             "type": "text",
-                            "default_value": "waklertaustralia.com"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_tab_steps",
@@ -2798,7 +2465,7 @@
                             "label": "Section Heading",
                             "name": "how_works_heading",
                             "type": "text",
-                            "default_value": "How Order Tracking Works"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_how_works_steps",
@@ -2838,7 +2505,7 @@
                             "label": "Need Help Title",
                             "name": "help_heading",
                             "type": "text",
-                            "default_value": "Need Help?"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_help_description",
@@ -2846,21 +2513,21 @@
                             "name": "help_description",
                             "type": "textarea",
                             "rows": 2,
-                            "default_value": "Can't find your tracking number or no scans after 3 business days? Contact our support team and we'll look into it."
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_help_btn_text",
                             "label": "Help Button Text",
                             "name": "help_btn_text",
                             "type": "text",
-                            "default_value": "Contact Support"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_help_btn_url",
                             "label": "Help Button Link",
                             "name": "help_btn_url",
                             "type": "text",
-                            "default_value": "/contact/"
+                            "default_value": ""
                         },
                         {
                             "key": "field_to_trust_cards",
@@ -2876,25 +2543,34 @@
                                     "name": "card_type",
                                     "type": "select",
                                     "choices": {
-                                        "shipping": "🚚 Australia Post Express Van (Free Shipping)",
-                                        "support": "💬 24/7 Verified Support",
-                                        "payment": "💳 100% Encrypted AUD Checkout",
-                                        "auto": "✨ Auto-Match from Title & Description (Recommended)",
-                                        "parcel_guarantee": "🛡️ Parcel Guarantee / Reship or Refund (\"If it doesn't land, we fix it\")",
-                                        "live_chat_support": "💬 Real People on Chat / 24/7 SMS & Support",
-                                        "medical_rx_clarity": "📋 Straight-Up Medicine Info / Schedule 4 & Rx Clarity",
-                                        "aud_checkout": "💳 Simple AUD Checkout / PayID & Secure Payment",
-                                        "express_shipping": "🚚 Fast Domestic Express Shipping / Australia Post Van",
-                                        "australia_delivery": "🇦🇺 Australia-Wide Delivery / Tracked Parcel Map",
-                                        "browse_catalogue": "💊 Focused Armodafinil Range / Blister Pack Catalogue",
-                                        "listing_details": "🔍 Clear Listing Details / Compare Strengths & Packs",
-                                        "returning_loyalty": "⭐ Returning Customers / Fast Reorder & Loyalty",
-                                        "discreet_sealed": "📦 Discreet Plain Packaging / Sealed Pharmacy Pack",
-                                        "po_box_delivery": "📮 PO Box & Parcel Locker Delivery",
-                                        "no_customs": "✅ Smooth Domestic Dispatch / No Customs Hassle",
-                                        "affordable_value": "💰 Affordable Direct Pricing / Best Value"
+                                        "auto": "Auto-match from title and description (recommended)",
+                                        "parcel_guarantee": "Parcel Guarantee / Reship or Refund",
+                                        "live_chat_support": "Phone and Chat Support",
+                                        "medical_rx_clarity": "Medicine Information / Schedule 4 and Prescription",
+                                        "aud_checkout": "AUD Checkout / PayID",
+                                        "express_shipping": "Express Shipping / Delivery Van",
+                                        "australia_delivery": "Australia-Wide Delivery",
+                                        "browse_catalogue": "Product Range / Blister Pack",
+                                        "listing_details": "Compare Strengths and Packs",
+                                        "returning_loyalty": "Returning Customers",
+                                        "discreet_sealed": "Discreet Plain Packaging",
+                                        "po_box_delivery": "PO Box and Parcel Locker Delivery",
+                                        "no_customs": "Domestic Dispatch / No Customs",
+                                        "affordable_value": "Affordable Pricing / Best Value",
+                                        "email_support": "Email Support",
+                                        "clock_hours": "Opening Hours / Response Time",
+                                        "bank_transfer": "Bank Transfer / EFT",
+                                        "secure_lock": "Secure Checkout / Encryption",
+                                        "track_parcel": "Track Your Parcel",
+                                        "verified_reviews": "Verified Reviews",
+                                        "pharmacist_advice": "Pharmacist Advice",
+                                        "faq_help": "FAQ / Help",
+                                        "shield_insurance": "Shipping Insurance",
+                                        "calendar_days": "Delivery Days / Calendar",
+                                        "location_pin": "Location / Address",
+                                        "health_check": "Health Information"
                                     },
-                                    "default_value": "shipping",
+                                    "default_value": "auto",
                                     "wrapper": {
                                         "width": "50",
                                         "class": "",
@@ -2966,7 +2642,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Knowledge & Resources",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -2986,7 +2662,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Latest Articles & Guides",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3006,7 +2682,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Helpful insights, dosage guides, and research on Armodafinil and cognitive performance.",
+                            "default_value": "",
                             "rows": 2,
                             "placeholder": "",
                             "new_lines": ""
@@ -3098,7 +2774,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "View All Articles",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3118,7 +2794,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "/blog",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3148,7 +2824,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Knowledge & Resources",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3168,7 +2844,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Latest Articles & Guides",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3188,7 +2864,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Helpful insights, dosage guides, and research on Armodafinil and cognitive performance.",
+                            "default_value": "",
                             "rows": 2,
                             "placeholder": "",
                             "new_lines": ""
@@ -3280,7 +2956,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "View All Articles",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3300,7 +2976,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "/blog",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -3330,7 +3006,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "FAQ",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3347,7 +3023,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Frequently Asked Questions / FAQ",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3364,7 +3040,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Everything you need to know about buying Modafinil in Malaysia.",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3381,7 +3057,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Still Have Questions?",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3398,7 +3074,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Our team speaks Malay and English, ready to assist 7 days a week.",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3415,7 +3091,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "WhatsApp Us Now",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3432,7 +3108,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "https://wa.me/60185754182",
+                            "default_value": "",
                             "placeholder": ""
                         },
                         {
@@ -3489,295 +3165,6 @@
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                "layout_refund_policy": {
-                    "key": "layout_refund_policy",
-                    "name": "refund_policy",
-                    "label": "Refund Policy Page",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "label": "Title",
-                            "name": "title",
-                            "type": "text",
-                            "default": "Refund Policy & Guarantee",
-                            "key": "field_ref_d48a00dd46a3"
-                        },
-                        {
-                            "label": "Subtitle",
-                            "name": "subtitle",
-                            "type": "textarea",
-                            "default": "If your order does not arrive, we will reship it for free or issue a full refund.",
-                            "key": "field_ref_4524e00f098a"
-                        },
-                        {
-                            "key": "field_ref_4685c02287ac",
-                            "label": "Badges / Highlights",
-                            "name": "badges",
-                            "type": "repeater",
-                            "layout": "block",
-                            "button_label": "Add Badge",
-                            "sub_fields": [
-                                {
-                                    "key": "field_ref_33f9b6e9ef9b",
-                                    "label": "Badge",
-                                    "name": "badge",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_ref_a3e48e910eee",
-                            "label": "Policy Sections",
-                            "name": "sections",
-                            "type": "repeater",
-                            "layout": "block",
-                            "button_label": "Add Section",
-                            "sub_fields": [
-                                {
-                                    "key": "field_ref_a36a22a29c4f",
-                                    "label": "Section Title",
-                                    "name": "title",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_ref_f8e7a5d6a302",
-                                    "label": "Content",
-                                    "name": "content",
-                                    "type": "textarea",
-                                    "rows": 4
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "layout_privacy_policy": {
-                    "key": "layout_privacy_policy",
-                    "name": "privacy_policy",
-                    "label": "Privacy Policy Page",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "label": "Title",
-                            "name": "title",
-                            "type": "text",
-                            "default": "Privacy Policy",
-                            "key": "field_prv_75a7e76c6b6d"
-                        },
-                        {
-                            "label": "Subtitle",
-                            "name": "subtitle",
-                            "type": "textarea",
-                            "default": "We collect the absolute minimum data required to process and deliver your order.",
-                            "key": "field_prv_9f1a915df9a3"
-                        },
-                        {
-                            "key": "field_prv_4e7ceb8fef70",
-                            "label": "Badges / Highlights",
-                            "name": "badges",
-                            "type": "repeater",
-                            "layout": "block",
-                            "button_label": "Add Badge",
-                            "sub_fields": [
-                                {
-                                    "key": "field_prv_33d845bce880",
-                                    "label": "Badge",
-                                    "name": "badge",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_prv_e5a3ba5f46bb",
-                            "label": "Policy Sections",
-                            "name": "sections",
-                            "type": "repeater",
-                            "layout": "block",
-                            "button_label": "Add Section",
-                            "sub_fields": [
-                                {
-                                    "key": "field_prv_e5d908c1e544",
-                                    "label": "Section Title",
-                                    "name": "title",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_prv_35c0999f1336",
-                                    "label": "Content",
-                                    "name": "content",
-                                    "type": "textarea",
-                                    "rows": 4
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "layout_terms_of_service": {
-                    "key": "layout_terms_of_service",
-                    "name": "terms_of_service",
-                    "label": "Terms of Service Page",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "label": "Title",
-                            "name": "title",
-                            "type": "text",
-                            "default": "Terms & Conditions",
-                            "key": "field_trm_14e9f36c3f1a"
-                        },
-                        {
-                            "label": "Subtitle",
-                            "name": "subtitle",
-                            "type": "textarea",
-                            "default": "By accessing this website and placing an order, you agree to the terms below.",
-                            "key": "field_trm_017a398b5af1"
-                        },
-                        {
-                            "key": "field_trm_32c5220a5e9b",
-                            "label": "Badges / Highlights",
-                            "name": "badges",
-                            "type": "repeater",
-                            "layout": "block",
-                            "button_label": "Add Badge",
-                            "sub_fields": [
-                                {
-                                    "key": "field_trm_71d51e7feaf2",
-                                    "label": "Badge",
-                                    "name": "badge",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_trm_739b04c8ae36",
-                            "label": "Policy Sections",
-                            "name": "sections",
-                            "type": "repeater",
-                            "layout": "block",
-                            "button_label": "Add Section",
-                            "sub_fields": [
-                                {
-                                    "key": "field_trm_e959ba899200",
-                                    "label": "Section Title",
-                                    "name": "title",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_trm_a6bceb1d73df",
-                                    "label": "Content",
-                                    "name": "content",
-                                    "type": "textarea",
-                                    "rows": 4
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_trm_contact_heading",
-                            "label": "Contact Callout Heading",
-                            "name": "contact_heading",
-                            "type": "text",
-                            "default_value": "Have questions about our terms?",
-                            "placeholder": "Have questions about our terms?"
-                        },
-                        {
-                            "key": "field_trm_contact_description",
-                            "label": "Contact Callout Description",
-                            "name": "contact_description",
-                            "type": "textarea",
-                            "rows": 2,
-                            "default_value": "Contact our legal support team via WhatsApp for any clarifications before placing your order.",
-                            "placeholder": "Contact our legal support team via WhatsApp for any clarifications before placing your order."
-                        },
-                        {
-                            "key": "field_trm_contact_btn_label",
-                            "label": "WhatsApp Button Label",
-                            "name": "contact_btn_label",
-                            "type": "text",
-                            "default_value": "Support WhatsApp",
-                            "placeholder": "Support WhatsApp"
-                        },
-                        {
-                            "key": "field_trm_whatsapp_number",
-                            "label": "WhatsApp Phone Number or Link",
-                            "name": "whatsapp_number",
-                            "type": "text",
-                            "instructions": "Enter Australian phone number (e.g. +61 488 841 833) or direct link (e.g. https://wa.me/61488841833). Defaults to Theme Settings.",
-                            "default_value": "+61 488 841 833",
-                            "placeholder": "+61 488 841 833"
-                        },
-                        {
-                            "key": "field_trm_hide_contact",
-                            "label": "Hide Contact Callout",
-                            "name": "hide_contact_callout",
-                            "type": "true_false",
-                            "ui": 1,
-                            "default_value": 0
-                        }
-                    ]
-                },
-                "layout_terms_contact": {
-                    "key": "layout_terms_contact",
-                    "name": "terms_contact",
-                    "label": "Terms & Conditions - Contact Support Callout",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_trm_cta_heading",
-                            "label": "Heading",
-                            "name": "heading",
-                            "type": "text",
-                            "default_value": "Have questions about our terms?",
-                            "placeholder": "Have questions about our terms?"
-                        },
-                        {
-                            "key": "field_trm_cta_description",
-                            "label": "Description",
-                            "name": "description",
-                            "type": "textarea",
-                            "rows": 2,
-                            "default_value": "Contact our legal support team via WhatsApp for any clarifications before placing your order.",
-                            "placeholder": "Contact our legal support team via WhatsApp for any clarifications before placing your order."
-                        },
-                        {
-                            "key": "field_trm_cta_btn_label",
-                            "label": "Button Label",
-                            "name": "btn_label",
-                            "type": "text",
-                            "default_value": "Support WhatsApp",
-                            "placeholder": "Support WhatsApp"
-                        },
-                        {
-                            "key": "field_trm_cta_whatsapp_number",
-                            "label": "WhatsApp Phone Number or Link",
-                            "name": "whatsapp_number",
-                            "type": "text",
-                            "instructions": "Enter Australian phone number (e.g. +61 488 841 833) or direct wa.me link. Defaults to Theme Settings.",
-                            "default_value": "+61 488 841 833",
-                            "placeholder": "+61 488 841 833"
-                        }
-                    ]
-                },
-                "layout_sitemap": {
-                    "key": "layout_sitemap",
-                    "name": "sitemap",
-                    "label": "Sitemap Page",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "label": "Title",
-                            "name": "title",
-                            "type": "text",
-                            "default": "Sitemap",
-                            "key": "field_stm_231b1e01f7a6"
-                        },
-                        {
-                            "label": "Subtitle",
-                            "name": "subtitle",
-                            "type": "textarea",
-                            "default": "Browse all pages on ModafinilMY. Find exactly what you're looking for.",
-                            "key": "field_stm_ba3c2400045b"
                         }
                     ]
                 },
@@ -3886,286 +3273,6 @@
                         }
                     ]
                 },
-                "layout_dosage_guide": {
-                    "key": "layout_dosage_guide",
-                    "name": "dosage_guide",
-                    "label": "Dosage Guide Page",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_dsg_23787a24fc",
-                            "label": "Page Badge",
-                            "name": "page_badge",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_c3e8d94a1d",
-                            "label": "Page Title",
-                            "name": "page_title",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_304d43d200",
-                            "label": "Page Subtitle",
-                            "name": "page_subtitle",
-                            "type": "textarea"
-                        },
-                        {
-                            "key": "field_dsg_03b5f12065",
-                            "label": "Disclaimer",
-                            "name": "disclaimer",
-                            "type": "textarea"
-                        },
-                        {
-                            "key": "field_dsg_1861c02731",
-                            "label": "Disclaimer Label",
-                            "name": "disclaimer_label",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_0d3f79609a",
-                            "label": "Before You Use Heading",
-                            "name": "guide_heading",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_216ab090e2",
-                            "label": "Before You Use Introduction",
-                            "name": "guide_intro",
-                            "type": "textarea"
-                        },
-                        {
-                            "key": "field_dsg_dbd9396588",
-                            "label": "Dosage Cards",
-                            "name": "dosage_cards",
-                            "type": "repeater",
-                            "layout": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_dsg_5d9e62cde7",
-                                    "label": "Dose (e.g. 200mg)",
-                                    "name": "dose",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_3653141a2e",
-                                    "label": "Label",
-                                    "name": "label",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_79671202e8",
-                                    "label": "Description",
-                                    "name": "desc",
-                                    "type": "textarea"
-                                },
-                                {
-                                    "key": "field_dsg_4a43414c43",
-                                    "label": "Color (blue/emerald/amber)",
-                                    "name": "color",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_dsg_f78c1dc52c",
-                            "label": "Timing Items",
-                            "name": "timing_items",
-                            "type": "repeater",
-                            "layout": "table",
-                            "sub_fields": [
-                                {
-                                    "key": "field_dsg_0fb1645626",
-                                    "label": "Time Label",
-                                    "name": "time",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_7a681ea9ac",
-                                    "label": "Description",
-                                    "name": "desc",
-                                    "type": "textarea"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_dsg_484f63d710",
-                            "label": "Products Section Heading",
-                            "name": "products_heading",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_3233ca758a",
-                            "label": "Australian Import Checks",
-                            "name": "malaysia_tips",
-                            "type": "repeater",
-                            "layout": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_dsg_e5fb491019",
-                                    "label": "Emoji",
-                                    "name": "emoji",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_afe52d680f",
-                                    "label": "Title",
-                                    "name": "title",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_a4540d0c41",
-                                    "label": "Description",
-                                    "name": "desc",
-                                    "type": "textarea"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_dsg_0f4d13f8a0",
-                            "label": "Products Button Text",
-                            "name": "products_button_text",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_5533e29071",
-                            "label": "Products Button Link",
-                            "name": "products_button_link",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_c5ad7251dc",
-                            "label": "Product Cards",
-                            "name": "product_cards",
-                            "type": "repeater",
-                            "layout": "table",
-                            "sub_fields": [
-                                {
-                                    "key": "field_dsg_131f02b0cb",
-                                    "label": "Product Name",
-                                    "name": "name",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_c6d199f563",
-                                    "label": "Listing Note",
-                                    "name": "use",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_8b879d706d",
-                                    "label": "Stated Strength",
-                                    "name": "dose",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_39713e496e",
-                                    "label": "Directions Note",
-                                    "name": "duration",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_d6b8a2e880",
-                                    "label": "Link",
-                                    "name": "link",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_dsg_7502be4e83",
-                            "label": "Timing Section Heading",
-                            "name": "timing_heading",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_3af0875b9e",
-                            "label": "Timing Section Introduction",
-                            "name": "timing_intro",
-                            "type": "textarea"
-                        },
-                        {
-                            "key": "field_dsg_c741650225",
-                            "label": "Import Section Heading",
-                            "name": "import_heading",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_6d06c5adfe",
-                            "label": "Import Section Introduction",
-                            "name": "import_intro",
-                            "type": "textarea"
-                        },
-                        {
-                            "key": "field_dsg_31cc6df9b0",
-                            "label": "FAQ Section Heading",
-                            "name": "faq_heading",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_ff966795a6",
-                            "label": "FAQ Items",
-                            "name": "faq_items",
-                            "type": "repeater",
-                            "layout": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_dsg_3718ef24da",
-                                    "label": "Question",
-                                    "name": "q",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_dsg_0264c9a81f",
-                                    "label": "Answer",
-                                    "name": "a",
-                                    "type": "wysiwyg",
-                                    "instructions": "Enter the answer. You can format text, add bullet points, and insert links (e.g. to Shipping Policy).",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 0,
-                                    "delay": 0
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_dsg_94f4a1a1d8",
-                            "label": "Call to Action Heading",
-                            "name": "cta_heading",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_5b4a80cd09",
-                            "label": "Call to Action Description",
-                            "name": "cta_description",
-                            "type": "textarea"
-                        },
-                        {
-                            "key": "field_dsg_19b2cab52e",
-                            "label": "Shop Button Text",
-                            "name": "shop_button_text",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_e629d75f7c",
-                            "label": "Shop Button Link",
-                            "name": "shop_button_link",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_9412ab9886",
-                            "label": "Contact Button Text",
-                            "name": "contact_button_text",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_dsg_0309c2a3de",
-                            "label": "Contact Button Link",
-                            "name": "contact_button_link",
-                            "type": "text"
-                        }
-                    ]
-                },
                 "layout_dsg_5bfaeae2e4": {
                     "key": "layout_dsg_5bfaeae2e4",
                     "name": "product_faqs",
@@ -4177,7 +3284,7 @@
                             "label": "FAQ Title",
                             "name": "heading",
                             "type": "text",
-                            "default_value": "Frequently Asked Questions"
+                            "default_value": ""
                         },
                         {
                             "key": "field_dsg_624949de81",
@@ -4244,50 +3351,7 @@
                                     "media_upload": 1
                                 }
                             ],
-                            "default_value": [
-                                {
-                                    "field_dsg_ae5395b1a7": "What is Modanil 200mg used for?",
-                                    "field_dsg_f3bbb68d4e": "Apakah kegunaan Modanil 200mg?",
-                                    "field_dsg_4ececabc41": "Modanil 200 mg is useful for the improvement of narcolepsy, obstructive sleep apnea, or shift work sleep disorder.",
-                                    "field_dsg_462a8df2cf": "Modanil 200 mg berguna untuk pembaikan narkolepsi, apnea tidur obstruktif, atau gangguan tidur kerja syif."
-                                },
-                                {
-                                    "field_dsg_ae5395b1a7": "How does Modanil 200mg work?",
-                                    "field_dsg_f3bbb68d4e": "Bagaimanakah Modanil 200mg berfungsi?",
-                                    "field_dsg_4ececabc41": "Modanil works by affecting certain chemicals in the brain that regulate the sleep-wake cycle, helping you stay awake and alert.",
-                                    "field_dsg_462a8df2cf": "Modanil berfungsi dengan mempengaruhi bahan kimia tertentu di dalam otak yang mengawal selitaran tidur-jaga, membantu anda kekal berjaga dan peka."
-                                },
-                                {
-                                    "field_dsg_ae5395b1a7": "How should I take Modanil 200mg?",
-                                    "field_dsg_f3bbb68d4e": "Bagaimanakah cara saya mengambil Modanil 200mg?",
-                                    "field_dsg_4ececabc41": "Take one tablet in the morning with a glass of water. Do not exceed the recommended dose.",
-                                    "field_dsg_462a8df2cf": "Ambil sebiji tablet pada waktu pagi dengan segelas air. Jangan melebihi dos yang disyorkan."
-                                },
-                                {
-                                    "field_dsg_ae5395b1a7": "Can I take Modanil with food?",
-                                    "field_dsg_f3bbb68d4e": "Bolehkah saya mengambil Modanil dengan makanan?",
-                                    "field_dsg_4ececabc41": "Yes, it can be taken with or without food.",
-                                    "field_dsg_462a8df2cf": "Ya, ia boleh diambil dengan atau tanpa makanan."
-                                },
-                                {
-                                    "field_dsg_ae5395b1a7": "What should I do if I miss a dose?",
-                                    "field_dsg_f3bbb68d4e": "Apakah yang harus saya lakukan jika terlepas dos?",
-                                    "field_dsg_4ececabc41": "If you miss a dose, take it as soon as you remember. If it is close to your next dose, skip the missed dose. Do not take a double dose.",
-                                    "field_dsg_462a8df2cf": "Jika anda terlepas dos, ambil sebaik sahaja anda teringat. Jika ia hampir dengan dos seterusnya, abaikan dos yang terlepas. Jangan ambil dos berganda."
-                                },
-                                {
-                                    "field_dsg_ae5395b1a7": "How long does Modanil 200mg last?",
-                                    "field_dsg_f3bbb68d4e": "Berapa lamakah Modanil 200mg bertahan?",
-                                    "field_dsg_4ececabc41": "The effects typically last between 12 to 15 hours.",
-                                    "field_dsg_462a8df2cf": "Kesannya biasanya bertahan antara 12 hingga 15 jam."
-                                },
-                                {
-                                    "field_dsg_ae5395b1a7": "What are the common side effects of Modanil 200mg?",
-                                    "field_dsg_f3bbb68d4e": "Apakah kesan sampingan biasa Modanil 200mg?",
-                                    "field_dsg_4ececabc41": "Common side effects include headache, nausea, nervousness, dizziness, or difficulty sleeping.",
-                                    "field_dsg_462a8df2cf": "Kesan sampingan biasa termasuk sakit kepala, loya, gementar, pening, atau kesukaran tidur."
-                                }
-                            ]
+                            "default_value": ""
                         }
                     ],
                     "min": "",
@@ -4312,7 +3376,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Need Help?",
+                            "default_value": "",
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
@@ -4332,7 +3396,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Talk to us via SMS or WhatsApp - 24/7.",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "Talk to us via SMS or WhatsApp - 24/7.",
                             "prepend": "",
@@ -4352,7 +3416,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "We are available all the time to handle any questions, offer advice or reassure you about your purchase.",
+                            "default_value": "",
                             "maxlength": "",
                             "rows": 4,
                             "placeholder": "We are available all the time to handle any questions, offer advice or reassure you about your purchase.",
@@ -4372,7 +3436,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "WhatsApp",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -4392,7 +3456,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "https://wa.me/61488841833",
+                            "default_value": "",
                             "placeholder": "https://wa.me/61488841833"
                         },
                         {
@@ -4408,7 +3472,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "sms:0488841833",
+                            "default_value": "",
                             "placeholder": "sms:0488841833",
                             "prepend": "",
                             "append": "",
@@ -4428,7 +3492,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Email Support",
+                            "default_value": "",
                             "maxlength": "",
                             "placeholder": "Email Support",
                             "prepend": "",
@@ -4440,7 +3504,7 @@
                             "name": "email_btn_url",
                             "aria-label": "",
                             "type": "text",
-                            "instructions": "Enter email address (e.g. support@waklertaustralia.com), mailto link, or page link (e.g. /contact/)",
+                            "instructions": "Enter email address (e.g. support@ivermectinaustralia.com), mailto link, or page link (e.g. /contact/)",
                             "required": false,
                             "conditional_logic": false,
                             "wrapper": {
@@ -4448,8 +3512,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "mailto:orders@waklertaustralia.com.au",
-                            "placeholder": "mailto:orders@waklertaustralia.com.au"
+                            "default_value": "",
+                            "placeholder": "mailto:orders@ivermectinaustralia.com.au"
                         },
                         {
                             "key": "field_scta_image",
@@ -4793,5 +3857,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "modified": 1792586495,
-    "local_file": "C:laragonwwwwaklertaustralia.com/wp-content/themes/waklertaustralia.com-wp/acf-json/group_page_modules.json"
+    "local_file": "C:laragonwwwivermectinaustralia.com/wp-content/themes/ivermectinaustralia.com-wp/acf-json/group_page_modules.json"
 }

@@ -3,7 +3,7 @@
  * Theme Setup & Registration
  */
 
-function modmy_theme_setup() {
+function ivermectin_theme_setup() {
     // Add default posts and comments RSS feed links to head.
     add_theme_support('automatic-feed-links');
 
@@ -27,12 +27,12 @@ function modmy_theme_setup() {
 
     // Register Navigation Menus
     register_nav_menus(array(
-        'primary'         => __('Primary Navigation (Desktop)', 'waklert-australia'),
-        'mobile'          => __('Mobile Navigation', 'waklert-australia'),
-        'footer_quick'    => __('Footer Quick Links', 'waklert-australia'),
-        'footer_info'     => __('Footer Information', 'waklert-australia'),
-        'footer_trending' => __('Footer Trending Products', 'waklert-australia'),
-        'footer_cities'   => __('Footer Delivery Cities', 'waklert-australia'),
+        'primary'         => __('Primary Navigation (Desktop)', 'ivermectin-australia'),
+        'mobile'          => __('Mobile Navigation', 'ivermectin-australia'),
+        'footer_quick'    => __('Footer Quick Links', 'ivermectin-australia'),
+        'footer_info'     => __('Footer Information', 'ivermectin-australia'),
+        'footer_trending' => __('Footer Trending Products', 'ivermectin-australia'),
+        'footer_cities'   => __('Footer Delivery Cities', 'ivermectin-australia'),
     ));
 
     // HTML5 markup support
@@ -46,31 +46,13 @@ function modmy_theme_setup() {
         'script',
     ));
 }
-add_action('after_setup_theme', 'modmy_theme_setup');
-
-/**
- * Register Custom Post Types
- */
-function modmy_register_cpt() {
-    // Reviews CPT
-    register_post_type('review', array(
-        'labels' => array(
-            'name' => 'Reviews',
-            'singular_name' => 'Review',
-            'add_new_item' => 'Add New Review'
-        ),
-        'public' => true,
-        'has_archive' => false,
-        'supports' => array('title'), // ACF will handle the rest
-    ));
-}
-add_action('init', 'modmy_register_cpt');
+add_action('after_setup_theme', 'ivermectin_theme_setup');
 
 /**
  * Add Tailwind CSS classes to Navigation Menus
  */
 add_filter('nav_menu_css_class', function($classes, $item, $args, $depth = 0) {
-    if (isset($args->walker) && ($args->walker instanceof Waklert_Desktop_Nav_Walker || $args->walker instanceof Waklert_Mobile_Nav_Walker)) {
+    if (isset($args->walker) && ($args->walker instanceof Ivermectin_Desktop_Nav_Walker || $args->walker instanceof Ivermectin_Mobile_Nav_Walker)) {
         return $classes;
     }
     if (isset($args->theme_location)) {
@@ -93,7 +75,7 @@ add_filter('nav_menu_css_class', function($classes, $item, $args, $depth = 0) {
 }, 10, 4);
 
 add_filter('nav_menu_link_attributes', function($atts, $item, $args, $depth = 0) {
-    if (isset($args->walker) && ($args->walker instanceof Waklert_Desktop_Nav_Walker || $args->walker instanceof Waklert_Mobile_Nav_Walker)) {
+    if (isset($args->walker) && ($args->walker instanceof Ivermectin_Desktop_Nav_Walker || $args->walker instanceof Ivermectin_Mobile_Nav_Walker)) {
         return $atts;
     }
     if (isset($args->theme_location)) {
@@ -131,7 +113,7 @@ add_filter('nav_menu_link_attributes', function($atts, $item, $args, $depth = 0)
 }, 10, 4);
 
 add_filter('nav_menu_submenu_css_class', function($classes, $args, $depth = 0) {
-    if (isset($args->walker) && ($args->walker instanceof Waklert_Desktop_Nav_Walker || $args->walker instanceof Waklert_Mobile_Nav_Walker)) {
+    if (isset($args->walker) && ($args->walker instanceof Ivermectin_Desktop_Nav_Walker || $args->walker instanceof Ivermectin_Mobile_Nav_Walker)) {
         return $classes;
     }
     if (isset($args->theme_location) && ($args->theme_location === 'primary' || $args->theme_location === 'mobile')) {
@@ -147,7 +129,7 @@ add_filter('nav_menu_submenu_css_class', function($classes, $args, $depth = 0) {
 }, 10, 3);
 
 add_filter('walker_nav_menu_start_el', function($item_output, $item, $depth, $args) {
-    if (isset($args->walker) && ($args->walker instanceof Waklert_Desktop_Nav_Walker || $args->walker instanceof Waklert_Mobile_Nav_Walker)) {
+    if (isset($args->walker) && ($args->walker instanceof Ivermectin_Desktop_Nav_Walker || $args->walker instanceof Ivermectin_Mobile_Nav_Walker)) {
         return $item_output;
     }
     if (isset($args->theme_location) && ($args->theme_location === 'primary' || $args->theme_location === 'mobile')) {
@@ -160,7 +142,7 @@ add_filter('walker_nav_menu_start_el', function($item_output, $item, $depth, $ar
                 $chevron_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-4.5 h-4.5 pointer-events-none transition-transform duration-200"><path d="m6 9 6 6 6-6"/></svg>';
                 $toggle_button = sprintf(
                     '<button type="button" class="mobile-submenu-toggle is-active flex items-center justify-center w-9 h-9 mr-6 rounded-xl bg-surface border border-border/70 text-foreground/70 hover:text-primary hover:bg-primary-softer hover:border-primary/40 transition-all focus:outline-none shrink-0" aria-expanded="true" aria-label="%s">%s</button>',
-                    esc_attr(sprintf(__('Toggle %s submenu', 'waklert-australia'), $item->title)),
+                    esc_attr(sprintf(__('Toggle %s submenu', 'ivermectin-australia'), $item->title)),
                     $chevron_svg
                 );
                 $item_output = '<div class="flex items-center justify-between w-full">' . $item_output . $toggle_button . '</div>';
@@ -183,7 +165,7 @@ add_filter('walker_nav_menu_start_el', function($item_output, $item, $depth, $ar
  * @param string $location 'header', 'mobile', or 'footer'
  * @return int Attachment ID or 0
  */
-function waklert_get_logo_id($location = 'header') {
+function ivermectin_get_logo_id($location = 'header') {
     if ($location === 'footer') {
         $footer_logo = function_exists('get_field') ? get_field('footer_logo', 'option') : null;
         if (!empty($footer_logo)) {
@@ -199,15 +181,15 @@ function waklert_get_logo_id($location = 'header') {
     return (int) get_theme_mod('custom_logo');
 }
 
-function waklert_get_logo_url($location = 'header') {
-    $logo_id = waklert_get_logo_id($location);
+function ivermectin_get_logo_url($location = 'header') {
+    $logo_id = ivermectin_get_logo_id($location);
     if ($logo_id && ($src = wp_get_attachment_image_url($logo_id, 'full'))) {
         return $src;
     }
     // Fallback to theme asset for fresh environments (e.g. InstaWP staging)
-    $theme_logo = get_template_directory() . '/assets/images/waklert-australia-logo.png';
+    $theme_logo = get_template_directory() . '/assets/images/ivermectin-australia-logo.png';
     if (file_exists($theme_logo)) {
-        return get_template_directory_uri() . '/assets/images/waklert-australia-logo.png';
+        return get_template_directory_uri() . '/assets/images/ivermectin-australia-logo.png';
     }
     return false;
 }
@@ -218,10 +200,10 @@ function waklert_get_logo_url($location = 'header') {
  * @param string $classes CSS classes for the img tag
  * @param string $location 'header', 'mobile', or 'footer'
  */
-function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:max-w-[312px] object-contain', $location = 'header') {
-    $logo_src = waklert_get_logo_url($location);
+function ivermectin_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:max-w-[312px] object-contain', $location = 'header') {
+    $logo_src = ivermectin_get_logo_url($location);
     $home_url = esc_url(home_url('/'));
-    $site_name = esc_attr(get_bloginfo('name') ?: 'Waklert Australia');
+    $site_name = esc_attr(get_bloginfo('name') ?: '');
 
     if ($logo_src) {
         $logo_classes = trim($classes . ' site-logo-img site-logo-img--' . esc_attr($location));
@@ -259,7 +241,7 @@ function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:m
             </a>',
             $home_url,
             $site_name,
-            esc_html(get_bloginfo('name') ?: 'Waklert Australia')
+            esc_html(get_bloginfo('name') ?: '')
         );
     } else {
         echo sprintf(
@@ -268,7 +250,7 @@ function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:m
             </a>',
             $home_url,
             $site_name,
-            esc_html(get_bloginfo('name') ?: 'Waklert Australia')
+            esc_html(get_bloginfo('name') ?: '')
         );
     }
 }
@@ -276,7 +258,7 @@ function waklert_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] sm:m
 /**
  * Wrap WYSIWYG tables in responsive table-wrapper if not already wrapped
  */
-function waklert_wrap_prose_tables($content) {
+function ivermectin_wrap_prose_tables($content) {
     if (empty($content) || !is_string($content) || strpos($content, '<table') === false) {
         return $content;
     }
@@ -286,8 +268,8 @@ function waklert_wrap_prose_tables($content) {
     }
     return preg_replace('/(<table\b[^>]*>.*?<\/table>)/is', '<div class="table-wrapper">$1</div>', $content);
 }
-add_filter('the_content', 'waklert_wrap_prose_tables', 20);
-add_filter('acf/format_value/type=wysiwyg', 'waklert_wrap_prose_tables', 20);
+add_filter('the_content', 'ivermectin_wrap_prose_tables', 20);
+add_filter('acf/format_value/type=wysiwyg', 'ivermectin_wrap_prose_tables', 20);
 
 
 

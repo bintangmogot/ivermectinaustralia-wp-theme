@@ -1,50 +1,40 @@
 <?php
 /**
  * Module: Contact Form & Info
- * Waklert Australia 2-tone Dashed & Patterned Theme
+ * Ivermectin Australia 2-tone Dashed & Patterned Theme
  */
 
-$heading = get_sub_field('heading') ?: "Have Questions? We Are Here.";
+$heading = get_sub_field('heading') ?: '';
 $desc    = get_sub_field('description');
-if (empty($desc) || strpos($desc, 'English and Australia') !== false) {
-    $desc = "Our Australian customer care team is here to assist with product information, tracking updates, and order support.";
-}
 
 // WhatsApp
-$wa_title  = get_sub_field('whatsapp_title') ?: "WhatsApp (Fastest Option)";
-$wa_number = get_sub_field('whatsapp_number') ?: "+61 488 841 833";
-$wa_url    = get_sub_field('whatsapp_url') ?: (get_field('whatsapp_number', 'option') ?: "https://wa.me/61488841833");
-if (strpos($wa_url, 'wa.me/60') !== false) {
-    $wa_url = "https://wa.me/61488841833";
-}
+$wa_title  = get_sub_field('whatsapp_title') ?: '';
+$wa_number = get_sub_field('whatsapp_number') ?: '';
+$wa_url    = get_sub_field('whatsapp_url') ?: (get_field('whatsapp_number', 'option') ?: '');
 
 // Email
-$email_title   = get_sub_field('email_title') ?: "Email Support";
-$email_address = get_sub_field('contact_email') ?: (get_field('contact_email', 'option') ?: "orders@waklertaustralia.com.au");
-if (strpos($email_address, 'example.com') !== false || strpos($email_address, 'hoppingmad') !== false || strpos($email_address, 'modaaust') !== false) {
-    $email_address = 'orders@waklertaustralia.com.au';
-}
-$email_subtext = get_sub_field('email_subtext') ?: "Within 24 hours";
+$email_title   = get_sub_field('email_title') ?: '';
+$email_address = get_sub_field('contact_email') ?: (get_field('contact_email', 'option') ?: '');
+$email_subtext = get_sub_field('email_subtext') ?: '';
 
 // Operating Hours
-$hours_title   = get_sub_field('hours_title') ?: "Operating Hours (AEST)";
-$hours_mon_fri = get_sub_field('hours_mon_fri') ?: "8:00 AM – 8:00 PM AEST";
-$hours_sat     = get_sub_field('hours_sat') ?: "9:00 AM – 5:00 PM AEST";
-$hours_sun     = get_sub_field('hours_sun') ?: "Limited (WhatsApp only)";
+$hours_title   = get_sub_field('hours_title') ?: '';
+$hours_mon_fri = get_sub_field('hours_mon_fri') ?: '';
+$hours_sat     = get_sub_field('hours_sat') ?: '';
+$hours_sun     = get_sub_field('hours_sun') ?: '';
 
 // Map & Address
-$address_title   = get_sub_field('address_title') ?: "Waklert Australia Support Office";
-$address_line_1  = get_sub_field('address_line_1') ?: "50 Holt St";
-$address_line_2  = get_sub_field('address_city_state_zip') ?: "Surry Hills NSW 2010";
-$address_country = get_sub_field('address_country') ?: "Australia";
+$address_title   = get_sub_field('address_title') ?: '';
+$address_line_1  = get_sub_field('address_line_1') ?: '';
+$address_line_2  = get_sub_field('address_city_state_zip') ?: '';
+$address_country = get_sub_field('address_country') ?: '';
 
 // Directions URL (link to open in Google Maps)
 $entered_directions = trim((string) (get_sub_field('directions_url') ?: ''));
 $default_directions = "https://maps.google.com/?q=" . urlencode($address_line_1 . ', ' . $address_line_2 . ', ' . $address_country);
 $directions_url     = $entered_directions ?: $default_directions;
 
-// Official Google Maps Embed URL specifically for 50 Holt St, Surry Hills NSW 2010
-$default_map_embed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.729113645068!2d151.2069395!3d-33.8862948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae21d2054155%3A0x88d02fd98fa53a3a!2s50%20Holt%20St%2C%20Surry%20Hills%20NSW%202010!5e0!3m2!1sen!2sau!4v1728725700000!5m2!1sen!2sau";
+$default_map_embed = '';
 
 $entered_embed = trim((string) (get_sub_field('google_maps_url') ?: ''));
 
@@ -65,26 +55,26 @@ if (strpos($entered_embed, 'maps.app.goo.gl') !== false || strpos($entered_embed
 ?>
 
 <!-- 2-Tone Patterned Header -->
-<header class="relative overflow-hidden border-b-2 border-dashed border-sky-300/80 bg-gradient-to-b from-[#f0f6fa] via-[#eef5fa] to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9">
+<header class="relative overflow-hidden border-b border-sky-300/80 bg-gradient-to-b from-primary-soft via-primary-soft to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9">
     <div class="container-site max-w-4xl mx-auto px-4 relative z-10">
         <!-- Breadcrumbs -->
         <div class="mb-3">
-            <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-dashed border-sky-300/80 bg-white/90 px-3.5 py-1 text-xs font-medium text-slate-500 shadow-xs backdrop-blur">
-                <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-slate-600 transition-colors hover:text-[#0c4161]">Home</a>
+            <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-sky-300/80 bg-white/90 px-3.5 py-1 text-xs font-medium text-slate-500 shadow-xs backdrop-blur">
+                <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-slate-600 transition-colors hover:text-primary">Home</a>
                 <span class="text-sky-300 font-normal">/</span>
-                <span aria-current="page" class="font-extrabold text-[#0c4161]">Contact Us</span>
+                <span aria-current="page" class="font-extrabold text-primary">Contact Us</span>
             </nav>
         </div>
 
         <!-- Eyebrow Badge -->
         <div class="mb-2.5">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#0c4161] shadow-xs">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-primary shadow-xs">
                 <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
                 Direct Customer Support
             </span>
         </div>
 
-        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-[#0c4161]">
+        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-primary">
             <?= esc_html($heading) ?>
         </h1>
 
@@ -101,7 +91,7 @@ if (strpos($entered_embed, 'maps.app.goo.gl') !== false || strpos($entered_embed
         <div class="space-y-5">
             
             <!-- WhatsApp Card (Fastest Option) -->
-            <a href="<?= esc_url($wa_url) ?>" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-2xl border-2 border-dashed border-emerald-300/80 bg-gradient-to-br from-emerald-50/60 via-white to-emerald-50/30 p-6 shadow-xs transition-all duration-200 hover:border-emerald-400 hover:shadow-md">
+            <a href="<?= esc_url($wa_url) ?>" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-2xl border border-emerald-300/80 bg-gradient-to-br from-emerald-50/60 via-white to-emerald-50/30 p-6 shadow-xs transition-all duration-200 hover:border-emerald-400 hover:shadow-md">
                 <div class="flex items-start gap-4">
                     <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-500 text-white shadow-xs group-hover:scale-105 transition-transform">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
@@ -117,7 +107,7 @@ if (strpos($entered_embed, 'maps.app.goo.gl') !== false || strpos($entered_embed
                             </span>
                         </div>
                         <p class="mt-1 font-mono text-base font-bold text-emerald-700"><?= esc_html($wa_number) ?></p>
-                        <p class="mt-1 text-xs text-slate-500">Typically replies within 15–30 minutes during business hours.</p>
+                        <p class="mt-1 text-xs text-slate-500">Typically replies within 15-30 minutes during business hours.</p>
                     </div>
                     <span class="hidden sm:inline-flex items-center text-xs font-bold text-emerald-600 group-hover:translate-x-1 transition-transform">
                         Chat Now &rarr;
@@ -126,16 +116,16 @@ if (strpos($entered_embed, 'maps.app.goo.gl') !== false || strpos($entered_embed
             </a>
 
             <!-- Email Card -->
-            <a href="<?= esc_url('mailto:' . $email_address) ?>" class="group relative block overflow-hidden rounded-2xl border-2 border-dashed border-sky-300/80 bg-gradient-to-br from-sky-50/60 via-white to-sky-50/30 p-6 shadow-xs transition-all duration-200 hover:border-sky-400 hover:shadow-md">
+            <a href="<?= esc_url('mailto:' . $email_address) ?>" class="group relative block overflow-hidden rounded-2xl border border-sky-300/80 bg-gradient-to-br from-sky-50/60 via-white to-sky-50/30 p-6 shadow-xs transition-all duration-200 hover:border-sky-400 hover:shadow-md">
                 <div class="flex items-start gap-4">
-                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0c4161] text-white shadow-xs group-hover:scale-105 transition-transform">
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-white shadow-xs group-hover:scale-105 transition-transform">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </span>
                     <div class="min-w-0 flex-1">
                         <h2 class="font-heading text-base font-bold text-slate-900"><?= esc_html($email_title) ?></h2>
-                        <p class="mt-1 font-mono text-sm font-semibold text-[#0c4161] break-all"><?= esc_html($email_address) ?></p>
+                        <p class="mt-1 font-mono text-sm font-semibold text-primary break-all"><?= esc_html($email_address) ?></p>
                         <p class="mt-1 text-xs text-slate-500">Response timeframe: <?= esc_html($email_subtext) ?></p>
                     </div>
                     <span class="hidden sm:inline-flex items-center text-xs font-bold text-sky-700 group-hover:translate-x-1 transition-transform">
@@ -145,9 +135,9 @@ if (strpos($entered_embed, 'maps.app.goo.gl') !== false || strpos($entered_embed
             </a>
 
             <!-- Operating Hours Card -->
-            <div class="rounded-2xl border-2 border-dashed border-slate-200/90 bg-white p-6 shadow-xs">
+            <div class="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs">
                 <div class="flex items-center gap-2 mb-4">
-                    <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-100 text-[#0c4161]">
+                    <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-100 text-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -156,7 +146,7 @@ if (strpos($entered_embed, 'maps.app.goo.gl') !== false || strpos($entered_embed
                 </div>
                 <div class="space-y-3 text-sm">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-                        <span class="text-slate-600 font-medium">Monday – Friday</span>
+                        <span class="text-slate-600 font-medium">Monday - Friday</span>
                         <span class="font-bold text-slate-900"><?= esc_html($hours_mon_fri) ?></span>
                     </div>
                     <div class="flex items-center justify-between border-b border-slate-100 pb-2">
@@ -171,9 +161,9 @@ if (strpos($entered_embed, 'maps.app.goo.gl') !== false || strpos($entered_embed
             </div>
 
             <!-- Visit Us / Google Maps Card -->
-            <div class="rounded-2xl border-2 border-dashed border-slate-200/90 bg-white overflow-hidden shadow-xs">
+            <div class="rounded-2xl border border-slate-200/90 bg-white overflow-hidden shadow-xs">
                 <div class="p-6 space-y-3">
-                    <div class="flex items-center gap-2 font-heading font-bold text-base text-[#0c4161]">
+                    <div class="flex items-center gap-2 font-heading font-bold text-base text-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -188,7 +178,7 @@ if (strpos($entered_embed, 'maps.app.goo.gl') !== false || strpos($entered_embed
                     ?>
                     <p class="text-sm leading-relaxed text-slate-600"><?= esc_html($one_line_address) ?></p>
                     <div class="pt-1">
-                        <a href="<?= esc_url($directions_url) ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full bg-sky-50 border border-sky-200/80 px-3.5 py-1.5 text-xs font-bold text-[#0c4161] hover:bg-sky-100 transition-colors">
+                        <a href="<?= esc_url($directions_url) ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full bg-sky-50 border border-sky-200/80 px-3.5 py-1.5 text-xs font-bold text-primary hover:bg-sky-100 transition-colors">
                             <span>Open in Google Maps</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -216,13 +206,9 @@ if (strpos($entered_embed, 'maps.app.goo.gl') !== false || strpos($entered_embed
         </div>
 
         <!-- Right: Message Form Card -->
-        <div class="rounded-3xl border-2 border-dashed border-sky-300/80 bg-white p-6 sm:p-8 md:p-10 shadow-xs relative">
+        <div class="rounded-3xl border border-sky-300/80 bg-white p-6 sm:p-8 md:p-10 shadow-xs relative">
             <div class="mb-6">
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3 py-0.5 text-[11px] font-black uppercase tracking-[0.16em] text-[#0c4161]">
-                    Online Enquiry
-                </span>
-                <h2 class="mt-2 font-heading text-2xl font-black text-[#0c4161]">Send Us a Message</h2>
-                <p class="mt-1 text-sm text-slate-500">Have an enquiry about your order or our armodafinil products? Submit your details and our team will get in touch promptly.</p>
+                <h2 class="mt-2 font-heading text-2xl font-black text-primary"><?= esc_html__('Send Us a Message', 'ivermectin-australia') ?></h2>
             </div>
 
             <div class="contact-form-wrapper">

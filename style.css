@@ -1,16 +1,15 @@
 /**
-Theme Name: Waklert Australia
+Theme Name: Ivermectin Australia
 Author: Bintang Aprilian
-Author URI: https://www.firas.cloud/
-Description: Waklert Australia - Custom English-language armodafinil storefront.
-Version: 1.0.3
+Description: Ivermectin Australia storefront. Classic PHP theme on ACF Pro Flexible Content, WooCommerce and Tailwind CSS 4.
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: waklert-australia
+Text Domain: ivermectin-australia
 Requires at least: 6.0
 Requires PHP: 7.4
 */
 
 /*
- * Note: Actual CSS is compiled into assets/css/main.css using Tailwind CLI.
+ * Compiled styles live in assets/css/main.css (npm run build).
  */

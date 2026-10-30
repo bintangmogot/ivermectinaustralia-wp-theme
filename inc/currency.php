@@ -38,8 +38,8 @@ add_filter('woocommerce_cart_total', function($cart_total) {
 }, 999, 1);
 
 // 2. Side Cart: Set Checkout button price to match product subtotal (not order total) and strip 'A'
-add_filter('xoo_wsc_footer_buttons_args', 'waklert_side_cart_checkout_button_subtotal', 20);
-function waklert_side_cart_checkout_button_subtotal($args) {
+add_filter('xoo_wsc_footer_buttons_args', 'ivermectin_side_cart_checkout_button_subtotal', 99);
+function ivermectin_side_cart_checkout_button_subtotal($args) {
     if (isset($args['buttons']['checkout']) && function_exists('WC') && WC()->cart && !WC()->cart->is_empty()) {
         // Extract button text prefix (defaults to 'Checkout')
         $chk_text = 'Checkout';
@@ -54,12 +54,9 @@ function waklert_side_cart_checkout_button_subtotal($args) {
         }
 
         if ($show_total) {
-            // Use cart subtotal (product price total) instead of order total
-            $subtotal = WC()->cart->get_cart_subtotal();
-            // Ensure no 'A' prefix appears in the price
-            $subtotal = str_replace(array('A$', 'A&#36;', 'A&dollar;'), '$', $subtotal);
-            // Note: side-cart-woocommerce adds ' - ' via .amount:before CSS, so we simply concatenate
-            $args['buttons']['checkout']['label'] = $chk_text . $subtotal;
+            // Product subtotal only (excludes shipping and insurance), reduced to digits and the $ sign.
+            $subtotal = preg_replace('/[^0-9\.,\$]/', '', wp_strip_all_tags(WC()->cart->get_cart_subtotal()));
+            $args['buttons']['checkout']['label'] = $chk_text . ' - ' . $subtotal;
         } else {
             $args['buttons']['checkout']['label'] = $chk_text;
         }
@@ -68,8 +65,8 @@ function waklert_side_cart_checkout_button_subtotal($args) {
 }
 
 // 3. Clean any 'A' prefix from Side Cart totals display
-add_filter('xoo_wsc_footer_totals_args', 'waklert_side_cart_clean_currency_totals', 20);
-function waklert_side_cart_clean_currency_totals($args) {
+add_filter('xoo_wsc_footer_totals_args', 'ivermectin_side_cart_clean_currency_totals', 20);
+function ivermectin_side_cart_clean_currency_totals($args) {
     if (!empty($args['totals']) && is_array($args['totals'])) {
         foreach ($args['totals'] as $k => $total) {
             if (isset($total['value'])) {
@@ -81,8 +78,8 @@ function waklert_side_cart_clean_currency_totals($args) {
 }
 
 // 4. Clean any 'A' prefix from Side Cart product items
-add_filter('xoo_wsc_product_args', 'waklert_side_cart_clean_product_args', 20, 4);
-function waklert_side_cart_clean_product_args($args, $_product, $cart_item, $cart_item_key) {
+add_filter('xoo_wsc_product_args', 'ivermectin_side_cart_clean_product_args', 20, 4);
+function ivermectin_side_cart_clean_product_args($args, $_product, $cart_item, $cart_item_key) {
     if (isset($args['product_price'])) {
         $args['product_price'] = str_replace(array('A$', 'A&#36;', 'A&dollar;'), '$', $args['product_price']);
     }

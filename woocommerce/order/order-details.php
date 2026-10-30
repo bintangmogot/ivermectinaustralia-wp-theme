@@ -1,6 +1,6 @@
 <?php
 /**
- * Order details - Waklert Australia Clean Modern Layout
+ * Order details - Ivermectin Australia Clean Modern Layout
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
@@ -43,16 +43,16 @@ if ( $show_downloads ) {
 <section class="woocommerce-order-details bg-card border border-border/80 rounded-2xl p-3 sm:px-5 sm:py-4 shadow-xs mb-3.5 sm:mb-5">
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
-	<h2 class="woocommerce-order-details__title font-heading text-lg sm:text-xl font-extrabold text-[#0C4161] mb-3 pb-2 border-b border-border/80 flex items-center justify-between">
+	<h2 class="woocommerce-order-details__title font-heading text-lg sm:text-xl font-extrabold text-primary mb-3 pb-2 border-b border-border/80 flex items-center justify-between">
 		<span><?php esc_html_e( 'Order details', 'woocommerce' ); ?></span>
-		<span class="text-xs font-bold uppercase tracking-wider text-[#0284C7] px-2.5 py-0.5 rounded-full bg-sky-50 border border-sky-200">
+		<span class="text-xs font-bold uppercase tracking-wider text-link px-2.5 py-0.5 rounded-full bg-sky-50 border border-sky-200">
 			Order #<?php echo esc_html( $order->get_order_number() ); ?>
 		</span>
 	</h2>
 
 	<!-- Mobile Flat Clean List (NO nested tables, NO nested boxes) -->
 	<div class="order-details-mobile-stack md:hidden mb-2">
-		<div class="bg-[#0C4161] text-white flex items-center justify-between py-2 px-3.5 rounded-lg text-xs font-bold uppercase tracking-wider mb-2" style="background-color: #0C4161 !important; color: #FFFFFF !important;">
+		<div class="bg-primary text-white flex items-center justify-between py-2 px-3.5 rounded-lg text-xs font-bold uppercase tracking-wider mb-2" style="background-color: #012c70 !important; color: #FFFFFF !important;">
 			<span style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important;"><?php esc_html_e( 'Product', 'woocommerce' ); ?></span>
 			<span style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important;"><?php esc_html_e( 'Total', 'woocommerce' ); ?></span>
 		</div>
@@ -66,7 +66,7 @@ if ( $show_downloads ) {
 				?>
 				<div class="py-3 first:pt-0 last:pb-3 flex items-start justify-between gap-3">
 					<div class="flex-1 pr-2">
-						<div class="font-bold text-sm text-[#0C4161] leading-snug">
+						<div class="font-bold text-sm text-primary leading-snug">
 							<?php echo wp_kses_post( $item->get_name() ); ?>
 						</div>
 						<div class="text-xs text-muted-foreground mt-1 flex items-center gap-2">
@@ -103,9 +103,9 @@ if ( $show_downloads ) {
 					}
 				}
 				?>
-				<div class="flex items-center justify-between <?php echo $is_grand_total ? 'pt-2.5 pb-2.5 px-3 bg-[#F0F7FC] border border-[#BAE6FD] rounded-lg font-black mt-1 order-total' : 'text-sm text-muted-foreground'; ?>">
-					<span class="<?php echo $is_grand_total ? 'text-[#0C4161] font-black text-base sm:text-lg' : 'text-muted-foreground text-xs font-semibold'; ?>"><?php echo esc_html( $total['label'] ); ?></span>
-					<span class="<?php echo $is_grand_total ? 'text-[#0284C7] font-mono text-xl sm:text-2xl font-black' : 'text-foreground font-medium text-xs sm:text-sm'; ?>">
+				<div class="flex items-center justify-between <?php echo $is_grand_total ? 'pt-2.5 pb-2.5 px-3 bg-primary-soft border border-[#b7d0f4] rounded-lg font-black mt-1 order-total' : 'text-sm text-muted-foreground'; ?>">
+					<span class="<?php echo $is_grand_total ? 'text-primary font-black text-base sm:text-lg' : 'text-muted-foreground text-xs font-semibold'; ?>"><?php echo esc_html( $total['label'] ); ?></span>
+					<span class="<?php echo $is_grand_total ? 'text-link font-mono text-xl sm:text-2xl font-black' : 'text-foreground font-medium text-xs sm:text-sm'; ?>">
 						<?php if ( $is_shipping && $mob_shipping_method ) : ?>
 							<span class="block text-right"><?php echo $mob_shipping_price; ?></span>
 							<span class="block text-right text-[10px] text-muted-foreground font-normal mt-0.5"><?php echo esc_html( wp_strip_all_tags( $mob_shipping_method ) ); ?></span>
@@ -129,9 +129,9 @@ if ( $show_downloads ) {
 	<div class="hidden md:block overflow-x-auto">
 		<table class="woocommerce-table woocommerce-table--order-details shop_table order_details w-full text-left border-collapse">
 			<thead>
-				<tr class="bg-[#0C4161] text-white" style="background-color: #0C4161 !important;">
-					<th class="woocommerce-table__product-name product-name py-2.5 px-3.5 text-xs font-bold uppercase tracking-wider text-white" style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; background-color: #0C4161 !important; border: none !important;"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-					<th class="woocommerce-table__product-table product-total py-2.5 px-3.5 text-xs font-bold uppercase tracking-wider text-white text-right" style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; background-color: #0C4161 !important; border: none !important;"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
+				<tr class="bg-primary text-white" style="background-color: #012c70 !important;">
+					<th class="woocommerce-table__product-name product-name py-2.5 px-3.5 text-xs font-bold uppercase tracking-wider text-white" style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; background-color: #012c70 !important; border: none !important;"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
+					<th class="woocommerce-table__product-table product-total py-2.5 px-3.5 text-xs font-bold uppercase tracking-wider text-white text-right" style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; background-color: #012c70 !important; border: none !important;"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
 				</tr>
 			</thead>
 
@@ -175,9 +175,9 @@ if ( $show_downloads ) {
 						}
 					}
 					?>
-					<tr class="<?php echo $is_grand_total ? 'bg-[#F0F7FC] border-y-2 border-[#BAE6FD] order-total' : ''; ?>" <?php if ( $is_grand_total ) echo 'style="background-color: #F0F7FC !important;"'; ?>>
-						<th scope="row" class="py-3 px-3.5 <?php echo $is_grand_total ? 'text-[#0C4161] font-black text-base sm:text-lg' : 'text-xs sm:text-sm font-semibold text-muted-foreground'; ?>" <?php if ( $is_grand_total ) echo 'style="color: #0C4161 !important; font-size: 1.25rem !important; font-weight: 900 !important;"'; ?>><?php echo esc_html( $total['label'] ); ?></th>
-						<td class="py-3 px-3.5 text-right font-bold <?php echo $is_grand_total ? 'text-[#0284C7] font-black text-2xl sm:text-3xl font-heading' : 'text-xs sm:text-sm text-foreground'; ?>" <?php if ( $is_grand_total ) echo 'style="color: #0284C7 !important; font-size: 1.625rem !important; font-weight: 900 !important;"'; ?>>
+					<tr class="<?php echo $is_grand_total ? 'bg-primary-soft border-y-2 border-[#b7d0f4] order-total' : ''; ?>" <?php if ( $is_grand_total ) echo 'style="background-color: #eef4fc !important;"'; ?>>
+						<th scope="row" class="py-3 px-3.5 <?php echo $is_grand_total ? 'text-primary font-black text-base sm:text-lg' : 'text-xs sm:text-sm font-semibold text-muted-foreground'; ?>" <?php if ( $is_grand_total ) echo 'style="color: #012c70 !important; font-size: 1.25rem !important; font-weight: 900 !important;"'; ?>><?php echo esc_html( $total['label'] ); ?></th>
+						<td class="py-3 px-3.5 text-right font-bold <?php echo $is_grand_total ? 'text-link font-black text-2xl sm:text-3xl font-heading' : 'text-xs sm:text-sm text-foreground'; ?>" <?php if ( $is_grand_total ) echo 'style="color: #0a68d4 !important; font-size: 1.625rem !important; font-weight: 900 !important;"'; ?>>
 							<?php if ( $is_shipping && $shipping_method ) : ?>
 								<?php echo $shipping_price; ?>
 								<div class="text-muted-foreground font-normal text-xs mt-0.5"><?php echo esc_html( wp_strip_all_tags( $shipping_method ) ); ?></div>

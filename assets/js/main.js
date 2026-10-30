@@ -130,16 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Fallback: check if any header contains 'waklert' or 'recommended'
-            if (highlightIdx === -1) {
-                headerCells.forEach((th, idx) => {
-                    const txt = th.textContent.trim().toLowerCase();
-                    if (idx > 0 && (txt.includes('waklert') || txt.includes('recommended'))) {
-                        highlightIdx = idx;
-                    }
-                });
-            }
-
             // Fallback: if comparison table (>= 3 columns) and no column matched, highlight the last column
             if (highlightIdx === -1 && headerCells.length >= 3) {
                 highlightIdx = headerCells.length - 1;
@@ -147,9 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (highlightIdx !== -1) {
                 const targetTh = headerCells[highlightIdx];
-                targetTh.classList.add('waklert-highlight-header');
+                targetTh.classList.add('iva-highlight-header');
                 table.querySelectorAll(`tbody tr td:nth-child(${highlightIdx + 1}), tbody tr th:nth-child(${highlightIdx + 1})`).forEach((td) => {
-                    td.classList.add('waklert-highlight-cell');
+                    td.classList.add('iva-highlight-cell');
                 });
             }
         }
@@ -195,5 +185,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2500);
             }).catch(() => {});
         });
+    });
+});
+
+// Quantity buttons: select one, the price in the same card follows it.
+document.addEventListener('click', (event) => {
+    const button = event.target.closest('.iva-qbtn');
+    if (!button) return;
+    const card = button.closest('[data-iva-qcard]');
+    if (!card) return;
+    card.querySelectorAll('.iva-qbtn').forEach((other) => other.setAttribute('aria-pressed', 'false'));
+    button.setAttribute('aria-pressed', 'true');
+    const output = card.querySelector('[data-iva-price]');
+    if (output && button.dataset.ivaPrice) output.innerHTML = button.dataset.ivaPrice;
+});
+
+// Previous theme's FAQ accordions (content stored in the old "modules" field).
+document.addEventListener('click', (event) => {
+    const title = event.target.closest('.iva-legacy .accordion-title');
+    if (!title) return;
+    const content = title.parentElement.querySelector('.accordion-content');
+    if (content) content.style.display = content.style.display === 'block' ? 'none' : 'block';
+});
+
+// Copy buttons on the thank you page.
+document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-iva-copy]');
+    if (!button) return;
+    const value = button.parentElement.querySelector('[data-iva-copy-value]');
+    if (!value || !navigator.clipboard) return;
+    navigator.clipboard.writeText(value.textContent.trim()).then(() => {
+        const label = button.textContent;
+        button.textContent = button.dataset.ivaCopied || label;
+        setTimeout(() => { button.textContent = label; }, 1200);
     });
 });

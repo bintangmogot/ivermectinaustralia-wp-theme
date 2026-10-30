@@ -7,9 +7,9 @@
 get_header();
 
 $blog_page_id = is_home() ? (int) get_option('page_for_posts') : 0;
-$has_modules  = $blog_page_id && have_rows('modules', $blog_page_id);
+$has_modules  = $blog_page_id && have_rows('page_modules', $blog_page_id);
 
-function modmy_render_blog_loop() {
+function ivermectin_render_blog_loop() {
     $has_posts = have_posts();
     ?>
     <section id="blog-articles" class="py-8 md:py-12 bg-gradient-to-b from-white via-slate-50/40 to-white min-h-[50vh]" aria-label="Articles">
@@ -22,7 +22,7 @@ function modmy_render_blog_loop() {
                         $categories = get_the_category($post_id);
                         $cat_label = (!empty($categories) && $categories[0]->name !== 'Uncategorized') 
                             ? $categories[0]->name 
-                            : 'Armodafinil Guide';
+                            : '';
 
                         // Reading time calculation (~200 wpm)
                         $plain_text = strip_tags(get_the_content());
@@ -31,7 +31,7 @@ function modmy_render_blog_loop() {
 
                         // Excerpt calculation
                         $excerpt = '';
-                        $modules = get_field('modules', $post_id);
+                        $modules = get_field('page_modules', $post_id);
                         if ($modules) {
                             foreach ($modules as $mod) {
                                 if (!empty($mod['intro'])) {
@@ -53,7 +53,7 @@ function modmy_render_blog_loop() {
                             $excerpt = wp_trim_words($plain_text, 22, '...');
                         }
                     ?>
-                        <article id="post-<?php the_ID(); ?>" <?php post_class('group flex flex-col h-full bg-white border-2 border-dashed border-sky-300/80 hover:border-[#0c4161] rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-out'); ?>>
+                        <article id="post-<?php the_ID(); ?>" <?php post_class('group flex flex-col h-full bg-white border border-sky-300/80 hover:border-primary rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-out'); ?>>
                             <!-- Thumbnail / Visual Media Area -->
                             <a href="<?php echo esc_url($permalink); ?>" class="block relative aspect-[16/10] overflow-hidden bg-slate-900 focus:outline-hidden" tabindex="-1" aria-hidden="true">
                                 <?php if (has_post_thumbnail($post_id)) : ?>
@@ -72,14 +72,14 @@ function modmy_render_blog_loop() {
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                             </svg>
                                         </div>
-                                        <span class="text-xs font-bold tracking-widest uppercase text-white/80">Waklert Knowledge</span>
+                                        
                                     </div>
                                 <?php endif; ?>
 
                                 <!-- Floating Category Badge -->
                                 <div class="absolute top-3.5 left-3.5 z-10">
                                     <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black tracking-wider uppercase bg-amber-400 text-slate-950 shadow-md border border-amber-500/30">
-                                        ★ <?php echo esc_html($cat_label); ?>
+                                        <?php echo esc_html($cat_label); ?>
                                     </span>
                                 </div>
                             </a>
@@ -105,7 +105,7 @@ function modmy_render_blog_loop() {
                                     </div>
 
                                     <!-- Title -->
-                                    <h2 class="font-heading font-black text-xl sm:text-2xl text-[#0c4161] group-hover:text-sky-900 transition-colors line-clamp-2 mb-3 leading-snug">
+                                    <h2 class="font-heading font-black text-xl sm:text-2xl text-primary group-hover:text-sky-900 transition-colors line-clamp-2 mb-3 leading-snug">
                                         <a href="<?php echo esc_url($permalink); ?>">
                                             <?php the_title(); ?>
                                         </a>
@@ -119,7 +119,7 @@ function modmy_render_blog_loop() {
                             </div>
 
                             <!-- Two-Tone Footer Block -->
-                            <a href="<?php echo esc_url($permalink); ?>" class="bg-[#f0f6fa] group-hover:bg-[#0c4161] p-3 px-4 sm:p-4 sm:px-6 border-t-2 border-dashed border-sky-200/80 flex items-center justify-between transition-colors duration-300 text-xs sm:text-sm font-black text-[#0c4161] group-hover:text-white mt-auto">
+                            <a href="<?php echo esc_url($permalink); ?>" class="bg-primary-soft group-hover:bg-primary p-3 px-4 sm:p-4 sm:px-6 border-t border-sky-200/80 flex items-center justify-between transition-colors duration-300 text-xs sm:text-sm font-black text-primary group-hover:text-white mt-auto">
                                 <span>Read Full Guide</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -143,17 +143,17 @@ function modmy_render_blog_loop() {
                         foreach ($pages as $page) {
                             if (strpos($page, 'current') !== false) {
                                 $num = strip_tags($page);
-                                echo '<li><span class="flex h-10 w-10 pointer-events-none items-center justify-center rounded-xl bg-[#0c4161] text-sm font-black text-white shadow-sm">' . esc_html($num) . '</span></li>';
+                                echo '<li><span class="flex h-10 w-10 pointer-events-none items-center justify-center rounded-xl bg-primary text-sm font-black text-white shadow-sm">' . esc_html($num) . '</span></li>';
                             } elseif (strpos($page, 'dots') !== false) {
                                 echo '<li><span class="flex h-10 w-10 items-center justify-center font-bold text-slate-400">&hellip;</span></li>';
                             } else {
                                 $styled_link = preg_replace(
                                     '/class="([^"]*)"/',
-                                    'class="$1 flex h-10 w-10 items-center justify-center rounded-xl border-2 border-dashed border-sky-200/80 bg-white text-sm font-bold text-[#0c4161] transition-all hover:bg-sky-50 hover:border-sky-300 hover:shadow-xs"',
+                                    'class="$1 flex h-10 w-10 items-center justify-center rounded-xl border border-sky-200/80 bg-white text-sm font-bold text-primary transition-all hover:bg-sky-50 hover:border-sky-300 hover:shadow-xs"',
                                     $page
                                 );
                                 if (strpos($styled_link, 'class=') === false) {
-                                    $styled_link = str_replace('<a ', '<a class="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-dashed border-sky-200/80 bg-white text-sm font-bold text-[#0c4161] transition-all hover:bg-sky-50 hover:border-sky-300 hover:shadow-xs" ', $styled_link);
+                                    $styled_link = str_replace('<a ', '<a class="flex h-10 w-10 items-center justify-center rounded-xl border border-sky-200/80 bg-white text-sm font-bold text-primary transition-all hover:bg-sky-50 hover:border-sky-300 hover:shadow-xs" ', $styled_link);
                                 }
                                 echo '<li>' . $styled_link . '</li>';
                             }
@@ -164,15 +164,15 @@ function modmy_render_blog_loop() {
                 </div>
             <?php else : ?>
                 <div class="col-span-full py-12 text-center">
-                    <div class="mx-auto max-w-xl rounded-3xl border-2 border-dashed border-sky-200/80 bg-white px-6 py-12 shadow-xs md:px-10">
-                        <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#0c4161]">
-                            <?php echo is_search() ? 'Search' : 'Waklert Australia Insights'; ?>
+                    <div class="mx-auto max-w-xl rounded-3xl border border-sky-200/80 bg-white px-6 py-12 shadow-xs md:px-10">
+                        <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-primary">
+                            <?php echo is_search() ? __('Search', 'ivermectin-australia') : single_post_title('', false); ?>
                         </span>
-                        <h2 class="mt-4 font-heading text-2xl font-black text-[#0c4161] md:text-3xl">
-                            <?php echo is_search() ? 'No results found' : 'No articles are published yet'; ?>
+                        <h2 class="mt-4 font-heading text-2xl font-black text-primary md:text-3xl">
+                            <?php echo is_search() ? __('No results found', 'ivermectin-australia') : __('No articles are published yet', 'ivermectin-australia'); ?>
                         </h2>
                         <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-600">
-                            <?php echo is_search() ? 'Try a different search term.' : 'Please check back for new articles and general information.'; ?>
+                            <?php echo is_search() ? __('Try a different search term.', 'ivermectin-australia') : __('Please check back for new articles.', 'ivermectin-australia'); ?>
                         </p>
                         <?php if (is_search()) : ?>
                             <div class="mx-auto mt-6 max-w-md">
@@ -189,20 +189,20 @@ function modmy_render_blog_loop() {
 
 if (is_home() && $has_modules) {
     $rendered_loop = false;
-    while (have_rows('modules', $blog_page_id)) {
+    while (have_rows('page_modules', $blog_page_id)) {
         the_row();
         $layout = get_row_layout();
 
         if ($layout === 'posts_grid' || $layout === 'blog_grid') {
-            modmy_render_blog_loop();
+            ivermectin_render_blog_loop();
             $rendered_loop = true;
         } else {
             get_template_part('modules/content', $layout);
             if ($layout === 'page_hero' && !$rendered_loop) {
-                $raw_modules = get_field('modules', $blog_page_id) ?: [];
+                $raw_modules = get_field('page_modules', $blog_page_id) ?: [];
                 $remaining_layouts = array_column($raw_modules, 'acf_fc_layout');
                 if (!in_array('posts_grid', $remaining_layouts, true) && !in_array('blog_grid', $remaining_layouts, true)) {
-                    modmy_render_blog_loop();
+                    ivermectin_render_blog_loop();
                     $rendered_loop = true;
                 }
             }
@@ -210,11 +210,11 @@ if (is_home() && $has_modules) {
     }
 
     if (!$rendered_loop) {
-        modmy_render_blog_loop();
+        ivermectin_render_blog_loop();
     }
 } else {
     $title = 'Articles & Guides';
-    $subtitle = 'General information, site updates and resources. Website content is not individual medical advice.';
+    $subtitle = '';
 
     if (is_archive()) {
         $archive_title = get_the_archive_title();
@@ -225,13 +225,13 @@ if (is_home() && $has_modules) {
         $subtitle = '';
     }
     ?>
-    <section class="relative overflow-hidden border-b-2 border-dashed border-sky-300/80 bg-gradient-to-b from-[#f0f6fa] via-[#eef5fa] to-white bg-pattern-dots text-center py-10 md:py-14" data-testid="blog-archive-hero">
+    <section class="relative overflow-hidden border-b border-sky-300/80 bg-gradient-to-b from-primary-soft via-primary-soft to-white bg-pattern-dots text-center py-10 md:py-14" data-testid="blog-archive-hero">
         <div class="container-site mx-auto max-w-4xl px-4 relative z-10">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#0c4161] shadow-xs mb-3">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-primary shadow-xs mb-3">
                 <span class="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" aria-hidden="true"></span>
-                <?php echo is_search() ? 'Search Results' : 'Waklert Australia Insights'; ?>
+                <?php echo is_search() ? __('Search Results', 'ivermectin-australia') : single_post_title('', false); ?>
             </span>
-            <h1 class="mx-auto mt-2 max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-tight text-[#0c4161]">
+            <h1 class="mx-auto mt-2 max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-tight text-primary">
                 <?php echo esc_html($title); ?>
             </h1>
             <?php if ($subtitle) : ?>
@@ -242,7 +242,7 @@ if (is_home() && $has_modules) {
         </div>
     </section>
     <?php
-    modmy_render_blog_loop();
+    ivermectin_render_blog_loop();
 }
 
 get_footer();

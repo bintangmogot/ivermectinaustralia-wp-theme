@@ -3,8 +3,8 @@
  * Product presentation helpers backed by WooCommerce and editable review data.
  */
 
-if (!function_exists('waklert_get_product_attribute_by_label')) {
-    function waklert_get_product_attribute_by_label($product, $pattern) {
+if (!function_exists('ivermectin_get_product_attribute_by_label')) {
+    function ivermectin_get_product_attribute_by_label($product, $pattern) {
         if (!is_object($product) || !method_exists($product, 'get_attributes')) {
             return '';
         }
@@ -30,9 +30,9 @@ if (!function_exists('waklert_get_product_attribute_by_label')) {
     }
 }
 
-if (!function_exists('waklert_get_product_strength')) {
-    function waklert_get_product_strength($product) {
-        $strength = waklert_get_product_attribute_by_label($product, '/strength|dosage/i');
+if (!function_exists('ivermectin_get_product_strength')) {
+    function ivermectin_get_product_strength($product) {
+        $strength = ivermectin_get_product_attribute_by_label($product, '/strength|dosage/i');
         if ($strength !== '') {
             return $strength;
         }
@@ -45,8 +45,8 @@ if (!function_exists('waklert_get_product_strength')) {
     }
 }
 
-if (!function_exists('waklert_get_product_pack_count')) {
-    function waklert_get_product_pack_count($product, $variation = null) {
+if (!function_exists('ivermectin_get_product_pack_count')) {
+    function ivermectin_get_product_pack_count($product, $variation = null) {
         if (!is_object($product)) {
             return 0;
         }
@@ -83,8 +83,8 @@ if (!function_exists('waklert_get_product_pack_count')) {
     }
 }
 
-if (!function_exists('waklert_get_product_unit_price')) {
-    function waklert_get_product_unit_price($product) {
+if (!function_exists('ivermectin_get_product_unit_price')) {
+    function ivermectin_get_product_unit_price($product) {
         if (!is_object($product) || !method_exists($product, 'get_price')) {
             return null;
         }
@@ -97,13 +97,13 @@ if (!function_exists('waklert_get_product_unit_price')) {
                     continue;
                 }
 
-                $pack_count = waklert_get_product_pack_count($product, $variation);
+                $pack_count = ivermectin_get_product_pack_count($product, $variation);
                 if ($pack_count > 0) {
                     $unit_prices[] = (float) $variation->get_price() / $pack_count;
                 }
             }
         } else {
-            $pack_count = waklert_get_product_pack_count($product);
+            $pack_count = ivermectin_get_product_pack_count($product);
             if ($pack_count > 0 && $product->get_price() !== '') {
                 $unit_prices[] = (float) $product->get_price() / $pack_count;
             }
@@ -113,12 +113,12 @@ if (!function_exists('waklert_get_product_unit_price')) {
     }
 }
 
-if (!function_exists('waklert_get_product_card_price_html')) {
+if (!function_exists('ivermectin_get_product_card_price_html')) {
     /**
      * Format catalogue card prices as whole dollars without changing the
      * store's configured precision for carts, checkout, or product details.
      */
-    function waklert_get_product_card_price_html($product) {
+    function ivermectin_get_product_card_price_html($product) {
         if (!is_object($product) || !method_exists($product, 'get_price_html')) {
             return '';
         }
@@ -136,8 +136,8 @@ if (!function_exists('waklert_get_product_card_price_html')) {
     }
 }
 
-if (!function_exists('waklert_format_product_unit_price')) {
-    function waklert_format_product_unit_price($amount) {
+if (!function_exists('ivermectin_format_product_unit_price')) {
+    function ivermectin_format_product_unit_price($amount) {
         $currency = get_woocommerce_currency();
         $symbol = '$';
 
@@ -150,15 +150,15 @@ if (!function_exists('waklert_format_product_unit_price')) {
     }
 }
 
-if (!function_exists('waklert_get_product_presentation_option')) {
-    function waklert_get_product_presentation_option($field_name, $default = '') {
-        $value = function_exists('get_field') ? trim((string) get_field($field_name, 'option')) : '';
-        return $value !== '' ? $value : $default;
+if (!function_exists('ivermectin_get_product_presentation_option')) {
+    /** Value of a Product Page Presentation setting. The second argument is kept for older callers and ignored. */
+    function ivermectin_get_product_presentation_option($field_name, $unused_default = '') {
+        return function_exists('get_field') ? trim((string) get_field($field_name, 'option')) : '';
     }
 }
 
-if (!function_exists('waklert_get_product_review_summary')) {
-    function waklert_get_product_review_summary($product_id) {
+if (!function_exists('ivermectin_get_product_review_summary')) {
+    function ivermectin_get_product_review_summary($product_id) {
         static $cache = [];
         $product_id = absint($product_id);
         if (isset($cache[$product_id])) {
@@ -166,7 +166,7 @@ if (!function_exists('waklert_get_product_review_summary')) {
         }
 
         $reviews = get_posts([
-            'post_type' => 'review',
+            'post_type' => 'reviews',
             'post_status' => 'publish',
             'posts_per_page' => -1,
             'orderby' => 'date',
@@ -199,14 +199,14 @@ if (!function_exists('waklert_get_product_review_summary')) {
     }
 }
 
-if (!function_exists('waklert_sort_product_variations')) {
+if (!function_exists('ivermectin_sort_product_variations')) {
     /**
      * Sort available product variations in logical ascending order:
      * 1. Pack count (tablet / quantity count) ascending: 30, 50, 60, 100, 120, 200, 240, 300, 400, 480, 500, 900, 1000.
      * 2. Total price ascending if pack count is equal or zero.
      * 3. Variation ID ascending as fallback.
      */
-    function waklert_sort_product_variations(&$variations, $product = null) {
+    function ivermectin_sort_product_variations(&$variations, $product = null) {
         if (!is_array($variations) || count($variations) <= 1) {
             return;
         }
@@ -216,8 +216,8 @@ if (!function_exists('waklert_sort_product_variations')) {
             $var_id = (int) ($var['variation_id'] ?? 0);
             $var_product = $var_id ? wc_get_product($var_id) : null;
             $pack_count = 0;
-            if ($product && $var_product && function_exists('waklert_get_product_pack_count')) {
-                $pack_count = (int) waklert_get_product_pack_count($product, $var_product);
+            if ($product && $var_product && function_exists('ivermectin_get_product_pack_count')) {
+                $pack_count = (int) ivermectin_get_product_pack_count($product, $var_product);
             }
             if (!$pack_count && !empty($var['attributes'])) {
                 foreach ($var['attributes'] as $attr_val) {
@@ -251,98 +251,6 @@ if (!function_exists('waklert_sort_product_variations')) {
         });
 
         $variations = array_column($items, 'data');
-    }
-}
-
-if (!function_exists('waklert_sync_all_variations_menu_order')) {
-    /**
-     * Idempotently synchronize database menu_order and attribute terms for all variable products
-     * so that WP Admin backend and core WooCommerce queries are also perfectly ordered.
-     */
-    function waklert_sync_all_variations_menu_order() {
-        if (!function_exists('wc_get_products')) {
-            return 0;
-        }
-
-        global $wpdb;
-        $products = wc_get_products(['limit' => -1, 'type' => 'variable']);
-        $updated_count = 0;
-
-        foreach ($products as $prod) {
-            $children = $prod->get_children();
-            if (empty($children)) continue;
-
-            $items = [];
-            foreach ($children as $cid) {
-                $vp = wc_get_product($cid);
-                if (!$vp) continue;
-
-                $pack_count = (int) waklert_get_product_pack_count($prod, $vp);
-                if (!$pack_count) {
-                    $attrs = $vp->get_attributes();
-                    foreach ($attrs as $aval) {
-                        if (preg_match('/\b(\d+)\b/', (string) $aval, $m)) {
-                            $pack_count = (int) $m[1];
-                            break;
-                        }
-                    }
-                }
-                $price = (float) $vp->get_price();
-
-                $items[] = [
-                    'id'    => $cid,
-                    'pack'  => $pack_count,
-                    'price' => $price,
-                ];
-            }
-
-            usort($items, static function ($a, $b) {
-                if ($a['pack'] > 0 && $b['pack'] > 0 && $a['pack'] !== $b['pack']) {
-                    return $a['pack'] <=> $b['pack'];
-                }
-                if ($a['price'] !== $b['price']) {
-                    return $a['price'] <=> $b['price'];
-                }
-                return $a['id'] <=> $b['id'];
-            });
-
-            foreach ($items as $idx => $item) {
-                $new_order = $idx + 1;
-                $current_order = (int) $wpdb->get_var($wpdb->prepare("SELECT menu_order FROM $wpdb->posts WHERE ID = %d", $item['id']));
-                if ($current_order !== $new_order) {
-                    $wpdb->update($wpdb->posts, ['menu_order' => $new_order], ['ID' => $item['id']], ['%d'], ['%d']);
-                    clean_post_cache($item['id']);
-                    $updated_count++;
-                }
-            }
-
-            wc_delete_product_transients($prod->get_id());
-        }
-
-        if (taxonomy_exists('pa_pack-size')) {
-            $terms = get_terms([
-                'taxonomy'   => 'pa_pack-size',
-                'hide_empty' => false,
-            ]);
-            if (!is_wp_error($terms) && !empty($terms)) {
-                $term_items = [];
-                foreach ($terms as $t) {
-                    $num = 0;
-                    if (preg_match('/\b(\d+)\b/', $t->name, $m)) {
-                        $num = (int) $m[1];
-                    }
-                    $term_items[] = ['term_id' => $t->term_id, 'num' => $num];
-                }
-                usort($term_items, static function ($a, $b) {
-                    return $a['num'] <=> $b['num'];
-                });
-                foreach ($term_items as $tidx => $titem) {
-                    update_term_meta($titem['term_id'], 'order', $tidx + 1);
-                }
-            }
-        }
-
-        return $updated_count;
     }
 }
 

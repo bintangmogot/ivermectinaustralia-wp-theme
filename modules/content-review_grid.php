@@ -3,15 +3,15 @@
  * Module: Review Grid
  */
 
-$tag = get_sub_field('tag') ?: "Customer Reviews";
+$tag = get_sub_field('tag') ?: '';
 
-$heading = get_sub_field('heading') ?: "What Australian Customers Say";
+$heading = get_sub_field('heading') ?: '';
 
-$desc = get_sub_field('description') ?: "Real testimonials from Waklert Australia users across Australia.";
+$desc = get_sub_field('description') ?: '';
 
 // Fetch reviews from CPT
 $reviews = get_posts([
-    'post_type' => 'review',
+    'post_type' => 'reviews',
     'posts_per_page' => -1,
     'orderby' => 'date',
     'order' => 'DESC',
@@ -63,7 +63,7 @@ $reviews = get_posts([
                     $title = get_the_title($post_id);
                     $body = get_post_field('post_content', $post_id);
                     $reviewer = get_field('name', $post_id) ?: (is_object($r) ? $r->post_title : get_the_title($post_id));
-                    $meta = get_field('reviewer_meta', $post_id) ?: "Verified Buyer";
+                    $meta = get_field('reviewer_meta', $post_id) ?: '';
                     $rating_val = get_field('rating', $post_id) ?: 5;
             ?>
             <div class="bg-white border border-stone-200 rounded-xl p-6 hover:border-primary-soft hover:shadow-sm transition-all">

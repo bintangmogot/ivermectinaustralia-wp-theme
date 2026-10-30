@@ -9,7 +9,7 @@ $args = isset($args) && is_array($args) ? $args : [];
 $product_id = absint($args['product_id'] ?? get_the_ID());
 $product_name = (string) ($args['product_name'] ?? get_the_title($product_id));
 $reviews = get_posts([
-    'post_type' => 'review',
+    'post_type' => 'reviews',
     'post_status' => 'publish',
     'posts_per_page' => -1,
     'orderby' => 'date',
@@ -69,7 +69,7 @@ if ($average_rating !== null) {
                 Verified reviews
             </span>
             <h2 class="mb-2 font-heading text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">What our customers say</h2>
-            <p class="text-sm font-medium text-slate-500 md:text-base">Real experiences from verified buyers</p>
+            
         </header>
 
         <?php if ($review_count > 0 && $rating_count > 0): ?>
@@ -104,17 +104,17 @@ if ($average_rating !== null) {
 
         <?php if ($review_count > 1): ?>
             <div class="mb-4 flex justify-end gap-2 pr-2">
-                <button type="button" class="waklert-review-prev flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:border-primary-light hover:text-primary-dark" aria-label="Previous reviews">
+                <button type="button" class="iva-review-prev flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:border-primary-light hover:text-primary-dark" aria-label="Previous reviews">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6"/></svg>
                 </button>
-                <button type="button" class="waklert-review-next flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:border-primary-light hover:text-primary-dark" aria-label="Next reviews">
+                <button type="button" class="iva-review-next flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:border-primary-light hover:text-primary-dark" aria-label="Next reviews">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
                 </button>
             </div>
         <?php endif; ?>
 
         <?php if ($reviews): ?>
-            <div class="waklert-review-slider mb-8 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-8" aria-label="Customer reviews">
+            <div class="iva-review-slider mb-8 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-8" aria-label="Customer reviews">
                 <?php foreach ($reviews as $index => $review):
                     $post_id = $review->ID;
                     $title = get_the_title($post_id);
@@ -163,8 +163,8 @@ if ($average_rating !== null) {
                 <?php endforeach; ?>
             </div>
         <?php else: ?>
-            <div class="mb-8 rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center md:p-12">
-                <p class="font-medium text-slate-500">No reviews yet. Be the first to review this product.</p>
+            <div class="mb-8 rounded-2xl border border-slate-300 bg-white p-8 text-center md:p-12">
+                <p class="font-medium text-slate-500"><?= esc_html(ivermectin_get_product_presentation_option('product_no_reviews_text')) ?></p>
             </div>
         <?php endif; ?>
 
@@ -176,17 +176,17 @@ if ($average_rating !== null) {
                 <h3 class="font-bold text-slate-900">Write a Review <span class="font-normal text-slate-400">for <?= esc_html($product_name) ?></span></h3>
             </div>
 
-            <form id="waklert-product-review-form" class="space-y-4" data-endpoint="<?= esc_url(admin_url('admin-ajax.php')) ?>">
-                <input type="hidden" name="action" value="waklert_submit_product_review">
+            <form id="iva-product-review-form" class="space-y-4" data-endpoint="<?= esc_url(admin_url('admin-ajax.php')) ?>">
+                <input type="hidden" name="action" value="ivermectin_submit_product_review">
                 <input type="hidden" name="product_id" value="<?= esc_attr($product_id) ?>">
                 <input type="hidden" name="rating" value="0" required>
-                <?php wp_nonce_field('waklert_submit_product_review', 'review_nonce'); ?>
+                <?php wp_nonce_field('ivermectin_submit_product_review', 'review_nonce'); ?>
 
                 <div>
                     <label class="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-700">Your rating</label>
                     <div class="flex items-center gap-1" role="group" aria-label="Choose a rating">
                         <?php for ($star = 1; $star <= 5; $star++): ?>
-                            <button type="button" class="waklert-review-star text-slate-300 transition-colors hover:text-accent" data-rating="<?= esc_attr($star) ?>" aria-label="<?= esc_attr($star) ?> star<?= $star === 1 ? '' : 's' ?>" aria-pressed="false">
+                            <button type="button" class="iva-review-star text-slate-300 transition-colors hover:text-accent" data-rating="<?= esc_attr($star) ?>" aria-label="<?= esc_attr($star) ?> star<?= $star === 1 ? '' : 's' ?>" aria-pressed="false">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.2 6.8 1-4.9 4.8L18 21l-6-3.2L5.9 21l1.2-7-5-4.8 6.9-1L12 2Z"/></svg>
                             </button>
                         <?php endfor; ?>
@@ -220,7 +220,7 @@ if ($average_rating !== null) {
                     </div>
                 </div>
 
-                <div id="waklert-review-form-message" class="hidden rounded-lg p-4 text-sm font-bold" role="status" aria-live="polite"></div>
+                <div id="iva-review-form-message" class="hidden rounded-lg p-4 text-sm font-bold" role="status" aria-live="polite"></div>
             </form>
         </div>
     </div>
@@ -231,23 +231,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const section = document.querySelector('[data-testid="section-reviews"]');
     if (!section) return;
 
-    const slider = section.querySelector('.waklert-review-slider');
+    const slider = section.querySelector('.iva-review-slider');
     const firstCard = slider ? slider.querySelector('article') : null;
     const slideBy = firstCard ? firstCard.getBoundingClientRect().width + 24 : 374;
 
-    section.querySelector('.waklert-review-prev')?.addEventListener('click', function () {
+    section.querySelector('.iva-review-prev')?.addEventListener('click', function () {
         slider?.scrollBy({ left: -slideBy, behavior: 'smooth' });
     });
-    section.querySelector('.waklert-review-next')?.addEventListener('click', function () {
+    section.querySelector('.iva-review-next')?.addEventListener('click', function () {
         slider?.scrollBy({ left: slideBy, behavior: 'smooth' });
     });
 
-    const form = section.querySelector('#waklert-product-review-form');
+    const form = section.querySelector('#iva-product-review-form');
     if (!form) return;
 
     const ratingInput = form.querySelector('[name="rating"]');
-    const stars = Array.from(form.querySelectorAll('.waklert-review-star'));
-    const message = form.querySelector('#waklert-review-form-message');
+    const stars = Array.from(form.querySelectorAll('.iva-review-star'));
+    const message = form.querySelector('#iva-review-form-message');
 
     function setRating(value) {
         ratingInput.value = value;

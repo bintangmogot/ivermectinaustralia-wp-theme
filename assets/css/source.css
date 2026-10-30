@@ -1,35 +1,59 @@
 @import "tailwindcss";
 @source "../..";
+@source not "../../legacy";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 /*
  * ============================================================
- * WAKLERT AUSTRALIA DESIGN SYSTEM
+ * IVERMECTIN AUSTRALIA DESIGN SYSTEM
  * ============================================================
- * Single source of truth for colour, type, radius, shadow.
- * Every component consumes these tokens - never hardcode a
- * colour in a component. See DESIGN-SYSTEM.md for the full map
- * (this file + that doc are the WordPress/PHP handoff spec).
+ * Single source of truth for colour, type, radius and shadow.
+ * Components read these tokens. Do not hardcode a hex in a template.
  * ============================================================
  */
 
+@theme {
+  /* Brand ramps replace the default sky and amber palettes, so sky-* is brand blue and amber-* is brand orange. */
+  --color-sky-50: #eef4fc;
+  --color-sky-100: #dbe8fb;
+  --color-sky-200: #b7d0f4;
+  --color-sky-300: #8db4ea;
+  --color-sky-400: #5f9ee8;
+  --color-sky-500: #0a68d4;
+  --color-sky-600: #0852a8;
+  --color-sky-700: #06408a;
+  --color-sky-800: #012c70;
+  --color-sky-900: #011d4c;
+  --color-sky-950: #00133a;
+
+  --color-amber-50: #fff6ea;
+  --color-amber-100: #ffe9cf;
+  --color-amber-200: #ffd3a1;
+  --color-amber-300: #ffb870;
+  --color-amber-400: #ff9f45;
+  --color-amber-500: #ff831a;
+  --color-amber-600: #e86e06;
+  --color-amber-700: #c25a05;
+  --color-amber-800: #9a4709;
+  --color-amber-900: #7a3a0b;
+}
+
 @theme inline {
   /* ---------- Typography ---------- */
-  --font-heading: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-script: "Caveat", cursive, system-ui, sans-serif;
 
-  /* ---------- Radii ---------- */
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  /* ---------- Radii (cards 14px, controls 10px) ---------- */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.625rem;
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.125rem;
+  --radius-4xl: 1.25rem;
 
   /* ---------- Semantic colours ---------- */
   --color-background: var(--background);
@@ -49,7 +73,10 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-soft: var(--accent-soft);
   --color-accent-foreground: var(--accent-foreground);
+  --color-link: var(--link);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-destructive-soft: var(--destructive-soft);
@@ -61,20 +88,12 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 
-  /* ---------- Elevation & motion ---------- */
-  --shadow-card: 0 1px 2px 0 oklch(0.208 0.042 265.755 / 0.06);
-  --shadow-card-hover: 0 12px 28px -12px oklch(0.208 0.042 265.755 / 0.18);
-  --shadow-pill: 0 8px 20px -8px oklch(0.46 0.082 235 / 0.28);
-  --shadow-header: 0 1px 0 0 oklch(0.929 0.013 255.508);
+  /* ---------- Elevation ---------- */
+  --shadow-card: 0 1px 2px 0 rgb(1 29 76 / 0.06);
+  --shadow-card-hover: 0 14px 30px -20px rgb(1 44 112 / 0.35);
+  --shadow-pill: 0 8px 20px -8px rgb(1 44 112 / 0.3);
+  --shadow-header: 0 1px 0 0 #dce4f0;
 }
 
 html {
@@ -82,93 +101,47 @@ html {
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.625rem;
 
-  /* Base surfaces */
   --background: #ffffff;
-  --foreground: oklch(0.235 0.035 248);
-  --surface: oklch(0.972 0.014 84);
+  --foreground: #132039;
+  --surface: #f6f9fd;
   --card: #ffffff;
-  --card-foreground: oklch(0.235 0.035 248);
+  --card-foreground: #132039;
   --popover: #ffffff;
-  --popover-foreground: oklch(0.235 0.035 248);
+  --popover-foreground: #132039;
 
-  /* Dark blue is used for headers; warm tones for soft accents (no blue in body) */
-  --primary: oklch(0.36 0.075 240);
-  --primary-foreground: oklch(1 0 0);
-  --primary-dark: oklch(0.28 0.065 242);
-  --primary-light: oklch(0.46 0.082 235);
-  --primary-soft: oklch(0.96 0.016 84);
-  --primary-softer: oklch(0.985 0.008 84);
+  /* Navy primary, blue for links, orange for the main action, red for small accents only. */
+  --primary: #012c70;
+  --primary-foreground: #ffffff;
+  --primary-dark: #011d4c;
+  --primary-light: #0852a8;
+  --primary-soft: #eef4fc;
+  --primary-softer: #f6f9fd;
 
-  /* Dark "ink" band used on inner page heroes */
-  --ink: oklch(0.205 0.04 247);
-  --ink-foreground: oklch(1 0 0);
+  --ink: #011d4c;
+  --ink-foreground: #ffffff;
 
-  --secondary: oklch(0.957 0.018 82);
-  --secondary-foreground: oklch(0.235 0.035 248);
-  --muted: oklch(0.957 0.018 82);
-  --muted-foreground: oklch(0.51 0.035 247);
-  --accent: oklch(0.76 0.13 55);
-  --accent-foreground: oklch(0.24 0.04 248);
+  --secondary: #eef4fc;
+  --secondary-foreground: #132039;
+  --muted: #eef4fc;
+  --muted-foreground: #566781;
 
-  --destructive: oklch(0.577 0.245 27.325); /* red-600 */
-  --destructive-foreground: oklch(1 0 0);
-  --destructive-soft: oklch(0.971 0.013 17.38); /* red-50 */
+  --accent: #ff831a;
+  --accent-dark: #e86e06;
+  --accent-soft: #fff0df;
+  --accent-foreground: #132039;
+  --link: #0a68d4;
 
-  --price: oklch(0.546 0.245 262.881); /* blue-600 #2563eb */
+  --destructive: #df0333;
+  --destructive-foreground: #ffffff;
+  --destructive-soft: #fdecef;
 
-  --border: oklch(0.9 0.018 82);
-  --input: oklch(0.9 0.018 82);
-  --ring: oklch(0.46 0.082 235);
+  --price: #012c70;
 
-  --sidebar: oklch(0.972 0.014 84);
-  --sidebar-foreground: oklch(0.235 0.035 248);
-  --sidebar-primary: oklch(0.46 0.082 235);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.957 0.018 82);
-  --sidebar-accent-foreground: oklch(0.235 0.035 248);
-  --sidebar-border: oklch(0.9 0.018 82);
-  --sidebar-ring: oklch(0.46 0.082 235);
-}
-
-.dark {
-  --background: oklch(0.205 0.04 247);
-  --foreground: oklch(0.972 0.014 84);
-  --surface: oklch(0.25 0.04 245);
-  --card: oklch(0.25 0.04 245);
-  --card-foreground: oklch(0.972 0.014 84);
-  --popover: oklch(0.25 0.04 245);
-  --popover-foreground: oklch(0.972 0.014 84);
-  --primary: oklch(0.69 0.09 215);
-  --primary-foreground: oklch(0.205 0.04 247);
-  --primary-dark: oklch(0.57 0.085 220);
-  --primary-light: oklch(0.77 0.075 210);
-  --primary-soft: oklch(0.34 0.045 230);
-  --primary-softer: oklch(0.28 0.04 235);
-  --ink: oklch(0.16 0.035 247);
-  --ink-foreground: oklch(0.972 0.014 84);
-  --secondary: oklch(0.29 0.035 245);
-  --secondary-foreground: oklch(0.972 0.014 84);
-  --muted: oklch(0.29 0.035 245);
-  --muted-foreground: oklch(0.73 0.025 235);
-  --accent: oklch(0.76 0.13 55);
-  --accent-foreground: oklch(0.24 0.04 248);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --destructive-soft: oklch(0.3 0.07 22);
-  --price: oklch(0.7 0.16 262);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.69 0.09 215);
-  --sidebar: oklch(0.25 0.04 245);
-  --sidebar-foreground: oklch(0.972 0.014 84);
-  --sidebar-primary: oklch(0.69 0.09 215);
-  --sidebar-primary-foreground: oklch(0.205 0.04 247);
-  --sidebar-accent: oklch(0.29 0.035 245);
-  --sidebar-accent-foreground: oklch(0.972 0.014 84);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.69 0.09 215);
+  --border: #dce4f0;
+  --input: #dce4f0;
+  --ring: #0a68d4;
 }
 
 @layer base {
@@ -243,12 +216,12 @@ html {
   padding-block: clamp(1.5rem, 1rem + 1vw, 2.25rem);
 }
 
-/* Alias — many components use section-padding instead of section-y */
+/* Alias - many components use section-padding instead of section-y */
 @utility section-padding {
   padding-block: clamp(1.5rem, 1rem + 1vw, 2.25rem);
 }
 
-/* The emerald gradient wash used on the home hero */
+/* Gradient wash used on large banners */
 @utility bg-brand-wash {
   background-image: linear-gradient(
     to bottom right,
@@ -494,7 +467,7 @@ html {
 }
 
 .prose.prose-invert a {
-  color: #38bdf8 !important;
+  color: #5aa2ee !important;
 }
 
 .prose.prose-invert a:hover {
@@ -520,7 +493,7 @@ html {
   text-decoration-thickness: 2px;
 }
 
-/* Lists - Customized with Waklert styled markers */
+/* Lists - Customized with brand markers */
 .prose ul {
   list-style-type: none;
   padding-left: 0;
@@ -661,7 +634,7 @@ details .prose > :last-child {
  * ------------------------------------------------------------
 /*
  * ------------------------------------------------------------
- * WAKLERT TABLE STYLING (Modern 2-Tone Dashed Brand Theme)
+ * TABLE STYLING (brand theme)
  * ------------------------------------------------------------
  */
 .prose .table-wrapper,
@@ -671,7 +644,7 @@ details .prose > :last-child {
   -webkit-overflow-scrolling: touch;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  border: 2px dashed rgba(125, 211, 252, 0.85); /* border-sky-300/80 */
+  border: 1px solid rgba(125, 211, 252, 0.85); /* border-sky-300/80 */
   border-radius: 1.5rem; /* rounded-3xl / 24px */
   background-color: #ffffff;
   box-shadow: 0 4px 20px -4px rgba(12, 65, 97, 0.08), 0 2px 6px -1px rgba(12, 65, 97, 0.04);
@@ -681,7 +654,7 @@ details .prose > :last-child {
   height: 6px;
 }
 .prose .table-wrapper::-webkit-scrollbar-track {
-  background: #f0f6fa;
+  background: #eef4fc;
   border-radius: 9999px;
 }
 .prose .table-wrapper::-webkit-scrollbar-thumb {
@@ -689,7 +662,7 @@ details .prose > :last-child {
   border-radius: 9999px;
 }
 .prose .table-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: #0a68d4;
 }
 
 /* Standalone table (when not wrapped in .table-wrapper) */
@@ -704,7 +677,7 @@ details .prose > :last-child {
   font-size: 0.9375rem;
   line-height: 1.55;
   background-color: #ffffff;
-  border: 2px dashed rgba(125, 211, 252, 0.85);
+  border: 1px solid rgba(125, 211, 252, 0.85);
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: 0 4px 20px -4px rgba(12, 65, 97, 0.08);
@@ -722,7 +695,7 @@ details .prose > :last-child {
 
 /* Table Headers (Pacific Navy Gradient with crisp white typography) */
 .prose thead {
-  background: linear-gradient(135deg, #0c4161 0%, #082c42 100%);
+  background: linear-gradient(135deg, #012c70 0%, #011d4c 100%);
   border-bottom: 2px solid rgba(12, 65, 97, 0.3) !important;
 }
 
@@ -738,7 +711,7 @@ details .prose > :last-child {
   vertical-align: middle;
   background: transparent;
   border-bottom: 2px solid rgba(12, 65, 97, 0.3) !important;
-  border-right: 1px dashed rgba(255, 255, 255, 0.18) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.18) !important;
   border-left: none !important;
   border-top: none !important;
   text-align: left;
@@ -748,8 +721,8 @@ details .prose > :last-child {
 .prose thead td:last-child,
 .prose th:last-child {
   border-right: none !important;
-  background: linear-gradient(135deg, #09344e 0%, #062235 100%) !important;
-  border-left: 1px dashed rgba(255, 255, 255, 0.2) !important;
+  background: linear-gradient(135deg, #011d4c 0%, #00133a 100%) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Ensure strong, b, span, p inside headers are bright white */
@@ -764,7 +737,7 @@ details .prose > :last-child {
 /* First row when no explicit thead is used by the WYSIWYG editor */
 .prose table:not(:has(thead)) tbody tr:first-child td,
 .prose table:not(:has(thead)) tbody tr:first-child th {
-  background: linear-gradient(135deg, #0c4161 0%, #082c42 100%) !important;
+  background: linear-gradient(135deg, #012c70 0%, #011d4c 100%) !important;
   font-family: var(--font-heading, inherit);
   font-weight: 800;
   font-size: 0.9375rem;
@@ -773,7 +746,7 @@ details .prose > :last-child {
   padding: 1.125rem 1.35rem;
   vertical-align: middle;
   border-bottom: 2px solid rgba(12, 65, 97, 0.3) !important;
-  border-right: 1px dashed rgba(255, 255, 255, 0.18) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.18) !important;
   border-left: none !important;
   border-top: none !important;
 }
@@ -786,8 +759,8 @@ details .prose > :last-child {
 .prose table:not(:has(thead)) tbody tr:first-child td:last-child,
 .prose table:not(:has(thead)) tbody tr:first-child th:last-child {
   border-right: none !important;
-  background: linear-gradient(135deg, #09344e 0%, #062235 100%) !important;
-  border-left: 1px dashed rgba(255, 255, 255, 0.2) !important;
+  background: linear-gradient(135deg, #011d4c 0%, #00133a 100%) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Table Body Rows */
@@ -809,7 +782,7 @@ details .prose > :last-child {
 /* Table Body Cells */
 .prose tbody td {
   padding: 1rem 1.35rem;
-  border-bottom: 1px dashed rgba(186, 230, 253, 0.75) !important;
+  border-bottom: 1px solid rgba(186, 230, 253, 0.75) !important;
   border-right: none !important;
   border-left: none !important;
   border-top: none !important;
@@ -825,14 +798,14 @@ details .prose > :last-child {
 .prose tbody th:first-child {
   font-family: var(--font-heading, inherit);
   font-weight: 800;
-  color: #0c4161 !important;
+  color: #012c70 !important;
   background-color: rgba(240, 246, 250, 0.5);
-  border-right: 1px dashed rgba(186, 230, 253, 0.65) !important;
+  border-right: 1px solid rgba(186, 230, 253, 0.65) !important;
 }
 
 .prose tbody td:first-child *,
 .prose tbody th:first-child * {
-  color: #0c4161 !important;
+  color: #012c70 !important;
   font-weight: 800;
 }
 
@@ -847,23 +820,23 @@ details .prose > :last-child {
 }
 
 /* Last Column / Fallback Highlight (when no explicit highlight class is set) */
-.prose table:not(:has(.waklert-highlight-cell)) tbody tr td:last-child {
+.prose table:not(:has(.iva-highlight-cell)) tbody tr td:last-child {
   background-color: rgba(224, 242, 254, 0.35);
-  border-left: 1px dashed rgba(125, 211, 252, 0.75) !important;
-  color: #0c4161 !important;
+  border-left: 1px solid rgba(125, 211, 252, 0.75) !important;
+  color: #012c70 !important;
   font-weight: 700;
 }
 
-.prose table:not(:has(.waklert-highlight-cell)) tbody tr td:last-child * {
-  color: #0c4161 !important;
+.prose table:not(:has(.iva-highlight-cell)) tbody tr td:last-child * {
+  color: #012c70 !important;
   font-weight: 700;
 }
 
-.prose table:not(:has(.waklert-highlight-cell)) tbody tr:nth-child(even) td:last-child {
+.prose table:not(:has(.iva-highlight-cell)) tbody tr:nth-child(even) td:last-child {
   background-color: rgba(224, 242, 254, 0.55);
 }
 
-.prose table:not(:has(.waklert-highlight-cell)) tbody tr:hover td:last-child {
+.prose table:not(:has(.iva-highlight-cell)) tbody tr:hover td:last-child {
   background-color: rgba(186, 230, 253, 0.75) !important;
 }
 
@@ -874,34 +847,34 @@ details .prose > :last-child {
 }
 
 /* Featured / Target Column Brand Highlight */
-.prose th.waklert-highlight-header,
-.prose thead th.waklert-highlight-header,
-.prose thead td.waklert-highlight-header {
-  background: linear-gradient(135deg, #09344e 0%, #062235 100%) !important;
+.prose th.iva-highlight-header,
+.prose thead th.iva-highlight-header,
+.prose thead td.iva-highlight-header {
+  background: linear-gradient(135deg, #011d4c 0%, #00133a 100%) !important;
   color: #ffffff !important;
   font-weight: 800;
-  border-left: 2px dashed rgba(251, 191, 36, 0.65) !important;
+  border-left: 1px solid rgba(251, 191, 36, 0.65) !important;
 }
 
-.prose td.waklert-highlight-cell,
-.prose tbody tr td.waklert-highlight-cell {
+.prose td.iva-highlight-cell,
+.prose tbody tr td.iva-highlight-cell {
   background-color: rgba(224, 242, 254, 0.4) !important;
   font-weight: 700;
-  color: #0c4161 !important;
-  border-left: 1px dashed rgba(125, 211, 252, 0.8) !important;
+  color: #012c70 !important;
+  border-left: 1px solid rgba(125, 211, 252, 0.8) !important;
 }
 
-.prose td.waklert-highlight-cell *,
-.prose tbody tr td.waklert-highlight-cell * {
-  color: #0c4161 !important;
+.prose td.iva-highlight-cell *,
+.prose tbody tr td.iva-highlight-cell * {
+  color: #012c70 !important;
   font-weight: 700;
 }
 
-.prose tbody tr:nth-child(even) td.waklert-highlight-cell {
+.prose tbody tr:nth-child(even) td.iva-highlight-cell {
   background-color: rgba(224, 242, 254, 0.6) !important;
 }
 
-.prose tbody tr:hover td.waklert-highlight-cell {
+.prose tbody tr:hover td.iva-highlight-cell {
   background-color: rgba(186, 230, 253, 0.8) !important;
 }
 
@@ -909,7 +882,7 @@ details .prose > :last-child {
 .prose th.is-featured,
 .prose td.is-featured {
   background-color: rgba(224, 242, 254, 0.5) !important;
-  color: #0c4161 !important;
+  color: #012c70 !important;
   font-weight: 700;
 }
 
@@ -1289,7 +1262,7 @@ input[type="radio"], input[type="checkbox"] {
 
 /* File Upload styling */
 .woocommerce form .form-row input[type="file"] {
-  @apply !block !w-full !rounded-lg !border-2 !border-dashed !border-border !bg-stone-50 !p-4 !text-sm !text-muted-foreground !cursor-pointer hover:!border-primary hover:!bg-primary-softer !transition-colors;
+  @apply !block !w-full !rounded-lg !border !border-border !bg-stone-50 !p-4 !text-sm !text-muted-foreground !cursor-pointer hover:!border-primary hover:!bg-primary-softer !transition-colors;
 }
 
 /* Checkboxes (Terms and Certify) */
@@ -1543,7 +1516,7 @@ input[type="radio"], input[type="checkbox"] {
     font-weight: 700 !important;
 }
 .woocommerce-cart .cart_totals form button[name='apply_coupon']:hover {
-    background-color: #eab308 !important; /* Yellow 500 */
+    background-color: #ff9a3a !important; /* Yellow 500 */
 }
 
 /* Override WooCommerce Trash Icon Default Styles */
@@ -1603,7 +1576,7 @@ input[type="radio"], input[type="checkbox"] {
   @apply !w-full !border-collapse !text-sm !mb-8;
 }
 .woocommerce-order .woocommerce-table--order-details thead tr {
-  @apply !bg-[#0C4161];
+  @apply !bg-primary;
 }
 .woocommerce-order .woocommerce-table--order-details thead th {
   @apply !font-bold !text-white !py-2.5 !px-3.5 !border-none !text-left;
@@ -2028,11 +2001,11 @@ label, .variations label { cursor: pointer !important; }
 }
 
 /* Keep the swipeable product review cards clean on touch screens. */
-.waklert-review-slider {
+.iva-review-slider {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.waklert-review-slider::-webkit-scrollbar {
+.iva-review-slider::-webkit-scrollbar {
   display: none;
 }
 
@@ -2043,13 +2016,13 @@ body.single-product a[href="#product-reviews"] > span:last-child {
 }
 
 /* Draw a molecule-inspired W mark for the header logo. */
-a[aria-label="Waklert Australia"] > span:first-child {
+a[aria-label="Ivermectin Australia"] > span:first-child {
   position: relative;
 }
-a[aria-label="Waklert Australia"] > span:first-child > span:first-child {
+a[aria-label="Ivermectin Australia"] > span:first-child > span:first-child {
   font-size: 0;
 }
-a[aria-label="Waklert Australia"] > span:first-child::after {
+a[aria-label="Ivermectin Australia"] > span:first-child::after {
   position: absolute;
   inset: 0;
   width: 30px;
@@ -2113,7 +2086,7 @@ a[aria-label="Waklert Australia"] > span:first-child::after {
   border-radius: var(--radius-xl, 1rem);
   padding: 0.5rem;
   box-shadow: 0 16px 36px -6px rgba(9, 21, 43, 0.16), 0 4px 12px -2px rgba(9, 21, 43, 0.08);
-  border: 2px dashed rgba(186, 230, 253, 0.8);
+  border: 1px solid rgba(186, 230, 253, 0.8);
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -2274,16 +2247,16 @@ footer .site-logo-img,
 }
 
 .bg-pattern-dots {
-  background-color: #f0f6fa;
+  background-color: #eef4fc;
   background-image: radial-gradient(rgba(12, 65, 97, 0.09) 1.2px, transparent 1.2px), 
-                    linear-gradient(180deg, #f0f6fa 0%, #e9f2f8 50%, #f8fafc 100%);
+                    linear-gradient(180deg, #eef4fc 0%, #e6eefa 50%, #f8fafc 100%);
   background-size: 22px 22px, 100% 100%;
 }
 
 .bg-pattern-dots-dark {
-  background-color: #0c4161;
+  background-color: #012c70;
   background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1.2px, transparent 1.2px), 
-                    linear-gradient(135deg, #082a3f 0%, #0c4161 50%, #125883 100%);
+                    linear-gradient(135deg, #011d4c 0%, #012c70 50%, #0852a8 100%);
   background-size: 24px 24px, 100% 100%;
 }
 
@@ -2340,4 +2313,233 @@ footer .site-logo-img,
   }
 }
 
+/*
+ * ============================================================
+ * STYLE A COMPONENTS
+ * ============================================================
+ */
+@layer components {
+  /* Ledger card: hairline border, solid label tab, tinted footer strip. */
+  .lcard {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .lcard:hover {
+    border-color: var(--color-sky-300);
+    box-shadow: var(--shadow-card-hover);
+  }
+  .lcard-tab {
+    align-self: flex-start;
+    margin: -1px 0 0 1.25rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    background: var(--color-primary);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .lcard-tab-blue { background: var(--color-link); }
+  .lcard-tab-red { background: var(--color-destructive); }
+  .lcard-foot {
+    border-top: 1px solid var(--color-border);
+    background: var(--color-primary-softer);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    font-size: 0.8125rem;
+    color: var(--color-muted-foreground);
+  }
 
+  /* Buttons */
+  .btn-cta,
+  .btn-ghost,
+  .btn-navy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.4rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-cta { background: var(--color-accent-dark); color: #fff; }
+  .btn-cta:hover { background: #cf5f00; }
+  .btn-navy { background: var(--color-primary); color: #fff; }
+  .btn-navy:hover { background: var(--color-primary-dark); }
+  .btn-ghost { border-color: rgb(255 255 255 / 0.4); color: #fff; }
+  .btn-ghost:hover { background: rgb(255 255 255 / 0.1); }
+
+  /* Section label with a short red dash */
+  .iva-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .iva-eyebrow::before {
+    content: "";
+    width: 1.125rem;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--color-destructive);
+  }
+
+  /* Faint grid on navy sections */
+  .iva-grid-bg {
+    background:
+      linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px) 0 0 / 48px 48px,
+      linear-gradient(0deg, rgb(255 255 255 / 0.045) 1px, transparent 1px) 0 0 / 48px 48px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 60%);
+    mask-image: linear-gradient(90deg, transparent, #000 60%);
+  }
+
+  /* Quantity buttons */
+  .iva-qbtn {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: #fff;
+    color: var(--color-foreground);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .iva-qbtn:hover { border-color: var(--color-foreground); }
+  .iva-qbtn[aria-pressed="true"] {
+    border-color: var(--color-primary);
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    box-shadow: inset 0 0 0 1px var(--color-primary);
+  }
+
+  /* Stars and FAQ */
+  .iva-stars { color: #f2a11f; letter-spacing: 0.1em; }
+  .iva-faq {
+    margin-bottom: 0.625rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: #fff;
+  }
+  .iva-faq[open] { border-color: var(--color-sky-300); }
+  .iva-faq > summary {
+    display: flex;
+    cursor: pointer;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1rem 1.125rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .iva-faq > summary::-webkit-details-marker { display: none; }
+  .iva-faq > summary::after { content: "+"; color: var(--color-link); font-size: 1.375rem; line-height: 1; }
+  .iva-faq[open] > summary::after { content: "-"; }
+  .iva-faq > div { padding: 0 1.125rem 1rem; color: var(--color-muted-foreground); }
+
+  /* Horizontal scroller (reviews) */
+  .iva-scroll-row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(16rem, 85%);
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+  }
+  .iva-scroll-item { scroll-snap-align: start; }
+  @media (min-width: 1024px) {
+    .iva-scroll-row { grid-auto-columns: calc((100% - 2rem) / 3); }
+  }
+
+  /* Navigation */
+  .iva-nav-link.is-active { box-shadow: inset 0 -2px 0 var(--color-destructive); }
+  .mobile-nav .sub-menu { display: none; }
+  .mobile-nav .sub-menu.is-open { display: block; }
+  .iva-footer-menu a:hover { color: #fff; }
+}
+
+/* Page container: 1200px with 16px / 24px gutters */
+@utility container-site {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (min-width: 768px) {
+    padding-inline: 1.5rem;
+  }
+}
+
+/*
+ * ============================================================
+ * EXISTING SITE CONTENT (previous theme's "modules" field)
+ * Scoped under .iva-legacy so the old layouts read well in the new design.
+ * ============================================================
+ */
+.iva-legacy .container { width: 100%; max-width: 75rem; margin-inline: auto; padding-inline: 1rem; }
+.iva-legacy .section { padding-block: 1.5rem; }
+.iva-legacy .row { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
+.iva-legacy .row.g-5 { gap: 1.5rem; }
+.iva-legacy .row > [class*="col-"] { flex: 1 1 100%; min-width: 0; }
+@media (min-width: 768px) {
+  .iva-legacy .col-md-4 { flex: 0 0 calc(33.333% - 1rem); }
+  .iva-legacy .col-md-5 { flex: 0 0 calc(41.666% - 1rem); }
+  .iva-legacy .col-md-6 { flex: 0 0 calc(50% - 0.75rem); }
+  .iva-legacy .col-md-7 { flex: 0 0 calc(58.333% - 1rem); }
+  .iva-legacy .col-md-8 { flex: 0 0 calc(66.666% - 1rem); }
+  .iva-legacy .align-items-center { align-items: center; }
+}
+.iva-legacy img { max-width: 100%; height: auto; }
+.iva-legacy .header-img-section { position: relative; color: #fff; background: var(--color-primary); }
+.iva-legacy .header-img { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.35; }
+.iva-legacy .header-img-content-wrapper { position: relative; padding-block: 2.5rem; }
+.iva-legacy .header-img-content h1,
+.iva-legacy .header-img-content h2,
+.iva-legacy .header-img-content p { color: #fff; }
+.iva-legacy .entry-content { color: var(--color-foreground); line-height: 1.75; }
+.iva-legacy .entry-content h1,
+.iva-legacy .entry-content h2,
+.iva-legacy .entry-content h3,
+.iva-legacy .entry-content h4 { margin-block: 1.25rem 0.5rem; color: var(--color-primary); font-weight: 800; line-height: 1.2; }
+.iva-legacy .entry-content h1 { font-size: 2rem; }
+.iva-legacy .entry-content h2 { font-size: 1.625rem; }
+.iva-legacy .entry-content h3 { font-size: 1.25rem; }
+.iva-legacy .entry-content p,
+.iva-legacy .entry-content ul,
+.iva-legacy .entry-content ol { margin-block: 0.75rem; }
+.iva-legacy .entry-content ul { list-style: disc; padding-left: 1.5rem; }
+.iva-legacy .entry-content ol { list-style: decimal; padding-left: 1.5rem; }
+.iva-legacy .entry-content a { color: var(--color-link); text-decoration: underline; }
+.iva-legacy .entry-content table { width: 100%; border-collapse: collapse; }
+.iva-legacy .entry-content th,
+.iva-legacy .entry-content td { border: 1px solid var(--color-border); padding: 0.625rem 0.75rem; text-align: left; }
+.iva-legacy .entry-content th { background: var(--color-primary-soft); color: var(--color-primary); }
+.iva-legacy .intro-section { color: #fff; }
+.iva-legacy .intro-section .entry-content,
+.iva-legacy .intro-section .entry-content h1,
+.iva-legacy .intro-section .entry-content h2,
+.iva-legacy .intro-section .entry-content h3,
+.iva-legacy .intro-section .entry-content p { color: inherit; }
+.iva-legacy .star-rating { position: relative; display: inline-block; width: 5.5em; height: 1em; background: linear-gradient(90deg, #d5ddea 100%, #d5ddea 100%); font-size: 1rem; }
+.iva-legacy .star-rating span { position: absolute; inset: 0 auto 0 0; background: #f2a11f; }
+.iva-legacy .reviews-slider { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(16rem, 85%); gap: 1rem; overflow-x: auto; }
+.iva-legacy .accordion-content { display: none; }
+.iva-legacy .accordion-title { cursor: pointer; font-weight: 700; padding-block: 0.75rem; }

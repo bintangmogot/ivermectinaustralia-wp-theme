@@ -1,46 +1,46 @@
 <?php
 /**
  * FAQ Full Page Module
- * Waklert Australia 2-tone Dashed & Patterned Theme
+ * Ivermectin Australia 2-tone Dashed & Patterned Theme
  */
 
-$eyebrow = get_sub_field('eyebrow') ?: 'FAQ & Support';
-$heading = get_sub_field('heading') ?: 'Frequently Asked Questions';
-$desc = get_sub_field('description') ?: 'General information about armodafinil products, Australian prescription requirements, ordering and delivery.';
+$eyebrow = get_sub_field('eyebrow') ?: '';
+$heading = get_sub_field('heading') ?: '';
+$desc = get_sub_field('description') ?: '';
 $categories = get_sub_field('faq_categories') ?: [];
-$cta_heading = get_sub_field('cta_heading') ?: 'Still Have Questions?';
-$cta_desc = get_sub_field('cta_desc') ?: 'Contact our Australian support team for assistance with orders, Australia Post tracking, and product information.';
-$cta_btn = get_sub_field('cta_btn_text') ?: 'Contact Us';
+$cta_heading = get_sub_field('cta_heading') ?: '';
+$cta_desc = get_sub_field('cta_desc') ?: '';
+$cta_btn = get_sub_field('cta_btn_text') ?: '';
 $cta_link = get_sub_field('cta_btn_link') ?: home_url('/contact/');
 
 $whatsapp_number = function_exists('get_field') ? get_field('whatsapp_number', 'option') : '';
-if (!$whatsapp_number && function_exists('waklert_get_whatsapp_number')) {
-    $whatsapp_number = waklert_get_whatsapp_number();
+if (!$whatsapp_number && function_exists('ivermectin_get_whatsapp_number')) {
+    $whatsapp_number = ivermectin_get_whatsapp_number();
 }
 $whatsapp_clean = $whatsapp_number ? preg_replace('/[^0-9]/', '', $whatsapp_number) : '61488841833';
 ?>
 
 <!-- 2-Tone Patterned Header -->
-<header class="relative overflow-hidden border-b-2 border-dashed border-sky-300/80 bg-gradient-to-b from-[#f0f6fa] via-[#eef5fa] to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9" data-testid="faq-page-hero">
+<header class="relative overflow-hidden border-b border-sky-300/80 bg-gradient-to-b from-primary-soft via-primary-soft to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9" data-testid="faq-page-hero">
     <div class="container-site max-w-4xl mx-auto px-4 relative z-10">
         <!-- Breadcrumbs -->
         <div class="mb-3">
-            <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-dashed border-sky-300/80 bg-white/90 px-3.5 py-1 text-xs font-medium text-slate-500 shadow-xs backdrop-blur">
-                <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-slate-600 transition-colors hover:text-[#0c4161]">Home</a>
+            <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-sky-300/80 bg-white/90 px-3.5 py-1 text-xs font-medium text-slate-500 shadow-xs backdrop-blur">
+                <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-slate-600 transition-colors hover:text-primary">Home</a>
                 <span class="text-sky-300 font-normal">/</span>
-                <span aria-current="page" class="font-extrabold text-[#0c4161]">FAQ</span>
+                <span aria-current="page" class="font-extrabold text-primary">FAQ</span>
             </nav>
         </div>
 
         <!-- Eyebrow Badge -->
         <div class="mb-2.5">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#0c4161] shadow-xs">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-primary shadow-xs">
                 <span class="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" aria-hidden="true"></span>
                 <?= esc_html($eyebrow) ?>
             </span>
         </div>
 
-        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-[#0c4161]">
+        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-primary">
             <?= esc_html($heading) ?>
         </h1>
 
@@ -58,9 +58,9 @@ $whatsapp_clean = $whatsapp_number ? preg_replace('/[^0-9]/', '', $whatsapp_numb
                 $cat_slug = sanitize_title($cat_title);
             ?>
             <a href="#cat-<?= esc_attr($cat_slug) ?>" 
-               class="inline-flex items-center gap-1.5 rounded-full bg-white/95 border border-dashed border-sky-300 px-3.5 py-1.5 text-xs font-bold text-[#0c4161] hover:bg-[#0c4161] hover:text-white hover:border-[#0c4161] transition-all shadow-2xs">
+               class="inline-flex items-center gap-1.5 rounded-full bg-white/95 border border-sky-300 px-3.5 py-1.5 text-xs font-bold text-primary hover:bg-primary hover:text-white hover:border-primary transition-all shadow-2xs">
                 <span><?= esc_html($cat_title) ?></span>
-                <span class="flex h-4 w-4 items-center justify-center rounded-full bg-sky-100 group-hover:bg-white/20 text-[10px] font-mono text-[#0c4161] font-bold">
+                <span class="flex h-4 w-4 items-center justify-center rounded-full bg-sky-100 group-hover:bg-white/20 text-[10px] font-mono text-primary font-bold">
                     <?= count($cat['items'] ?? []) ?>
                 </span>
             </a>
@@ -82,12 +82,12 @@ $whatsapp_clean = $whatsapp_number ? preg_replace('/[^0-9]/', '', $whatsapp_numb
             <div id="cat-<?= esc_attr($cat_slug) ?>" class="scroll-mt-28">
                 <!-- Category Section Header -->
                 <?php if ($cat_title): ?>
-                <div class="flex items-center justify-between gap-3 mb-5 pb-3 border-b-2 border-dashed border-sky-200/80">
+                <div class="flex items-center justify-between gap-3 mb-5 pb-3 border-b border-sky-200/80">
                     <div class="flex items-center gap-2.5">
-                        <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-100 font-mono text-xs font-black text-[#0c4161]">
+                        <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-100 font-mono text-xs font-black text-primary">
                             <?= sprintf('%02d', $c_idx + 1) ?>
                         </span>
-                        <h2 class="font-heading text-lg sm:text-xl md:text-2xl font-black text-[#0c4161] m-0">
+                        <h2 class="font-heading text-lg sm:text-xl md:text-2xl font-black text-primary m-0">
                             <?= esc_html($cat_title) ?>
                         </h2>
                     </div>
@@ -106,29 +106,29 @@ $whatsapp_clean = $whatsapp_number ? preg_replace('/[^0-9]/', '', $whatsapp_numb
                         // First item in first category starts open for quick preview
                         $is_open = ($c_idx === 0 && $i_idx === 0) ? 'open' : '';
                     ?>
-                    <details <?= $is_open ?> class="group rounded-2xl border-2 border-dashed border-sky-200/80 bg-white overflow-hidden shadow-xs hover:border-sky-300 transition-all duration-200 open:border-sky-300 open:shadow-sm">
+                    <details <?= $is_open ?> class="group rounded-2xl border border-sky-200/80 bg-white overflow-hidden shadow-xs hover:border-sky-300 transition-all duration-200 open:border-sky-300 open:shadow-sm">
                         <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none bg-white transition-colors hover:bg-sky-50/40 group-open:bg-sky-50/50">
                             <div class="flex items-center gap-3.5 text-left">
                                 <!-- Distinct Question Icon -->
                                 <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-sky-100 border border-sky-200/80 shadow-2xs group-hover:scale-105 transition-transform" aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4" fill="none">
-                                        <circle cx="12" cy="12" r="9" fill="#0C4161" />
-                                        <text x="12" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="900" fill="#F59E0B" text-anchor="middle">?</text>
+                                        <circle cx="12" cy="12" r="9" fill="#012c70" />
+                                        <text x="12" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="900" fill="#ff831a" text-anchor="middle">?</text>
                                     </svg>
                                 </div>
-                                <h3 class="font-heading text-sm sm:text-base font-extrabold text-[#0c4161] group-hover:text-sky-950 transition-colors leading-snug">
+                                <h3 class="font-heading text-sm sm:text-base font-extrabold text-primary group-hover:text-sky-950 transition-colors leading-snug">
                                     <?= esc_html($q) ?>
                                 </h3>
                             </div>
                             <!-- Rotating Arrow Chevron Button -->
-                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-all duration-200 group-hover:bg-[#0c4161] group-hover:text-white group-open:bg-[#0c4161] group-open:text-white" aria-hidden="true">
+                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-all duration-200 group-hover:bg-primary group-hover:text-white group-open:bg-primary group-open:text-white" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 transform transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
                         </summary>
                         <!-- Answer Block with Dashed Divider -->
-                        <div class="border-t-2 border-dashed border-sky-200/70 bg-gradient-to-b from-sky-50/30 via-white to-white px-6 pb-6 pt-4 text-sm sm:text-[15px] leading-relaxed text-slate-600 prose max-w-none [&_a]:text-[#0c4161] [&_a]:font-bold hover:[&_a]:underline">
+                        <div class="border-t border-sky-200/70 bg-gradient-to-b from-sky-50/30 via-white to-white px-6 pb-6 pt-4 text-sm sm:text-[15px] leading-relaxed text-slate-600 prose max-w-none [&_a]:text-primary [&_a]:font-bold hover:[&_a]:underline">
                             <?= wp_kses_post(wpautop($a)) ?>
                         </div>
                     </details>
@@ -140,12 +140,12 @@ $whatsapp_clean = $whatsapp_number ? preg_replace('/[^0-9]/', '', $whatsapp_numb
         <?php endif; ?>
 
         <!-- 2-Tone Support CTA Card -->
-        <div class="rounded-3xl border-2 border-dashed border-sky-300/80 bg-gradient-to-br from-[#f0f6fa] via-white to-sky-50/50 p-8 sm:p-10 md:p-12 shadow-xs text-center">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#0c4161] shadow-2xs">
+        <div class="rounded-3xl border border-sky-300/80 bg-gradient-to-br from-primary-soft via-white to-sky-50/50 p-8 sm:p-10 md:p-12 shadow-xs text-center">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-primary shadow-2xs">
                 <span class="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" aria-hidden="true"></span>
                 Direct Customer Care
             </span>
-            <h2 class="mt-3 font-heading text-xl sm:text-2xl md:text-3xl font-black text-[#0c4161]">
+            <h2 class="mt-3 font-heading text-xl sm:text-2xl md:text-3xl font-black text-primary">
                 <?= esc_html($cta_heading) ?>
             </h2>
             <p class="mx-auto mt-2 mb-6 max-w-lg text-sm sm:text-base leading-relaxed text-slate-600">
@@ -158,7 +158,7 @@ $whatsapp_clean = $whatsapp_number ? preg_replace('/[^0-9]/', '', $whatsapp_numb
                     </svg>
                     WhatsApp Support &rarr;
                 </a>
-                <a href="<?= esc_url($cta_link) ?>" class="inline-flex items-center gap-2 rounded-full bg-[#0c4161] hover:bg-[#082c42] text-white font-bold px-6 py-3 text-xs sm:text-sm shadow-sm transition-colors">
+                <a href="<?= esc_url($cta_link) ?>" class="inline-flex items-center gap-2 rounded-full bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 text-xs sm:text-sm shadow-sm transition-colors">
                     <?= esc_html($cta_btn) ?> &rarr;
                 </a>
             </div>

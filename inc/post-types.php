@@ -1,75 +1,59 @@
 <?php
 /**
- * Custom Post Types
+ * Custom Post Types.
+ *
+ * "reviews" and "reviews_cat" keep the names used by the previous theme so existing
+ * reviews stay available after the theme is switched.
  */
 
-function modmy_register_post_types() {
-    // 1. Reviews CPT
-    $review_labels = array(
-        'name'                  => 'Reviews',
-        'singular_name'         => 'Review',
-        'menu_name'             => 'Reviews',
-        'name_admin_bar'        => 'Review',
-        'add_new'               => 'Add New',
-        'add_new_item'          => 'Add New Review',
-        'new_item'              => 'New Review',
-        'edit_item'             => 'Edit Review',
-        'view_item'             => 'View Review',
-        'all_items'             => 'All Reviews',
-        'search_items'          => 'Search Reviews',
-        'not_found'             => 'No reviews found.',
-    );
+function ivermectin_register_post_types() {
+    register_post_type('reviews', array(
+        'label'           => __('Reviews', 'ivermectin-australia'),
+        'singular_label'  => __('Review', 'ivermectin-australia'),
+        'public'          => false,
+        'show_ui'         => true,
+        'capability_type' => 'post',
+        'hierarchical'    => false,
+        'has_archive'     => false,
+        'rewrite'         => true,
+        'query_var'       => true,
+        'menu_position'   => 20,
+        'menu_icon'       => 'dashicons-star-filled',
+        'supports'        => array('title', 'editor'),
+    ));
 
-    $review_args = array(
-        'labels'             => $review_labels,
-        'public'             => false,
-        'publicly_queryable' => false,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'review' ),
-        'capability_type'    => 'post',
-        'has_archive'        => false,
-        'hierarchical'       => false,
-        'menu_position'      => 20,
-        'menu_icon'          => 'dashicons-star-filled',
-        'supports'           => array( 'title', 'editor' ),
-    );
+    register_taxonomy('reviews_cat', array('reviews'), array(
+        'hierarchical'      => true,
+        'labels'            => array('name' => _x('Reviews Categories', 'taxonomy general name')),
+        'show_ui'           => true,
+        'query_var'         => true,
+        'show_admin_column' => true,
+        'public'            => false,
+    ));
 
-    register_post_type( 'review', $review_args );
-
-    // 2. Cities CPT
-    $city_labels = array(
-        'name'                  => 'Australia Delivery',
-        'singular_name'         => 'City',
-        'menu_name'             => 'Australia Delivery',
-        'name_admin_bar'        => 'City',
-        'add_new'               => 'Add New',
-        'add_new_item'          => 'Add New City',
-        'new_item'              => 'New City',
-        'edit_item'             => 'Edit City',
-        'view_item'             => 'View City',
-        'all_items'             => 'All Cities',
-        'search_items'          => 'Search Cities',
-        'not_found'             => 'No cities found.',
-    );
-
-    $city_args = array(
-        'labels'             => $city_labels,
+    register_post_type('city', array(
+        'labels' => array(
+            'name'          => 'Delivery Areas',
+            'singular_name' => 'Delivery Area',
+            'menu_name'     => 'Delivery Areas',
+            'add_new_item'  => 'Add New Delivery Area',
+            'edit_item'     => 'Edit Delivery Area',
+            'all_items'     => 'All Delivery Areas',
+            'search_items'  => 'Search Delivery Areas',
+            'not_found'     => 'No delivery areas found.',
+        ),
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'buy-modafinil', 'with_front' => false ),
+        'rewrite'            => array('slug' => 'delivery-areas', 'with_front' => false),
         'capability_type'    => 'post',
         'has_archive'        => false,
         'hierarchical'       => false,
         'menu_position'      => 21,
         'menu_icon'          => 'dashicons-location',
-        'supports'           => array( 'title', 'thumbnail' ),
-    );
-
-    register_post_type( 'city', $city_args );
+        'supports'           => array('title', 'thumbnail'),
+    ));
 }
-add_action( 'init', 'modmy_register_post_types' );
+add_action('init', 'ivermectin_register_post_types');

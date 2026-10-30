@@ -1,6 +1,6 @@
 <?php
 /**
- * Email Footer - Waklert Australia Bespoke Design
+ * Email Footer - Ivermectin Australia Bespoke Design
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails
@@ -40,7 +40,7 @@ $site_url = home_url( '/' );
 
 												<!-- Copyright -->
 												<p style="margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; color: #94A3B8;">
-													&copy; <?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( $site_url ); ?>" style="color: #64748B; text-decoration: underline; font-weight: 600;">Waklert Australia</a>. All rights reserved.
+													&copy; <?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( $site_url ); ?>" style="color: #64748B; text-decoration: underline; font-weight: 600;">Ivermectin Australia</a>. All rights reserved.
 												</p>
 
 											</td>

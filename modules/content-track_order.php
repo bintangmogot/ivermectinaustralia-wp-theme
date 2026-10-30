@@ -12,89 +12,60 @@ if (!$tracking_param && isset($_GET['order_id'])) {
 }
 
 // 1. Hero & Intro Fields
-$badge_text = get_sub_field('badge_text') ?: 'Live Australia Post Tracking';
-$page_title = get_sub_field('heading') ?: get_the_title() ?: 'Track Your Parcel';
-$page_desc  = get_sub_field('description') ?: 'Follow your Waklert Australia delivery from our warehouse to your doorstep with real-time Australia Post tracking.';
-$intro_p1   = get_sub_field('intro_callout_p1') ?: 'Welcome to the Waklert Australia order tracking page. Every parcel we dispatch is shipped with Australia Post and comes with a unique tracking number, so you can follow your delivery from our warehouse to your door.';
-$intro_p2   = get_sub_field('intro_callout_p2') ?: "Your tracking number was emailed to you when your order was dispatched. Enter it below and we'll take you straight to the live Australia Post tracking results for your parcel.";
+$badge_text = get_sub_field('badge_text') ?: '';
+$page_title = get_sub_field('heading') ?: get_the_title() ?: '';
+$page_desc  = get_sub_field('description') ?: '';
+$intro_p1   = get_sub_field('intro_callout_p1') ?: '';
+$intro_p2   = get_sub_field('intro_callout_p2') ?: '';
 
 // 2. Tracking Form Fields
-$form_heading        = get_sub_field('form_heading') ?: 'Enter Your Tracking Number';
-$form_instructions   = get_sub_field('form_instructions') ?: 'Tracking numbers are usually 10–23 characters long, e.g. 33ABC1234567. You can find yours in your dispatch confirmation email.';
-$input_placeholder   = get_sub_field('input_placeholder') ?: 'e.g. 33ABC1234567';
-$button_text         = get_sub_field('track_btn_text') ?: 'Track My Order';
-$redirect_notice     = get_sub_field('redirect_notice') ?: "You'll be redirected to the official Australia Post tracking page (auspost.com.au), where your parcel's latest scan events are shown automatically.";
+$form_heading        = get_sub_field('form_heading') ?: '';
+$form_instructions   = get_sub_field('form_instructions') ?: '';
+$input_placeholder   = get_sub_field('input_placeholder') ?: '';
+$button_text         = get_sub_field('track_btn_text') ?: '';
+$redirect_notice     = get_sub_field('redirect_notice') ?: '';
 
 // 3. How Order Tracking Works Steps Repeater
-$how_heading = get_sub_field('how_works_heading') ?: 'How Order Tracking Works';
+$how_heading = get_sub_field('how_works_heading') ?: '';
 $how_steps   = get_sub_field('how_works_steps');
 if (empty($how_steps) || !is_array($how_steps)) {
-    $how_steps = [
-        [
-            'title' => '1. Order Dispatched',
-            'description' => 'Once your order leaves our facility, we email you a dispatch confirmation containing your Australia Post tracking number.'
-        ],
-        [
-            'title' => '2. Enter Your Number',
-            'description' => 'Paste the tracking number into the field above and select "Track My Order". We\'ll open your parcel\'s results on the Australia Post website.'
-        ],
-        [
-            'title' => '3. Follow Your Parcel',
-            'description' => 'Australia Post updates scan events at each stage — accepted, in transit, onboard for delivery, and delivered.'
-        ]
-    ];
+    $how_steps = [];
 }
 
 // 4. Need Help & Support Fields
-$help_title    = get_sub_field('help_heading') ?: 'Need Help?';
-$help_desc     = get_sub_field('help_description') ?: "Can't find your tracking number or no scans after 3 business days? Contact our support team and we'll look into it.";
-$help_btn_text = get_sub_field('help_btn_text') ?: 'Contact Support';
+$help_title    = get_sub_field('help_heading') ?: '';
+$help_desc     = get_sub_field('help_description') ?: '';
+$help_btn_text = get_sub_field('help_btn_text') ?: '';
 $help_btn_url  = get_sub_field('help_btn_url') ?: home_url('/contact/');
 
 // 5. Trust Cards Repeater
 $trust_cards = get_sub_field('trust_cards');
 if (empty($trust_cards) || !is_array($trust_cards)) {
-    $trust_cards = [
-        [
-            'card_type'   => 'shipping',
-            'title'       => 'Free Shipping',
-            'description' => 'On orders over $200 AUD — enjoy fast, secure, and discreet delivery right to your doorstep.'
-        ],
-        [
-            'card_type'   => 'support',
-            'title'       => '24/7 Support',
-            'description' => 'We’re here to help anytime — day or night, our team is ready to assist you with your orders and inquiries.'
-        ],
-        [
-            'card_type'   => 'payment',
-            'title'       => 'Secure Payment',
-            'description' => 'Shop with confidence — all transactions are 100% safe, encrypted, and protected for your peace of mind.'
-        ]
-    ];
+    $trust_cards = [];
 }
 ?>
 
 <!-- 2-Tone Patterned Header -->
-<header class="relative overflow-hidden border-b-2 border-dashed border-sky-300/80 bg-gradient-to-b from-[#f0f6fa] via-[#eef5fa] to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9" data-testid="track-order-hero">
+<header class="relative overflow-hidden border-b border-sky-300/80 bg-gradient-to-b from-primary-soft via-primary-soft to-white bg-pattern-dots text-center py-6 sm:py-7 md:py-9" data-testid="track-order-hero">
     <div class="container-site max-w-5xl mx-auto px-4 relative z-10">
         <!-- Breadcrumbs -->
         <div class="mb-3">
-            <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-dashed border-sky-300/80 bg-white/90 px-3.5 py-1 text-xs font-medium text-slate-500 shadow-xs backdrop-blur">
-                <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-slate-600 transition-colors hover:text-[#0c4161]">Home</a>
+            <nav aria-label="Breadcrumb" class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-sky-300/80 bg-white/90 px-3.5 py-1 text-xs font-medium text-slate-500 shadow-xs backdrop-blur">
+                <a href="<?= esc_url(home_url('/')) ?>" class="font-bold text-slate-600 transition-colors hover:text-primary">Home</a>
                 <span class="text-sky-300 font-normal">/</span>
-                <span aria-current="page" class="font-extrabold text-[#0c4161]"><?= esc_html($page_title) ?></span>
+                <span aria-current="page" class="font-extrabold text-primary"><?= esc_html($page_title) ?></span>
             </nav>
         </div>
 
         <!-- Eyebrow Badge -->
         <div class="mb-2.5">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-[#0c4161] shadow-xs">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-primary shadow-xs">
                 <span class="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" aria-hidden="true"></span>
                 <?= esc_html($badge_text) ?>
             </span>
         </div>
 
-        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-[#0c4161]">
+        <h1 class="mx-auto max-w-3xl font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-primary">
             <?= esc_html($page_title) ?>
         </h1>
         <p class="mx-auto mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-slate-600">
@@ -108,7 +79,7 @@ if (empty($trust_cards) || !is_array($trust_cards)) {
 
     <!-- Intro Callout Box (Yellow/Amber Accent Line) -->
     <div class="rounded-2xl border border-slate-200/90 border-l-[6px] border-l-amber-500 bg-gradient-to-r from-amber-50/40 via-white to-white p-5 sm:p-7 shadow-xs">
-        <div class="text-sm sm:text-base leading-relaxed text-slate-700 m-0 space-y-3 prose-a:text-[#0c4161] prose-a:font-bold prose-a:underline hover:prose-a:text-amber-600">
+        <div class="text-sm sm:text-base leading-relaxed text-slate-700 m-0 space-y-3 prose-a:text-primary prose-a:font-bold prose-a:underline hover:prose-a:text-amber-600">
             <p class="m-0"><?= wp_kses_post(wpautop($intro_p1)) ?></p>
             <?php if ($intro_p2): ?>
                 <p class="mt-3 m-0"><?= wp_kses_post(wpautop($intro_p2)) ?></p>
@@ -117,16 +88,16 @@ if (empty($trust_cards) || !is_array($trust_cards)) {
     </div>
 
     <!-- Main Australia Post Tracking Tool Card (Clean, Focused Single Card) -->
-    <section class="rounded-3xl border-2 border-dashed border-sky-300/80 bg-white p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden" aria-label="Australia Post Order Tracking">
+    <section class="rounded-3xl border border-sky-300/80 bg-white p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden" aria-label="Australia Post Order Tracking">
         <div class="max-w-3xl mx-auto space-y-6">
             <div class="text-center sm:text-left">
-                <div class="inline-flex items-center gap-2 rounded-full bg-sky-100 border border-sky-300/80 px-3 py-1 text-xs font-black uppercase tracking-wider text-[#0c4161] mb-2.5">
+                <div class="inline-flex items-center gap-2 rounded-full bg-sky-100 border border-sky-300/80 px-3 py-1 text-xs font-black uppercase tracking-wider text-primary mb-2.5">
                     <svg class="w-3.5 h-3.5 text-sky-600" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
                     <span><?= esc_html($form_heading) ?></span>
                 </div>
-                <h2 class="font-heading text-2xl sm:text-3xl font-black text-[#0c4161] tracking-tight">
+                <h2 class="font-heading text-2xl sm:text-3xl font-black text-primary tracking-tight">
                     <?= esc_html($form_heading) ?>
                 </h2>
                 <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -152,7 +123,7 @@ if (empty($trust_cards) || !is_array($trust_cards)) {
                             placeholder="<?= esc_attr($input_placeholder) ?>" 
                             autocomplete="off"
                             spellcheck="false"
-                            class="w-full rounded-full border-2 border-sky-300/80 bg-slate-50/50 pl-12 pr-5 py-3.5 sm:py-4 text-base sm:text-lg font-mono tracking-wider text-slate-900 placeholder:text-slate-400 focus:border-[#0c4161] focus:bg-white focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all shadow-inner"
+                            class="w-full rounded-full border-2 border-sky-300/80 bg-slate-50/50 pl-12 pr-5 py-3.5 sm:py-4 text-base sm:text-lg font-mono tracking-wider text-slate-900 placeholder:text-slate-400 focus:border-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all shadow-inner"
                         >
                     </div>
                     <button 
@@ -185,7 +156,7 @@ if (empty($trust_cards) || !is_array($trust_cards)) {
     <?php if (!empty($how_steps)): ?>
     <section class="space-y-6 pt-2" aria-labelledby="how-tracking-works-heading">
         <div class="border-b border-slate-200 pb-3">
-            <h2 id="how-tracking-works-heading" class="font-heading text-2xl sm:text-3xl font-black text-[#0c4161] tracking-tight">
+            <h2 id="how-tracking-works-heading" class="font-heading text-2xl sm:text-3xl font-black text-primary tracking-tight">
                 <?= esc_html($how_heading) ?>
             </h2>
         </div>
@@ -210,9 +181,9 @@ if (empty($trust_cards) || !is_array($trust_cards)) {
     <?php endif; ?>
 
     <!-- "Need Help?" Card -->
-    <section class="rounded-2xl border-2 border-dashed border-sky-300/80 bg-gradient-to-r from-sky-50/60 via-white to-sky-50/40 p-6 sm:p-7 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5" aria-labelledby="need-help-heading">
+    <section class="rounded-2xl border border-sky-300/80 bg-gradient-to-r from-sky-50/60 via-white to-sky-50/40 p-6 sm:p-7 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5" aria-labelledby="need-help-heading">
         <div class="space-y-1.5 max-w-xl">
-            <h3 id="need-help-heading" class="font-heading text-lg sm:text-xl font-extrabold text-[#0c4161]">
+            <h3 id="need-help-heading" class="font-heading text-lg sm:text-xl font-extrabold text-primary">
                 <?= esc_html($help_title) ?>
             </h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed m-0">
@@ -220,7 +191,7 @@ if (empty($trust_cards) || !is_array($trust_cards)) {
             </p>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-            <a href="<?= esc_url($help_btn_url) ?>" class="inline-flex items-center gap-2 rounded-xl bg-[#0c4161] hover:bg-[#082a40] text-white px-5 py-2.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-sm transition-all">
+            <a href="<?= esc_url($help_btn_url) ?>" class="inline-flex items-center gap-2 rounded-xl bg-primary hover:bg-[#082a40] text-white px-5 py-2.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-sm transition-all">
                 <span><?= esc_html($help_btn_text) ?></span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -245,7 +216,7 @@ if (empty($trust_cards) || !is_array($trust_cards)) {
                 'payment'  => 'aud_checkout',
             ];
             $resolved_preset = $legacy_map[$ctype] ?? $ctype;
-            $card_icon_html = waklert_render_card_icon([
+            $card_icon_html = ivermectin_render_card_icon([
                 'icon_image'     => $cimage,
                 'icon_preset'    => $resolved_preset,
                 'title'          => $ctitle,
@@ -254,7 +225,7 @@ if (empty($trust_cards) || !is_array($trust_cards)) {
                 'size_class'     => 'w-10 h-10 shrink-0',
             ]);
         ?>
-        <div class="rounded-2xl border-2 border-dashed border-sky-200/90 bg-white p-6 shadow-xs hover:border-sky-400 hover:shadow-md transition-all flex flex-col items-center text-center">
+        <div class="rounded-2xl border border-sky-200/90 bg-white p-6 shadow-xs hover:border-sky-400 hover:shadow-md transition-all flex flex-col items-center text-center">
             <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white p-2 shadow-lg shadow-black/10 border-2 border-sky-100 mb-4 shrink-0">
                 <?= $card_icon_html ?>
             </div>

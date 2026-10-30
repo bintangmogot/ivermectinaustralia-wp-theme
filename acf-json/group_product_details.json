@@ -1,9 +1,9 @@
 {
-    "key": "group_waklert_product_details",
+    "key": "group_product_details",
     "title": "Product Page Details",
     "fields": [
         {
-            "key": "field_waklert_product_badge",
+            "key": "field_ivermectin_product_badge",
             "label": "Product Badge",
             "name": "product_badge",
             "type": "text",
@@ -12,7 +12,7 @@
             "maxlength": 32
         },
         {
-            "key": "field_waklert_product_active_ingredient",
+            "key": "field_ivermectin_product_active_ingredient",
             "label": "Active Ingredient",
             "name": "product_active_ingredient",
             "type": "text",
@@ -21,7 +21,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_waklert_product_indication",
+            "key": "field_ivermectin_product_indication",
             "label": "Indication",
             "name": "product_indication",
             "type": "text",
@@ -30,7 +30,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_waklert_product_manufacturer",
+            "key": "field_ivermectin_product_manufacturer",
             "label": "Manufacturer",
             "name": "product_manufacturer",
             "type": "text",
@@ -38,7 +38,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_waklert_product_packaging",
+            "key": "field_ivermectin_product_packaging",
             "label": "Packaging",
             "name": "product_packaging",
             "type": "text",
@@ -46,7 +46,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_waklert_product_delivery_time",
+            "key": "field_ivermectin_product_delivery_time",
             "label": "Delivery Time",
             "name": "product_delivery_time",
             "type": "text",

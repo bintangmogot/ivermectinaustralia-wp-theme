@@ -24,12 +24,8 @@ remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
     </div>
 
     <h2 class="font-heading text-3xl font-black text-slate-900 mb-4">
-        <?= "Your cart is empty" ?>
+        <?= esc_html__('Your cart is empty', 'ivermectin-australia') ?>
     </h2>
-    
-    <p class="text-slate-500 mb-10 max-w-md mx-auto">
-        <?= "Looks like you haven't added anything to your cart yet. Discover our premium products and get started." ?>
-    </p>
 
     <?php do_action( 'woocommerce_cart_is_empty' ); ?>
 

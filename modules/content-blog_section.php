@@ -31,7 +31,7 @@ if (empty($subtitle) && isset($row['subtitle'])) {
     $subtitle = $row['subtitle'];
 }
 if (empty($subtitle)) {
-    $subtitle = get_sub_field('description') ?: ($row['description'] ?? 'Helpful insights, dosage guides, and research on Armodafinil and cognitive performance.');
+    $subtitle = get_sub_field('description') ?: ($row['description'] ?? '');
 }
 
 $posts_count = get_sub_field('posts_count');
@@ -101,7 +101,7 @@ if (empty($articles)) {
     $articles = $blog_query->posts;
 }
 ?>
-<section class="section-padding bg-gradient-to-b from-[#f0f6fa] via-[#e9f2f8] to-[#f8fafc] bg-pattern-dots border-t-2 border-dashed border-sky-200/80 relative isolate overflow-hidden" data-testid="blog-section">
+<section class="section-padding bg-gradient-to-b from-primary-soft via-primary-soft to-[#f8fafc] bg-pattern-dots border-t border-sky-200/80 relative isolate overflow-hidden" data-testid="blog-section">
     <div class="container-custom relative z-10">
         <!-- Section Header -->
         <?php if (!empty($title) || !empty($eyebrow)): ?>
@@ -136,7 +136,7 @@ if (empty($articles)) {
                 $categories = get_the_category($post_id);
                 $cat_label = (!empty($categories) && $categories[0]->name !== 'Uncategorized') 
                     ? $categories[0]->name 
-                    : 'Armodafinil Guide';
+                    : '';
 
                 // Reading time calculation (~200 wpm)
                 $plain_text = strip_tags($article->post_content);
@@ -146,7 +146,7 @@ if (empty($articles)) {
                 // Intro / Excerpt calculation
                 $intro_val = '';
                 if (function_exists('get_field')) {
-                    $modules_data = get_field('modules', $post_id);
+                    $modules_data = get_field('page_modules', $post_id);
                     if (is_array($modules_data)) {
                         foreach ($modules_data as $mod) {
                             if (!empty($mod['intro'])) {
@@ -164,7 +164,7 @@ if (empty($articles)) {
                     ? $article->post_excerpt 
                     : (!empty($intro_val) ? $intro_val : wp_trim_words($plain_text, 22, '...'));
             ?>
-            <article class="group flex flex-col h-full bg-white border-2 border-dashed border-sky-300/80 hover:border-[#0c4161] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+            <article class="group flex flex-col h-full bg-white border border-sky-300/80 hover:border-primary rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
                 <!-- Card Thumbnail / Visual Area -->
                 <a href="<?= esc_url($permalink) ?>" class="block relative aspect-[16/10] overflow-hidden bg-slate-900 focus:outline-hidden" tabindex="-1" aria-hidden="true">
                     <?php if (has_post_thumbnail($post_id)): ?>
@@ -183,14 +183,14 @@ if (empty($articles)) {
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                 </svg>
                             </div>
-                            <span class="text-xs font-bold tracking-widest uppercase text-white/80">Waklert Knowledge</span>
+                            
                         </div>
                     <?php endif; ?>
 
                     <!-- Floating Category Badge -->
                     <div class="absolute top-3.5 left-3.5 z-10">
                         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black tracking-wider uppercase bg-amber-400 text-slate-950 shadow-md border border-amber-500/30">
-                            ★ <?= esc_html($cat_label) ?>
+                            <?= esc_html($cat_label) ?>
                         </span>
                     </div>
                 </a>
@@ -216,7 +216,7 @@ if (empty($articles)) {
                         </div>
 
                         <!-- Title -->
-                        <h3 class="font-heading font-black text-xl sm:text-2xl text-ink group-hover:text-[#0c4161] transition-colors line-clamp-2 mb-3 leading-snug">
+                        <h3 class="font-heading font-black text-xl sm:text-2xl text-ink group-hover:text-primary transition-colors line-clamp-2 mb-3 leading-snug">
                             <a href="<?= esc_url($permalink) ?>">
                                 <?= esc_html($article->post_title) ?>
                             </a>
@@ -230,7 +230,7 @@ if (empty($articles)) {
                 </div>
 
                 <!-- Two-Tone Footer Block -->
-                <a href="<?= esc_url($permalink) ?>" class="bg-[#f0f6fa] group-hover:bg-[#0c4161] p-3 px-4 sm:p-4 sm:px-6 border-t-2 border-dashed border-sky-200/80 flex items-center justify-between transition-colors duration-300 text-xs sm:text-sm font-black text-[#0c4161] group-hover:text-white mt-auto">
+                <a href="<?= esc_url($permalink) ?>" class="bg-primary-soft group-hover:bg-primary p-3 px-4 sm:p-4 sm:px-6 border-t border-sky-200/80 flex items-center justify-between transition-colors duration-300 text-xs sm:text-sm font-black text-primary group-hover:text-white mt-auto">
                     <span>Read Full Guide</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -240,7 +240,7 @@ if (empty($articles)) {
             <?php endforeach; ?>
         </div>
         <?php else: ?>
-        <div class="text-center py-12 bg-white rounded-2xl border-2 border-dashed border-sky-300/80 p-8">
+        <div class="text-center py-12 bg-white rounded-2xl border border-sky-300/80 p-8">
             <p class="text-slate-500 font-medium">No articles published yet.</p>
         </div>
         <?php endif; ?>
@@ -248,7 +248,7 @@ if (empty($articles)) {
         <!-- View All Button -->
         <?php if ($show_view_all && !empty($button_text) && !empty($button_url)): ?>
         <div class="mt-10 md:mt-12 text-center">
-            <a href="<?= esc_url($button_url) ?>" class="inline-flex items-center gap-2 border-2 border-dashed border-sky-300/90 bg-white hover:bg-[#0c4161] text-[#0c4161] hover:text-white font-extrabold px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-full transition-all duration-300 uppercase tracking-wider sm:tracking-widest text-xs shadow-sm hover:shadow-md hover:-translate-y-0.5">
+            <a href="<?= esc_url($button_url) ?>" class="inline-flex items-center gap-2 border border-sky-300/90 bg-white hover:bg-primary text-primary hover:text-white font-extrabold px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-full transition-all duration-300 uppercase tracking-wider sm:tracking-widest text-xs shadow-sm hover:shadow-md hover:-translate-y-0.5">
                 <span><?= esc_html($button_text) ?></span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />

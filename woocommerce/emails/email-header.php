@@ -1,6 +1,6 @@
 <?php
 /**
- * Email Header - Waklert Australia Bespoke Design
+ * Email Header - Ivermectin Australia Bespoke Design
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails
@@ -11,14 +11,14 @@ defined( 'ABSPATH' ) || exit;
 
 $store_name = $store_name ?? get_bloginfo( 'name', 'display' );
 if ( empty( $store_name ) ) {
-    $store_name = 'Waklert Australia';
+    $store_name = 'Ivermectin Australia';
 }
 
-$logo_url = function_exists( 'waklert_get_logo_url' ) ? waklert_get_logo_url( 'header' ) : '';
+$logo_url = function_exists( 'ivermectin_get_logo_url' ) ? ivermectin_get_logo_url( 'header' ) : '';
 if ( empty( $logo_url ) ) {
-    $theme_logo = get_template_directory() . '/assets/images/waklert-australia-logo.png';
+    $theme_logo = get_template_directory() . '/assets/images/ivermectin-australia-logo.png';
     if ( file_exists( $theme_logo ) ) {
-        $logo_url = get_template_directory_uri() . '/assets/images/waklert-australia-logo.png';
+        $logo_url = get_template_directory_uri() . '/assets/images/ivermectin-australia-logo.png';
     }
 }
 $header_image_url = home_url( '/' );
@@ -42,7 +42,7 @@ $header_image_url = home_url( '/' );
 									
 									<!-- Preheader Preview Text for Email Clients -->
 									<div style="display: none; font-size: 1px; color: #ffffff; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
-										Waklert Australia &bull; Order Confirmation
+										Ivermectin Australia &bull; Order Confirmation
 									</div>
 
 									<!-- Brand Top Bar / Logo Header -->
@@ -54,11 +54,11 @@ $header_image_url = home_url( '/' );
 														<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( $store_name ); ?>" width="240" style="max-width: 240px; height: auto; display: block; border: 0; outline: none; margin: 0 auto;" />
 													</a>
 												<?php else : ?>
-													<a href="<?php echo esc_url( $header_image_url ); ?>" target="_blank" style="text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 800; color: #0C4161; letter-spacing: -0.5px;">
+													<a href="<?php echo esc_url( $header_image_url ); ?>" target="_blank" style="text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 800; color: #012c70; letter-spacing: -0.5px;">
 														<?php echo esc_html( $store_name ); ?>
 													</a>
 												<?php endif; ?>
-												<p style="margin: 8px 0 0 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; color: #0284C7; letter-spacing: 0.8px; text-transform: uppercase;">
+												<p style="margin: 8px 0 0 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; color: #0a68d4; letter-spacing: 0.8px; text-transform: uppercase;">
 													Official Australian Express Order Confirmation
 												</p>
 											</td>
@@ -74,7 +74,7 @@ $header_image_url = home_url( '/' );
 													<tr>
 														<td id="header_wrapper" align="center">
 															<h1><?php echo esc_html( $email_heading ); ?></h1>
-															<p class="email-subheading">Thank you for shopping with Waklert Australia</p>
+															<p class="email-subheading">Thank you for shopping with Ivermectin Australia</p>
 														</td>
 													</tr>
 												</table>

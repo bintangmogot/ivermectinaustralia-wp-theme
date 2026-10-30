@@ -16,7 +16,7 @@ if ( ! class_exists( 'WooCommerce' ) ) {
  *
  * @param WC_Cart $cart WooCommerce cart.
  */
-function waklert_cart_insurance_select_default( $cart ) {
+function ivermectin_cart_insurance_select_default( $cart ) {
 	if ( ! WC()->session || ! $cart || $cart->is_empty() ) {
 		return;
 	}
@@ -83,7 +83,7 @@ function waklert_cart_insurance_select_default( $cart ) {
 		WC()->session->set( 'shipping_insurance_package', $default_id );
 	}
 }
-add_action( 'woocommerce_cart_calculate_fees', 'waklert_cart_insurance_select_default', 1 );
+add_action( 'woocommerce_cart_calculate_fees', 'ivermectin_cart_insurance_select_default', 1 );
 
 /**
  * Normalize the insurance radio markup and preserve explicit selections across refreshes.
@@ -91,7 +91,7 @@ add_action( 'woocommerce_cart_calculate_fees', 'waklert_cart_insurance_select_de
  * @param string $markup Insurance Manager radio markup.
  * @return string
  */
-function waklert_cart_insurance_preserve_decline_choice( $markup ) {
+function ivermectin_cart_insurance_preserve_decline_choice( $markup ) {
 	if ( empty( $markup ) ) {
 		return $markup;
 	}
@@ -131,7 +131,7 @@ function waklert_cart_insurance_preserve_decline_choice( $markup ) {
 }
 
 /** Render the plugin's insurance choices in the existing cart totals layout. */
-function waklert_cart_insurance_render_cart_choices() {
+function ivermectin_cart_insurance_render_cart_choices() {
 	if ( ! class_exists( 'Shipping_Insurance_Manager_Public' ) || ! WC()->cart || ! WC()->session ) {
 		return;
 	}
@@ -139,7 +139,7 @@ function waklert_cart_insurance_render_cart_choices() {
 	ob_start();
 	$insurance = new Shipping_Insurance_Manager_Public( 'shipping-insurance-manager', '1.0.0' );
 	$insurance->add_shipping_insurance_checkbox();
-	$markup = waklert_cart_insurance_preserve_decline_choice( ob_get_clean() );
+	$markup = ivermectin_cart_insurance_preserve_decline_choice( ob_get_clean() );
 
 	if ( ! preg_match( '/<td[^>]*>(.*?)<\/td>/is', $markup, $matches ) ) {
 		return;
@@ -162,26 +162,26 @@ function waklert_cart_insurance_render_cart_choices() {
 	echo '<div style="display:flex;flex-direction:column;gap:.5rem">' . $options . '</div>';
 	echo '</div>';
 }
-add_action( 'woocommerce_cart_totals_before_order_total', 'waklert_cart_insurance_render_cart_choices', 10 );
+add_action( 'woocommerce_cart_totals_before_order_total', 'ivermectin_cart_insurance_render_cart_choices', 10 );
 
 /** Capture the checkout plugin output so an explicit opt-out survives AJAX. */
-function waklert_cart_insurance_start_checkout_buffer() {
+function ivermectin_cart_insurance_start_checkout_buffer() {
 	ob_start();
 }
-add_action( 'woocommerce_review_order_before_order_total', 'waklert_cart_insurance_start_checkout_buffer', -9999 );
+add_action( 'woocommerce_review_order_before_order_total', 'ivermectin_cart_insurance_start_checkout_buffer', -9999 );
 
-function waklert_cart_insurance_finish_checkout_buffer() {
+function ivermectin_cart_insurance_finish_checkout_buffer() {
 	$markup = ob_get_clean();
-	echo waklert_cart_insurance_preserve_decline_choice( $markup );
+	echo ivermectin_cart_insurance_preserve_decline_choice( $markup );
 }
-add_action( 'woocommerce_review_order_before_order_total', 'waklert_cart_insurance_finish_checkout_buffer', 9999 );
+add_action( 'woocommerce_review_order_before_order_total', 'ivermectin_cart_insurance_finish_checkout_buffer', 9999 );
 
 /**
  * Synchronize checkout order review AJAX updates with the shipping insurance session.
  *
  * @param string $posted_data Serialized checkout form data.
  */
-function waklert_cart_insurance_handle_checkout_update( $posted_data ) {
+function ivermectin_cart_insurance_handle_checkout_update( $posted_data ) {
 	if ( empty( $posted_data ) || ! WC()->session ) {
 		return;
 	}
@@ -212,12 +212,12 @@ function waklert_cart_insurance_handle_checkout_update( $posted_data ) {
 		}
 	}
 }
-add_action( 'woocommerce_checkout_update_order_review', 'waklert_cart_insurance_handle_checkout_update', 25 );
+add_action( 'woocommerce_checkout_update_order_review', 'ivermectin_cart_insurance_handle_checkout_update', 25 );
 
 /**
  * Ensure insurance selection is properly applied when placing order.
  */
-function waklert_cart_insurance_save_checkout_field_on_submit() {
+function ivermectin_cart_insurance_save_checkout_field_on_submit() {
 	if ( ! WC()->session ) {
 		return;
 	}
@@ -234,11 +234,11 @@ function waklert_cart_insurance_save_checkout_field_on_submit() {
 		}
 	}
 }
-add_action( 'woocommerce_checkout_process', 'waklert_cart_insurance_save_checkout_field_on_submit', 5 );
+add_action( 'woocommerce_checkout_process', 'ivermectin_cart_insurance_save_checkout_field_on_submit', 5 );
 
 /** Save cart-page insurance choices, recalculate the fee and refresh the cart. */
-function waklert_cart_insurance_save_choice() {
-	check_ajax_referer( 'waklert_cart_insurance', 'nonce' );
+function ivermectin_cart_insurance_save_choice() {
+	check_ajax_referer( 'ivermectin_cart_insurance', 'nonce' );
 
 	if ( ! WC()->session || ! WC()->cart || ! isset( $_POST['package'] ) ) {
 		wp_send_json_error( array( 'message' => 'Cart is unavailable.' ), 400 );
@@ -256,18 +256,18 @@ function waklert_cart_insurance_save_choice() {
 	WC()->cart->calculate_totals();
 	wp_send_json_success();
 }
-add_action( 'wp_ajax_waklert_cart_insurance', 'waklert_cart_insurance_save_choice' );
-add_action( 'wp_ajax_nopriv_waklert_cart_insurance', 'waklert_cart_insurance_save_choice' );
+add_action( 'wp_ajax_ivermectin_cart_insurance', 'ivermectin_cart_insurance_save_choice' );
+add_action( 'wp_ajax_nopriv_ivermectin_cart_insurance', 'ivermectin_cart_insurance_save_choice' );
 
 /** Post radio changes from the cart, then reload WooCommerce's rendered totals. */
-function waklert_cart_insurance_cart_script() {
+function ivermectin_cart_insurance_cart_script() {
 	if ( ! is_cart() || is_checkout() ) {
 		return;
 	}
 
 	$config = array(
 		'url'   => admin_url( 'admin-ajax.php' ),
-		'nonce' => wp_create_nonce( 'waklert_cart_insurance' ),
+		'nonce' => wp_create_nonce( 'ivermectin_cart_insurance' ),
 	);
 	?>
 	<script>
@@ -278,7 +278,7 @@ function waklert_cart_insurance_cart_script() {
 			if (!input) return;
 
 			const body = new URLSearchParams({
-				action: 'waklert_cart_insurance',
+				action: 'ivermectin_cart_insurance',
 				nonce: config.nonce,
 				package: input.value || 'NO_INSURANCE'
 			});
@@ -303,10 +303,10 @@ function waklert_cart_insurance_cart_script() {
 	</script>
 	<?php
 }
-add_action( 'wp_footer', 'waklert_cart_insurance_cart_script', 40 );
+add_action( 'wp_footer', 'ivermectin_cart_insurance_cart_script', 40 );
 
 /** Ensure the "No Insurance" radio always has value="NO_INSURANCE" before checkout serializes. */
-function waklert_cart_insurance_checkout_script() {
+function ivermectin_cart_insurance_checkout_script() {
 	if ( ! is_checkout() || is_order_received_page() ) {
 		return;
 	}
@@ -332,4 +332,4 @@ function waklert_cart_insurance_checkout_script() {
 	</script>
 	<?php
 }
-add_action( 'wp_footer', 'waklert_cart_insurance_checkout_script', 45 );
+add_action( 'wp_footer', 'ivermectin_cart_insurance_checkout_script', 45 );

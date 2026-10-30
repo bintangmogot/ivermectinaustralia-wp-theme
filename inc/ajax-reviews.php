@@ -3,9 +3,9 @@
  * Handles moderated product review submissions from the product page.
  */
 
-function waklert_submit_product_review_ajax() {
+function ivermectin_submit_product_review_ajax() {
     $nonce = isset($_POST['review_nonce']) ? sanitize_text_field(wp_unslash($_POST['review_nonce'])) : '';
-    if (!$nonce || !wp_verify_nonce($nonce, 'waklert_submit_product_review')) {
+    if (!$nonce || !wp_verify_nonce($nonce, 'ivermectin_submit_product_review')) {
         wp_send_json_error(['message' => 'Your session expired. Refresh the page and try again.'], 403);
     }
 
@@ -25,7 +25,7 @@ function waklert_submit_product_review_ajax() {
     }
 
     $review_id = wp_insert_post([
-        'post_type' => 'review',
+        'post_type' => 'reviews',
         'post_status' => 'draft',
         'post_title' => $title,
         'post_content' => $content,
@@ -39,7 +39,6 @@ function waklert_submit_product_review_ajax() {
         'rating' => $rating,
         'name' => $name,
         'email' => $email,
-        'reviewer_meta' => 'Customer review',
         'linked_product' => $product_id,
     ];
 
@@ -55,5 +54,5 @@ function waklert_submit_product_review_ajax() {
     wp_send_json_success(['message' => 'Thank you. Your review has been submitted and is pending moderation.']);
 }
 
-add_action('wp_ajax_waklert_submit_product_review', 'waklert_submit_product_review_ajax');
-add_action('wp_ajax_nopriv_waklert_submit_product_review', 'waklert_submit_product_review_ajax');
+add_action('wp_ajax_ivermectin_submit_product_review', 'ivermectin_submit_product_review_ajax');
+add_action('wp_ajax_nopriv_ivermectin_submit_product_review', 'ivermectin_submit_product_review_ajax');
