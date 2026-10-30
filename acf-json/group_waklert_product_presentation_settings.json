@@ -1,0 +1,129 @@
+{
+    "key": "group_waklert_product_presentation_settings",
+    "title": "Product Page Presentation",
+    "fields": [
+        {
+            "key": "field_waklert_featured_badge_label",
+            "label": "Featured Badge Label",
+            "name": "best_seller_label",
+            "type": "text",
+            "default_value": "Best Seller",
+            "instructions": "Used for products marked Featured in WooCommerce when no custom product badge is set."
+        },
+        {
+            "key": "field_waklert_free_shipping_message",
+            "label": "Free Shipping Message",
+            "name": "free_shipping_message",
+            "type": "text",
+            "default_value": "Free shipping on orders above",
+            "instructions": "Displayed with the threshold below on product pages."
+        },
+        {
+            "key": "field_waklert_free_shipping_threshold",
+            "label": "Free Shipping Threshold",
+            "name": "free_shipping_threshold",
+            "type": "number",
+            "default_value": 299,
+            "min": 0,
+            "step": 1,
+            "prepend": "$",
+            "append": "AUD"
+        },
+        {
+            "key": "field_waklert_product_trust_dispatch",
+            "label": "Dispatch Trust Label",
+            "name": "product_trust_dispatch",
+            "type": "text",
+            "default_value": "AU-wide dispatch"
+        },
+        {
+            "key": "field_waklert_product_trust_checkout",
+            "label": "Checkout Trust Label",
+            "name": "product_trust_checkout",
+            "type": "text",
+            "default_value": "Encrypted checkout"
+        },
+        {
+            "key": "field_waklert_product_trust_quality",
+            "label": "Quality Trust Label",
+            "name": "product_trust_quality",
+            "type": "text",
+            "default_value": "Quality verified"
+        },
+        {
+            "key": "field_waklert_product_specs_heading",
+            "label": "Product Specs Heading",
+            "name": "product_specs_heading",
+            "type": "text",
+            "default_value": "Product specs"
+        },
+        {
+            "key": "field_waklert_product_no_reviews_text",
+            "label": "No Reviews Text",
+            "name": "product_no_reviews_text",
+            "type": "text",
+            "default_value": "No reviews yet"
+        },
+        {
+            "key": "field_waklert_product_specs_active_label",
+            "label": "Active Ingredient Label",
+            "name": "product_specs_active_label",
+            "type": "text",
+            "default_value": "Active Ingredient"
+        },
+        {
+            "key": "field_waklert_product_specs_indication_label",
+            "label": "Indication Label",
+            "name": "product_specs_indication_label",
+            "type": "text",
+            "default_value": "Indication"
+        },
+        {
+            "key": "field_waklert_product_specs_manufacturer_label",
+            "label": "Manufacturer Label",
+            "name": "product_specs_manufacturer_label",
+            "type": "text",
+            "default_value": "Manufacturer"
+        },
+        {
+            "key": "field_waklert_product_specs_strength_label",
+            "label": "Strength Label",
+            "name": "product_specs_strength_label",
+            "type": "text",
+            "default_value": "Strength"
+        },
+        {
+            "key": "field_waklert_product_specs_packaging_label",
+            "label": "Packaging Label",
+            "name": "product_specs_packaging_label",
+            "type": "text",
+            "default_value": "Packaging"
+        },
+        {
+            "key": "field_waklert_product_specs_delivery_label",
+            "label": "Delivery Time Label",
+            "name": "product_specs_delivery_label",
+            "type": "text",
+            "default_value": "Delivery Time"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Editable labels and shipping/trust messages used on WooCommerce product pages.",
+    "show_in_rest": 0,
+    "modified": 1791190000
+}

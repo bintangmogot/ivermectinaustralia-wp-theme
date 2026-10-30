@@ -1,0 +1,3690 @@
+[
+    {
+        "name": "sydney",
+        "title": "Armodafinil Delivery to Sydney",
+        "menu_order": 1,
+        "acf": {
+            "city_name": "Sydney",
+            "region": "New South Wales",
+            "population": "5,312,163 (Greater Sydney, ABS)",
+            "delivery_days": "5–10 business days",
+            "demographic": "New South Wales major financial, commercial, and university centre.",
+            "industry": "Banking, professional services, healthcare, technology, and construction.",
+            "hero_desc": "Explore genuine Armodafinil products (Sun Pharma & HAB Pharma) with discreet delivery options across Greater Sydney, CBD, Western Sydney, and Northern Beaches.",
+            "desc": "Ordering Armodafinil to Sydney? Browse genuine Sun Pharma and HAB Pharma blister packs. All orders are packed discreetly and dispatched with tracking to Sydney postcodes.",
+            "hero_heading": "Armodafinil Delivery to Sydney",
+            "carrier": "Australia Post Express",
+            "shipping_note": "Discreet Australia Post dispatch",
+            "packaging_note": "Plain, unbranded protective packaging",
+            "tracking_note": "Online tracking number provided",
+            "cta_heading": "Need Armodafinil Delivered to Sydney?",
+            "cta_desc": "Order genuine Sun Pharma Waklert 150mg or Artvigil 150mg today. Tracked delivery straight to your Sydney home, office, or PO Box.",
+            "about_label": "About Sydney Delivery",
+            "about_heading": "Fast Domestic Shipping Across Sydney & NSW",
+            "features_heading": "Ordering to Sydney",
+            "reasons_heading": "Why Sydney Customers Choose Us",
+            "products_heading": "Popular Armodafinil Products in Sydney",
+            "faq_heading": "Sydney Delivery FAQ",
+            "delivery_note": "Free shipping on orders $299+",
+            "summary_heading": "Delivery at a Glance",
+            "delivery_link_label": "Track your parcel online",
+            "products_label": "Direct Range",
+            "products_desc": "Explore current products, prices and pack sizes available for delivery to Sydney.",
+            "faq_label": "FAQ",
+            "faq_link_label": "Read the full FAQ →",
+            "shop_button_label": "Browse Full Shop",
+            "products_button_label": "View Range",
+            "all_products_label": "View All Products",
+            "cta_button_label": "Explore Products",
+            "selected_products": [
+                1174,
+                1175,
+                1176,
+                1178
+            ],
+            "features": [
+                {
+                    "feat": "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+                },
+                {
+                    "feat": "Discreet, unmarked packaging with zero medical references outside"
+                },
+                {
+                    "feat": "Australia Post tracking provided upon same-day or next-day dispatch"
+                },
+                {
+                    "feat": "Dedicated responsive Australian customer care via email & WhatsApp"
+                }
+            ],
+            "reasons": [
+                {
+                    "title": "Genuine WHO-GMP Certified Brands",
+                    "text": "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+                },
+                {
+                    "title": "Dedicated Logistics to Sydney",
+                    "text": "Every order to Sydney is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+                },
+                {
+                    "title": "Australian Customer Support",
+                    "text": "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "How long does delivery to Sydney take?",
+                    "answer": "<p>Standard delivery to Sydney metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>\n"
+                },
+                {
+                    "question": "Is the packaging to Sydney completely discreet?",
+                    "answer": "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>\n"
+                },
+                {
+                    "question": "Can orders be delivered to PO Boxes or Parcel Lockers in Sydney?",
+                    "answer": "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Sydney is fully supported.</p>\n"
+                },
+                {
+                    "question": "What happens if my parcel is delayed or lost?",
+                    "answer": "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>\n"
+                }
+            ],
+            "trust_badges": [
+                {
+                    "label": "Australia-wide Express Delivery"
+                },
+                {
+                    "label": "Factory-Sealed Authentic Blisters"
+                },
+                {
+                    "label": "Secure Encrypted Checkout"
+                },
+                {
+                    "label": "100% Discreet Packaging"
+                }
+            ]
+        },
+        "meta": {
+            "city_name": [
+                "Sydney"
+            ],
+            "_city_name": [
+                "field_city_ce059537dd"
+            ],
+            "region": [
+                "New South Wales"
+            ],
+            "_region": [
+                "field_city_680ced9e34"
+            ],
+            "population": [
+                "5,312,163 (Greater Sydney, ABS)"
+            ],
+            "_population": [
+                "field_city_360585b1b5"
+            ],
+            "delivery_days": [
+                "5–10 business days"
+            ],
+            "_delivery_days": [
+                "field_city_9892e3300e"
+            ],
+            "demographic": [
+                "New South Wales major financial, commercial, and university centre."
+            ],
+            "_demographic": [
+                "field_city_abaa91cacc"
+            ],
+            "industry": [
+                "Banking, professional services, healthcare, technology, and construction."
+            ],
+            "_industry": [
+                "field_city_cb3f0ff75b"
+            ],
+            "hero_desc": [
+                "Explore genuine Armodafinil products (Sun Pharma & HAB Pharma) with discreet delivery options across Greater Sydney, CBD, Western Sydney, and Northern Beaches."
+            ],
+            "_hero_desc": [
+                "field_city_fa0fc3abac"
+            ],
+            "desc": [
+                "Ordering Armodafinil to Sydney? Browse genuine Sun Pharma and HAB Pharma blister packs. All orders are packed discreetly and dispatched with tracking to Sydney postcodes."
+            ],
+            "_desc": [
+                "field_city_f770a53d7d"
+            ],
+            "hero_heading": [
+                "Armodafinil Delivery to Sydney"
+            ],
+            "_hero_heading": [
+                "field_wa_delivery_hero_heading"
+            ],
+            "carrier": [
+                "Australia Post Express"
+            ],
+            "_carrier": [
+                "field_wa_delivery_carrier"
+            ],
+            "shipping_note": [
+                "Discreet Australia Post dispatch"
+            ],
+            "_shipping_note": [
+                "field_wa_delivery_shipping_note"
+            ],
+            "packaging_note": [
+                "Plain, unbranded protective packaging"
+            ],
+            "_packaging_note": [
+                "field_wa_delivery_packaging_note"
+            ],
+            "tracking_note": [
+                "Online tracking number provided"
+            ],
+            "_tracking_note": [
+                "field_wa_delivery_tracking_note"
+            ],
+            "cta_heading": [
+                "Need Armodafinil Delivered to Sydney?"
+            ],
+            "_cta_heading": [
+                "field_wa_delivery_cta_heading"
+            ],
+            "cta_desc": [
+                "Order genuine Sun Pharma Waklert 150mg or Artvigil 150mg today. Tracked delivery straight to your Sydney home, office, or PO Box."
+            ],
+            "_cta_desc": [
+                "field_wa_delivery_cta_desc"
+            ],
+            "about_label": [
+                "About Sydney Delivery"
+            ],
+            "_about_label": [
+                "field_wa_delivery_about_label"
+            ],
+            "about_heading": [
+                "Fast Domestic Shipping Across Sydney & NSW"
+            ],
+            "_about_heading": [
+                "field_wa_delivery_about_heading"
+            ],
+            "features_heading": [
+                "Ordering to Sydney"
+            ],
+            "_features_heading": [
+                "field_wa_delivery_features_heading"
+            ],
+            "reasons_heading": [
+                "Why Sydney Customers Choose Us"
+            ],
+            "_reasons_heading": [
+                "field_wa_delivery_reasons_heading"
+            ],
+            "products_heading": [
+                "Popular Armodafinil Products in Sydney"
+            ],
+            "_products_heading": [
+                "field_wa_delivery_products_heading"
+            ],
+            "faq_heading": [
+                "Sydney Delivery FAQ"
+            ],
+            "_faq_heading": [
+                "field_wa_delivery_faq_heading"
+            ],
+            "delivery_note": [
+                "Free shipping on orders $299+"
+            ],
+            "_delivery_note": [
+                "field_wa_delivery_delivery_note"
+            ],
+            "summary_heading": [
+                "Delivery at a Glance"
+            ],
+            "_summary_heading": [
+                "field_wa_delivery_summary_heading"
+            ],
+            "delivery_link_label": [
+                "Track your parcel online"
+            ],
+            "_delivery_link_label": [
+                "field_wa_delivery_delivery_link_label"
+            ],
+            "products_label": [
+                "Direct Range"
+            ],
+            "_products_label": [
+                "field_wa_delivery_products_label"
+            ],
+            "products_desc": [
+                "Explore current products, prices and pack sizes available for delivery to Sydney."
+            ],
+            "_products_desc": [
+                "field_wa_delivery_products_desc"
+            ],
+            "faq_label": [
+                "FAQ"
+            ],
+            "_faq_label": [
+                "field_wa_delivery_faq_label"
+            ],
+            "faq_link_label": [
+                "Read the full FAQ →"
+            ],
+            "_faq_link_label": [
+                "field_wa_delivery_faq_link_label"
+            ],
+            "shop_button_label": [
+                "Browse Full Shop"
+            ],
+            "_shop_button_label": [
+                "field_wa_delivery_shop_button_label"
+            ],
+            "products_button_label": [
+                "View Range"
+            ],
+            "_products_button_label": [
+                "field_wa_delivery_products_button_label"
+            ],
+            "all_products_label": [
+                "View All Products"
+            ],
+            "_all_products_label": [
+                "field_wa_delivery_all_products_label"
+            ],
+            "cta_button_label": [
+                "Explore Products"
+            ],
+            "_cta_button_label": [
+                "field_wa_delivery_cta_button_label"
+            ],
+            "selected_products": [
+                "a:4:{i:0;i:1174;i:1;i:1175;i:2;i:1176;i:3;i:1178;}"
+            ],
+            "_selected_products": [
+                "field_wa_delivery_products"
+            ],
+            "features": [
+                "4"
+            ],
+            "_features": [
+                "field_city_49979aff46"
+            ],
+            "features_0_feat": [
+                "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+            ],
+            "_features_0_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_1_feat": [
+                "Discreet, unmarked packaging with zero medical references outside"
+            ],
+            "_features_1_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_2_feat": [
+                "Australia Post tracking provided upon same-day or next-day dispatch"
+            ],
+            "_features_2_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_3_feat": [
+                "Dedicated responsive Australian customer care via email & WhatsApp"
+            ],
+            "_features_3_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "reasons": [
+                "3"
+            ],
+            "_reasons": [
+                "field_wa_delivery_reasons"
+            ],
+            "reasons_0_title": [
+                "Genuine WHO-GMP Certified Brands"
+            ],
+            "_reasons_0_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_0_text": [
+                "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+            ],
+            "_reasons_0_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_1_title": [
+                "Dedicated Logistics to Sydney"
+            ],
+            "_reasons_1_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_1_text": [
+                "Every order to Sydney is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+            ],
+            "_reasons_1_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_2_title": [
+                "Australian Customer Support"
+            ],
+            "_reasons_2_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_2_text": [
+                "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+            ],
+            "_reasons_2_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "faqs": [
+                "4"
+            ],
+            "_faqs": [
+                "field_wa_delivery_faqs"
+            ],
+            "faqs_0_question": [
+                "How long does delivery to Sydney take?"
+            ],
+            "_faqs_0_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_0_answer": [
+                "<p>Standard delivery to Sydney metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>"
+            ],
+            "_faqs_0_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_1_question": [
+                "Is the packaging to Sydney completely discreet?"
+            ],
+            "_faqs_1_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_1_answer": [
+                "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>"
+            ],
+            "_faqs_1_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_2_question": [
+                "Can orders be delivered to PO Boxes or Parcel Lockers in Sydney?"
+            ],
+            "_faqs_2_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_2_answer": [
+                "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Sydney is fully supported.</p>"
+            ],
+            "_faqs_2_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_3_question": [
+                "What happens if my parcel is delayed or lost?"
+            ],
+            "_faqs_3_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_3_answer": [
+                "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>"
+            ],
+            "_faqs_3_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "trust_badges": [
+                "4"
+            ],
+            "_trust_badges": [
+                "field_wa_delivery_trust_badges"
+            ],
+            "trust_badges_0_label": [
+                "Australia-wide Express Delivery"
+            ],
+            "_trust_badges_0_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_1_label": [
+                "Factory-Sealed Authentic Blisters"
+            ],
+            "_trust_badges_1_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_2_label": [
+                "Secure Encrypted Checkout"
+            ],
+            "_trust_badges_2_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_3_label": [
+                "100% Discreet Packaging"
+            ],
+            "_trust_badges_3_label": [
+                "field_wa_delivery_trust_label"
+            ]
+        }
+    },
+    {
+        "name": "melbourne",
+        "title": "Armodafinil Delivery to Melbourne",
+        "menu_order": 2,
+        "acf": {
+            "city_name": "Melbourne",
+            "region": "Victoria",
+            "population": "5,078,193 (Greater Melbourne, ABS)",
+            "delivery_days": "5–10 business days",
+            "demographic": "Victoria's capital and major medical, legal, and educational hub.",
+            "industry": "Healthcare, university research, finance, manufacturing, and tech.",
+            "hero_desc": "Reliable delivery of genuine Armodafinil (Waklert 150mg, Artvigil 150mg) to Melbourne CBD, Inner Suburbs, and Greater Victoria.",
+            "desc": "Order Armodafinil online with delivery to Melbourne. 100% genuine batch-tested products shipped in plain, tamper-evident packaging.",
+            "hero_heading": "Armodafinil Delivery to Melbourne",
+            "carrier": "Australia Post Express",
+            "shipping_note": "Discreet Australia Post dispatch",
+            "packaging_note": "Plain, unbranded protective packaging",
+            "tracking_note": "Online tracking number provided",
+            "cta_heading": "Order Armodafinil to Melbourne",
+            "cta_desc": "Secure, reliable dispatch to all Melbourne metropolitan and regional Victorian addresses.",
+            "about_label": "About Melbourne Delivery",
+            "about_heading": "Express Logistics Across Melbourne & Victoria",
+            "features_heading": "Ordering to Melbourne",
+            "reasons_heading": "Why Melbourne Professionals Trust Us",
+            "products_heading": "Available Armodafinil in Melbourne",
+            "faq_heading": "Melbourne Delivery FAQ",
+            "delivery_note": "Free shipping on orders $299+",
+            "summary_heading": "Delivery at a Glance",
+            "delivery_link_label": "Track your parcel online",
+            "products_label": "Direct Range",
+            "products_desc": "Explore current products, prices and pack sizes available for delivery to Melbourne.",
+            "faq_label": "FAQ",
+            "faq_link_label": "Read the full FAQ →",
+            "shop_button_label": "Browse Full Shop",
+            "products_button_label": "View Range",
+            "all_products_label": "View All Products",
+            "cta_button_label": "Explore Products",
+            "selected_products": [
+                1174,
+                1175,
+                1176,
+                1178
+            ],
+            "features": [
+                {
+                    "feat": "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+                },
+                {
+                    "feat": "Discreet, unmarked packaging with zero medical references outside"
+                },
+                {
+                    "feat": "Australia Post tracking provided upon same-day or next-day dispatch"
+                },
+                {
+                    "feat": "Dedicated responsive Australian customer care via email & WhatsApp"
+                }
+            ],
+            "reasons": [
+                {
+                    "title": "Genuine WHO-GMP Certified Brands",
+                    "text": "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+                },
+                {
+                    "title": "Dedicated Logistics to Melbourne",
+                    "text": "Every order to Melbourne is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+                },
+                {
+                    "title": "Australian Customer Support",
+                    "text": "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "How long does delivery to Melbourne take?",
+                    "answer": "<p>Standard delivery to Melbourne metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>\n"
+                },
+                {
+                    "question": "Is the packaging to Melbourne completely discreet?",
+                    "answer": "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>\n"
+                },
+                {
+                    "question": "Can orders be delivered to PO Boxes or Parcel Lockers in Melbourne?",
+                    "answer": "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Melbourne is fully supported.</p>\n"
+                },
+                {
+                    "question": "What happens if my parcel is delayed or lost?",
+                    "answer": "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>\n"
+                }
+            ],
+            "trust_badges": [
+                {
+                    "label": "Australia-wide Express Delivery"
+                },
+                {
+                    "label": "Factory-Sealed Authentic Blisters"
+                },
+                {
+                    "label": "Secure Encrypted Checkout"
+                },
+                {
+                    "label": "100% Discreet Packaging"
+                }
+            ]
+        },
+        "meta": {
+            "city_name": [
+                "Melbourne"
+            ],
+            "_city_name": [
+                "field_city_ce059537dd"
+            ],
+            "region": [
+                "Victoria"
+            ],
+            "_region": [
+                "field_city_680ced9e34"
+            ],
+            "population": [
+                "5,078,193 (Greater Melbourne, ABS)"
+            ],
+            "_population": [
+                "field_city_360585b1b5"
+            ],
+            "delivery_days": [
+                "5–10 business days"
+            ],
+            "_delivery_days": [
+                "field_city_9892e3300e"
+            ],
+            "demographic": [
+                "Victoria's capital and major medical, legal, and educational hub."
+            ],
+            "_demographic": [
+                "field_city_abaa91cacc"
+            ],
+            "industry": [
+                "Healthcare, university research, finance, manufacturing, and tech."
+            ],
+            "_industry": [
+                "field_city_cb3f0ff75b"
+            ],
+            "hero_desc": [
+                "Reliable delivery of genuine Armodafinil (Waklert 150mg, Artvigil 150mg) to Melbourne CBD, Inner Suburbs, and Greater Victoria."
+            ],
+            "_hero_desc": [
+                "field_city_fa0fc3abac"
+            ],
+            "desc": [
+                "Order Armodafinil online with delivery to Melbourne. 100% genuine batch-tested products shipped in plain, tamper-evident packaging."
+            ],
+            "_desc": [
+                "field_city_f770a53d7d"
+            ],
+            "hero_heading": [
+                "Armodafinil Delivery to Melbourne"
+            ],
+            "_hero_heading": [
+                "field_wa_delivery_hero_heading"
+            ],
+            "carrier": [
+                "Australia Post Express"
+            ],
+            "_carrier": [
+                "field_wa_delivery_carrier"
+            ],
+            "shipping_note": [
+                "Discreet Australia Post dispatch"
+            ],
+            "_shipping_note": [
+                "field_wa_delivery_shipping_note"
+            ],
+            "packaging_note": [
+                "Plain, unbranded protective packaging"
+            ],
+            "_packaging_note": [
+                "field_wa_delivery_packaging_note"
+            ],
+            "tracking_note": [
+                "Online tracking number provided"
+            ],
+            "_tracking_note": [
+                "field_wa_delivery_tracking_note"
+            ],
+            "cta_heading": [
+                "Order Armodafinil to Melbourne"
+            ],
+            "_cta_heading": [
+                "field_wa_delivery_cta_heading"
+            ],
+            "cta_desc": [
+                "Secure, reliable dispatch to all Melbourne metropolitan and regional Victorian addresses."
+            ],
+            "_cta_desc": [
+                "field_wa_delivery_cta_desc"
+            ],
+            "about_label": [
+                "About Melbourne Delivery"
+            ],
+            "_about_label": [
+                "field_wa_delivery_about_label"
+            ],
+            "about_heading": [
+                "Express Logistics Across Melbourne & Victoria"
+            ],
+            "_about_heading": [
+                "field_wa_delivery_about_heading"
+            ],
+            "features_heading": [
+                "Ordering to Melbourne"
+            ],
+            "_features_heading": [
+                "field_wa_delivery_features_heading"
+            ],
+            "reasons_heading": [
+                "Why Melbourne Professionals Trust Us"
+            ],
+            "_reasons_heading": [
+                "field_wa_delivery_reasons_heading"
+            ],
+            "products_heading": [
+                "Available Armodafinil in Melbourne"
+            ],
+            "_products_heading": [
+                "field_wa_delivery_products_heading"
+            ],
+            "faq_heading": [
+                "Melbourne Delivery FAQ"
+            ],
+            "_faq_heading": [
+                "field_wa_delivery_faq_heading"
+            ],
+            "delivery_note": [
+                "Free shipping on orders $299+"
+            ],
+            "_delivery_note": [
+                "field_wa_delivery_delivery_note"
+            ],
+            "summary_heading": [
+                "Delivery at a Glance"
+            ],
+            "_summary_heading": [
+                "field_wa_delivery_summary_heading"
+            ],
+            "delivery_link_label": [
+                "Track your parcel online"
+            ],
+            "_delivery_link_label": [
+                "field_wa_delivery_delivery_link_label"
+            ],
+            "products_label": [
+                "Direct Range"
+            ],
+            "_products_label": [
+                "field_wa_delivery_products_label"
+            ],
+            "products_desc": [
+                "Explore current products, prices and pack sizes available for delivery to Melbourne."
+            ],
+            "_products_desc": [
+                "field_wa_delivery_products_desc"
+            ],
+            "faq_label": [
+                "FAQ"
+            ],
+            "_faq_label": [
+                "field_wa_delivery_faq_label"
+            ],
+            "faq_link_label": [
+                "Read the full FAQ →"
+            ],
+            "_faq_link_label": [
+                "field_wa_delivery_faq_link_label"
+            ],
+            "shop_button_label": [
+                "Browse Full Shop"
+            ],
+            "_shop_button_label": [
+                "field_wa_delivery_shop_button_label"
+            ],
+            "products_button_label": [
+                "View Range"
+            ],
+            "_products_button_label": [
+                "field_wa_delivery_products_button_label"
+            ],
+            "all_products_label": [
+                "View All Products"
+            ],
+            "_all_products_label": [
+                "field_wa_delivery_all_products_label"
+            ],
+            "cta_button_label": [
+                "Explore Products"
+            ],
+            "_cta_button_label": [
+                "field_wa_delivery_cta_button_label"
+            ],
+            "selected_products": [
+                "a:4:{i:0;i:1174;i:1;i:1175;i:2;i:1176;i:3;i:1178;}"
+            ],
+            "_selected_products": [
+                "field_wa_delivery_products"
+            ],
+            "features": [
+                "4"
+            ],
+            "_features": [
+                "field_city_49979aff46"
+            ],
+            "features_0_feat": [
+                "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+            ],
+            "_features_0_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_1_feat": [
+                "Discreet, unmarked packaging with zero medical references outside"
+            ],
+            "_features_1_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_2_feat": [
+                "Australia Post tracking provided upon same-day or next-day dispatch"
+            ],
+            "_features_2_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_3_feat": [
+                "Dedicated responsive Australian customer care via email & WhatsApp"
+            ],
+            "_features_3_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "reasons": [
+                "3"
+            ],
+            "_reasons": [
+                "field_wa_delivery_reasons"
+            ],
+            "reasons_0_title": [
+                "Genuine WHO-GMP Certified Brands"
+            ],
+            "_reasons_0_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_0_text": [
+                "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+            ],
+            "_reasons_0_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_1_title": [
+                "Dedicated Logistics to Melbourne"
+            ],
+            "_reasons_1_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_1_text": [
+                "Every order to Melbourne is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+            ],
+            "_reasons_1_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_2_title": [
+                "Australian Customer Support"
+            ],
+            "_reasons_2_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_2_text": [
+                "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+            ],
+            "_reasons_2_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "faqs": [
+                "4"
+            ],
+            "_faqs": [
+                "field_wa_delivery_faqs"
+            ],
+            "faqs_0_question": [
+                "How long does delivery to Melbourne take?"
+            ],
+            "_faqs_0_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_0_answer": [
+                "<p>Standard delivery to Melbourne metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>"
+            ],
+            "_faqs_0_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_1_question": [
+                "Is the packaging to Melbourne completely discreet?"
+            ],
+            "_faqs_1_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_1_answer": [
+                "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>"
+            ],
+            "_faqs_1_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_2_question": [
+                "Can orders be delivered to PO Boxes or Parcel Lockers in Melbourne?"
+            ],
+            "_faqs_2_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_2_answer": [
+                "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Melbourne is fully supported.</p>"
+            ],
+            "_faqs_2_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_3_question": [
+                "What happens if my parcel is delayed or lost?"
+            ],
+            "_faqs_3_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_3_answer": [
+                "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>"
+            ],
+            "_faqs_3_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "trust_badges": [
+                "4"
+            ],
+            "_trust_badges": [
+                "field_wa_delivery_trust_badges"
+            ],
+            "trust_badges_0_label": [
+                "Australia-wide Express Delivery"
+            ],
+            "_trust_badges_0_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_1_label": [
+                "Factory-Sealed Authentic Blisters"
+            ],
+            "_trust_badges_1_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_2_label": [
+                "Secure Encrypted Checkout"
+            ],
+            "_trust_badges_2_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_3_label": [
+                "100% Discreet Packaging"
+            ],
+            "_trust_badges_3_label": [
+                "field_wa_delivery_trust_label"
+            ]
+        }
+    },
+    {
+        "name": "adelaide",
+        "title": "Armodafinil Delivery to Adelaide",
+        "menu_order": 3,
+        "acf": {
+            "city_name": "Adelaide",
+            "region": "South Australia",
+            "population": "1,387,290 (Greater Adelaide, ABS)",
+            "delivery_days": "5–10 business days",
+            "demographic": "South Australia's central capital, known for defence research and medical sciences.",
+            "industry": "Defence, biotechnology, healthcare, manufacturing, and higher education.",
+            "hero_desc": "Discreet, tracked Armodafinil delivery across Adelaide, the Adelaide Hills, and regional South Australia.",
+            "desc": "Browse authentic Sun Pharma Waklert 150mg and HAB Pharma Artvigil 150mg with express tracked shipping to all Adelaide postcodes.",
+            "hero_heading": "Armodafinil Delivery to Adelaide",
+            "carrier": "Australia Post Express",
+            "shipping_note": "Discreet Australia Post dispatch",
+            "packaging_note": "Plain, unbranded protective packaging",
+            "tracking_note": "Online tracking number provided",
+            "cta_heading": "Get Armodafinil Delivered to Adelaide",
+            "cta_desc": "Fast checkout, secure payment, and tracked domestic shipping directly to your door in South Australia.",
+            "about_label": "About Adelaide Delivery",
+            "about_heading": "Reliable Shipping to Adelaide & South Australia",
+            "features_heading": "Ordering to Adelaide",
+            "reasons_heading": "Why Adelaide Buyers Rely on Us",
+            "products_heading": "Armodafinil Range for Adelaide",
+            "faq_heading": "Adelaide Delivery FAQ",
+            "delivery_note": "Free shipping on orders $299+",
+            "summary_heading": "Delivery at a Glance",
+            "delivery_link_label": "Track your parcel online",
+            "products_label": "Direct Range",
+            "products_desc": "Explore current products, prices and pack sizes available for delivery to Adelaide.",
+            "faq_label": "FAQ",
+            "faq_link_label": "Read the full FAQ →",
+            "shop_button_label": "Browse Full Shop",
+            "products_button_label": "View Range",
+            "all_products_label": "View All Products",
+            "cta_button_label": "Explore Products",
+            "selected_products": [
+                1174,
+                1175,
+                1176,
+                1178
+            ],
+            "features": [
+                {
+                    "feat": "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+                },
+                {
+                    "feat": "Discreet, unmarked packaging with zero medical references outside"
+                },
+                {
+                    "feat": "Australia Post tracking provided upon same-day or next-day dispatch"
+                },
+                {
+                    "feat": "Dedicated responsive Australian customer care via email & WhatsApp"
+                }
+            ],
+            "reasons": [
+                {
+                    "title": "Genuine WHO-GMP Certified Brands",
+                    "text": "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+                },
+                {
+                    "title": "Dedicated Logistics to Adelaide",
+                    "text": "Every order to Adelaide is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+                },
+                {
+                    "title": "Australian Customer Support",
+                    "text": "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "How long does delivery to Adelaide take?",
+                    "answer": "<p>Standard delivery to Adelaide metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>\n"
+                },
+                {
+                    "question": "Is the packaging to Adelaide completely discreet?",
+                    "answer": "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>\n"
+                },
+                {
+                    "question": "Can orders be delivered to PO Boxes or Parcel Lockers in Adelaide?",
+                    "answer": "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Adelaide is fully supported.</p>\n"
+                },
+                {
+                    "question": "What happens if my parcel is delayed or lost?",
+                    "answer": "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>\n"
+                }
+            ],
+            "trust_badges": [
+                {
+                    "label": "Australia-wide Express Delivery"
+                },
+                {
+                    "label": "Factory-Sealed Authentic Blisters"
+                },
+                {
+                    "label": "Secure Encrypted Checkout"
+                },
+                {
+                    "label": "100% Discreet Packaging"
+                }
+            ]
+        },
+        "meta": {
+            "city_name": [
+                "Adelaide"
+            ],
+            "_city_name": [
+                "field_city_ce059537dd"
+            ],
+            "region": [
+                "South Australia"
+            ],
+            "_region": [
+                "field_city_680ced9e34"
+            ],
+            "population": [
+                "1,387,290 (Greater Adelaide, ABS)"
+            ],
+            "_population": [
+                "field_city_360585b1b5"
+            ],
+            "delivery_days": [
+                "5–10 business days"
+            ],
+            "_delivery_days": [
+                "field_city_9892e3300e"
+            ],
+            "demographic": [
+                "South Australia's central capital, known for defence research and medical sciences."
+            ],
+            "_demographic": [
+                "field_city_abaa91cacc"
+            ],
+            "industry": [
+                "Defence, biotechnology, healthcare, manufacturing, and higher education."
+            ],
+            "_industry": [
+                "field_city_cb3f0ff75b"
+            ],
+            "hero_desc": [
+                "Discreet, tracked Armodafinil delivery across Adelaide, the Adelaide Hills, and regional South Australia."
+            ],
+            "_hero_desc": [
+                "field_city_fa0fc3abac"
+            ],
+            "desc": [
+                "Browse authentic Sun Pharma Waklert 150mg and HAB Pharma Artvigil 150mg with express tracked shipping to all Adelaide postcodes."
+            ],
+            "_desc": [
+                "field_city_f770a53d7d"
+            ],
+            "hero_heading": [
+                "Armodafinil Delivery to Adelaide"
+            ],
+            "_hero_heading": [
+                "field_wa_delivery_hero_heading"
+            ],
+            "carrier": [
+                "Australia Post Express"
+            ],
+            "_carrier": [
+                "field_wa_delivery_carrier"
+            ],
+            "shipping_note": [
+                "Discreet Australia Post dispatch"
+            ],
+            "_shipping_note": [
+                "field_wa_delivery_shipping_note"
+            ],
+            "packaging_note": [
+                "Plain, unbranded protective packaging"
+            ],
+            "_packaging_note": [
+                "field_wa_delivery_packaging_note"
+            ],
+            "tracking_note": [
+                "Online tracking number provided"
+            ],
+            "_tracking_note": [
+                "field_wa_delivery_tracking_note"
+            ],
+            "cta_heading": [
+                "Get Armodafinil Delivered to Adelaide"
+            ],
+            "_cta_heading": [
+                "field_wa_delivery_cta_heading"
+            ],
+            "cta_desc": [
+                "Fast checkout, secure payment, and tracked domestic shipping directly to your door in South Australia."
+            ],
+            "_cta_desc": [
+                "field_wa_delivery_cta_desc"
+            ],
+            "about_label": [
+                "About Adelaide Delivery"
+            ],
+            "_about_label": [
+                "field_wa_delivery_about_label"
+            ],
+            "about_heading": [
+                "Reliable Shipping to Adelaide & South Australia"
+            ],
+            "_about_heading": [
+                "field_wa_delivery_about_heading"
+            ],
+            "features_heading": [
+                "Ordering to Adelaide"
+            ],
+            "_features_heading": [
+                "field_wa_delivery_features_heading"
+            ],
+            "reasons_heading": [
+                "Why Adelaide Buyers Rely on Us"
+            ],
+            "_reasons_heading": [
+                "field_wa_delivery_reasons_heading"
+            ],
+            "products_heading": [
+                "Armodafinil Range for Adelaide"
+            ],
+            "_products_heading": [
+                "field_wa_delivery_products_heading"
+            ],
+            "faq_heading": [
+                "Adelaide Delivery FAQ"
+            ],
+            "_faq_heading": [
+                "field_wa_delivery_faq_heading"
+            ],
+            "delivery_note": [
+                "Free shipping on orders $299+"
+            ],
+            "_delivery_note": [
+                "field_wa_delivery_delivery_note"
+            ],
+            "summary_heading": [
+                "Delivery at a Glance"
+            ],
+            "_summary_heading": [
+                "field_wa_delivery_summary_heading"
+            ],
+            "delivery_link_label": [
+                "Track your parcel online"
+            ],
+            "_delivery_link_label": [
+                "field_wa_delivery_delivery_link_label"
+            ],
+            "products_label": [
+                "Direct Range"
+            ],
+            "_products_label": [
+                "field_wa_delivery_products_label"
+            ],
+            "products_desc": [
+                "Explore current products, prices and pack sizes available for delivery to Adelaide."
+            ],
+            "_products_desc": [
+                "field_wa_delivery_products_desc"
+            ],
+            "faq_label": [
+                "FAQ"
+            ],
+            "_faq_label": [
+                "field_wa_delivery_faq_label"
+            ],
+            "faq_link_label": [
+                "Read the full FAQ →"
+            ],
+            "_faq_link_label": [
+                "field_wa_delivery_faq_link_label"
+            ],
+            "shop_button_label": [
+                "Browse Full Shop"
+            ],
+            "_shop_button_label": [
+                "field_wa_delivery_shop_button_label"
+            ],
+            "products_button_label": [
+                "View Range"
+            ],
+            "_products_button_label": [
+                "field_wa_delivery_products_button_label"
+            ],
+            "all_products_label": [
+                "View All Products"
+            ],
+            "_all_products_label": [
+                "field_wa_delivery_all_products_label"
+            ],
+            "cta_button_label": [
+                "Explore Products"
+            ],
+            "_cta_button_label": [
+                "field_wa_delivery_cta_button_label"
+            ],
+            "selected_products": [
+                "a:4:{i:0;i:1174;i:1;i:1175;i:2;i:1176;i:3;i:1178;}"
+            ],
+            "_selected_products": [
+                "field_wa_delivery_products"
+            ],
+            "features": [
+                "4"
+            ],
+            "_features": [
+                "field_city_49979aff46"
+            ],
+            "features_0_feat": [
+                "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+            ],
+            "_features_0_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_1_feat": [
+                "Discreet, unmarked packaging with zero medical references outside"
+            ],
+            "_features_1_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_2_feat": [
+                "Australia Post tracking provided upon same-day or next-day dispatch"
+            ],
+            "_features_2_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_3_feat": [
+                "Dedicated responsive Australian customer care via email & WhatsApp"
+            ],
+            "_features_3_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "reasons": [
+                "3"
+            ],
+            "_reasons": [
+                "field_wa_delivery_reasons"
+            ],
+            "reasons_0_title": [
+                "Genuine WHO-GMP Certified Brands"
+            ],
+            "_reasons_0_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_0_text": [
+                "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+            ],
+            "_reasons_0_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_1_title": [
+                "Dedicated Logistics to Adelaide"
+            ],
+            "_reasons_1_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_1_text": [
+                "Every order to Adelaide is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+            ],
+            "_reasons_1_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_2_title": [
+                "Australian Customer Support"
+            ],
+            "_reasons_2_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_2_text": [
+                "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+            ],
+            "_reasons_2_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "faqs": [
+                "4"
+            ],
+            "_faqs": [
+                "field_wa_delivery_faqs"
+            ],
+            "faqs_0_question": [
+                "How long does delivery to Adelaide take?"
+            ],
+            "_faqs_0_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_0_answer": [
+                "<p>Standard delivery to Adelaide metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>"
+            ],
+            "_faqs_0_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_1_question": [
+                "Is the packaging to Adelaide completely discreet?"
+            ],
+            "_faqs_1_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_1_answer": [
+                "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>"
+            ],
+            "_faqs_1_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_2_question": [
+                "Can orders be delivered to PO Boxes or Parcel Lockers in Adelaide?"
+            ],
+            "_faqs_2_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_2_answer": [
+                "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Adelaide is fully supported.</p>"
+            ],
+            "_faqs_2_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_3_question": [
+                "What happens if my parcel is delayed or lost?"
+            ],
+            "_faqs_3_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_3_answer": [
+                "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>"
+            ],
+            "_faqs_3_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "trust_badges": [
+                "4"
+            ],
+            "_trust_badges": [
+                "field_wa_delivery_trust_badges"
+            ],
+            "trust_badges_0_label": [
+                "Australia-wide Express Delivery"
+            ],
+            "_trust_badges_0_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_1_label": [
+                "Factory-Sealed Authentic Blisters"
+            ],
+            "_trust_badges_1_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_2_label": [
+                "Secure Encrypted Checkout"
+            ],
+            "_trust_badges_2_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_3_label": [
+                "100% Discreet Packaging"
+            ],
+            "_trust_badges_3_label": [
+                "field_wa_delivery_trust_label"
+            ]
+        }
+    },
+    {
+        "name": "darwin",
+        "title": "Armodafinil Delivery to Darwin",
+        "menu_order": 4,
+        "acf": {
+            "city_name": "Darwin",
+            "region": "Northern Territory",
+            "population": "147,255 (Greater Darwin, ABS)",
+            "delivery_days": "5–10 business days",
+            "demographic": "Northern Australia's key port and administrative hub with diverse FIFO and shift worker communities.",
+            "industry": "Mining, defence, maritime, tourism, and public administration.",
+            "hero_desc": "Tracked Armodafinil shipping to Darwin, Palmerston, and Northern Territory remote locations.",
+            "desc": "Need Armodafinil delivered to the Top End? We ship genuine Sun Pharma Waklert 150mg with protective, weather-sealed packaging to Darwin.",
+            "hero_heading": "Armodafinil Delivery to Darwin",
+            "carrier": "Australia Post Express",
+            "shipping_note": "Discreet Australia Post dispatch",
+            "packaging_note": "Weather-resistant, discreet outer packaging",
+            "tracking_note": "Online tracking number provided",
+            "cta_heading": "Order Armodafinil to Darwin",
+            "cta_desc": "Fast, discreet delivery to Darwin CBD, residential suburbs, and NT PO Boxes.",
+            "about_label": "About Darwin Delivery",
+            "about_heading": "Reliable Dispatch to Darwin & Northern Territory",
+            "features_heading": "Ordering to Darwin",
+            "reasons_heading": "Why Top End Shift Workers Choose Us",
+            "products_heading": "Armodafinil Tablets for Darwin",
+            "faq_heading": "Darwin Delivery FAQ",
+            "delivery_note": "Free shipping on orders $299+",
+            "summary_heading": "Delivery at a Glance",
+            "delivery_link_label": "Track your parcel online",
+            "products_label": "Direct Range",
+            "products_desc": "Explore current products, prices and pack sizes available for delivery to Darwin.",
+            "faq_label": "FAQ",
+            "faq_link_label": "Read the full FAQ →",
+            "shop_button_label": "Browse Full Shop",
+            "products_button_label": "View Range",
+            "all_products_label": "View All Products",
+            "cta_button_label": "Explore Products",
+            "selected_products": [
+                1174,
+                1175,
+                1176,
+                1178
+            ],
+            "features": [
+                {
+                    "feat": "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+                },
+                {
+                    "feat": "Discreet, unmarked packaging with zero medical references outside"
+                },
+                {
+                    "feat": "Australia Post tracking provided upon same-day or next-day dispatch"
+                },
+                {
+                    "feat": "Dedicated responsive Australian customer care via email & WhatsApp"
+                }
+            ],
+            "reasons": [
+                {
+                    "title": "Genuine WHO-GMP Certified Brands",
+                    "text": "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+                },
+                {
+                    "title": "Dedicated Logistics to Darwin",
+                    "text": "Every order to Darwin is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+                },
+                {
+                    "title": "Australian Customer Support",
+                    "text": "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "How long does delivery to Darwin take?",
+                    "answer": "<p>Standard delivery to Darwin metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>\n"
+                },
+                {
+                    "question": "Is the packaging to Darwin completely discreet?",
+                    "answer": "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>\n"
+                },
+                {
+                    "question": "Can orders be delivered to PO Boxes or Parcel Lockers in Darwin?",
+                    "answer": "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Darwin is fully supported.</p>\n"
+                },
+                {
+                    "question": "What happens if my parcel is delayed or lost?",
+                    "answer": "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>\n"
+                }
+            ],
+            "trust_badges": [
+                {
+                    "label": "Australia-wide Express Delivery"
+                },
+                {
+                    "label": "Factory-Sealed Authentic Blisters"
+                },
+                {
+                    "label": "Secure Encrypted Checkout"
+                },
+                {
+                    "label": "100% Discreet Packaging"
+                }
+            ]
+        },
+        "meta": {
+            "city_name": [
+                "Darwin"
+            ],
+            "_city_name": [
+                "field_city_ce059537dd"
+            ],
+            "region": [
+                "Northern Territory"
+            ],
+            "_region": [
+                "field_city_680ced9e34"
+            ],
+            "population": [
+                "147,255 (Greater Darwin, ABS)"
+            ],
+            "_population": [
+                "field_city_360585b1b5"
+            ],
+            "delivery_days": [
+                "5–10 business days"
+            ],
+            "_delivery_days": [
+                "field_city_9892e3300e"
+            ],
+            "demographic": [
+                "Northern Australia's key port and administrative hub with diverse FIFO and shift worker communities."
+            ],
+            "_demographic": [
+                "field_city_abaa91cacc"
+            ],
+            "industry": [
+                "Mining, defence, maritime, tourism, and public administration."
+            ],
+            "_industry": [
+                "field_city_cb3f0ff75b"
+            ],
+            "hero_desc": [
+                "Tracked Armodafinil shipping to Darwin, Palmerston, and Northern Territory remote locations."
+            ],
+            "_hero_desc": [
+                "field_city_fa0fc3abac"
+            ],
+            "desc": [
+                "Need Armodafinil delivered to the Top End? We ship genuine Sun Pharma Waklert 150mg with protective, weather-sealed packaging to Darwin."
+            ],
+            "_desc": [
+                "field_city_f770a53d7d"
+            ],
+            "hero_heading": [
+                "Armodafinil Delivery to Darwin"
+            ],
+            "_hero_heading": [
+                "field_wa_delivery_hero_heading"
+            ],
+            "carrier": [
+                "Australia Post Express"
+            ],
+            "_carrier": [
+                "field_wa_delivery_carrier"
+            ],
+            "shipping_note": [
+                "Discreet Australia Post dispatch"
+            ],
+            "_shipping_note": [
+                "field_wa_delivery_shipping_note"
+            ],
+            "packaging_note": [
+                "Weather-resistant, discreet outer packaging"
+            ],
+            "_packaging_note": [
+                "field_wa_delivery_packaging_note"
+            ],
+            "tracking_note": [
+                "Online tracking number provided"
+            ],
+            "_tracking_note": [
+                "field_wa_delivery_tracking_note"
+            ],
+            "cta_heading": [
+                "Order Armodafinil to Darwin"
+            ],
+            "_cta_heading": [
+                "field_wa_delivery_cta_heading"
+            ],
+            "cta_desc": [
+                "Fast, discreet delivery to Darwin CBD, residential suburbs, and NT PO Boxes."
+            ],
+            "_cta_desc": [
+                "field_wa_delivery_cta_desc"
+            ],
+            "about_label": [
+                "About Darwin Delivery"
+            ],
+            "_about_label": [
+                "field_wa_delivery_about_label"
+            ],
+            "about_heading": [
+                "Reliable Dispatch to Darwin & Northern Territory"
+            ],
+            "_about_heading": [
+                "field_wa_delivery_about_heading"
+            ],
+            "features_heading": [
+                "Ordering to Darwin"
+            ],
+            "_features_heading": [
+                "field_wa_delivery_features_heading"
+            ],
+            "reasons_heading": [
+                "Why Top End Shift Workers Choose Us"
+            ],
+            "_reasons_heading": [
+                "field_wa_delivery_reasons_heading"
+            ],
+            "products_heading": [
+                "Armodafinil Tablets for Darwin"
+            ],
+            "_products_heading": [
+                "field_wa_delivery_products_heading"
+            ],
+            "faq_heading": [
+                "Darwin Delivery FAQ"
+            ],
+            "_faq_heading": [
+                "field_wa_delivery_faq_heading"
+            ],
+            "delivery_note": [
+                "Free shipping on orders $299+"
+            ],
+            "_delivery_note": [
+                "field_wa_delivery_delivery_note"
+            ],
+            "summary_heading": [
+                "Delivery at a Glance"
+            ],
+            "_summary_heading": [
+                "field_wa_delivery_summary_heading"
+            ],
+            "delivery_link_label": [
+                "Track your parcel online"
+            ],
+            "_delivery_link_label": [
+                "field_wa_delivery_delivery_link_label"
+            ],
+            "products_label": [
+                "Direct Range"
+            ],
+            "_products_label": [
+                "field_wa_delivery_products_label"
+            ],
+            "products_desc": [
+                "Explore current products, prices and pack sizes available for delivery to Darwin."
+            ],
+            "_products_desc": [
+                "field_wa_delivery_products_desc"
+            ],
+            "faq_label": [
+                "FAQ"
+            ],
+            "_faq_label": [
+                "field_wa_delivery_faq_label"
+            ],
+            "faq_link_label": [
+                "Read the full FAQ →"
+            ],
+            "_faq_link_label": [
+                "field_wa_delivery_faq_link_label"
+            ],
+            "shop_button_label": [
+                "Browse Full Shop"
+            ],
+            "_shop_button_label": [
+                "field_wa_delivery_shop_button_label"
+            ],
+            "products_button_label": [
+                "View Range"
+            ],
+            "_products_button_label": [
+                "field_wa_delivery_products_button_label"
+            ],
+            "all_products_label": [
+                "View All Products"
+            ],
+            "_all_products_label": [
+                "field_wa_delivery_all_products_label"
+            ],
+            "cta_button_label": [
+                "Explore Products"
+            ],
+            "_cta_button_label": [
+                "field_wa_delivery_cta_button_label"
+            ],
+            "selected_products": [
+                "a:4:{i:0;i:1174;i:1;i:1175;i:2;i:1176;i:3;i:1178;}"
+            ],
+            "_selected_products": [
+                "field_wa_delivery_products"
+            ],
+            "features": [
+                "4"
+            ],
+            "_features": [
+                "field_city_49979aff46"
+            ],
+            "features_0_feat": [
+                "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+            ],
+            "_features_0_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_1_feat": [
+                "Discreet, unmarked packaging with zero medical references outside"
+            ],
+            "_features_1_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_2_feat": [
+                "Australia Post tracking provided upon same-day or next-day dispatch"
+            ],
+            "_features_2_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_3_feat": [
+                "Dedicated responsive Australian customer care via email & WhatsApp"
+            ],
+            "_features_3_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "reasons": [
+                "3"
+            ],
+            "_reasons": [
+                "field_wa_delivery_reasons"
+            ],
+            "reasons_0_title": [
+                "Genuine WHO-GMP Certified Brands"
+            ],
+            "_reasons_0_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_0_text": [
+                "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+            ],
+            "_reasons_0_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_1_title": [
+                "Dedicated Logistics to Darwin"
+            ],
+            "_reasons_1_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_1_text": [
+                "Every order to Darwin is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+            ],
+            "_reasons_1_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_2_title": [
+                "Australian Customer Support"
+            ],
+            "_reasons_2_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_2_text": [
+                "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+            ],
+            "_reasons_2_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "faqs": [
+                "4"
+            ],
+            "_faqs": [
+                "field_wa_delivery_faqs"
+            ],
+            "faqs_0_question": [
+                "How long does delivery to Darwin take?"
+            ],
+            "_faqs_0_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_0_answer": [
+                "<p>Standard delivery to Darwin metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>"
+            ],
+            "_faqs_0_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_1_question": [
+                "Is the packaging to Darwin completely discreet?"
+            ],
+            "_faqs_1_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_1_answer": [
+                "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>"
+            ],
+            "_faqs_1_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_2_question": [
+                "Can orders be delivered to PO Boxes or Parcel Lockers in Darwin?"
+            ],
+            "_faqs_2_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_2_answer": [
+                "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Darwin is fully supported.</p>"
+            ],
+            "_faqs_2_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_3_question": [
+                "What happens if my parcel is delayed or lost?"
+            ],
+            "_faqs_3_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_3_answer": [
+                "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>"
+            ],
+            "_faqs_3_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "trust_badges": [
+                "4"
+            ],
+            "_trust_badges": [
+                "field_wa_delivery_trust_badges"
+            ],
+            "trust_badges_0_label": [
+                "Australia-wide Express Delivery"
+            ],
+            "_trust_badges_0_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_1_label": [
+                "Factory-Sealed Authentic Blisters"
+            ],
+            "_trust_badges_1_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_2_label": [
+                "Secure Encrypted Checkout"
+            ],
+            "_trust_badges_2_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_3_label": [
+                "100% Discreet Packaging"
+            ],
+            "_trust_badges_3_label": [
+                "field_wa_delivery_trust_label"
+            ]
+        }
+    },
+    {
+        "name": "brisbane",
+        "title": "Armodafinil Delivery to Brisbane",
+        "menu_order": 5,
+        "acf": {
+            "city_name": "Brisbane",
+            "region": "Queensland",
+            "population": "2,560,720 (Greater Brisbane, ABS)",
+            "delivery_days": "5–10 business days",
+            "demographic": "Queensland's booming capital, major commercial centre and gateway to resource sectors.",
+            "industry": "Construction, finance, mining support, healthcare, and technology.",
+            "hero_desc": "Authentic Armodafinil blister packs delivered to Brisbane, Moreton Bay, Ipswich, and surrounding districts.",
+            "desc": "Buy Armodafinil with dependable express shipping to Brisbane. Sealed pharmaceutical-grade products dispatched promptly with AusPost tracking.",
+            "hero_heading": "Armodafinil Delivery to Brisbane",
+            "carrier": "Australia Post Express",
+            "shipping_note": "Discreet Australia Post dispatch",
+            "packaging_note": "Plain, unbranded protective packaging",
+            "tracking_note": "Online tracking number provided",
+            "cta_heading": "Ready to Order in Brisbane?",
+            "cta_desc": "Get Waklert 150mg and Artvigil 150mg delivered to your Brisbane address or local parcel locker.",
+            "about_label": "About Brisbane Delivery",
+            "about_heading": "Fast Shipping Across Greater Brisbane & QLD",
+            "features_heading": "Ordering to Brisbane",
+            "reasons_heading": "Why Brisbane Chooses Waklert Australia",
+            "products_heading": "Armodafinil Selection in Brisbane",
+            "faq_heading": "Brisbane Delivery FAQ",
+            "delivery_note": "Free shipping on orders $299+",
+            "summary_heading": "Delivery at a Glance",
+            "delivery_link_label": "Track your parcel online",
+            "products_label": "Direct Range",
+            "products_desc": "Explore current products, prices and pack sizes available for delivery to Brisbane.",
+            "faq_label": "FAQ",
+            "faq_link_label": "Read the full FAQ →",
+            "shop_button_label": "Browse Full Shop",
+            "products_button_label": "View Range",
+            "all_products_label": "View All Products",
+            "cta_button_label": "Explore Products",
+            "selected_products": [
+                1174,
+                1175,
+                1176,
+                1178
+            ],
+            "features": [
+                {
+                    "feat": "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+                },
+                {
+                    "feat": "Discreet, unmarked packaging with zero medical references outside"
+                },
+                {
+                    "feat": "Australia Post tracking provided upon same-day or next-day dispatch"
+                },
+                {
+                    "feat": "Dedicated responsive Australian customer care via email & WhatsApp"
+                }
+            ],
+            "reasons": [
+                {
+                    "title": "Genuine WHO-GMP Certified Brands",
+                    "text": "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+                },
+                {
+                    "title": "Dedicated Logistics to Brisbane",
+                    "text": "Every order to Brisbane is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+                },
+                {
+                    "title": "Australian Customer Support",
+                    "text": "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "How long does delivery to Brisbane take?",
+                    "answer": "<p>Standard delivery to Brisbane metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>\n"
+                },
+                {
+                    "question": "Is the packaging to Brisbane completely discreet?",
+                    "answer": "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>\n"
+                },
+                {
+                    "question": "Can orders be delivered to PO Boxes or Parcel Lockers in Brisbane?",
+                    "answer": "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Brisbane is fully supported.</p>\n"
+                },
+                {
+                    "question": "What happens if my parcel is delayed or lost?",
+                    "answer": "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>\n"
+                }
+            ],
+            "trust_badges": [
+                {
+                    "label": "Australia-wide Express Delivery"
+                },
+                {
+                    "label": "Factory-Sealed Authentic Blisters"
+                },
+                {
+                    "label": "Secure Encrypted Checkout"
+                },
+                {
+                    "label": "100% Discreet Packaging"
+                }
+            ]
+        },
+        "meta": {
+            "city_name": [
+                "Brisbane"
+            ],
+            "_city_name": [
+                "field_city_ce059537dd"
+            ],
+            "region": [
+                "Queensland"
+            ],
+            "_region": [
+                "field_city_680ced9e34"
+            ],
+            "population": [
+                "2,560,720 (Greater Brisbane, ABS)"
+            ],
+            "_population": [
+                "field_city_360585b1b5"
+            ],
+            "delivery_days": [
+                "5–10 business days"
+            ],
+            "_delivery_days": [
+                "field_city_9892e3300e"
+            ],
+            "demographic": [
+                "Queensland's booming capital, major commercial centre and gateway to resource sectors."
+            ],
+            "_demographic": [
+                "field_city_abaa91cacc"
+            ],
+            "industry": [
+                "Construction, finance, mining support, healthcare, and technology."
+            ],
+            "_industry": [
+                "field_city_cb3f0ff75b"
+            ],
+            "hero_desc": [
+                "Authentic Armodafinil blister packs delivered to Brisbane, Moreton Bay, Ipswich, and surrounding districts."
+            ],
+            "_hero_desc": [
+                "field_city_fa0fc3abac"
+            ],
+            "desc": [
+                "Buy Armodafinil with dependable express shipping to Brisbane. Sealed pharmaceutical-grade products dispatched promptly with AusPost tracking."
+            ],
+            "_desc": [
+                "field_city_f770a53d7d"
+            ],
+            "hero_heading": [
+                "Armodafinil Delivery to Brisbane"
+            ],
+            "_hero_heading": [
+                "field_wa_delivery_hero_heading"
+            ],
+            "carrier": [
+                "Australia Post Express"
+            ],
+            "_carrier": [
+                "field_wa_delivery_carrier"
+            ],
+            "shipping_note": [
+                "Discreet Australia Post dispatch"
+            ],
+            "_shipping_note": [
+                "field_wa_delivery_shipping_note"
+            ],
+            "packaging_note": [
+                "Plain, unbranded protective packaging"
+            ],
+            "_packaging_note": [
+                "field_wa_delivery_packaging_note"
+            ],
+            "tracking_note": [
+                "Online tracking number provided"
+            ],
+            "_tracking_note": [
+                "field_wa_delivery_tracking_note"
+            ],
+            "cta_heading": [
+                "Ready to Order in Brisbane?"
+            ],
+            "_cta_heading": [
+                "field_wa_delivery_cta_heading"
+            ],
+            "cta_desc": [
+                "Get Waklert 150mg and Artvigil 150mg delivered to your Brisbane address or local parcel locker."
+            ],
+            "_cta_desc": [
+                "field_wa_delivery_cta_desc"
+            ],
+            "about_label": [
+                "About Brisbane Delivery"
+            ],
+            "_about_label": [
+                "field_wa_delivery_about_label"
+            ],
+            "about_heading": [
+                "Fast Shipping Across Greater Brisbane & QLD"
+            ],
+            "_about_heading": [
+                "field_wa_delivery_about_heading"
+            ],
+            "features_heading": [
+                "Ordering to Brisbane"
+            ],
+            "_features_heading": [
+                "field_wa_delivery_features_heading"
+            ],
+            "reasons_heading": [
+                "Why Brisbane Chooses Waklert Australia"
+            ],
+            "_reasons_heading": [
+                "field_wa_delivery_reasons_heading"
+            ],
+            "products_heading": [
+                "Armodafinil Selection in Brisbane"
+            ],
+            "_products_heading": [
+                "field_wa_delivery_products_heading"
+            ],
+            "faq_heading": [
+                "Brisbane Delivery FAQ"
+            ],
+            "_faq_heading": [
+                "field_wa_delivery_faq_heading"
+            ],
+            "delivery_note": [
+                "Free shipping on orders $299+"
+            ],
+            "_delivery_note": [
+                "field_wa_delivery_delivery_note"
+            ],
+            "summary_heading": [
+                "Delivery at a Glance"
+            ],
+            "_summary_heading": [
+                "field_wa_delivery_summary_heading"
+            ],
+            "delivery_link_label": [
+                "Track your parcel online"
+            ],
+            "_delivery_link_label": [
+                "field_wa_delivery_delivery_link_label"
+            ],
+            "products_label": [
+                "Direct Range"
+            ],
+            "_products_label": [
+                "field_wa_delivery_products_label"
+            ],
+            "products_desc": [
+                "Explore current products, prices and pack sizes available for delivery to Brisbane."
+            ],
+            "_products_desc": [
+                "field_wa_delivery_products_desc"
+            ],
+            "faq_label": [
+                "FAQ"
+            ],
+            "_faq_label": [
+                "field_wa_delivery_faq_label"
+            ],
+            "faq_link_label": [
+                "Read the full FAQ →"
+            ],
+            "_faq_link_label": [
+                "field_wa_delivery_faq_link_label"
+            ],
+            "shop_button_label": [
+                "Browse Full Shop"
+            ],
+            "_shop_button_label": [
+                "field_wa_delivery_shop_button_label"
+            ],
+            "products_button_label": [
+                "View Range"
+            ],
+            "_products_button_label": [
+                "field_wa_delivery_products_button_label"
+            ],
+            "all_products_label": [
+                "View All Products"
+            ],
+            "_all_products_label": [
+                "field_wa_delivery_all_products_label"
+            ],
+            "cta_button_label": [
+                "Explore Products"
+            ],
+            "_cta_button_label": [
+                "field_wa_delivery_cta_button_label"
+            ],
+            "selected_products": [
+                "a:4:{i:0;i:1174;i:1;i:1175;i:2;i:1176;i:3;i:1178;}"
+            ],
+            "_selected_products": [
+                "field_wa_delivery_products"
+            ],
+            "features": [
+                "4"
+            ],
+            "_features": [
+                "field_city_49979aff46"
+            ],
+            "features_0_feat": [
+                "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+            ],
+            "_features_0_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_1_feat": [
+                "Discreet, unmarked packaging with zero medical references outside"
+            ],
+            "_features_1_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_2_feat": [
+                "Australia Post tracking provided upon same-day or next-day dispatch"
+            ],
+            "_features_2_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_3_feat": [
+                "Dedicated responsive Australian customer care via email & WhatsApp"
+            ],
+            "_features_3_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "reasons": [
+                "3"
+            ],
+            "_reasons": [
+                "field_wa_delivery_reasons"
+            ],
+            "reasons_0_title": [
+                "Genuine WHO-GMP Certified Brands"
+            ],
+            "_reasons_0_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_0_text": [
+                "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+            ],
+            "_reasons_0_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_1_title": [
+                "Dedicated Logistics to Brisbane"
+            ],
+            "_reasons_1_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_1_text": [
+                "Every order to Brisbane is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+            ],
+            "_reasons_1_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_2_title": [
+                "Australian Customer Support"
+            ],
+            "_reasons_2_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_2_text": [
+                "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+            ],
+            "_reasons_2_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "faqs": [
+                "4"
+            ],
+            "_faqs": [
+                "field_wa_delivery_faqs"
+            ],
+            "faqs_0_question": [
+                "How long does delivery to Brisbane take?"
+            ],
+            "_faqs_0_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_0_answer": [
+                "<p>Standard delivery to Brisbane metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>"
+            ],
+            "_faqs_0_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_1_question": [
+                "Is the packaging to Brisbane completely discreet?"
+            ],
+            "_faqs_1_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_1_answer": [
+                "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>"
+            ],
+            "_faqs_1_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_2_question": [
+                "Can orders be delivered to PO Boxes or Parcel Lockers in Brisbane?"
+            ],
+            "_faqs_2_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_2_answer": [
+                "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Brisbane is fully supported.</p>"
+            ],
+            "_faqs_2_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_3_question": [
+                "What happens if my parcel is delayed or lost?"
+            ],
+            "_faqs_3_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_3_answer": [
+                "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>"
+            ],
+            "_faqs_3_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "trust_badges": [
+                "4"
+            ],
+            "_trust_badges": [
+                "field_wa_delivery_trust_badges"
+            ],
+            "trust_badges_0_label": [
+                "Australia-wide Express Delivery"
+            ],
+            "_trust_badges_0_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_1_label": [
+                "Factory-Sealed Authentic Blisters"
+            ],
+            "_trust_badges_1_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_2_label": [
+                "Secure Encrypted Checkout"
+            ],
+            "_trust_badges_2_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_3_label": [
+                "100% Discreet Packaging"
+            ],
+            "_trust_badges_3_label": [
+                "field_wa_delivery_trust_label"
+            ]
+        }
+    },
+    {
+        "name": "gold-coast",
+        "title": "Armodafinil Delivery to Gold Coast",
+        "menu_order": 6,
+        "acf": {
+            "city_name": "Gold Coast",
+            "region": "Queensland",
+            "population": "640,778 (Gold Coast - Tweed Heads, ABS)",
+            "delivery_days": "5–10 business days",
+            "demographic": "Dynamic coastal city with high numbers of remote workers, healthcare staff, and university students.",
+            "industry": "Tourism, healthcare, education, construction, and remote tech work.",
+            "hero_desc": "Prompt delivery of genuine Armodafinil to Southport, Surfers Paradise, Burleigh Heads, and Tweed.",
+            "desc": "Looking for Armodafinil on the Gold Coast? We offer genuine Waklert 150mg with express shipping, tracked right to your doorstep.",
+            "hero_heading": "Armodafinil Delivery to Gold Coast",
+            "carrier": "Australia Post Express",
+            "shipping_note": "Discreet Australia Post dispatch",
+            "packaging_note": "Plain, unbranded protective packaging",
+            "tracking_note": "Online tracking number provided",
+            "cta_heading": "Order Armodafinil to the Gold Coast",
+            "cta_desc": "Fast, discreet and secure shipping to all Gold Coast postcodes and parcel lockers.",
+            "about_label": "About Gold Coast Delivery",
+            "about_heading": "Prompt Dispatch to Gold Coast & SE Queensland",
+            "features_heading": "Ordering to Gold Coast",
+            "reasons_heading": "Why Gold Coast Customers Choose Us",
+            "products_heading": "Armodafinil Available for Gold Coast",
+            "faq_heading": "Gold Coast Delivery FAQ",
+            "delivery_note": "Free shipping on orders $299+",
+            "summary_heading": "Delivery at a Glance",
+            "delivery_link_label": "Track your parcel online",
+            "products_label": "Direct Range",
+            "products_desc": "Explore current products, prices and pack sizes available for delivery to Gold Coast.",
+            "faq_label": "FAQ",
+            "faq_link_label": "Read the full FAQ →",
+            "shop_button_label": "Browse Full Shop",
+            "products_button_label": "View Range",
+            "all_products_label": "View All Products",
+            "cta_button_label": "Explore Products",
+            "selected_products": [
+                1174,
+                1175,
+                1176,
+                1178
+            ],
+            "features": [
+                {
+                    "feat": "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+                },
+                {
+                    "feat": "Discreet, unmarked packaging with zero medical references outside"
+                },
+                {
+                    "feat": "Australia Post tracking provided upon same-day or next-day dispatch"
+                },
+                {
+                    "feat": "Dedicated responsive Australian customer care via email & WhatsApp"
+                }
+            ],
+            "reasons": [
+                {
+                    "title": "Genuine WHO-GMP Certified Brands",
+                    "text": "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+                },
+                {
+                    "title": "Dedicated Logistics to Gold Coast",
+                    "text": "Every order to Gold Coast is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+                },
+                {
+                    "title": "Australian Customer Support",
+                    "text": "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "How long does delivery to Gold Coast take?",
+                    "answer": "<p>Standard delivery to Gold Coast metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>\n"
+                },
+                {
+                    "question": "Is the packaging to Gold Coast completely discreet?",
+                    "answer": "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>\n"
+                },
+                {
+                    "question": "Can orders be delivered to PO Boxes or Parcel Lockers in Gold Coast?",
+                    "answer": "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Gold Coast is fully supported.</p>\n"
+                },
+                {
+                    "question": "What happens if my parcel is delayed or lost?",
+                    "answer": "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>\n"
+                }
+            ],
+            "trust_badges": [
+                {
+                    "label": "Australia-wide Express Delivery"
+                },
+                {
+                    "label": "Factory-Sealed Authentic Blisters"
+                },
+                {
+                    "label": "Secure Encrypted Checkout"
+                },
+                {
+                    "label": "100% Discreet Packaging"
+                }
+            ]
+        },
+        "meta": {
+            "city_name": [
+                "Gold Coast"
+            ],
+            "_city_name": [
+                "field_city_ce059537dd"
+            ],
+            "region": [
+                "Queensland"
+            ],
+            "_region": [
+                "field_city_680ced9e34"
+            ],
+            "population": [
+                "640,778 (Gold Coast - Tweed Heads, ABS)"
+            ],
+            "_population": [
+                "field_city_360585b1b5"
+            ],
+            "delivery_days": [
+                "5–10 business days"
+            ],
+            "_delivery_days": [
+                "field_city_9892e3300e"
+            ],
+            "demographic": [
+                "Dynamic coastal city with high numbers of remote workers, healthcare staff, and university students."
+            ],
+            "_demographic": [
+                "field_city_abaa91cacc"
+            ],
+            "industry": [
+                "Tourism, healthcare, education, construction, and remote tech work."
+            ],
+            "_industry": [
+                "field_city_cb3f0ff75b"
+            ],
+            "hero_desc": [
+                "Prompt delivery of genuine Armodafinil to Southport, Surfers Paradise, Burleigh Heads, and Tweed."
+            ],
+            "_hero_desc": [
+                "field_city_fa0fc3abac"
+            ],
+            "desc": [
+                "Looking for Armodafinil on the Gold Coast? We offer genuine Waklert 150mg with express shipping, tracked right to your doorstep."
+            ],
+            "_desc": [
+                "field_city_f770a53d7d"
+            ],
+            "hero_heading": [
+                "Armodafinil Delivery to Gold Coast"
+            ],
+            "_hero_heading": [
+                "field_wa_delivery_hero_heading"
+            ],
+            "carrier": [
+                "Australia Post Express"
+            ],
+            "_carrier": [
+                "field_wa_delivery_carrier"
+            ],
+            "shipping_note": [
+                "Discreet Australia Post dispatch"
+            ],
+            "_shipping_note": [
+                "field_wa_delivery_shipping_note"
+            ],
+            "packaging_note": [
+                "Plain, unbranded protective packaging"
+            ],
+            "_packaging_note": [
+                "field_wa_delivery_packaging_note"
+            ],
+            "tracking_note": [
+                "Online tracking number provided"
+            ],
+            "_tracking_note": [
+                "field_wa_delivery_tracking_note"
+            ],
+            "cta_heading": [
+                "Order Armodafinil to the Gold Coast"
+            ],
+            "_cta_heading": [
+                "field_wa_delivery_cta_heading"
+            ],
+            "cta_desc": [
+                "Fast, discreet and secure shipping to all Gold Coast postcodes and parcel lockers."
+            ],
+            "_cta_desc": [
+                "field_wa_delivery_cta_desc"
+            ],
+            "about_label": [
+                "About Gold Coast Delivery"
+            ],
+            "_about_label": [
+                "field_wa_delivery_about_label"
+            ],
+            "about_heading": [
+                "Prompt Dispatch to Gold Coast & SE Queensland"
+            ],
+            "_about_heading": [
+                "field_wa_delivery_about_heading"
+            ],
+            "features_heading": [
+                "Ordering to Gold Coast"
+            ],
+            "_features_heading": [
+                "field_wa_delivery_features_heading"
+            ],
+            "reasons_heading": [
+                "Why Gold Coast Customers Choose Us"
+            ],
+            "_reasons_heading": [
+                "field_wa_delivery_reasons_heading"
+            ],
+            "products_heading": [
+                "Armodafinil Available for Gold Coast"
+            ],
+            "_products_heading": [
+                "field_wa_delivery_products_heading"
+            ],
+            "faq_heading": [
+                "Gold Coast Delivery FAQ"
+            ],
+            "_faq_heading": [
+                "field_wa_delivery_faq_heading"
+            ],
+            "delivery_note": [
+                "Free shipping on orders $299+"
+            ],
+            "_delivery_note": [
+                "field_wa_delivery_delivery_note"
+            ],
+            "summary_heading": [
+                "Delivery at a Glance"
+            ],
+            "_summary_heading": [
+                "field_wa_delivery_summary_heading"
+            ],
+            "delivery_link_label": [
+                "Track your parcel online"
+            ],
+            "_delivery_link_label": [
+                "field_wa_delivery_delivery_link_label"
+            ],
+            "products_label": [
+                "Direct Range"
+            ],
+            "_products_label": [
+                "field_wa_delivery_products_label"
+            ],
+            "products_desc": [
+                "Explore current products, prices and pack sizes available for delivery to Gold Coast."
+            ],
+            "_products_desc": [
+                "field_wa_delivery_products_desc"
+            ],
+            "faq_label": [
+                "FAQ"
+            ],
+            "_faq_label": [
+                "field_wa_delivery_faq_label"
+            ],
+            "faq_link_label": [
+                "Read the full FAQ →"
+            ],
+            "_faq_link_label": [
+                "field_wa_delivery_faq_link_label"
+            ],
+            "shop_button_label": [
+                "Browse Full Shop"
+            ],
+            "_shop_button_label": [
+                "field_wa_delivery_shop_button_label"
+            ],
+            "products_button_label": [
+                "View Range"
+            ],
+            "_products_button_label": [
+                "field_wa_delivery_products_button_label"
+            ],
+            "all_products_label": [
+                "View All Products"
+            ],
+            "_all_products_label": [
+                "field_wa_delivery_all_products_label"
+            ],
+            "cta_button_label": [
+                "Explore Products"
+            ],
+            "_cta_button_label": [
+                "field_wa_delivery_cta_button_label"
+            ],
+            "selected_products": [
+                "a:4:{i:0;i:1174;i:1;i:1175;i:2;i:1176;i:3;i:1178;}"
+            ],
+            "_selected_products": [
+                "field_wa_delivery_products"
+            ],
+            "features": [
+                "4"
+            ],
+            "_features": [
+                "field_city_49979aff46"
+            ],
+            "features_0_feat": [
+                "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+            ],
+            "_features_0_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_1_feat": [
+                "Discreet, unmarked packaging with zero medical references outside"
+            ],
+            "_features_1_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_2_feat": [
+                "Australia Post tracking provided upon same-day or next-day dispatch"
+            ],
+            "_features_2_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_3_feat": [
+                "Dedicated responsive Australian customer care via email & WhatsApp"
+            ],
+            "_features_3_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "reasons": [
+                "3"
+            ],
+            "_reasons": [
+                "field_wa_delivery_reasons"
+            ],
+            "reasons_0_title": [
+                "Genuine WHO-GMP Certified Brands"
+            ],
+            "_reasons_0_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_0_text": [
+                "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+            ],
+            "_reasons_0_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_1_title": [
+                "Dedicated Logistics to Gold Coast"
+            ],
+            "_reasons_1_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_1_text": [
+                "Every order to Gold Coast is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+            ],
+            "_reasons_1_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_2_title": [
+                "Australian Customer Support"
+            ],
+            "_reasons_2_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_2_text": [
+                "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+            ],
+            "_reasons_2_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "faqs": [
+                "4"
+            ],
+            "_faqs": [
+                "field_wa_delivery_faqs"
+            ],
+            "faqs_0_question": [
+                "How long does delivery to Gold Coast take?"
+            ],
+            "_faqs_0_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_0_answer": [
+                "<p>Standard delivery to Gold Coast metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>"
+            ],
+            "_faqs_0_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_1_question": [
+                "Is the packaging to Gold Coast completely discreet?"
+            ],
+            "_faqs_1_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_1_answer": [
+                "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>"
+            ],
+            "_faqs_1_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_2_question": [
+                "Can orders be delivered to PO Boxes or Parcel Lockers in Gold Coast?"
+            ],
+            "_faqs_2_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_2_answer": [
+                "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Gold Coast is fully supported.</p>"
+            ],
+            "_faqs_2_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_3_question": [
+                "What happens if my parcel is delayed or lost?"
+            ],
+            "_faqs_3_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_3_answer": [
+                "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>"
+            ],
+            "_faqs_3_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "trust_badges": [
+                "4"
+            ],
+            "_trust_badges": [
+                "field_wa_delivery_trust_badges"
+            ],
+            "trust_badges_0_label": [
+                "Australia-wide Express Delivery"
+            ],
+            "_trust_badges_0_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_1_label": [
+                "Factory-Sealed Authentic Blisters"
+            ],
+            "_trust_badges_1_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_2_label": [
+                "Secure Encrypted Checkout"
+            ],
+            "_trust_badges_2_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_3_label": [
+                "100% Discreet Packaging"
+            ],
+            "_trust_badges_3_label": [
+                "field_wa_delivery_trust_label"
+            ]
+        }
+    },
+    {
+        "name": "hobart",
+        "title": "Armodafinil Delivery to Hobart",
+        "menu_order": 7,
+        "acf": {
+            "city_name": "Hobart",
+            "region": "Tasmania",
+            "population": "251,047 (Greater Hobart, ABS)",
+            "delivery_days": "5–10 business days",
+            "demographic": "Tasmania's historic capital and national centre for Antarctic and marine science.",
+            "industry": "Public sector, tourism, maritime, healthcare, and scientific research.",
+            "hero_desc": "Tracked domestic delivery of genuine Armodafinil across Hobart, Sandy Bay, Glenorchy, and southern Tasmania.",
+            "desc": "Armodafinil delivery to Hobart and Tasmania made simple. Genuine Sun Pharma & HAB Pharma blister packs shipped in discreet packaging.",
+            "hero_heading": "Armodafinil Delivery to Hobart",
+            "carrier": "Australia Post Express",
+            "shipping_note": "Discreet Australia Post dispatch",
+            "packaging_note": "Plain, unbranded protective packaging",
+            "tracking_note": "Online tracking number provided",
+            "cta_heading": "Get Armodafinil in Hobart",
+            "cta_desc": "Reliable delivery across Tasmania with full Australia Post tracking and responsive customer support.",
+            "about_label": "About Hobart Delivery",
+            "about_heading": "Express Shipping to Hobart & Tasmania",
+            "features_heading": "Ordering to Hobart",
+            "reasons_heading": "Why Tasmanian Customers Trust Us",
+            "products_heading": "Armodafinil for Hobart",
+            "faq_heading": "Hobart Delivery FAQ",
+            "delivery_note": "Free shipping on orders $299+",
+            "summary_heading": "Delivery at a Glance",
+            "delivery_link_label": "Track your parcel online",
+            "products_label": "Direct Range",
+            "products_desc": "Explore current products, prices and pack sizes available for delivery to Hobart.",
+            "faq_label": "FAQ",
+            "faq_link_label": "Read the full FAQ →",
+            "shop_button_label": "Browse Full Shop",
+            "products_button_label": "View Range",
+            "all_products_label": "View All Products",
+            "cta_button_label": "Explore Products",
+            "selected_products": [
+                1174,
+                1175,
+                1176,
+                1178
+            ],
+            "features": [
+                {
+                    "feat": "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+                },
+                {
+                    "feat": "Discreet, unmarked packaging with zero medical references outside"
+                },
+                {
+                    "feat": "Australia Post tracking provided upon same-day or next-day dispatch"
+                },
+                {
+                    "feat": "Dedicated responsive Australian customer care via email & WhatsApp"
+                }
+            ],
+            "reasons": [
+                {
+                    "title": "Genuine WHO-GMP Certified Brands",
+                    "text": "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+                },
+                {
+                    "title": "Dedicated Logistics to Hobart",
+                    "text": "Every order to Hobart is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+                },
+                {
+                    "title": "Australian Customer Support",
+                    "text": "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "How long does delivery to Hobart take?",
+                    "answer": "<p>Standard delivery to Hobart metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>\n"
+                },
+                {
+                    "question": "Is the packaging to Hobart completely discreet?",
+                    "answer": "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>\n"
+                },
+                {
+                    "question": "Can orders be delivered to PO Boxes or Parcel Lockers in Hobart?",
+                    "answer": "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Hobart is fully supported.</p>\n"
+                },
+                {
+                    "question": "What happens if my parcel is delayed or lost?",
+                    "answer": "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>\n"
+                }
+            ],
+            "trust_badges": [
+                {
+                    "label": "Australia-wide Express Delivery"
+                },
+                {
+                    "label": "Factory-Sealed Authentic Blisters"
+                },
+                {
+                    "label": "Secure Encrypted Checkout"
+                },
+                {
+                    "label": "100% Discreet Packaging"
+                }
+            ]
+        },
+        "meta": {
+            "city_name": [
+                "Hobart"
+            ],
+            "_city_name": [
+                "field_city_ce059537dd"
+            ],
+            "region": [
+                "Tasmania"
+            ],
+            "_region": [
+                "field_city_680ced9e34"
+            ],
+            "population": [
+                "251,047 (Greater Hobart, ABS)"
+            ],
+            "_population": [
+                "field_city_360585b1b5"
+            ],
+            "delivery_days": [
+                "5–10 business days"
+            ],
+            "_delivery_days": [
+                "field_city_9892e3300e"
+            ],
+            "demographic": [
+                "Tasmania's historic capital and national centre for Antarctic and marine science."
+            ],
+            "_demographic": [
+                "field_city_abaa91cacc"
+            ],
+            "industry": [
+                "Public sector, tourism, maritime, healthcare, and scientific research."
+            ],
+            "_industry": [
+                "field_city_cb3f0ff75b"
+            ],
+            "hero_desc": [
+                "Tracked domestic delivery of genuine Armodafinil across Hobart, Sandy Bay, Glenorchy, and southern Tasmania."
+            ],
+            "_hero_desc": [
+                "field_city_fa0fc3abac"
+            ],
+            "desc": [
+                "Armodafinil delivery to Hobart and Tasmania made simple. Genuine Sun Pharma & HAB Pharma blister packs shipped in discreet packaging."
+            ],
+            "_desc": [
+                "field_city_f770a53d7d"
+            ],
+            "hero_heading": [
+                "Armodafinil Delivery to Hobart"
+            ],
+            "_hero_heading": [
+                "field_wa_delivery_hero_heading"
+            ],
+            "carrier": [
+                "Australia Post Express"
+            ],
+            "_carrier": [
+                "field_wa_delivery_carrier"
+            ],
+            "shipping_note": [
+                "Discreet Australia Post dispatch"
+            ],
+            "_shipping_note": [
+                "field_wa_delivery_shipping_note"
+            ],
+            "packaging_note": [
+                "Plain, unbranded protective packaging"
+            ],
+            "_packaging_note": [
+                "field_wa_delivery_packaging_note"
+            ],
+            "tracking_note": [
+                "Online tracking number provided"
+            ],
+            "_tracking_note": [
+                "field_wa_delivery_tracking_note"
+            ],
+            "cta_heading": [
+                "Get Armodafinil in Hobart"
+            ],
+            "_cta_heading": [
+                "field_wa_delivery_cta_heading"
+            ],
+            "cta_desc": [
+                "Reliable delivery across Tasmania with full Australia Post tracking and responsive customer support."
+            ],
+            "_cta_desc": [
+                "field_wa_delivery_cta_desc"
+            ],
+            "about_label": [
+                "About Hobart Delivery"
+            ],
+            "_about_label": [
+                "field_wa_delivery_about_label"
+            ],
+            "about_heading": [
+                "Express Shipping to Hobart & Tasmania"
+            ],
+            "_about_heading": [
+                "field_wa_delivery_about_heading"
+            ],
+            "features_heading": [
+                "Ordering to Hobart"
+            ],
+            "_features_heading": [
+                "field_wa_delivery_features_heading"
+            ],
+            "reasons_heading": [
+                "Why Tasmanian Customers Trust Us"
+            ],
+            "_reasons_heading": [
+                "field_wa_delivery_reasons_heading"
+            ],
+            "products_heading": [
+                "Armodafinil for Hobart"
+            ],
+            "_products_heading": [
+                "field_wa_delivery_products_heading"
+            ],
+            "faq_heading": [
+                "Hobart Delivery FAQ"
+            ],
+            "_faq_heading": [
+                "field_wa_delivery_faq_heading"
+            ],
+            "delivery_note": [
+                "Free shipping on orders $299+"
+            ],
+            "_delivery_note": [
+                "field_wa_delivery_delivery_note"
+            ],
+            "summary_heading": [
+                "Delivery at a Glance"
+            ],
+            "_summary_heading": [
+                "field_wa_delivery_summary_heading"
+            ],
+            "delivery_link_label": [
+                "Track your parcel online"
+            ],
+            "_delivery_link_label": [
+                "field_wa_delivery_delivery_link_label"
+            ],
+            "products_label": [
+                "Direct Range"
+            ],
+            "_products_label": [
+                "field_wa_delivery_products_label"
+            ],
+            "products_desc": [
+                "Explore current products, prices and pack sizes available for delivery to Hobart."
+            ],
+            "_products_desc": [
+                "field_wa_delivery_products_desc"
+            ],
+            "faq_label": [
+                "FAQ"
+            ],
+            "_faq_label": [
+                "field_wa_delivery_faq_label"
+            ],
+            "faq_link_label": [
+                "Read the full FAQ →"
+            ],
+            "_faq_link_label": [
+                "field_wa_delivery_faq_link_label"
+            ],
+            "shop_button_label": [
+                "Browse Full Shop"
+            ],
+            "_shop_button_label": [
+                "field_wa_delivery_shop_button_label"
+            ],
+            "products_button_label": [
+                "View Range"
+            ],
+            "_products_button_label": [
+                "field_wa_delivery_products_button_label"
+            ],
+            "all_products_label": [
+                "View All Products"
+            ],
+            "_all_products_label": [
+                "field_wa_delivery_all_products_label"
+            ],
+            "cta_button_label": [
+                "Explore Products"
+            ],
+            "_cta_button_label": [
+                "field_wa_delivery_cta_button_label"
+            ],
+            "selected_products": [
+                "a:4:{i:0;i:1174;i:1;i:1175;i:2;i:1176;i:3;i:1178;}"
+            ],
+            "_selected_products": [
+                "field_wa_delivery_products"
+            ],
+            "features": [
+                "4"
+            ],
+            "_features": [
+                "field_city_49979aff46"
+            ],
+            "features_0_feat": [
+                "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+            ],
+            "_features_0_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_1_feat": [
+                "Discreet, unmarked packaging with zero medical references outside"
+            ],
+            "_features_1_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_2_feat": [
+                "Australia Post tracking provided upon same-day or next-day dispatch"
+            ],
+            "_features_2_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_3_feat": [
+                "Dedicated responsive Australian customer care via email & WhatsApp"
+            ],
+            "_features_3_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "reasons": [
+                "3"
+            ],
+            "_reasons": [
+                "field_wa_delivery_reasons"
+            ],
+            "reasons_0_title": [
+                "Genuine WHO-GMP Certified Brands"
+            ],
+            "_reasons_0_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_0_text": [
+                "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+            ],
+            "_reasons_0_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_1_title": [
+                "Dedicated Logistics to Hobart"
+            ],
+            "_reasons_1_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_1_text": [
+                "Every order to Hobart is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+            ],
+            "_reasons_1_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_2_title": [
+                "Australian Customer Support"
+            ],
+            "_reasons_2_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_2_text": [
+                "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+            ],
+            "_reasons_2_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "faqs": [
+                "4"
+            ],
+            "_faqs": [
+                "field_wa_delivery_faqs"
+            ],
+            "faqs_0_question": [
+                "How long does delivery to Hobart take?"
+            ],
+            "_faqs_0_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_0_answer": [
+                "<p>Standard delivery to Hobart metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>"
+            ],
+            "_faqs_0_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_1_question": [
+                "Is the packaging to Hobart completely discreet?"
+            ],
+            "_faqs_1_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_1_answer": [
+                "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>"
+            ],
+            "_faqs_1_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_2_question": [
+                "Can orders be delivered to PO Boxes or Parcel Lockers in Hobart?"
+            ],
+            "_faqs_2_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_2_answer": [
+                "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Hobart is fully supported.</p>"
+            ],
+            "_faqs_2_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_3_question": [
+                "What happens if my parcel is delayed or lost?"
+            ],
+            "_faqs_3_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_3_answer": [
+                "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>"
+            ],
+            "_faqs_3_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "trust_badges": [
+                "4"
+            ],
+            "_trust_badges": [
+                "field_wa_delivery_trust_badges"
+            ],
+            "trust_badges_0_label": [
+                "Australia-wide Express Delivery"
+            ],
+            "_trust_badges_0_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_1_label": [
+                "Factory-Sealed Authentic Blisters"
+            ],
+            "_trust_badges_1_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_2_label": [
+                "Secure Encrypted Checkout"
+            ],
+            "_trust_badges_2_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_3_label": [
+                "100% Discreet Packaging"
+            ],
+            "_trust_badges_3_label": [
+                "field_wa_delivery_trust_label"
+            ]
+        }
+    },
+    {
+        "name": "canberra",
+        "title": "Armodafinil Delivery to Canberra",
+        "menu_order": 8,
+        "acf": {
+            "city_name": "Canberra",
+            "region": "Australian Capital Territory",
+            "population": "456,652 (Canberra - Queanbeyan, ABS)",
+            "delivery_days": "5–10 business days",
+            "demographic": "Australia's capital, home to federal departments, national institutions, and major universities.",
+            "industry": "Public administration, defence, IT consulting, scientific research, and tertiary education.",
+            "hero_desc": "Confidential Armodafinil delivery to Canberra CBD, Belconnen, Barton, Tuggeranong, and Gungahlin.",
+            "desc": "Order authentic Armodafinil with confidential, tracked delivery to Canberra. Fast Australia Post express dispatch for demanding professional schedules.",
+            "hero_heading": "Armodafinil Delivery to Canberra",
+            "carrier": "Australia Post Express",
+            "shipping_note": "Discreet Australia Post dispatch",
+            "packaging_note": "Plain, unbranded protective packaging",
+            "tracking_note": "Online tracking number provided",
+            "cta_heading": "Order Armodafinil to Canberra",
+            "cta_desc": "100% confidential dispatch to all ACT addresses, government agency PO Boxes, and parcel lockers.",
+            "about_label": "About Canberra Delivery",
+            "about_heading": "Confidential Dispatch to Canberra & ACT",
+            "features_heading": "Ordering to Canberra",
+            "reasons_heading": "Why Canberra Professionals Choose Us",
+            "products_heading": "Armodafinil Range for Canberra",
+            "faq_heading": "Canberra Delivery FAQ",
+            "delivery_note": "Free shipping on orders $299+",
+            "summary_heading": "Delivery at a Glance",
+            "delivery_link_label": "Track your parcel online",
+            "products_label": "Direct Range",
+            "products_desc": "Explore current products, prices and pack sizes available for delivery to Canberra.",
+            "faq_label": "FAQ",
+            "faq_link_label": "Read the full FAQ →",
+            "shop_button_label": "Browse Full Shop",
+            "products_button_label": "View Range",
+            "all_products_label": "View All Products",
+            "cta_button_label": "Explore Products",
+            "selected_products": [
+                1174,
+                1175,
+                1176,
+                1178
+            ],
+            "features": [
+                {
+                    "feat": "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+                },
+                {
+                    "feat": "Discreet, unmarked packaging with zero medical references outside"
+                },
+                {
+                    "feat": "Australia Post tracking provided upon same-day or next-day dispatch"
+                },
+                {
+                    "feat": "Dedicated responsive Australian customer care via email & WhatsApp"
+                }
+            ],
+            "reasons": [
+                {
+                    "title": "Genuine WHO-GMP Certified Brands",
+                    "text": "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+                },
+                {
+                    "title": "Dedicated Logistics to Canberra",
+                    "text": "Every order to Canberra is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+                },
+                {
+                    "title": "Australian Customer Support",
+                    "text": "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "How long does delivery to Canberra take?",
+                    "answer": "<p>Standard delivery to Canberra metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>\n"
+                },
+                {
+                    "question": "Is the packaging to Canberra completely discreet?",
+                    "answer": "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>\n"
+                },
+                {
+                    "question": "Can orders be delivered to PO Boxes or Parcel Lockers in Canberra?",
+                    "answer": "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Canberra is fully supported.</p>\n"
+                },
+                {
+                    "question": "What happens if my parcel is delayed or lost?",
+                    "answer": "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>\n"
+                }
+            ],
+            "trust_badges": [
+                {
+                    "label": "Australia-wide Express Delivery"
+                },
+                {
+                    "label": "Factory-Sealed Authentic Blisters"
+                },
+                {
+                    "label": "Secure Encrypted Checkout"
+                },
+                {
+                    "label": "100% Discreet Packaging"
+                }
+            ]
+        },
+        "meta": {
+            "city_name": [
+                "Canberra"
+            ],
+            "_city_name": [
+                "field_city_ce059537dd"
+            ],
+            "region": [
+                "Australian Capital Territory"
+            ],
+            "_region": [
+                "field_city_680ced9e34"
+            ],
+            "population": [
+                "456,652 (Canberra - Queanbeyan, ABS)"
+            ],
+            "_population": [
+                "field_city_360585b1b5"
+            ],
+            "delivery_days": [
+                "5–10 business days"
+            ],
+            "_delivery_days": [
+                "field_city_9892e3300e"
+            ],
+            "demographic": [
+                "Australia's capital, home to federal departments, national institutions, and major universities."
+            ],
+            "_demographic": [
+                "field_city_abaa91cacc"
+            ],
+            "industry": [
+                "Public administration, defence, IT consulting, scientific research, and tertiary education."
+            ],
+            "_industry": [
+                "field_city_cb3f0ff75b"
+            ],
+            "hero_desc": [
+                "Confidential Armodafinil delivery to Canberra CBD, Belconnen, Barton, Tuggeranong, and Gungahlin."
+            ],
+            "_hero_desc": [
+                "field_city_fa0fc3abac"
+            ],
+            "desc": [
+                "Order authentic Armodafinil with confidential, tracked delivery to Canberra. Fast Australia Post express dispatch for demanding professional schedules."
+            ],
+            "_desc": [
+                "field_city_f770a53d7d"
+            ],
+            "hero_heading": [
+                "Armodafinil Delivery to Canberra"
+            ],
+            "_hero_heading": [
+                "field_wa_delivery_hero_heading"
+            ],
+            "carrier": [
+                "Australia Post Express"
+            ],
+            "_carrier": [
+                "field_wa_delivery_carrier"
+            ],
+            "shipping_note": [
+                "Discreet Australia Post dispatch"
+            ],
+            "_shipping_note": [
+                "field_wa_delivery_shipping_note"
+            ],
+            "packaging_note": [
+                "Plain, unbranded protective packaging"
+            ],
+            "_packaging_note": [
+                "field_wa_delivery_packaging_note"
+            ],
+            "tracking_note": [
+                "Online tracking number provided"
+            ],
+            "_tracking_note": [
+                "field_wa_delivery_tracking_note"
+            ],
+            "cta_heading": [
+                "Order Armodafinil to Canberra"
+            ],
+            "_cta_heading": [
+                "field_wa_delivery_cta_heading"
+            ],
+            "cta_desc": [
+                "100% confidential dispatch to all ACT addresses, government agency PO Boxes, and parcel lockers."
+            ],
+            "_cta_desc": [
+                "field_wa_delivery_cta_desc"
+            ],
+            "about_label": [
+                "About Canberra Delivery"
+            ],
+            "_about_label": [
+                "field_wa_delivery_about_label"
+            ],
+            "about_heading": [
+                "Confidential Dispatch to Canberra & ACT"
+            ],
+            "_about_heading": [
+                "field_wa_delivery_about_heading"
+            ],
+            "features_heading": [
+                "Ordering to Canberra"
+            ],
+            "_features_heading": [
+                "field_wa_delivery_features_heading"
+            ],
+            "reasons_heading": [
+                "Why Canberra Professionals Choose Us"
+            ],
+            "_reasons_heading": [
+                "field_wa_delivery_reasons_heading"
+            ],
+            "products_heading": [
+                "Armodafinil Range for Canberra"
+            ],
+            "_products_heading": [
+                "field_wa_delivery_products_heading"
+            ],
+            "faq_heading": [
+                "Canberra Delivery FAQ"
+            ],
+            "_faq_heading": [
+                "field_wa_delivery_faq_heading"
+            ],
+            "delivery_note": [
+                "Free shipping on orders $299+"
+            ],
+            "_delivery_note": [
+                "field_wa_delivery_delivery_note"
+            ],
+            "summary_heading": [
+                "Delivery at a Glance"
+            ],
+            "_summary_heading": [
+                "field_wa_delivery_summary_heading"
+            ],
+            "delivery_link_label": [
+                "Track your parcel online"
+            ],
+            "_delivery_link_label": [
+                "field_wa_delivery_delivery_link_label"
+            ],
+            "products_label": [
+                "Direct Range"
+            ],
+            "_products_label": [
+                "field_wa_delivery_products_label"
+            ],
+            "products_desc": [
+                "Explore current products, prices and pack sizes available for delivery to Canberra."
+            ],
+            "_products_desc": [
+                "field_wa_delivery_products_desc"
+            ],
+            "faq_label": [
+                "FAQ"
+            ],
+            "_faq_label": [
+                "field_wa_delivery_faq_label"
+            ],
+            "faq_link_label": [
+                "Read the full FAQ →"
+            ],
+            "_faq_link_label": [
+                "field_wa_delivery_faq_link_label"
+            ],
+            "shop_button_label": [
+                "Browse Full Shop"
+            ],
+            "_shop_button_label": [
+                "field_wa_delivery_shop_button_label"
+            ],
+            "products_button_label": [
+                "View Range"
+            ],
+            "_products_button_label": [
+                "field_wa_delivery_products_button_label"
+            ],
+            "all_products_label": [
+                "View All Products"
+            ],
+            "_all_products_label": [
+                "field_wa_delivery_all_products_label"
+            ],
+            "cta_button_label": [
+                "Explore Products"
+            ],
+            "_cta_button_label": [
+                "field_wa_delivery_cta_button_label"
+            ],
+            "selected_products": [
+                "a:4:{i:0;i:1174;i:1;i:1175;i:2;i:1176;i:3;i:1178;}"
+            ],
+            "_selected_products": [
+                "field_wa_delivery_products"
+            ],
+            "features": [
+                "4"
+            ],
+            "_features": [
+                "field_city_49979aff46"
+            ],
+            "features_0_feat": [
+                "Genuine blister-sealed pharmaceutical stock (Sun Pharma & HAB Pharma)"
+            ],
+            "_features_0_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_1_feat": [
+                "Discreet, unmarked packaging with zero medical references outside"
+            ],
+            "_features_1_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_2_feat": [
+                "Australia Post tracking provided upon same-day or next-day dispatch"
+            ],
+            "_features_2_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "features_3_feat": [
+                "Dedicated responsive Australian customer care via email & WhatsApp"
+            ],
+            "_features_3_feat": [
+                "field_city_90d4aeda50"
+            ],
+            "reasons": [
+                "3"
+            ],
+            "_reasons": [
+                "field_wa_delivery_reasons"
+            ],
+            "reasons_0_title": [
+                "Genuine WHO-GMP Certified Brands"
+            ],
+            "_reasons_0_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_0_text": [
+                "Direct from Sun Pharma & HAB Pharma in foil-sealed blister packs with clear batch numbers and expiry dates."
+            ],
+            "_reasons_0_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_1_title": [
+                "Dedicated Logistics to Canberra"
+            ],
+            "_reasons_1_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_1_text": [
+                "Every order to Canberra is packed discreetly and dispatched with Australia Post tracking so you can monitor transit."
+            ],
+            "_reasons_1_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "reasons_2_title": [
+                "Australian Customer Support"
+            ],
+            "_reasons_2_title": [
+                "field_wa_delivery_reason_title"
+            ],
+            "reasons_2_text": [
+                "Our team is available every day via email and WhatsApp to assist with product questions, order tracking, and delivery support."
+            ],
+            "_reasons_2_text": [
+                "field_wa_delivery_reason_text"
+            ],
+            "faqs": [
+                "4"
+            ],
+            "_faqs": [
+                "field_wa_delivery_faqs"
+            ],
+            "faqs_0_question": [
+                "How long does delivery to Canberra take?"
+            ],
+            "_faqs_0_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_0_answer": [
+                "<p>Standard delivery to Canberra metro addresses typically takes <strong>5–10 business days</strong>. Orders are dispatched quickly and include an Australia Post tracking number sent directly to your email.</p>"
+            ],
+            "_faqs_0_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_1_question": [
+                "Is the packaging to Canberra completely discreet?"
+            ],
+            "_faqs_1_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_1_answer": [
+                "<p>Yes. All orders are sent in plain, durable, unbranded packaging with no logos, medication names, or pharmacy branding visible from the outside. Your privacy is 100% protected.</p>"
+            ],
+            "_faqs_1_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_2_question": [
+                "Can orders be delivered to PO Boxes or Parcel Lockers in Canberra?"
+            ],
+            "_faqs_2_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_2_answer": [
+                "<p>Yes. Because we ship via Australia Post, delivery to residential addresses, commercial offices, Australia Post PO Boxes, and 24/7 Parcel Lockers in Canberra is fully supported.</p>"
+            ],
+            "_faqs_2_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "faqs_3_question": [
+                "What happens if my parcel is delayed or lost?"
+            ],
+            "_faqs_3_question": [
+                "field_wa_delivery_question"
+            ],
+            "faqs_3_answer": [
+                "<p>We provide full delivery support. If your parcel is substantially delayed or goes missing in transit, contact our support team with your order reference number and we will resolve it promptly under our reshipment guarantee.</p>"
+            ],
+            "_faqs_3_answer": [
+                "field_wa_delivery_answer"
+            ],
+            "trust_badges": [
+                "4"
+            ],
+            "_trust_badges": [
+                "field_wa_delivery_trust_badges"
+            ],
+            "trust_badges_0_label": [
+                "Australia-wide Express Delivery"
+            ],
+            "_trust_badges_0_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_1_label": [
+                "Factory-Sealed Authentic Blisters"
+            ],
+            "_trust_badges_1_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_2_label": [
+                "Secure Encrypted Checkout"
+            ],
+            "_trust_badges_2_label": [
+                "field_wa_delivery_trust_label"
+            ],
+            "trust_badges_3_label": [
+                "100% Discreet Packaging"
+            ],
+            "_trust_badges_3_label": [
+                "field_wa_delivery_trust_label"
+            ]
+        }
+    }
+]

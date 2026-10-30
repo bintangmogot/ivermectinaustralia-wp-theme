@@ -1,0 +1,76 @@
+{
+    "key": "group_waklert_product_details",
+    "title": "Product Page Details",
+    "fields": [
+        {
+            "key": "field_waklert_product_badge",
+            "label": "Product Badge",
+            "name": "product_badge",
+            "type": "text",
+            "instructions": "Optional badge shown above the product title, for example Best Seller. Leave blank to hide it.",
+            "default_value": "",
+            "maxlength": 32
+        },
+        {
+            "key": "field_waklert_product_active_ingredient",
+            "label": "Active Ingredient",
+            "name": "product_active_ingredient",
+            "type": "text",
+            "instructions": "Enter the value to display in Product specs.",
+            "default_value": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_waklert_product_indication",
+            "label": "Indication",
+            "name": "product_indication",
+            "type": "text",
+            "instructions": "Optional product information. Only enter approved, verified copy.",
+            "default_value": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_waklert_product_manufacturer",
+            "label": "Manufacturer",
+            "name": "product_manufacturer",
+            "type": "text",
+            "default_value": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_waklert_product_packaging",
+            "label": "Packaging",
+            "name": "product_packaging",
+            "type": "text",
+            "default_value": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_waklert_product_delivery_time",
+            "label": "Delivery Time",
+            "name": "product_delivery_time",
+            "type": "text",
+            "default_value": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Product specific content displayed on the WooCommerce product page.",
+    "show_in_rest": 0,
+    "modified": 1791190000
+}

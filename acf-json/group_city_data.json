@@ -1,0 +1,383 @@
+{
+    "key": "group_city_data",
+    "title": "City Page Details",
+    "fields": [
+        {
+            "key": "field_city_region_en",
+            "label": "Region (EN)",
+            "name": "region_en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_city_region_ms",
+            "label": "Region (MS)",
+            "name": "region_ms",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_city_population",
+            "label": "Population",
+            "name": "population",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_city_days",
+            "label": "Delivery Days",
+            "name": "days",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_city_demographic_en",
+            "label": "Target Demographic (EN)",
+            "name": "demographic_en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_city_demographic_ms",
+            "label": "Target Demographic (MS)",
+            "name": "demographic_ms",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_city_industry_en",
+            "label": "Key Industry (EN)",
+            "name": "industry_en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_city_industry_ms",
+            "label": "Key Industry (MS)",
+            "name": "industry_ms",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_city_hero_desc_en",
+            "label": "Hero Description (EN)",
+            "name": "hero_description_en",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
+        },
+        {
+            "key": "field_city_hero_desc_ms",
+            "label": "Hero Description (MS)",
+            "name": "hero_description_ms",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
+        },
+        {
+            "key": "field_city_desc_en",
+            "label": "Long Description (EN)",
+            "name": "description_en",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0
+        },
+        {
+            "key": "field_city_desc_ms",
+            "label": "Long Description (MS)",
+            "name": "description_ms",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0
+        },
+        {
+            "key": "field_city_features",
+            "label": "Feature Cards",
+            "name": "features",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "layout": "table",
+            "button_label": "Add Row",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_city_feat_icon",
+                    "label": "Icon Name",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_city_features"
+                },
+                {
+                    "key": "field_city_feat_en",
+                    "label": "Text (EN)",
+                    "name": "text_en",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_city_features"
+                },
+                {
+                    "key": "field_city_feat_ms",
+                    "label": "Text (MS)",
+                    "name": "text_ms",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_city_features"
+                }
+            ]
+        },
+        {
+            "key": "field_city_reviews",
+            "label": "Featured Reviews",
+            "name": "city_reviews",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "review"
+            ],
+            "taxonomy": [],
+            "min": 0,
+            "max": 0,
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [],
+            "return_format": "object",
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "city"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": false,
+    "description": "",
+    "show_in_rest": false,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1790807826
+}

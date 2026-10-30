@@ -2,14 +2,6 @@
 /**
  * Empty cart page
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart-empty.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
  * @version 7.0.1
@@ -17,23 +9,38 @@
 
 defined( 'ABSPATH' ) || exit;
 
-/*
- * @hooked wc_empty_cart_message - 10
- */
-do_action( 'woocommerce_cart_is_empty' );
+// Remove default empty cart message so we can style our own
+remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
+?>
 
-if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
-	<p class="return-to-shop">
-		<a class="button wc-backward<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
-			<?php
-				/**
-				 * Filter "Return To Shop" text.
-				 *
-				 * @since 4.6.0
-				 * @param string $default_text Default text.
-				 */
-				echo esc_html( apply_filters( 'woocommerce_return_to_shop_text', __( 'Return to shop', 'woocommerce' ) ) );
-			?>
-		</a>
-	</p>
-<?php endif; ?>
+<div class="max-w-2xl mx-auto py-12 md:py-20 text-center">
+    
+    <div class="mb-8 flex justify-center">
+        <div class="w-32 h-32 bg-stone-100 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+        </div>
+    </div>
+
+    <h2 class="font-heading text-3xl font-black text-slate-900 mb-4">
+        <?= "Your cart is empty" ?>
+    </h2>
+    
+    <p class="text-slate-500 mb-10 max-w-md mx-auto">
+        <?= "Looks like you haven't added anything to your cart yet. Discover our premium products and get started." ?>
+    </p>
+
+    <?php do_action( 'woocommerce_cart_is_empty' ); ?>
+
+    <?php if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
+        <p class="return-to-shop">
+            <a class="inline-flex rounded-full bg-primary px-5 py-2.5 sm:px-8 sm:py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-primary-dark hover:-translate-y-0.5" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
+                <?php
+                    echo esc_html( apply_filters( 'woocommerce_return_to_shop_text', 'Return to shop' ) );
+                ?>
+            </a>
+        </p>
+    <?php endif; ?>
+
+</div>

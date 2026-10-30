@@ -29,47 +29,44 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 ?>
 
-<form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" aria-label="<?php echo esc_attr__( 'Checkout', 'woocommerce' ); ?>">
+<form name="checkout" method="post" class="checkout woocommerce-checkout grid gap-6 lg:gap-8 lg:grid-cols-[55fr_45fr]" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data" aria-label="<?php echo esc_attr__( 'Checkout', 'woocommerce' ); ?>">
 
-	<?php if ( $checkout->get_checkout_fields() ) : ?>
+	<div class="space-y-4">
+		<?php if ( $checkout->get_checkout_fields() ) : ?>
 
-		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+			<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-		<div class="row g-5" id="customer_details">
-			<div class="col-md-6">
-				<div class='checkout-fields-block'>
-				<?php do_action( 'woocommerce_checkout_billing' ); ?>
+			<div id="customer_details">
+				<div class="col-1 mb-6">
+					<?php do_action( 'woocommerce_checkout_billing' ); ?>
 				</div>
-				<div class='checkout-fields-block'>
-				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
-				</div>
-			</div>
 
-			<div class="col-md-6">
-				<div class='checkout-fields-block medical-condition-fields'>
-				<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+				<div class="col-2 mb-4">
+					<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 				</div>
 			</div>
-		</div>
 
-		
+			<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
-	<?php endif; ?>
-	
-	<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
-	
-	<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
-	
-	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-
-	<div id="order_review" class="woocommerce-checkout-review-order">
-		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+		<?php endif; ?>
 	</div>
 	
+	<div>
+		<div class="sticky top-24 rounded-2xl border border-border bg-card p-6 shadow-card lg:p-8">
+			<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
+			
+			<h3 id="order_review_heading" class="mb-5 font-heading text-xl font-bold text-card-foreground"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
+			
+			<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
-	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+			<div id="order_review" class="woocommerce-checkout-review-order">
+				<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+			</div>
+
+			<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+		</div>
+	</div>
 
 </form>
-
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>

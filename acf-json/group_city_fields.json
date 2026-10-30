@@ -1,0 +1,375 @@
+{
+  "key": "group_city_fields",
+  "title": "Australia Delivery",
+  "fields": [
+    {
+      "key": "field_city_ce059537dd",
+      "label": "City Name",
+      "name": "city_name",
+      "type": "text"
+    },
+    {
+      "key": "field_city_680ced9e34",
+      "label": "Region",
+      "name": "region",
+      "type": "text"
+    },
+    {
+      "key": "field_city_360585b1b5",
+      "label": "Population",
+      "name": "population",
+      "type": "text",
+      "instructions": "Enter the locality and census year with the figure, for example 15,312 (2021 Census).",
+      "append": "people"
+    },
+    {
+      "key": "field_city_9892e3300e",
+      "label": "Delivery Days / Estimate",
+      "name": "delivery_days",
+      "type": "text",
+      "instructions": "Enter the confirmed timeframe, or say customers should contact us to confirm. Do not infer timing from another store or a shipping zone."
+    },
+    {
+      "key": "field_city_abaa91cacc",
+      "label": "Local Population Context",
+      "name": "demographic",
+      "type": "text",
+      "instructions": "Use neutral, published community statistics. Do not imply these residents are customers or treatment candidates."
+    },
+    {
+      "key": "field_city_cb3f0ff75b",
+      "label": "Local Employment Context",
+      "name": "industry",
+      "type": "text",
+      "instructions": "Use a dated, public source and describe the area only. Do not claim workers use or need a product."
+    },
+    {
+      "key": "field_city_fa0fc3abac",
+      "label": "Hero Description",
+      "name": "hero_desc",
+      "type": "textarea"
+    },
+    {
+      "key": "field_city_f770a53d7d",
+      "label": "Description",
+      "name": "desc",
+      "type": "textarea"
+    },
+    {
+      "key": "field_city_49979aff46",
+      "label": "Features",
+      "name": "features",
+      "type": "repeater",
+      "layout": "table",
+      "sub_fields": [
+        {
+          "key": "field_city_90d4aeda50",
+          "label": "Feature",
+          "name": "feat",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_city_46e61eefb4",
+      "label": "Reviews",
+      "name": "reviews",
+      "type": "repeater",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_city_31a98aede4",
+          "label": "Author",
+          "name": "author",
+          "type": "text"
+        },
+        {
+          "key": "field_city_da7ad3a5ca",
+          "label": "Rating",
+          "name": "rating",
+          "type": "number"
+        },
+        {
+          "key": "field_city_d3899a0fe1",
+          "label": "Date",
+          "name": "date",
+          "type": "text"
+        },
+        {
+          "key": "field_city_4d580b61ed",
+          "label": "Text",
+          "name": "text",
+          "type": "textarea"
+        }
+      ],
+      "instructions": "Only enter genuine, approved customer feedback. Never create sample or attributed quotes."
+    },
+    {
+      "name": "hero_heading",
+      "type": "text",
+      "key": "field_wa_delivery_hero_heading",
+      "label": "Hero Heading"
+    },
+    {
+      "name": "carrier",
+      "type": "text",
+      "key": "field_wa_delivery_carrier",
+      "label": "Delivery Label / Carrier",
+      "instructions": "Delivery card label. Enter a carrier name only when confirmed."
+    },
+    {
+      "name": "shipping_note",
+      "type": "text",
+      "key": "field_wa_delivery_shipping_note",
+      "label": "Shipping Summary"
+    },
+    {
+      "name": "packaging_note",
+      "type": "text",
+      "key": "field_wa_delivery_packaging_note",
+      "label": "Packaging Summary"
+    },
+    {
+      "name": "tracking_note",
+      "type": "text",
+      "key": "field_wa_delivery_tracking_note",
+      "label": "Tracking Summary"
+    },
+    {
+      "name": "cta_heading",
+      "type": "text",
+      "key": "field_wa_delivery_cta_heading",
+      "label": "Final Heading"
+    },
+    {
+      "name": "cta_desc",
+      "type": "textarea",
+      "key": "field_wa_delivery_cta_desc",
+      "label": "Final Description"
+    },
+    {
+      "layout": "block",
+      "instructions": "Enter the reason cards displayed on this page.",
+      "type": "repeater",
+      "label": "Reasons to Choose Us",
+      "sub_fields": [
+        {
+          "name": "title",
+          "type": "text",
+          "key": "field_wa_delivery_reason_title",
+          "label": "Title",
+          "required": 1
+        },
+        {
+          "name": "text",
+          "type": "textarea",
+          "key": "field_wa_delivery_reason_text",
+          "label": "Description",
+          "required": 1
+        }
+      ],
+      "key": "field_wa_delivery_reasons",
+      "name": "reasons",
+      "max": 3
+    },
+    {
+      "key": "field_wa_delivery_faqs",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "name": "question",
+          "type": "text",
+          "key": "field_wa_delivery_question",
+          "label": "Question",
+          "required": 1
+        },
+        {
+          "name": "answer",
+          "type": "wysiwyg",
+          "key": "field_wa_delivery_answer",
+          "label": "Answer",
+          "instructions": "Enter the answer. You can format text, add bullet points, and insert links (e.g. to Shipping Policy).",
+          "required": 1,
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 0,
+          "delay": 0
+        }
+      ],
+      "layout": "block",
+      "instructions": "Enter the questions and answers displayed on this page.",
+      "label": "City FAQs",
+      "name": "faqs"
+    },
+    {
+      "max": 4,
+      "key": "field_wa_delivery_products",
+      "type": "relationship",
+      "name": "selected_products",
+      "filters": [
+        "search"
+      ],
+      "return_format": "id",
+      "label": "Featured Products",
+      "post_type": [
+        "product"
+      ],
+      "instructions": "Leave empty to show up to four catalog products. Prices and stock come from WooCommerce."
+    },
+    {
+      "label": "Delivery Estimate Summary",
+      "name": "delivery_note",
+      "key": "field_wa_delivery_delivery_note",
+      "type": "text"
+    },
+    {
+      "label": "Delivery Card Heading",
+      "name": "summary_heading",
+      "key": "field_wa_delivery_summary_heading",
+      "type": "text"
+    },
+    {
+      "label": "Delivery Support Link Label",
+      "name": "delivery_link_label",
+      "key": "field_wa_delivery_delivery_link_label",
+      "type": "text"
+    },
+    {
+      "label": "About Section Label",
+      "name": "about_label",
+      "key": "field_wa_delivery_about_label",
+      "type": "text"
+    },
+    {
+      "label": "About Section Heading",
+      "name": "about_heading",
+      "key": "field_wa_delivery_about_heading",
+      "type": "text"
+    },
+    {
+      "label": "Features Heading",
+      "name": "features_heading",
+      "key": "field_wa_delivery_features_heading",
+      "type": "text"
+    },
+    {
+      "label": "Reasons Section Heading",
+      "name": "reasons_heading",
+      "key": "field_wa_delivery_reasons_heading",
+      "type": "text"
+    },
+    {
+      "label": "Products Section Label",
+      "name": "products_label",
+      "key": "field_wa_delivery_products_label",
+      "type": "text"
+    },
+    {
+      "label": "Products Section Heading",
+      "name": "products_heading",
+      "key": "field_wa_delivery_products_heading",
+      "type": "text"
+    },
+    {
+      "label": "Products Description",
+      "name": "products_desc",
+      "key": "field_wa_delivery_products_desc",
+      "type": "text"
+    },
+    {
+      "label": "FAQ Section Label",
+      "name": "faq_label",
+      "key": "field_wa_delivery_faq_label",
+      "type": "text"
+    },
+    {
+      "label": "FAQ Heading",
+      "name": "faq_heading",
+      "key": "field_wa_delivery_faq_heading",
+      "type": "text"
+    },
+    {
+      "label": "Full FAQ Link Label",
+      "name": "faq_link_label",
+      "key": "field_wa_delivery_faq_link_label",
+      "type": "text"
+    },
+    {
+      "label": "Shop Button Label",
+      "name": "shop_button_label",
+      "key": "field_wa_delivery_shop_button_label",
+      "type": "text"
+    },
+    {
+      "label": "View Products Button Label",
+      "name": "products_button_label",
+      "key": "field_wa_delivery_products_button_label",
+      "type": "text"
+    },
+    {
+      "label": "All Products Button Label",
+      "name": "all_products_label",
+      "key": "field_wa_delivery_all_products_label",
+      "type": "text"
+    },
+    {
+      "label": "Final Button Label",
+      "name": "cta_button_label",
+      "key": "field_wa_delivery_cta_button_label",
+      "type": "text"
+    },
+    {
+      "layout": "table",
+      "key": "field_wa_delivery_trust_badges",
+      "sub_fields": [
+        {
+          "label": "Label",
+          "required": 1,
+          "name": "label",
+          "key": "field_wa_delivery_trust_label",
+          "type": "text"
+        }
+      ],
+      "type": "repeater",
+      "label": "Trust Strip",
+      "name": "trust_badges"
+    },
+    {
+      "label": "Local Data Source URL",
+      "key": "field_wa_delivery_facts_source",
+      "type": "url",
+      "name": "facts_source"
+    },
+    {
+      "label": "Local Data Year",
+      "key": "field_wa_delivery_facts_date",
+      "type": "text",
+      "name": "facts_date"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "city"
+      }
+    ],
+    [
+      {
+        "value": "template-australia-delivery.php",
+        "param": "page_template",
+        "operator": "=="
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "description": "Reusable city landing page. Enter verified city details and store delivery terms. Optional fields use neutral defaults.",
+  "show_in_rest": false,
+  "modified": 1791995768
+}
