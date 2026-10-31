@@ -24,6 +24,8 @@ function ivermectin_render_modules($post_id = false) {
     }
 
     if (have_rows('modules', $post_id)) {
+        // The old template ran in global scope and loops like "foreach (... as $post)" relied on it.
+        global $post, $product;
         echo '<div class="iva-legacy">';
         include get_theme_file_path('legacy/modules.php');
         echo '</div>';

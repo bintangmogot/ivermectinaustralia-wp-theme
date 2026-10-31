@@ -83,7 +83,17 @@ $topbar_center = trim((string) get_field('topbar_center', 'option'));
                     <span><?= esc_html($phone_label) ?></span>
                 </a>
             <?php endif; ?>
-            <?= do_shortcode('[xoo_wsc_cart]') ?>
+            <?php if (shortcode_exists('xoo_wsc_cart')) : ?>
+                <?= do_shortcode('[xoo_wsc_cart]') ?>
+            <?php elseif (function_exists('wc_get_cart_url')) : ?>
+                <a href="<?= esc_url(wc_get_cart_url()) ?>" aria-label="<?= esc_attr__('Cart', 'ivermectin-australia') ?>" class="relative grid h-10 w-10 place-items-center rounded-lg border border-border text-primary hover:bg-primary-softer">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+                    <?php $cart_count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0; ?>
+                    <?php if ($cart_count > 0) : ?>
+                        <span class="absolute -right-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-accent-dark px-1 text-xs font-bold text-white"><?= esc_html((string) $cart_count) ?></span>
+                    <?php endif; ?>
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </header>
