@@ -232,9 +232,7 @@ html {
 }
 
 /*
- * The Side Cart WooCommerce Style settings are the source of truth for cart
- * colors, typography, spacing, and button themes. Keep only structural tweaks
- * here so theme CSS does not override those configurable plugin values.
+ * Side cart structure. The colours, type and buttons are set in the SIDE CART block at the end of this file.
  */
 
 /* Keep the custom trust badges grouped in a centered row. */
@@ -266,19 +264,7 @@ html {
   font-style: normal !important;
 }
 
-@media (max-width: 480px) {
-  .xoo-wsc-ft-buttons-cont > a.xoo-wsc-ft-btn:nth-of-type(2) {
-    font-size: clamp(0.7rem, 3.2vw, 0.8rem) !important;
-    padding-inline: 0.25rem !important;
-  }
-
-  .xoo-wsc-ft-buttons-cont > a.xoo-wsc-ft-btn:nth-of-type(2) .woocommerce-Price-amount.amount {
-    font-size: 0.78rem !important;
-    line-height: 1.1;
-  }
-}
-
-/* Keep the basket trigger compact; its colors remain controlled by the plugin. */
+/* Keep the basket trigger compact. */
 .xoo-wsc-sc-subt {
   display: none !important;
 }
@@ -3607,3 +3593,82 @@ footer .site-logo-img,
 /* Checkout: the checkout fields plugin leaves a hidden select positioned beyond the form on phones */
 .iva-woo .form-row { position: relative; }
 .iva-woo select.select2-hidden-accessible { left: 0 !important; right: auto !important; width: 1px !important; max-width: 1px !important; }
+
+/*
+ * ============================================================
+ * SIDE CART (Side Cart WooCommerce plugin) in the theme design
+ * The plugin is not edited; these rules restyle its markup. They use !important because the plugin
+ * prints its own colours and sizes from its Style settings.
+ * ============================================================
+ */
+:root {
+  --iva-bag-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.5 8h13l1.1 12.5H4.4z'/%3E%3Cpath d='M9 10.5V7a3 3 0 0 1 6 0v3.5'/%3E%3C/svg%3E");
+}
+
+/* New bag icon in place of the plugin's icon font glyph (trigger, floating basket, panel header) */
+.xoo-wsc-bki.xoo-wsc-icon-shopping-bag1::before,
+.xoo-wsc-sc-bki.xoo-wsc-icon-shopping-bag1::before,
+.xoo-wsch-bki.xoo-wsc-icon-shopping-bag1::before {
+  content: "" !important;
+  display: block;
+  width: 1em;
+  height: 1em;
+  background: currentColor;
+  -webkit-mask: var(--iva-bag-icon) center / contain no-repeat;
+  mask: var(--iva-bag-icon) center / contain no-repeat;
+}
+
+.xoo-wsc-bki.xoo-wsc-icon-shopping-bag1,
+.xoo-wsc-sc-bki.xoo-wsc-icon-shopping-bag1,
+.xoo-wsch-bki.xoo-wsc-icon-shopping-bag1 { display: block; width: 1em; height: 1em; line-height: 1; overflow: visible; }
+
+/* Panel */
+.xoo-wsc-container { font-family: var(--font-sans) !important; box-shadow: -30px 0 80px -40px rgb(1 29 76 / 0.55) !important; }
+@media (min-width: 640px) { .xoo-wsc-container { border-radius: 1.75rem 0 0 1.75rem !important; overflow: hidden; } }
+
+.xoo-wsc-header { padding: 0.5rem 0.75rem !important; border-bottom: 1px solid var(--color-border) !important; background: #fff !important; }
+.xoo-wsch-top { align-items: center !important; }
+.xoo-wsch-text { font-family: var(--font-heading) !important; font-size: 1.375rem !important; font-weight: 800 !important; letter-spacing: -0.01em; color: var(--color-primary) !important; }
+.xoo-wsch-bki { font-size: 1.75rem !important; color: var(--color-primary) !important; }
+.xoo-wsch-basket { position: relative !important; }
+.xoo-wsch-items-count { top: -0.4rem !important; right: -0.55rem !important; left: auto !important; display: grid; place-items: center; min-width: 1.25rem; height: 1.25rem; padding: 0 0.25rem; border-radius: 999px !important; font-size: 0.75rem !important; line-height: 1; background: var(--iva-red) !important; color: #fff !important; font-weight: 700 !important; box-shadow: 0 0 0 2px #fff; }
+.xoo-wsch-close { display: grid !important; place-items: center; width: 2.25rem; height: 2.25rem; border: 1px solid var(--color-border); border-radius: 999px; font-size: 0.875rem !important; color: var(--color-primary) !important; transition: border-color 0.15s ease, background-color 0.15s ease; }
+.xoo-wsch-close:hover { border-color: var(--color-primary); background: var(--color-primary-soft); }
+
+/* Items */
+.xoo-wsc-body { background: var(--color-primary-softer) !important; }
+.xoo-wsc-product { margin: 0.75rem 1rem !important; padding: 0.875rem !important; border: 1px solid var(--color-border) !important; border-radius: 1.25rem !important; background: #fff !important; box-shadow: none !important; }
+.xoo-wsc-img-col img { border: 1px solid var(--color-border); border-radius: 0.875rem; background: var(--color-primary-softer); }
+.xoo-wsc-pname, .xoo-wsc-pname a { font-family: var(--font-heading) !important; font-size: 1.0625rem !important; font-weight: 700 !important; line-height: 1.25 !important; color: var(--color-primary) !important; text-decoration: none !important; }
+.xoo-wsc-pname a:hover { color: var(--color-link) !important; }
+.xoo-wsc-qty-price, .xoo-wsc-qty-price * { font-size: 0.875rem !important; color: var(--color-muted-foreground) !important; }
+.xoo-wsc-qty-price .woocommerce-Price-amount { font-weight: 700; color: var(--color-primary) !important; }
+.xoo-wsc-smr-del { color: var(--iva-red) !important; transition: transform 0.15s ease; }
+.xoo-wsc-smr-del:hover { transform: scale(1.12); }
+
+/* Footer */
+.xoo-wsc-footer { padding: 1.25rem 1.25rem 1.5rem !important; border-top: 1px solid var(--color-border) !important; background: #fff !important; box-shadow: 0 -20px 40px -34px rgb(1 44 112 / 0.35) !important; }
+.xoo-wsc-ft-amt { font-family: var(--font-heading) !important; font-size: 1.125rem !important; font-weight: 800 !important; color: var(--color-primary) !important; }
+.xoo-wsc-footer-txt { font-size: 0.8125rem !important; color: var(--color-muted-foreground) !important; }
+.xoo-wsc-ft-buttons-cont { display: grid !important; grid-template-columns: 1fr 1fr; gap: 0.625rem !important; }
+.xoo-wsc-ft-btn { display: inline-flex !important; align-items: center; justify-content: center; min-height: 3rem; margin: 0 !important; padding: 0 1rem !important; border: 1.5px solid var(--color-border) !important; border-radius: 999px !important; background: #fff !important; color: var(--color-primary) !important; font-family: var(--font-heading) !important; font-size: 0.9375rem !important; font-weight: 700 !important; text-decoration: none !important; transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.2s ease; }
+.xoo-wsc-ft-btn:hover { border-color: var(--color-primary) !important; }
+.xoo-wsc-ft-btn-checkout { grid-column: 1 / -1; min-height: 3.5rem; border-color: transparent !important; background: var(--color-accent-dark) !important; color: #fff !important; font-size: 1.0625rem !important; }
+.xoo-wsc-ft-btn-checkout:hover { border-color: transparent !important; background: #cf5f00 !important; transform: translateY(-1px); }
+.xoo-wsc-ft-btn:focus-visible, .xoo-wsch-close:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+
+/* Header trigger: the same square button as the other header controls */
+.xoo-wsc-sc-cont .xoo-wsc-sc-bkcont { position: relative; display: grid !important; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--color-border); border-radius: 0.75rem; background: #fff; color: var(--color-primary) !important; transition: border-color 0.15s ease, background-color 0.15s ease; }
+.xoo-wsc-sc-cont .xoo-wsc-cart-trigger:hover .xoo-wsc-sc-bkcont { border-color: var(--color-primary); background: var(--color-primary-soft); }
+.xoo-wsc-sc-bki { font-size: 1.375rem !important; color: var(--color-primary) !important; }
+.xoo-wsc-sc-count { position: absolute !important; top: -0.4rem !important; right: -0.4rem !important; display: grid; place-items: center; min-width: 1.25rem; height: 1.25rem; padding: 0 0.25rem; border-radius: 999px !important; background: var(--iva-red) !important; color: #fff !important; font-size: 0.75rem !important; font-weight: 700 !important; line-height: 1; box-shadow: 0 0 0 2px #fff; }
+
+/* Floating basket */
+.xoo-wsc-basket { display: grid !important; place-items: center; width: 3.5rem !important; height: 3.5rem !important; border: 0 !important; border-radius: 999px !important; background: var(--color-primary) !important; color: #fff !important; box-shadow: 0 18px 36px -16px rgb(1 29 76 / 0.7) !important; transition: transform 0.2s ease, background-color 0.15s ease; }
+.xoo-wsc-basket:hover { background: var(--color-primary-dark) !important; transform: translateY(-2px); }
+.xoo-wsc-basket .xoo-wsc-bki { font-size: 1.5rem !important; color: #fff !important; }
+.xoo-wsc-basket .xoo-wsc-items-count { top: -0.25rem !important; right: -0.25rem !important; display: grid; place-items: center; min-width: 1.375rem; height: 1.375rem; padding: 0 0.25rem; border-radius: 999px !important; background: var(--iva-red) !important; color: #fff !important; font-size: 0.75rem !important; font-weight: 700 !important; box-shadow: 0 0 0 2px #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .xoo-wsc-basket, .xoo-wsc-basket:hover, .xoo-wsc-ft-btn, .xoo-wsc-ft-btn-checkout:hover, .xoo-wsc-smr-del:hover { transform: none !important; transition: none !important; }
+}
