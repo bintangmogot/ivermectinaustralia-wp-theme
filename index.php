@@ -66,7 +66,7 @@ if (is_home() && $has_modules) {
     } elseif (is_search()) {
         $title = ivermectin_fill(ivermectin_label('search_title'), ['query' => get_search_query()]);
     }
-    ivermectin_page_hero(['title' => $title, 'lead' => $lead]);
+    ivermectin_page_hero(['title' => $title, 'lead' => $lead] + ivermectin_hero_variant_args('search'));
     ivermectin_render_blog_loop();
 }
 

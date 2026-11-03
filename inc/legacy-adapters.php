@@ -106,7 +106,8 @@ function ivermectin_render_legacy_rows(array $rows, array $opts = []): void {
                 $hero['title'] = ivermectin_label('reviews_page_heading') ?: get_the_title();
             }
         }
-        ivermectin_page_hero($hero);
+        $variant = (string) ($hero['variant'] ?? ivermectin_detect_hero_variant($rows));
+        ivermectin_page_hero($hero + ivermectin_hero_variant_args($variant, ['rows' => $rows]));
     }
 
     foreach ($rows as $index => $row) {
@@ -136,20 +137,20 @@ function ivermectin_legacy_render_intro_black_background(array $row, int $index)
 
 /** Questions as two columns of open cards. The schema.org markup of the previous theme is kept. */
 function ivermectin_legacy_render_faqs(array $row, int $index): void {
-    ivermectin_render_faq_section($row['title'], $row['items']);
+    ivermectin_render_faq_section($row['title'], $row['items'], 'bg-surface', ivermectin_faq_anchor($index));
 }
 
 /**
  * FAQ cards in two columns, open by default. $items: [['question' => ..., 'answer' => ...], ...]
- * $background: 'bg-surface' or 'bg-white'.
+ * $background: 'bg-surface' or 'bg-white'. $id becomes the section's anchor (the FAQ page header links to it).
  */
-function ivermectin_render_faq_section(string $title, array $items, string $background = 'bg-surface'): void {
+function ivermectin_render_faq_section(string $title, array $items, string $background = 'bg-surface', string $id = ''): void {
     $items = array_values(array_filter($items, static fn($item) => trim((string) ($item['question'] ?? '')) !== ''));
     if (!$items) {
         return;
     }
     ?>
-    <section class="iva-section iva-faqs <?= esc_attr($background) ?>">
+    <section class="iva-section iva-faqs <?= esc_attr($background) ?>"<?= $id !== '' ? ' id="' . esc_attr($id) . '"' : '' ?>>
         <div class="container-site">
             <?php ivermectin_section_head('', $title, '', 'light', 'left'); ?>
             <div class="iva-qa-grid" data-iva-stagger>
@@ -256,11 +257,7 @@ function ivermectin_legacy_render_review_page(array $row, int $index): void {
         <div class="container-site grid gap-8 lg:grid-cols-[20rem_minmax(0,1fr)] lg:items-start">
             <?php if ($stats['count']) : ?>
                 <aside class="iva-score lg:sticky lg:top-28" data-iva-reveal-item>
-                    <div class="flex items-center gap-4">
-                        <p class="font-heading text-6xl font-extrabold leading-none text-primary" data-iva-count="<?= esc_attr(number_format($stats['average'], 1)) ?>"><?= esc_html(number_format($stats['average'], 1)) ?></p>
-                        <div><?= ivermectin_star_row($stats['average']) ?></div>
-                    </div>
-                    <p class="mt-3 text-[0.9375rem] text-muted-foreground"><?= esc_html(ivermectin_fill(ivermectin_label('reviews_page_summary'), ['score' => number_format($stats['average'], 1), 'count' => $stats['count']])) ?></p>
+                    <p class="text-[0.9375rem] font-semibold text-primary"><?= esc_html(ivermectin_fill(ivermectin_label('reviews_page_summary'), ['score' => number_format($stats['average'], 1), 'count' => $stats['count']])) ?></p>
                     <ul class="mt-5 space-y-2">
                         <?php foreach ($stats['breakdown'] as $star => $count) : $share = round($count / $stats['count'] * 100); ?>
                             <li class="grid grid-cols-[2.25rem_1fr_2rem] items-center gap-2 text-sm">

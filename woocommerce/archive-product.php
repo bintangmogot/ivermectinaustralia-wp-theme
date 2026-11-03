@@ -21,7 +21,7 @@ if ($has_new) {
     ivermectin_page_hero([
         'title' => woocommerce_page_title(false),
         'lead'  => $intro_text !== '' ? $intro_text : (is_shop() ? '' : term_description()),
-    ]);
+    ] + ivermectin_hero_variant_args('shop'));
     ?>
     <section class="iva-section-tight bg-white" id="products">
         <div class="container-site">

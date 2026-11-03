@@ -23,14 +23,20 @@ function ivermectin_fill(string $label, array $values): string {
 }
 
 /**
- * Light page header: breadcrumb, H1 and an optional lead.
+ * Page header: breadcrumb, H1 and an optional lead. Each kind of page picks a variant (see inc/hero-variants.php):
+ * the variant changes the look and can add a block under the text and a visual on the right.
  *
  * @param array $args {
- *   @type string $title   H1 text (defaults to the page title)
- *   @type string $lead    Short text under the H1 (HTML allowed)
- *   @type string $meta    Extra HTML under the lead, e.g. category and date for articles
- *   @type array  $crumbs  [[label, url], ...] before the current page. Default: Home.
- *   @type bool   $mascot  Show the peeking mascot. Default: the "Show the mascot in page headers" setting.
+ *   @type string $title    H1 text (defaults to the page title)
+ *   @type string $lead     Short text under the H1 (HTML allowed)
+ *   @type string $meta     Extra HTML under the lead, e.g. category and date for articles
+ *   @type array  $crumbs   [[label, url], ...] before the current page. Default: Home.
+ *   @type string $variant  default, contact, reviews, faq, document, route, search, dark, shop, steps or place
+ *   @type string $extra    HTML under the text (chips, search box, step tracker)
+ *   @type string $side     HTML in a column on the right (score card, location pin)
+ *   @type string $decor    HTML drawn behind the header (route line)
+ *   @type string $icon     HTML icon tile before the title
+ *   @type bool   $mascot   Show the peeking mascot. Default: the "Show the mascot in page headers" setting, off for some variants.
  * }
  */
 function ivermectin_page_hero(array $args = []): void {
@@ -40,23 +46,33 @@ function ivermectin_page_hero(array $args = []): void {
     if ($title === '') {
         return;
     }
+    $variant    = preg_replace('/[^a-z]/', '', (string) ($args['variant'] ?? 'default')) ?: 'default';
+    $extra      = (string) ($args['extra'] ?? '');
+    $side       = (string) ($args['side'] ?? '');
+    $decor      = (string) ($args['decor'] ?? '');
+    $icon       = (string) ($args['icon'] ?? '');
     $home_label = ivermectin_label('breadcrumb_home_label');
     $crumbs     = $args['crumbs'] ?? ($home_label !== '' ? [[$home_label, home_url('/')]] : []);
-    $mascot     = $args['mascot'] ?? (get_field('page_hero_mascot', 'option') !== false && get_field('page_hero_mascot', 'option') !== '0');
+    $mascot_on  = get_field('page_hero_mascot', 'option') !== false && get_field('page_hero_mascot', 'option') !== '0';
+    $mascot     = $args['mascot'] ?? ($mascot_on && !in_array($variant, ['document', 'route', 'place', 'steps'], true) && $side === '');
     ?>
-    <header class="iva-pagehero relative isolate overflow-hidden">
-        <div class="container-site relative">
-            <?php if ($crumbs || $title !== '') : ?>
+    <header class="iva-pagehero iva-pagehero-<?= esc_attr($variant) ?> relative isolate overflow-hidden">
+        <?= $decor ?>
+        <div class="container-site relative <?= $side !== '' ? 'iva-pagehero-grid' : '' ?>">
+            <div class="iva-pagehero-main">
                 <nav aria-label="<?= esc_attr($home_label !== '' ? $home_label : $title) ?>" class="iva-crumbs" data-iva-hero>
                     <?php foreach ($crumbs as [$crumb_label, $crumb_url]) : ?>
                         <a href="<?= esc_url($crumb_url) ?>"><?= esc_html($crumb_label) ?></a><span class="iva-crumbs-sep" aria-hidden="true"></span>
                     <?php endforeach; ?>
                     <span aria-current="page"><?= esc_html(wp_trim_words($title, 8, '')) ?></span>
                 </nav>
-            <?php endif; ?>
-            <h1 class="iva-pagehero-title" data-iva-hero><?= esc_html($title) ?></h1>
-            <?php if ($lead !== '') : ?><div class="iva-pagehero-lead" data-iva-hero><?= wp_kses_post($lead) ?></div><?php endif; ?>
-            <?php if ($meta !== '') : ?><div class="iva-pagehero-meta" data-iva-hero><?= $meta ?></div><?php endif; ?>
+                <?php if ($icon !== '') : ?><div class="iva-pagehero-icon" data-iva-hero><?= $icon ?></div><?php endif; ?>
+                <h1 class="iva-pagehero-title" data-iva-hero><?= esc_html($title) ?></h1>
+                <?php if ($lead !== '') : ?><div class="iva-pagehero-lead" data-iva-hero><?= wp_kses_post($lead) ?></div><?php endif; ?>
+                <?php if ($meta !== '') : ?><div class="iva-pagehero-meta" data-iva-hero><?= $meta ?></div><?php endif; ?>
+                <?php if ($extra !== '') : ?><div class="iva-pagehero-extra" data-iva-hero><?= $extra ?></div><?php endif; ?>
+            </div>
+            <?php if ($side !== '') : ?><div class="iva-pagehero-side" data-iva-hero><?= $side ?></div><?php endif; ?>
         </div>
         <?php if ($mascot) { get_template_part('template-parts/mascot', null, ['pose' => 'peek', 'class' => 'iva-pagehero-mascot']); } ?>
     </header>

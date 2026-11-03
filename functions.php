@@ -23,6 +23,7 @@ require_once IVERMECTIN_THEME_DIR . '/inc/icon-library.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/section-head.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/rich-article.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/components.php';
+require_once IVERMECTIN_THEME_DIR . '/inc/hero-variants.php';
 
 // 2. Assets
 require_once IVERMECTIN_THEME_DIR . '/inc/enqueue.php';

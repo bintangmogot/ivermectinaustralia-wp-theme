@@ -3486,8 +3486,8 @@ footer .site-logo-img,
 /* Article page */
 .iva-meta-chip { padding: 0.3125rem 0.75rem; border: 1px solid var(--color-border); border-radius: 999px; background: #fff; color: var(--color-primary); font-size: 0.8125rem; font-weight: 700; }
 .iva-meta-chip::before { content: ""; display: inline-block; width: 0.375rem; height: 0.375rem; margin-right: 0.4rem; border-radius: 999px; background: var(--iva-red); vertical-align: 0.1em; }
-.iva-article-photo { aspect-ratio: 16 / 7; overflow: hidden; border-radius: 2rem; background: var(--color-primary-soft); box-shadow: 0 40px 80px -56px rgb(1 44 112 / 0.55); }
-@media (max-width: 639px) { .iva-article-photo { aspect-ratio: 16 / 10; border-radius: 1.5rem; } }
+.iva-article-photo { aspect-ratio: 4 / 3; overflow: hidden; border: 6px solid rgb(255 255 255 / 0.14); border-radius: 1.75rem; background: var(--color-primary-soft); box-shadow: 0 40px 80px -48px rgb(0 0 0 / 0.6); }
+@media (max-width: 899px) { .iva-article-photo { aspect-ratio: 16 / 10; border-radius: 1.5rem; } }
 .iva-empty { max-width: 36rem; margin-inline: auto; padding: 3rem 1.5rem; border: 1px solid var(--color-border); border-radius: 1.75rem; background: #fff; text-align: center; }
 
 /* Panels and tables inside article chapters */
@@ -3683,3 +3683,95 @@ footer .site-logo-img,
 .iva-footer-links-split { columns: 2; }
 @media (max-width: 1023px) { .iva-footer-grid > :first-child, .iva-footer-grid > .iva-footer-wide { grid-column: 1 / -1; } }
 @media (prefers-reduced-motion: reduce) { .iva-footer-links a:hover, .iva-footer-menu a:hover { transform: none; transition: none; } }
+
+/*
+ * ============================================================
+ * PAGE HEADER VARIANTS (inc/hero-variants.php)
+ * ============================================================
+ */
+.iva-pagehero-grid { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 900px) { .iva-pagehero-grid { grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; } }
+.iva-pagehero-extra { margin-top: 1.75rem; }
+.iva-pagehero-icon { margin-top: 1.5rem; }
+
+/* Contact: quick contact buttons */
+.iva-hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.iva-hero-action { display: inline-flex; align-items: center; gap: 0.75rem; max-width: 100%; padding: 0.5rem 1.375rem 0.5rem 0.5rem; border: 1px solid var(--color-border); border-radius: 999px; background: #fff; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.0625rem; font-weight: 700; box-shadow: 0 20px 40px -32px rgb(1 44 112 / 0.5); transition: border-color 0.15s ease, transform 0.2s ease; }
+.iva-hero-action:hover { border-color: var(--color-primary); transform: translateY(-2px); }
+.iva-hero-action:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+/* Reviews: score card */
+.iva-hero-score { min-width: 15rem; padding: 1.75rem 2rem; border: 1px solid var(--color-border); border-radius: 1.75rem; background: #fff; text-align: center; box-shadow: 0 30px 60px -44px rgb(1 44 112 / 0.5); }
+.iva-hero-score-num { font-family: var(--font-heading); font-size: 4.5rem; font-weight: 800; line-height: 1; color: var(--color-primary); }
+.iva-hero-score .iva-stars { display: block; margin-top: 0.625rem; font-size: 1.5rem; line-height: 1; }
+.iva-hero-score-text { margin-top: 0.625rem; font-size: 0.9375rem; color: var(--color-muted-foreground); }
+
+/* FAQ: jump chips */
+.iva-hero-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.iva-hero-chips .iva-chip { font-size: 0.9375rem; }
+.iva-faqs { scroll-margin-top: 5rem; }
+
+/* Policies: document header with a left bar */
+.iva-pagehero-document { padding-block: 2.5rem 3rem; border-bottom: 1px solid var(--color-border); background: #fff; }
+@media (min-width: 768px) { .iva-pagehero-document { padding-block: 4rem 4.5rem; } }
+.iva-pagehero-document::before { display: none; }
+.iva-pagehero-document::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 0.5rem; background: linear-gradient(180deg, var(--iva-red), var(--color-primary)); }
+
+/* How to order and tracking: delivery route line */
+.iva-pagehero-route { padding-bottom: 5.5rem; }
+@media (min-width: 768px) { .iva-pagehero-route { padding-bottom: 6.5rem; } }
+.iva-route { position: absolute; right: 0; bottom: 0; z-index: -1; width: min(46rem, 78%); height: auto; opacity: 0.75; }
+@media (min-width: 1024px) { .iva-route { opacity: 1; } }
+.iva-route-line { animation: iva-march 26s linear infinite; }
+@keyframes iva-march { to { stroke-dashoffset: -280; } }
+
+/* Insights, categories, search: search box */
+.iva-hero-search { display: flex; max-width: 32rem; padding: 0.375rem; border: 1px solid var(--color-border); border-radius: 999px; background: #fff; box-shadow: 0 20px 40px -32px rgb(1 44 112 / 0.5); transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+.iva-hero-search:focus-within { border-color: var(--color-primary); box-shadow: 0 0 0 4px var(--color-primary-soft); }
+.iva-hero-search input[type="search"] { flex: 1; min-width: 0; padding: 0 1rem; border: 0; outline: 0; background: transparent; font-size: 1rem; color: var(--color-foreground); }
+.iva-hero-search button { min-height: 2.75rem; padding: 0 1.5rem; border-radius: 999px; background: var(--color-primary); color: #fff; font-family: var(--font-heading); font-weight: 700; transition: background-color 0.15s ease; }
+.iva-hero-search button:hover { background: var(--color-primary-dark); }
+
+/* Articles: navy header with the photo framed on the right */
+.iva-pagehero-dark { background: var(--color-ink); }
+.iva-pagehero-dark::before { background-image: radial-gradient(circle, rgb(255 255 255 / 0.07) 0 0.45rem, transparent 0.5rem); }
+.iva-pagehero-dark .iva-crumbs { color: rgb(255 255 255 / 0.65); }
+.iva-pagehero-dark .iva-crumbs a:hover, .iva-pagehero-dark .iva-crumbs [aria-current] { color: #fff; }
+.iva-pagehero-dark .iva-pagehero-title { color: #fff; }
+.iva-pagehero-dark .iva-pagehero-lead { color: rgb(255 255 255 / 0.75); }
+.iva-pagehero-dark .iva-pagehero-meta { color: rgb(255 255 255 / 0.7); }
+.iva-pagehero-dark .iva-meta-chip { border-color: rgb(255 255 255 / 0.2); background: rgb(255 255 255 / 0.08); color: #fff; }
+@media (min-width: 900px) { .iva-pagehero-dark .iva-pagehero-side { width: 26rem; } }
+
+/* Shop: strength capsules */
+.iva-hero-capsules { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.iva-capsule-link { align-self: auto; background: #fff; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.iva-capsule-link:hover { transform: translateY(-2px); box-shadow: 0 12px 22px -14px rgb(1 44 112 / 0.6); }
+.iva-capsule-link:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+
+/* Cart and checkout: step tracker */
+.iva-pagehero-steps { padding-block: 1.75rem 2rem; }
+@media (min-width: 768px) { .iva-pagehero-steps { padding-block: 2.5rem 3rem; } }
+.iva-pagehero-steps .iva-pagehero-title { font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem); }
+.iva-stepper { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+.iva-stepper li { display: flex; align-items: center; gap: 0.625rem; color: var(--color-muted-foreground); font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 700; }
+.iva-stepper li + li::before { content: ""; width: 2rem; height: 2px; margin-right: 0.125rem; border-radius: 2px; background: var(--color-border); }
+.iva-stepper-done + li::before, .iva-stepper-current + li::before { background: var(--color-sky-300); }
+.iva-stepper-dot { display: grid; place-items: center; width: 2rem; height: 2rem; border: 2px solid var(--color-border); border-radius: 999px; background: #fff; font-size: 0.875rem; }
+.iva-stepper-dot svg { width: 0.9rem; height: 0.9rem; }
+.iva-stepper-current, .iva-stepper-done { color: var(--color-primary); }
+.iva-stepper-current .iva-stepper-dot { border-color: var(--iva-red); background: var(--iva-red); color: #fff; }
+.iva-stepper-done .iva-stepper-dot { border-color: var(--color-primary); background: var(--color-primary); color: #fff; }
+
+/* City pages: pulsing location pin */
+.iva-place { position: relative; display: grid; place-items: center; width: 11rem; height: 11rem; }
+@media (max-width: 899px) { .iva-place { display: none; } }
+.iva-place-ring { position: absolute; inset: 0; border: 2px solid var(--color-sky-300); border-radius: 999px; animation: iva-ping 3.4s ease-out infinite; }
+.iva-place-ring-2 { animation-delay: 1.7s; }
+.iva-place-pin { position: relative; display: grid; place-items: center; width: 6.5rem; height: 6.5rem; border-radius: 999px; background: #fff; box-shadow: 0 24px 48px -28px rgb(1 44 112 / 0.6); }
+@keyframes iva-ping { 0% { transform: scale(0.55); opacity: 0.9; } 100% { transform: scale(1.1); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .iva-route-line, .iva-place-ring { animation: none !important; }
+  .iva-hero-action:hover, .iva-capsule-link:hover { transform: none; }
+}

@@ -11,7 +11,7 @@ get_header();
 if (!ivermectin_render_modules()) :
     $is_shop_flow = class_exists('WooCommerce') && (is_cart() || is_checkout() || is_account_page());
     while (have_posts()) : the_post();
-        ivermectin_page_hero(['title' => get_the_title()]);
+        ivermectin_page_hero(['title' => get_the_title()] + ivermectin_hero_variant_args($is_shop_flow ? 'steps' : 'default'));
         if ($is_shop_flow) : ?>
             <section class="iva-section-tight bg-white">
                 <div class="container-site max-w-7xl">

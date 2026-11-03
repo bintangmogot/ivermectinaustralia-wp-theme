@@ -1578,6 +1578,126 @@
             "append": ""
         },
         {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_policy_sections",
+            "label": "Policy pages: section count",
+            "name": "policy_sections_label",
+            "type": "text",
+            "instructions": "In the header of long text pages such as the policies. {count} is the number of headings on the page. Leave empty to hide it.",
+            "default_value": "{count} sections",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_search_ph",
+            "label": "Articles page: search box placeholder",
+            "name": "blog_search_placeholder",
+            "type": "text",
+            "instructions": "Inside the search box in the header of the Insights page and article lists.",
+            "default_value": "Search articles",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_search_btn",
+            "label": "Articles page: search button",
+            "name": "blog_search_button",
+            "type": "text",
+            "instructions": "Button next to the search box.",
+            "default_value": "Search",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_step_cart",
+            "label": "Order steps: Cart",
+            "name": "checkout_step_cart",
+            "type": "text",
+            "instructions": "First step shown in the header of the cart and checkout pages.",
+            "default_value": "Cart",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_step_checkout",
+            "label": "Order steps: Checkout",
+            "name": "checkout_step_checkout",
+            "type": "text",
+            "instructions": "Second step.",
+            "default_value": "Checkout",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_step_done",
+            "label": "Order steps: Order complete",
+            "name": "checkout_step_done",
+            "type": "text",
+            "instructions": "Third step, highlighted on the order confirmation page.",
+            "default_value": "Order complete",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_iva_tab_404",
             "label": "404 Page",
             "name": "",
@@ -1677,5 +1797,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793706959
+    "modified": 1793709467
 }

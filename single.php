@@ -22,19 +22,15 @@ while (have_posts()) : the_post();
     <?php
     $meta = ob_get_clean();
 
-    ivermectin_page_hero([
-        'title' => get_the_title(),
-        'lead'  => has_excerpt() ? get_the_excerpt() : '',
-        'meta'  => $meta,
-    ]);
+    $photo = has_post_thumbnail() ? '<div class="iva-article-photo">' . get_the_post_thumbnail(null, 'large', ['class' => 'h-full w-full object-cover', 'alt' => '', 'fetchpriority' => 'high']) . '</div>' : '';
 
-    if (has_post_thumbnail()) : ?>
-        <section class="pt-10 md:pt-14">
-            <div class="container-site">
-                <div class="iva-article-photo"><?php the_post_thumbnail('large', ['class' => 'h-full w-full object-cover', 'alt' => '']); ?></div>
-            </div>
-        </section>
-    <?php endif;
+    ivermectin_page_hero([
+        'title'   => get_the_title(),
+        'lead'    => has_excerpt() ? get_the_excerpt() : '',
+        'meta'    => $meta,
+        'variant' => 'dark',
+        'side'    => $photo,
+    ]);
 
     if (!ivermectin_render_modules($post_id, ['hero' => false])) {
         ivermectin_render_article_section((string) apply_filters('the_content', get_the_content()), true, 'default', true);
