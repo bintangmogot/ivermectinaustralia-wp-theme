@@ -1438,6 +1438,146 @@
             "append": ""
         },
         {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_archive_title",
+            "label": "Article list: default heading",
+            "name": "archive_default_title",
+            "type": "text",
+            "instructions": "Page header of the articles list when no category or search applies.",
+            "default_value": "Articles & Guides",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_search_title",
+            "label": "Search results: heading",
+            "name": "search_title",
+            "type": "text",
+            "instructions": "Page header of search results. {query} is what the visitor searched for.",
+            "default_value": "Search results for: {query}",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_search_empty_h",
+            "label": "Search results: nothing found heading",
+            "name": "search_empty_heading",
+            "type": "text",
+            "instructions": "Shown when a search finds nothing.",
+            "default_value": "No results found",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_search_empty_t",
+            "label": "Search results: nothing found text",
+            "name": "search_empty_text",
+            "type": "text",
+            "instructions": "Under the nothing found heading.",
+            "default_value": "Try a different search term.",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_posts_empty_h",
+            "label": "Article list: nothing published heading",
+            "name": "empty_posts_heading",
+            "type": "text",
+            "instructions": "Shown when a category or the article list has no posts.",
+            "default_value": "No articles are published yet",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_posts_empty_t",
+            "label": "Article list: nothing published text",
+            "name": "empty_posts_text",
+            "type": "text",
+            "instructions": "Under the nothing published heading.",
+            "default_value": "Please check back for new articles.",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_read_time",
+            "label": "Article page: reading time",
+            "name": "article_read_time_label",
+            "type": "text",
+            "instructions": "Under the article title. {minutes} is calculated from the article length. Leave empty to hide it.",
+            "default_value": "{minutes} min read",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_iva_tab_404",
             "label": "404 Page",
             "name": "",
@@ -1537,5 +1677,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793706610
+    "modified": 1793706959
 }

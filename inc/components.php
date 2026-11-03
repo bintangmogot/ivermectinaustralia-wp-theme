@@ -218,3 +218,26 @@ function ivermectin_star_row(float $rating): string {
     $filled = (int) round($rating);
     return '<span class="iva-stars" aria-hidden="true">' . str_repeat('&#9733;', $filled) . '<span class="text-border">' . str_repeat('&#9733;', max(0, 5 - $filled)) . '</span></span>';
 }
+
+/** Page numbers for the main query (archives, search), styled like ivermectin_pagination(). */
+function ivermectin_main_pagination(): string {
+    $links = paginate_links([
+        'type'      => 'array',
+        'mid_size'  => 1,
+        'prev_text' => ivermectin_label('pagination_previous_label') ?: '&lsaquo;',
+        'next_text' => ivermectin_label('pagination_next_label') ?: '&rsaquo;',
+    ]);
+    return $links ? '<nav class="iva-pager" aria-label="' . esc_attr(ivermectin_label('pagination_label')) . '"><ul><li>' . implode('</li><li>', $links) . '</li></ul></nav>' : '';
+}
+
+/** Minutes to read a post (about 200 words a minute): its content plus the text blocks of the previous theme's modules. */
+function ivermectin_reading_minutes(int $post_id): int {
+    $text = wp_strip_all_tags(get_post_field('post_content', $post_id));
+    foreach ((array) get_post_meta($post_id, 'modules', true) as $index => $layout) {
+        if (is_string($layout) && str_contains($layout, 'text')) {
+            $text .= ' ' . wp_strip_all_tags((string) get_post_meta($post_id, "modules_{$index}_content", true));
+        }
+    }
+    $words = str_word_count($text);
+    return $words > 0 ? max(1, (int) ceil($words / 200)) : 0;
+}
