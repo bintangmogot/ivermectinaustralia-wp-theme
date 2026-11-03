@@ -153,6 +153,326 @@
             "type": "text",
             "default_value": "Details",
             "instructions": "Outline button to the product page on homepage product cards (tablet and desktop)."
+        },
+        {
+            "key": "field_iva_pr_eyebrow",
+            "label": "Reviews: tag above the heading",
+            "name": "product_reviews_eyebrow",
+            "type": "text",
+            "default_value": "Verified reviews",
+            "instructions": "Small tag above the reviews heading on product pages."
+        },
+        {
+            "key": "field_iva_pr_heading",
+            "label": "Reviews: heading",
+            "name": "product_reviews_heading",
+            "type": "text",
+            "default_value": "What our customers say",
+            "instructions": "Heading of the reviews section on product pages."
+        },
+        {
+            "key": "field_iva_pr_label_default",
+            "label": "Reviews: rating label (default)",
+            "name": "product_reviews_label_default",
+            "type": "text",
+            "default_value": "Customer rating",
+            "instructions": "Above the average score when the product has no rating."
+        },
+        {
+            "key": "field_iva_pr_label_excellent",
+            "label": "Reviews: rating label 4.5 and above",
+            "name": "product_reviews_label_excellent",
+            "type": "text",
+            "default_value": "Excellent",
+            "instructions": "Above the average score."
+        },
+        {
+            "key": "field_iva_pr_label_great",
+            "label": "Reviews: rating label 4.0 to 4.4",
+            "name": "product_reviews_label_great",
+            "type": "text",
+            "default_value": "Great",
+            "instructions": "Above the average score."
+        },
+        {
+            "key": "field_iva_pr_label_average",
+            "label": "Reviews: rating label 3.0 to 3.9",
+            "name": "product_reviews_label_average",
+            "type": "text",
+            "default_value": "Average",
+            "instructions": "Above the average score."
+        },
+        {
+            "key": "field_iva_pr_label_poor",
+            "label": "Reviews: rating label below 3.0",
+            "name": "product_reviews_label_poor",
+            "type": "text",
+            "default_value": "Poor",
+            "instructions": "Above the average score."
+        },
+        {
+            "key": "field_iva_pr_based_on",
+            "label": "Reviews: score line",
+            "name": "product_reviews_based_on",
+            "type": "text",
+            "default_value": "Based on {count} reviews",
+            "instructions": "Under the average score. {count} is the number of reviews."
+        },
+        {
+            "key": "field_iva_pr_star_bar_label",
+            "label": "Reviews: star bar label",
+            "name": "product_reviews_star_bar_label",
+            "type": "text",
+            "default_value": "{star}-star",
+            "instructions": "Label of each bar in the star breakdown. {star} is 5 to 1."
+        },
+        {
+            "key": "field_iva_pr_stars_aria",
+            "label": "Reviews: stars (screen readers)",
+            "name": "product_reviews_stars_aria",
+            "type": "text",
+            "default_value": "{rating} out of 5 stars",
+            "instructions": "Read aloud for star rows. {rating} is the rating."
+        },
+        {
+            "key": "field_iva_pr_prev_label",
+            "label": "Reviews: previous arrow (screen readers)",
+            "name": "product_reviews_prev_label",
+            "type": "text",
+            "default_value": "Previous reviews",
+            "instructions": "Read aloud for the left arrow."
+        },
+        {
+            "key": "field_iva_pr_next_label",
+            "label": "Reviews: next arrow (screen readers)",
+            "name": "product_reviews_next_label",
+            "type": "text",
+            "default_value": "Next reviews",
+            "instructions": "Read aloud for the right arrow."
+        },
+        {
+            "key": "field_iva_pr_slider_label",
+            "label": "Reviews: list (screen readers)",
+            "name": "product_reviews_slider_label",
+            "type": "text",
+            "default_value": "Customer reviews",
+            "instructions": "Read aloud for the row of review cards."
+        },
+        {
+            "key": "field_iva_pr_badge_verified",
+            "label": "Reviews: verified badge",
+            "name": "product_reviews_badge_verified",
+            "type": "text",
+            "default_value": "Verified",
+            "instructions": "Badge on a review marked Verified Buyer."
+        },
+        {
+            "key": "field_iva_pr_badge_review",
+            "label": "Reviews: other badge",
+            "name": "product_reviews_badge_review",
+            "type": "text",
+            "default_value": "Review",
+            "instructions": "Badge on a review that is not marked Verified Buyer."
+        },
+        {
+            "key": "field_iva_pr_form_heading",
+            "label": "Review form: heading",
+            "name": "product_reviews_form_heading",
+            "type": "text",
+            "default_value": "Write a Review",
+            "instructions": "Heading above the review form."
+        },
+        {
+            "key": "field_iva_pr_form_for",
+            "label": "Review form: product text",
+            "name": "product_reviews_form_for",
+            "type": "text",
+            "default_value": "for {product}",
+            "instructions": "After the heading. {product} is the product name."
+        },
+        {
+            "key": "field_iva_pr_form_rating_label",
+            "label": "Review form: rating label",
+            "name": "product_reviews_form_rating_label",
+            "type": "text",
+            "default_value": "Your rating",
+            "instructions": "Above the star buttons."
+        },
+        {
+            "key": "field_iva_pr_form_rating_aria",
+            "label": "Review form: stars group (screen readers)",
+            "name": "product_reviews_form_rating_aria",
+            "type": "text",
+            "default_value": "Choose a rating",
+            "instructions": "Read aloud for the group of star buttons."
+        },
+        {
+            "key": "field_iva_pr_form_star_aria",
+            "label": "Review form: one star button (screen readers)",
+            "name": "product_reviews_form_star_aria",
+            "type": "text",
+            "default_value": "Rate {star} out of 5",
+            "instructions": "Read aloud for each star button."
+        },
+        {
+            "key": "field_iva_pr_form_name_label",
+            "label": "Review form: name label",
+            "name": "product_reviews_form_name_label",
+            "type": "text",
+            "default_value": "Name",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_form_name_placeholder",
+            "label": "Review form: name placeholder",
+            "name": "product_reviews_form_name_placeholder",
+            "type": "text",
+            "default_value": "Your name",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_form_email_label",
+            "label": "Review form: email label",
+            "name": "product_reviews_form_email_label",
+            "type": "text",
+            "default_value": "Email",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_form_email_placeholder",
+            "label": "Review form: email placeholder",
+            "name": "product_reviews_form_email_placeholder",
+            "type": "text",
+            "default_value": "you@example.com",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_form_title_label",
+            "label": "Review form: title label",
+            "name": "product_reviews_form_title_label",
+            "type": "text",
+            "default_value": "Title",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_form_title_placeholder",
+            "label": "Review form: title placeholder",
+            "name": "product_reviews_form_title_placeholder",
+            "type": "text",
+            "default_value": "Summarize your review",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_form_review_label",
+            "label": "Review form: review label",
+            "name": "product_reviews_form_review_label",
+            "type": "text",
+            "default_value": "Your review",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_form_review_placeholder",
+            "label": "Review form: review placeholder",
+            "name": "product_reviews_form_review_placeholder",
+            "type": "text",
+            "default_value": "Share your experience...",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_form_required_note",
+            "label": "Review form: required note",
+            "name": "product_reviews_form_required_note",
+            "type": "text",
+            "default_value": "All fields are required.",
+            "instructions": "Next to the submit button."
+        },
+        {
+            "key": "field_iva_pr_form_submit",
+            "label": "Review form: submit button",
+            "name": "product_reviews_form_submit",
+            "type": "text",
+            "default_value": "Submit Review",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_form_moderated",
+            "label": "Review form: moderation note",
+            "name": "product_reviews_form_moderated",
+            "type": "text",
+            "default_value": "Moderated before publishing",
+            "instructions": "Under the submit button."
+        },
+        {
+            "key": "field_iva_pr_msg_pick_rating",
+            "label": "Review form message: no rating chosen",
+            "name": "product_reviews_msg_pick_rating",
+            "type": "text",
+            "default_value": "Please select a star rating.",
+            "instructions": "Shown if the visitor submits without choosing stars."
+        },
+        {
+            "key": "field_iva_pr_msg_submitting",
+            "label": "Review form message: sending",
+            "name": "product_reviews_msg_submitting",
+            "type": "text",
+            "default_value": "Submitting...",
+            "instructions": "Button text while the review is being sent."
+        },
+        {
+            "key": "field_iva_pr_msg_failed",
+            "label": "Review form message: could not submit",
+            "name": "product_reviews_msg_failed",
+            "type": "text",
+            "default_value": "Your review could not be submitted. Please try again.",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_msg_network",
+            "label": "Review form message: network error",
+            "name": "product_reviews_msg_network",
+            "type": "text",
+            "default_value": "A network error occurred. Please try again.",
+            "instructions": ""
+        },
+        {
+            "key": "field_iva_pr_msg_session",
+            "label": "Review form message: session expired",
+            "name": "product_reviews_msg_session",
+            "type": "text",
+            "default_value": "Your session expired. Refresh the page and try again.",
+            "instructions": "Sent by the server."
+        },
+        {
+            "key": "field_iva_pr_msg_unavailable",
+            "label": "Review form message: product not available",
+            "name": "product_reviews_msg_unavailable",
+            "type": "text",
+            "default_value": "This product is not available for reviews.",
+            "instructions": "Sent by the server."
+        },
+        {
+            "key": "field_iva_pr_msg_incomplete",
+            "label": "Review form message: fields missing",
+            "name": "product_reviews_msg_incomplete",
+            "type": "text",
+            "default_value": "Please complete each field and choose a valid rating.",
+            "instructions": "Sent by the server."
+        },
+        {
+            "key": "field_iva_pr_msg_save_failed",
+            "label": "Review form message: could not save",
+            "name": "product_reviews_msg_save_failed",
+            "type": "text",
+            "default_value": "Your review could not be saved. Please try again.",
+            "instructions": "Sent by the server."
+        },
+        {
+            "key": "field_iva_pr_msg_thanks",
+            "label": "Review form message: thank you",
+            "name": "product_reviews_msg_thanks",
+            "type": "text",
+            "default_value": "Thank you. Your review has been submitted and is pending moderation.",
+            "instructions": "Shown after a review is sent."
         }
     ],
     "location": [
@@ -173,5 +493,5 @@
     "active": true,
     "description": "Editable labels and shipping/trust messages used on WooCommerce product pages.",
     "show_in_rest": 0,
-    "modified": 1793705189
+    "modified": 1793707647
 }

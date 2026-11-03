@@ -24,6 +24,9 @@ if ($email_url === '') {
     $support_email = trim((string) get_field('support_email', 'option'));
     $email_url     = $support_email !== '' ? 'mailto:' . $support_email : '';
 }
+if (stripos($chat_url, 'tel:') === 0) {
+    $chat_url = ivermectin_tel_url(substr($chat_url, 4)) ?: $chat_url;
+}
 $image_url = is_array($image_field) ? ($image_field['url'] ?? '') : (is_numeric($image_field) ? (string) wp_get_attachment_image_url((int) $image_field, 'large') : '');
 
 if ($title === '') {

@@ -11,7 +11,7 @@
 
 defined('ABSPATH') || exit;
 
-const IVERMECTIN_CONTENT_SEED_VERSION = 5;
+const IVERMECTIN_CONTENT_SEED_VERSION = 6;
 
 add_action('acf/init', 'ivermectin_run_content_seed', 99);
 

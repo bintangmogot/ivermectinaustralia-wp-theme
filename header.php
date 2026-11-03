@@ -13,6 +13,10 @@ $phone_url_opt = trim((string) get_field('whatsapp_button_url', 'option'));
 if ($phone_url_opt !== '' && stripos($phone_url_opt, 'wa.me') === false) {
     $phone_href = $phone_url_opt;
 }
+// Australian numbers dial with +61 (a saved tel: link is normalised here, the setting is not changed).
+if (stripos($phone_href, 'tel:') === 0) {
+    $phone_href = ivermectin_tel_url(substr($phone_href, 4)) ?: $phone_href;
+}
 $topbar_left   = trim((string) get_field('topbar_left', 'option'));
 $topbar_center = trim((string) get_field('topbar_center', 'option'));
 ?>
