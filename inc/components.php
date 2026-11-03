@@ -241,3 +241,47 @@ function ivermectin_reading_minutes(int $post_id): int {
     $words = str_word_count($text);
     return $words > 0 ? max(1, (int) ceil($words / 200)) : 0;
 }
+
+/**
+ * Turn the previous theme's saved footer menu HTML (headings with loose links, paragraphs or lists) into clean groups.
+ * Each heading starts a group; every link after it joins that group. Display only: the saved HTML is not changed.
+ *
+ * @return array<int, array{title: string, links: array<int, array{href: string, label: string, target: string, rel: string}>}>
+ */
+function ivermectin_parse_footer_links(string $html): array {
+    if (trim($html) === '' || !class_exists('DOMDocument')) {
+        return [];
+    }
+    $dom = new DOMDocument();
+    libxml_use_internal_errors(true);
+    $dom->loadHTML('<?xml encoding="utf-8"?><div id="iva-fm">' . $html . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    libxml_clear_errors();
+    $root = $dom->getElementById('iva-fm');
+    if (!$root) {
+        return [];
+    }
+    $groups = [];
+    $index  = -1;
+    foreach ($root->getElementsByTagName('*') as $node) {
+        $name = strtolower($node->nodeName);
+        if (in_array($name, ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], true)) {
+            $title = trim(preg_replace('/\s+/', ' ', $node->textContent));
+            if ($title !== '') {
+                $groups[] = ['title' => $title, 'links' => []];
+                $index    = count($groups) - 1;
+            }
+        } elseif ($name === 'a') {
+            $label = trim(preg_replace('/\s+/', ' ', $node->textContent));
+            $href  = trim($node->getAttribute('href'));
+            if ($label === '' || $href === '') {
+                continue;
+            }
+            if ($index < 0) {
+                $groups[] = ['title' => '', 'links' => []];
+                $index    = 0;
+            }
+            $groups[$index]['links'][] = ['href' => $href, 'label' => $label, 'target' => $node->getAttribute('target'), 'rel' => $node->getAttribute('rel')];
+        }
+    }
+    return array_values(array_filter($groups, static fn($group) => $group['links']));
+}

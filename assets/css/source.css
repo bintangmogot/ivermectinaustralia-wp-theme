@@ -3582,8 +3582,8 @@ footer .site-logo-img,
 .iva-woo .woocommerce-MyAccount-navigation .is-active a { border-color: var(--color-primary); background: var(--color-primary); color: #fff; }
 
 /* Footer */
-.iva-footer-head { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: #fff; }
-.iva-footer-head::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 999px; background: var(--iva-red); box-shadow: 0 0 0 3px rgb(212 1 47 / 0.25); }
+.iva-footer-head { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 1rem; font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: #fff; }
+.iva-footer-head::before { content: ""; flex-shrink: 0; margin-top: 0.5rem; width: 0.375rem; height: 0.375rem; border-radius: 999px; background: var(--iva-red); box-shadow: 0 0 0 3px rgb(212 1 47 / 0.25); }
 .iva-footer-about img { display: none; }
 .iva-footer-about p { margin: 0 0 0.75rem; }
 @media (min-width: 1024px) { .iva-footer-about { column-count: 2; column-gap: 3rem; } .iva-footer-about p { break-inside: avoid; } }
@@ -3672,3 +3672,14 @@ footer .site-logo-img,
 @media (prefers-reduced-motion: reduce) {
   .xoo-wsc-basket, .xoo-wsc-basket:hover, .xoo-wsc-ft-btn, .xoo-wsc-ft-btn-checkout:hover, .xoo-wsc-smr-del:hover { transform: none !important; transition: none !important; }
 }
+
+/* Footer link columns */
+.iva-footer-links { margin: 0; padding: 0; list-style: none; }
+.iva-footer-links li { break-inside: avoid; }
+.iva-footer-links a, .iva-footer-menu a { position: relative; display: inline-block; padding: 0.3125rem 0; color: rgb(255 255 255 / 0.72); font-size: 0.9375rem; line-height: 1.4; transition: color 0.15s ease, transform 0.2s ease; }
+.iva-footer-links a:hover, .iva-footer-menu a:hover { color: #fff; transform: translateX(3px); }
+.iva-footer-links a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; border-radius: 0.25rem; }
+.iva-footer-links-split { column-gap: 2rem; }
+.iva-footer-links-split { columns: 2; }
+@media (max-width: 1023px) { .iva-footer-grid > :first-child, .iva-footer-grid > .iva-footer-wide { grid-column: 1 / -1; } }
+@media (prefers-reduced-motion: reduce) { .iva-footer-links a:hover, .iva-footer-menu a:hover { transform: none; transition: none; } }

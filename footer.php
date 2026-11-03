@@ -50,13 +50,10 @@ foreach (['footer_quick', 'footer_info', 'footer_trending', 'footer_cities'] as 
         $footer_menus[] = ['location' => $location, 'title' => $menu->name];
     }
 }
-$legacy_menus = [];
+$legacy_groups = [];
 if (!$footer_menus) {
     foreach (['footer_menu', 'footer_menu_2', 'footer_menu_3'] as $legacy_field) {
-        $html = (string) $opt($legacy_field);
-        if ($html !== '') {
-            $legacy_menus[] = $html;
-        }
+        $legacy_groups = array_merge($legacy_groups, ivermectin_parse_footer_links((string) $opt($legacy_field)));
     }
 }
 
@@ -94,7 +91,7 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
     <?php endif; ?>
 
     <div class="container-site relative z-10 py-12 md:py-16">
-        <div class="grid gap-10 lg:grid-cols-[1.4fr_repeat(4,1fr)] lg:gap-8">
+        <div class="iva-footer-grid grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[minmax(15.5rem,1.3fr)_1.6fr_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-x-10">
             <div>
                 <?php ivermectin_the_logo('h-11 w-auto object-contain', 'footer'); ?>
                 <?php if ($contact_head !== '') : ?><p class="mt-6 font-heading text-base font-bold text-white"><?= esc_html($contact_head) ?></p><?php endif; ?>
@@ -102,7 +99,7 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
                     <ul class="mt-3 space-y-3 text-sm text-white/80">
                         <?php if ($address !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('australia_delivery', 'h-6 w-6') ?><span><?= esc_html($address) ?></span></li><?php endif; ?>
                         <?php if ($phone_label !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('live_chat_support', 'h-6 w-6') ?><?php if ($phone_href !== '') : ?><a href="<?= esc_url(ivermectin_tel_url($phone_href)) ?>" class="hover:text-white"><?= esc_html($phone_label) ?></a><?php else : ?><span><?= esc_html($phone_label) ?></span><?php endif; ?></li><?php endif; ?>
-                        <?php if ($email !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('email_support', 'h-6 w-6') ?><a href="mailto:<?= esc_attr($email) ?>" class="break-all hover:text-white"><?= esc_html($email) ?></a></li><?php endif; ?>
+                        <?php if ($email !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('email_support', 'h-6 w-6') ?><a href="mailto:<?= esc_attr($email) ?>" class="[overflow-wrap:anywhere] hover:text-white"><?= esc_html($email) ?></a></li><?php endif; ?>
                         <?php if ($working_days !== '' || $office_hours !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('clock_hours', 'h-6 w-6') ?><span><?= esc_html(trim($working_days . ' ' . $office_hours)) ?></span></li><?php endif; ?>
                     </ul>
                 <?php endif; ?>
@@ -121,8 +118,15 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
                     <?php wp_nav_menu(['theme_location' => $footer_menu['location'], 'container' => false, 'menu_class' => 'iva-footer-menu space-y-2.5 text-sm text-white/75', 'fallback_cb' => false, 'depth' => 1]); ?>
                 </nav>
             <?php endforeach; ?>
-            <?php foreach ($legacy_menus as $legacy_html) : ?>
-                <div class="iva-footer-menu text-sm text-white/75"><?= wp_kses_post($legacy_html) ?></div>
+            <?php foreach ($legacy_groups as $group) : ?>
+                <nav aria-label="<?= esc_attr($group['title']) ?>"<?= count($group['links']) > 9 ? ' class="iva-footer-wide"' : '' ?>>
+                    <?php if ($group['title'] !== '') : ?><h4 class="iva-footer-head"><?= esc_html($group['title']) ?></h4><?php endif; ?>
+                    <ul class="iva-footer-links<?= count($group['links']) > 9 ? ' iva-footer-links-split' : '' ?>">
+                        <?php foreach ($group['links'] as $link) : ?>
+                            <li><a href="<?= esc_url($link['href']) ?>"<?= $link['target'] !== '' ? ' target="' . esc_attr($link['target']) . '"' : '' ?><?= $link['rel'] !== '' ? ' rel="' . esc_attr($link['rel']) . '"' : '' ?>><?= esc_html($link['label']) ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </nav>
             <?php endforeach; ?>
         </div>
 
