@@ -15,7 +15,7 @@ if (!ivermectin_render_modules()) :
         if ($is_shop_flow) : ?>
             <section class="iva-section-tight bg-white">
                 <div class="container-site max-w-7xl">
-                    <div class="prose max-w-none iva-woo"><?php the_content(); ?></div>
+                    <div class="iva-woo"><?php the_content(); ?></div>
                 </div>
             </section>
         <?php else :

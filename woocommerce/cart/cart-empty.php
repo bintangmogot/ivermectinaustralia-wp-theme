@@ -16,14 +16,14 @@ remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
 <div class="max-w-2xl mx-auto py-12 md:py-20 text-center">
     
     <div class="mb-8 flex justify-center">
-        <div class="w-32 h-32 bg-stone-100 rounded-full flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <div class="w-32 h-32 bg-primary-soft rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-border" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
         </div>
     </div>
 
-    <h2 class="font-heading text-3xl font-black text-slate-900 mb-4">
+    <h2 class="font-heading text-3xl font-extrabold text-primary mb-4">
         <?= esc_html__('Your cart is empty', 'ivermectin-australia') ?>
     </h2>
 

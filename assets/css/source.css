@@ -3513,3 +3513,84 @@ footer .site-logo-img,
 .iva-chapter-content tbody tr:nth-child(even) td { background: var(--color-primary-softer); }
 .iva-chapter-content td strong, .iva-chapter-content td b { color: var(--color-primary); }
 @media (max-width: 639px) { .iva-chapter-content table { display: block; overflow-x: auto; } }
+
+/* Cart, checkout and account pages */
+.iva-woo { color: var(--color-foreground); }
+.iva-woo a.checkout-button,
+.iva-woo .checkout-button {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3.5rem;
+  border-radius: 999px !important;
+  background: var(--color-accent-dark) !important;
+  color: #fff !important;
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, transform 0.2s ease;
+}
+.iva-woo a.checkout-button:hover,
+.iva-woo .checkout-button:hover { background: #cf5f00 !important; transform: translateY(-1px); }
+.iva-woo .woocommerce-cart-form thead th { background: var(--color-primary-softer); color: var(--color-primary); font-family: var(--font-heading); }
+.iva-woo .woocommerce-cart-form .quantity input,
+.iva-woo .quantity .qty { border-radius: 999px; border: 1px solid var(--color-border); text-align: center; }
+.iva-woo .cart_totals { border-radius: 1.5rem; }
+.iva-woo .wc-block-components-notice-banner,
+.iva-woo .woocommerce-message,
+.iva-woo .woocommerce-info,
+.iva-woo .woocommerce-error { border-radius: 1rem; }
+
+/* Cart page (WooCommerce cart block) */
+.iva-woo .wc-block-cart { margin: 0; }
+.iva-woo table.wc-block-cart-items { overflow: hidden; border: 1px solid var(--color-border); border-radius: 1.5rem; border-collapse: separate; border-spacing: 0; background: #fff; }
+.iva-woo .wc-block-cart-items__header th { padding: 1rem 1.25rem; background: var(--color-primary-softer); color: var(--color-primary); font-family: var(--font-heading); font-size: 0.875rem; font-weight: 700; text-transform: none; letter-spacing: 0; }
+.iva-woo .wc-block-cart-items__row td { padding: 1.25rem; border-top: 1px solid var(--color-border); vertical-align: top; }
+.iva-woo .wc-block-cart-item__image img { border: 1px solid var(--color-border); border-radius: 0.875rem; background: var(--color-primary-softer); }
+.iva-woo .wc-block-components-product-name { color: var(--color-primary); font-family: var(--font-heading); font-weight: 700; text-decoration: none; }
+.iva-woo .wc-block-components-product-name:hover { color: var(--color-link); }
+.iva-woo .wc-block-cart-item__remove-link { color: var(--iva-red); font-size: 0.8125rem; font-weight: 600; }
+.iva-woo .wc-block-components-quantity-selector { overflow: hidden; border: 1px solid var(--color-border); border-radius: 999px; background: #fff; }
+.iva-woo .wc-block-components-quantity-selector::after { border: 0; }
+.iva-woo .wc-block-cart__sidebar { padding: 1.5rem; border: 1px solid var(--color-border); border-radius: 1.5rem; background: #fff; box-shadow: 0 30px 60px -48px rgb(1 44 112 / 0.5); }
+@media (max-width: 781px) { .iva-woo .wc-block-cart__sidebar { margin-top: 1.5rem; } }
+.iva-woo .wc-block-cart__totals-title { padding: 0 0 0.75rem; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; text-transform: none; letter-spacing: 0; }
+.iva-woo .wc-block-components-totals-footer-item .wc-block-components-totals-item__label { font-family: var(--font-heading); font-weight: 700; color: var(--color-primary); }
+.iva-woo .wc-block-components-totals-footer-item .wc-block-components-totals-item__value { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--color-primary); }
+.iva-woo .wc-block-components-button:not(.is-link) { min-height: 3rem; border-radius: 999px; background: var(--color-primary); color: #fff; font-family: var(--font-heading); font-weight: 700; transition: background-color 0.15s ease; }
+.iva-woo .wc-block-components-button:not(.is-link):hover { background: var(--color-primary-dark); }
+.iva-woo .wc-block-cart__submit-button,
+.iva-woo .wc-block-components-checkout-place-order-button { min-height: 3.5rem; background: var(--color-accent-dark) !important; font-size: 1.0625rem; }
+.iva-woo .wc-block-cart__submit-button:hover,
+.iva-woo .wc-block-components-checkout-place-order-button:hover { background: #cf5f00 !important; }
+.iva-woo .wc-block-components-totals-coupon__button { min-height: 2.75rem; }
+.iva-woo .wc-block-components-notice-banner { border-radius: 1rem; }
+
+/* Account pages: login and register cards, navy pill buttons */
+.iva-woo .woocommerce-form-login,
+.iva-woo .woocommerce-form-register { max-width: 34rem; margin-inline: auto; padding: 2rem; border: 1px solid var(--color-border); border-radius: 1.75rem; background: #fff; box-shadow: 0 30px 60px -48px rgb(1 44 112 / 0.5); }
+.iva-woo .woocommerce-Button:not(#place_order),
+.iva-woo button.button:not(#place_order):not(.checkout-button),
+.iva-woo a.button:not(.checkout-button):not(.wc-block-components-button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1.75rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.iva-woo .woocommerce-Button:not(#place_order):hover,
+.iva-woo button.button:not(#place_order):not(.checkout-button):hover,
+.iva-woo a.button:not(.checkout-button):not(.wc-block-components-button):hover { background: var(--color-primary-dark); color: #fff; }
+.iva-woo .woocommerce-MyAccount-navigation ul { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.5rem; padding: 0; list-style: none; }
+.iva-woo .woocommerce-MyAccount-navigation a { display: block; padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 999px; background: #fff; color: var(--color-muted-foreground); font-size: 0.875rem; font-weight: 600; }
+.iva-woo .woocommerce-MyAccount-navigation .is-active a { border-color: var(--color-primary); background: var(--color-primary); color: #fff; }
