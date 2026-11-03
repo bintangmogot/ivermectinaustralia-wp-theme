@@ -93,15 +93,23 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
     </div>
     <?php endif; ?>
 
-    <div class="container-site relative z-10 py-10">
-        <div class="grid gap-8 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
+    <div class="container-site relative z-10 py-12 md:py-16">
+        <div class="grid gap-10 lg:grid-cols-[1.4fr_repeat(4,1fr)] lg:gap-8">
             <div>
-                <?php ivermectin_the_logo('h-10 w-auto object-contain', 'footer'); ?>
-                <?php if ($description !== '') : ?><div class="prose-invert mt-4 text-sm leading-relaxed text-white/75"><?= wp_kses_post($description) ?></div><?php endif; ?>
+                <?php ivermectin_the_logo('h-11 w-auto object-contain', 'footer'); ?>
+                <?php if ($contact_head !== '') : ?><p class="mt-6 font-heading text-base font-bold text-white"><?= esc_html($contact_head) ?></p><?php endif; ?>
+                <?php if ($address !== '' || $email !== '' || $phone_label !== '') : ?>
+                    <ul class="mt-3 space-y-3 text-sm text-white/80">
+                        <?php if ($address !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('australia_delivery', 'h-6 w-6') ?><span><?= esc_html($address) ?></span></li><?php endif; ?>
+                        <?php if ($phone_label !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('live_chat_support', 'h-6 w-6') ?><?php if ($phone_href !== '') : ?><a href="<?= esc_url(ivermectin_tel_url($phone_href)) ?>" class="hover:text-white"><?= esc_html($phone_label) ?></a><?php else : ?><span><?= esc_html($phone_label) ?></span><?php endif; ?></li><?php endif; ?>
+                        <?php if ($email !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('email_support', 'h-6 w-6') ?><a href="mailto:<?= esc_attr($email) ?>" class="break-all hover:text-white"><?= esc_html($email) ?></a></li><?php endif; ?>
+                        <?php if ($working_days !== '' || $office_hours !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('clock_hours', 'h-6 w-6') ?><span><?= esc_html(trim($working_days . ' ' . $office_hours)) ?></span></li><?php endif; ?>
+                    </ul>
+                <?php endif; ?>
                 <?php if ($socials) : ?>
-                    <ul class="mt-5 flex gap-2">
+                    <ul class="mt-6 flex gap-2">
                         <?php foreach ($socials as $label => $url) : ?>
-                            <li><a href="<?= esc_url($url) ?>" target="_blank" rel="noopener noreferrer" aria-label="<?= esc_attr($label) ?>" class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 text-white hover:bg-white/20"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="<?= esc_attr($social_paths[$label]) ?>"/></svg></a></li>
+                            <li><a href="<?= esc_url($url) ?>" target="_blank" rel="noopener noreferrer" aria-label="<?= esc_attr($label) ?>" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white hover:text-primary"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="<?= esc_attr($social_paths[$label]) ?>"/></svg></a></li>
                         <?php endforeach; ?>
                     </ul>
                 <?php endif; ?>
@@ -109,8 +117,8 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
 
             <?php foreach ($footer_menus as $footer_menu) : ?>
                 <nav aria-label="<?= esc_attr($footer_menu['title']) ?>">
-                    <h4 class="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-white"><?= esc_html($footer_menu['title']) ?></h4>
-                    <?php wp_nav_menu(['theme_location' => $footer_menu['location'], 'container' => false, 'menu_class' => 'iva-footer-menu space-y-2 text-sm text-white/75', 'fallback_cb' => false, 'depth' => 1]); ?>
+                    <h4 class="iva-footer-head"><?= esc_html($footer_menu['title']) ?></h4>
+                    <?php wp_nav_menu(['theme_location' => $footer_menu['location'], 'container' => false, 'menu_class' => 'iva-footer-menu space-y-2.5 text-sm text-white/75', 'fallback_cb' => false, 'depth' => 1]); ?>
                 </nav>
             <?php endforeach; ?>
             <?php foreach ($legacy_menus as $legacy_html) : ?>
@@ -118,43 +126,44 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
             <?php endforeach; ?>
         </div>
 
-        <?php if ($address !== '' || $email !== '' || $phone_label !== '') : ?>
-        <div class="mt-8 border-t border-white/10 pt-6">
-            <?php if ($contact_head !== '') : ?><h4 class="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-white"><?= esc_html($contact_head) ?></h4><?php endif; ?>
-            <ul class="grid gap-3 text-sm text-white/85 md:grid-cols-3">
-                <?php if ($address !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('australia_delivery', 'h-7 w-7') ?><span><?= esc_html($address) ?></span></li><?php endif; ?>
-                <?php if ($phone_label !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('live_chat_support', 'h-7 w-7') ?><?php if ($phone_href !== '') : ?><a href="tel:<?= esc_attr($phone_href) ?>" class="hover:text-white"><?= esc_html($phone_label) ?></a><?php else : ?><span><?= esc_html($phone_label) ?></span><?php endif; ?></li><?php endif; ?>
-                <?php if ($email !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('email_support', 'h-7 w-7') ?><a href="mailto:<?= esc_attr($email) ?>" class="break-all hover:text-white"><?= esc_html($email) ?></a></li><?php endif; ?>
-                <?php if ($working_days !== '' || $office_hours !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('clock_hours', 'h-7 w-7') ?><span><?= esc_html(trim($working_days . ' ' . $office_hours)) ?></span></li><?php endif; ?>
-            </ul>
-        </div>
-        <?php endif; ?>
-
         <?php
         $logo_groups = [
             [trim((string) $opt('footer_payments_heading')), $opt('footer_payment_images')],
             [trim((string) $opt('footer_shipping_heading')), $opt('footer_shipping_images')],
         ];
+        $has_logos = false;
+        foreach ($logo_groups as [, $group_images]) {
+            $has_logos = $has_logos || (!empty($group_images) && is_array($group_images));
+        }
+        $chips = array_filter([$ssl_text, $dispatch_text, $checkout_text]);
         ?>
-        <div class="mt-6 flex flex-wrap items-start gap-x-10 gap-y-5">
+        <?php if ($has_logos || $chips) : ?>
+        <div class="mt-10 flex flex-wrap items-center gap-x-10 gap-y-5 border-t border-white/10 pt-8">
             <?php foreach ($logo_groups as [$group_heading, $group_images]) :
                 if (empty($group_images) || !is_array($group_images)) { continue; } ?>
                 <div>
-                    <?php if ($group_heading !== '') : ?><p class="mb-2 text-xs font-bold uppercase tracking-wider text-white/70"><?= esc_html($group_heading) ?></p><?php endif; ?>
+                    <?php if ($group_heading !== '') : ?><p class="mb-2 text-sm font-semibold text-white/70"><?= esc_html($group_heading) ?></p><?php endif; ?>
                     <ul class="flex flex-wrap items-center gap-2">
                         <?php foreach ($group_images as $row) : $url = $img_url($row['image'] ?? ''); if ($url === '') { continue; } ?>
-                            <li class="rounded-md bg-white px-3 py-1.5"><img src="<?= esc_url($url) ?>" alt="<?= esc_attr($row['alt_text'] ?? '') ?>" class="h-6 w-auto object-contain" loading="lazy"></li>
+                            <li class="rounded-lg bg-white px-3.5 py-2"><img src="<?= esc_url($url) ?>" alt="<?= esc_attr($row['alt_text'] ?? '') ?>" class="h-6 w-auto object-contain" loading="lazy"></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
             <?php endforeach; ?>
-            <?php foreach ([$ssl_text, $dispatch_text, $checkout_text] as $chip) : if ($chip === '') { continue; } ?>
-                <p class="rounded-md border border-white/20 px-3 py-1.5 text-xs font-semibold text-white/85"><?= esc_html($chip) ?></p>
-            <?php endforeach; ?>
+            <?php if ($chips) : ?>
+                <ul class="flex flex-wrap gap-2 lg:ml-auto">
+                    <?php foreach ($chips as $chip) : ?><li class="rounded-full border border-white/20 px-3.5 py-1.5 text-xs font-semibold text-white/85"><?= esc_html($chip) ?></li><?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
         </div>
+        <?php endif; ?>
+
+        <?php if ($description !== '') : ?>
+            <div class="iva-footer-about mt-8 border-t border-white/10 pt-8 text-sm leading-relaxed text-white/60"><?= wp_kses_post($description) ?></div>
+        <?php endif; ?>
 
         <?php if ($disclaimer !== '' || $copyright !== '') : ?>
-        <div class="mt-8 space-y-2 border-t border-white/10 pt-5 text-xs leading-relaxed text-white/60">
+        <div class="mt-8 space-y-2 border-t border-white/10 pt-6 text-xs leading-relaxed text-white/55">
             <?php if ($disclaimer !== '') : ?><p><?= esc_html($disclaimer) ?></p><?php endif; ?>
             <?php if ($copyright !== '') : ?><p>&copy; <?= esc_html(gmdate('Y')) ?> <?= esc_html($copyright) ?></p><?php endif; ?>
         </div>
