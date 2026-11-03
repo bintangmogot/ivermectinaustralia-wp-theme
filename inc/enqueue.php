@@ -71,5 +71,16 @@ function ivermectin_enqueue_scripts() {
         file_exists(IVERMECTIN_THEME_DIR . '/assets/js/main.js') ? filemtime(IVERMECTIN_THEME_DIR . '/assets/js/main.js') : IVERMECTIN_THEME_VERSION,
         true
     );
+
+    // 4. Scroll motion: GSAP with ScrollTrigger, then the theme's motion script. Content stays visible if they fail to load.
+    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', array(), '3.12.5', true);
+    wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', array('gsap'), '3.12.5', true);
+    wp_enqueue_script(
+        'ivermectin-motion-js',
+        IVERMECTIN_THEME_URI . '/assets/js/motion.js',
+        array('gsap', 'gsap-scrolltrigger'),
+        file_exists(IVERMECTIN_THEME_DIR . '/assets/js/motion.js') ? filemtime(IVERMECTIN_THEME_DIR . '/assets/js/motion.js') : IVERMECTIN_THEME_VERSION,
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'ivermectin_enqueue_scripts');

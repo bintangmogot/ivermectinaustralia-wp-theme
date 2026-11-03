@@ -369,6 +369,50 @@
                                     "required": 1
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_iva_hero_review_badge",
+                            "label": "Review badge text",
+                            "name": "review_badge_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Badge on the hero photo. {score} is the average rating and {count} the number of published reviews, both calculated from the Reviews posts. Leave empty to hide the badge.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "{score} from {count} reviews",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_hero_section",
+                            "parent": "field_iva_page_modules"
+                        },
+                        {
+                            "key": "field_iva_hero_show_mascot",
+                            "label": "Show the mascot",
+                            "name": "show_mascot",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "The waving tablet character at the corner of the hero photo.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_hero_section",
+                            "parent": "field_iva_page_modules"
                         }
                     ],
                     "min": "",
@@ -896,6 +940,32 @@
                                     "parent_repeater": "field_wcu_audiences"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_iva_why_choose_us_image",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Optional photo shown beside this section.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_layout": "layout_why_choose_us"
                         }
                     ],
                     "min": "",
@@ -955,6 +1025,116 @@
                             "elements": [],
                             "return_format": "object",
                             "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_iva_rc_score_text",
+                            "label": "Score line",
+                            "name": "score_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Under the average score beside the heading. {count} is the number of published reviews.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Based on {count} reviews",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_reviews_carousel",
+                            "parent": "field_iva_page_modules"
+                        },
+                        {
+                            "key": "field_iva_rc_verified_label",
+                            "label": "Verified buyer label",
+                            "name": "verified_label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Shown after the date on reviews marked Verified Buyer.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Verified buyer",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_reviews_carousel",
+                            "parent": "field_iva_page_modules"
+                        },
+                        {
+                            "key": "field_iva_rc_rating_label",
+                            "label": "Star rating label (screen readers)",
+                            "name": "rating_label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Read aloud for the stars on each card. {rating} is the review rating.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "{rating} out of 5",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_reviews_carousel",
+                            "parent": "field_iva_page_modules"
+                        },
+                        {
+                            "key": "field_iva_rc_prev_label",
+                            "label": "Previous arrow label (screen readers)",
+                            "name": "previous_label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Read aloud for the left arrow.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Previous reviews",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_reviews_carousel",
+                            "parent": "field_iva_page_modules"
+                        },
+                        {
+                            "key": "field_iva_rc_next_label",
+                            "label": "Next arrow label (screen readers)",
+                            "name": "next_label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Read aloud for the right arrow.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Next reviews",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_reviews_carousel",
+                            "parent": "field_iva_page_modules"
                         }
                     ],
                     "min": "",
@@ -1448,6 +1628,54 @@
                                     "parent_repeater": "field_hto_steps"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_iva_how_to_order_image",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Optional photo shown beside this section.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_layout": "layout_how_to_order"
+                        },
+                        {
+                            "key": "field_iva_hto_show_logos",
+                            "label": "Show payment and delivery logos",
+                            "name": "show_payment_logos",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Logos under the steps. They come from Theme Settings > Footer > Payments Accepted and Shipping Partner images.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_how_to_order",
+                            "parent": "field_iva_page_modules"
                         }
                     ],
                     "min": "",
@@ -3539,6 +3767,28 @@
                             "max_height": 0,
                             "max_size": 0,
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_iva_scta_show_mascot",
+                            "label": "Show the mascot",
+                            "name": "show_mascot",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "The tablet character peeking over the top of the block.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_support_cta",
+                            "parent": "field_iva_page_modules"
                         }
                     ],
                     "min": "",
@@ -3596,6 +3846,54 @@
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_iva_rich_text_image",
+                            "label": "Side image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Optional photo shown beside this section.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_layout": "layout_rich_text"
+                        },
+                        {
+                            "key": "field_iva_rt_faq_open",
+                            "label": "Show FAQ answers open",
+                            "name": "faq_open",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Applies to paragraphs that start with a bold question in long content: on shows every answer, off shows only the questions.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_layout": "layout_rich_text",
+                            "parent": "field_iva_page_modules"
                         }
                     ],
                     "min": "",
@@ -3856,6 +4154,6 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792586495,
+    "modified": 1793705189,
     "local_file": "C:laragonwwwivermectinaustralia.com/wp-content/themes/ivermectinaustralia.com-wp/acf-json/group_page_modules.json"
 }

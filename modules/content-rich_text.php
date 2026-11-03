@@ -1,6 +1,10 @@
 <?php
 /**
- * Module: Rich Text
+ * Module: rich_text. Sub fields: content, width (narrow, default, full), image.
+ * Long content with three or more H2 headings renders as a guide: a contents rail beside the chapters,
+ * with lists, tips and questions restyled (see inc/rich-article.php); faq_open shows the answers open.
+ * Shorter content renders as plain prose.
+ * The image field is kept in admin and not shown.
  */
 
 $content = get_sub_field('content');
@@ -8,28 +12,42 @@ if (!$content) {
     return;
 }
 
-$width = get_sub_field('width') ?: 'default';
+$article = ivermectin_build_rich_article((string) $content, (bool) get_sub_field('faq_open'));
+$width   = get_sub_field('width') ?: 'default';
 $max_width_class = match ($width) {
     'narrow' => 'max-w-3xl',
     'full' => 'max-w-none',
     default => 'max-w-6xl',
 };
-
-$is_about_page = false;
-$section_classes = $is_about_page ? 'section-padding bg-white' : 'section-padding bg-background';
-$container_width_class = $is_about_page ? 'max-w-4xl' : $max_width_class;
-$panel_classes = $is_about_page ? 'relative isolate overflow-hidden rounded-3xl bg-primary border border-sky-400/40 p-6 text-white shadow-sm sm:p-8 md:p-12' : '';
-$prose_classes = $is_about_page
-    ? 'relative z-10 prose prose-invert max-w-none prose-headings:font-heading prose-headings:font-bold text-white [&_h1]:!text-white [&_h2]:!text-white [&_h3]:!text-white [&_h4]:!text-white [&_h5]:!text-white [&_h6]:!text-white [&_h1_*]:!text-white [&_h2_*]:!text-white [&_h3_*]:!text-white [&_h4_*]:!text-white [&_h5_*]:!text-white [&_h6_*]:!text-white [&_b]:!text-white [&_strong]:!text-white [&>p]:!text-white/85 [&_li]:!text-white/85 [&_a]:!text-sky-300 [&_a:hover]:!text-white'
-    : 'prose prose-slate max-w-none prose-a:text-primary hover:prose-a:text-primary-dark prose-headings:font-heading prose-headings:font-bold';
+$toc = $article ? array_values(array_filter($article['chapters'], static fn($chapter) => $chapter['id'] !== '')) : [];
 ?>
-<section class="<?= esc_attr($section_classes) ?>">
-    <div class="container-site <?= esc_attr($container_width_class) ?>">
-        <div class="<?= esc_attr($panel_classes) ?>">
-            <?php if ($is_about_page) ivermectin_output_pattern_rings(); ?>
-            <div class="<?= esc_attr($prose_classes) ?>">
+<section class="iva-section iva-guide bg-white">
+    <?php if ($article) : ?>
+        <div class="container-site grid grid-cols-1 gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16 xl:grid-cols-[17rem_minmax(0,1fr)]">
+            <?php if (count($toc) > 1) : ?>
+                <nav class="iva-toc" data-iva-toc>
+                    <ol>
+                        <?php foreach ($toc as $chapter) : ?>
+                            <li><a href="#<?= esc_attr($chapter['id']) ?>"><?= esc_html($chapter['title']) ?></a></li>
+                        <?php endforeach; ?>
+                    </ol>
+                </nav>
+            <?php endif; ?>
+
+            <div class="iva-guide-body">
+                <?php foreach ($article['chapters'] as $chapter) : ?>
+                    <article class="iva-chapter"<?= $chapter['id'] !== '' ? ' id="' . esc_attr($chapter['id']) . '"' : '' ?>>
+                        <?php if ($chapter['title'] !== '') : ?><h2 class="iva-chapter-title"><?= esc_html($chapter['title']) ?></h2><?php endif; ?>
+                        <div class="iva-chapter-content"><?= $chapter['html'] ?></div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php else : ?>
+        <div class="container-site <?= esc_attr($max_width_class) ?>">
+            <div class="prose prose-slate max-w-none">
                 <?= wp_kses_post($content) ?>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
 </section>

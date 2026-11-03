@@ -113,6 +113,46 @@
             "name": "product_specs_delivery_label",
             "type": "text",
             "default_value": "Delivery Time"
+        },
+        {
+            "key": "field_iva_in_stock_label",
+            "label": "In stock label",
+            "name": "in_stock_label",
+            "type": "text",
+            "default_value": "In stock",
+            "instructions": "Product cards and the hero quick order card, for products in stock."
+        },
+        {
+            "key": "field_iva_out_of_stock_label",
+            "label": "Out of stock label",
+            "name": "out_of_stock_label",
+            "type": "text",
+            "default_value": "Out of stock",
+            "instructions": "Product cards and the hero quick order card, for products out of stock."
+        },
+        {
+            "key": "field_iva_per_tab_label",
+            "label": "Price per tablet label",
+            "name": "per_tab_label",
+            "type": "text",
+            "default_value": "per tab",
+            "instructions": "After the price per tablet on homepage product cards."
+        },
+        {
+            "key": "field_iva_add_to_cart_label",
+            "label": "Add to cart button",
+            "name": "add_to_cart_label",
+            "type": "text",
+            "default_value": "Add to Cart",
+            "instructions": "Button on homepage product cards and the hero quick order card."
+        },
+        {
+            "key": "field_iva_details_label",
+            "label": "Details button",
+            "name": "details_label",
+            "type": "text",
+            "default_value": "Details",
+            "instructions": "Outline button to the product page on homepage product cards (tablet and desktop)."
         }
     ],
     "location": [
@@ -133,5 +173,5 @@
     "active": true,
     "description": "Editable labels and shipping/trust messages used on WooCommerce product pages.",
     "show_in_rest": 0,
-    "modified": 1791190000
+    "modified": 1793705189
 }

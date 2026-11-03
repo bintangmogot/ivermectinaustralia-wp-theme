@@ -197,7 +197,16 @@ document.addEventListener('click', (event) => {
     card.querySelectorAll('.iva-qbtn').forEach((other) => other.setAttribute('aria-pressed', 'false'));
     button.setAttribute('aria-pressed', 'true');
     const output = card.querySelector('[data-iva-price]');
-    if (output && button.dataset.ivaAmount) output.innerHTML = button.dataset.ivaAmount;
+    if (output && button.dataset.ivaAmount) {
+        output.innerHTML = button.dataset.ivaAmount;
+        output.classList.remove('is-changed');
+        void output.offsetWidth;
+        output.classList.add('is-changed');
+    }
+    const cartLink = card.querySelector('[data-iva-cart]');
+    if (cartLink && button.dataset.ivaCartUrl) cartLink.href = button.dataset.ivaCartUrl;
+    const unit = card.querySelector('[data-iva-unit-out]');
+    if (unit) unit.innerHTML = button.dataset.ivaUnit || '';
 });
 
 // Previous theme's FAQ accordions (content stored in the old "modules" field).
@@ -220,3 +229,38 @@ document.addEventListener('click', (event) => {
         setTimeout(() => { button.textContent = label; }, 1200);
     });
 });
+
+// Arrow buttons that scroll a horizontal card row by one card.
+document.addEventListener('click', (event) => {
+    const arrow = event.target.closest('[data-iva-scroll]');
+    if (!arrow) return;
+    const row = document.getElementById(arrow.dataset.ivaScroll);
+    if (!row) return;
+    const card = row.firstElementChild;
+    const gap = parseFloat(getComputedStyle(row).columnGap) || 16;
+    const step = card ? card.getBoundingClientRect().width + gap : row.clientWidth;
+    row.scrollBy({ left: step * Number(arrow.dataset.dir || 1), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+});
+
+
+// Guide contents rail: mark the chapter being read; on phones keep the active chip in view.
+(() => {
+    const toc = document.querySelector('[data-iva-toc]');
+    if (!toc || !('IntersectionObserver' in window)) return;
+    const links = [...toc.querySelectorAll('a[href^="#"]')];
+    const chapters = links.map((link) => document.getElementById(link.getAttribute('href').slice(1))).filter(Boolean);
+    const setActive = (id) => {
+        links.forEach((link) => {
+            const active = link.getAttribute('href') === '#' + id;
+            link.setAttribute('aria-current', active ? 'true' : 'false');
+            const list = link.closest('ol');
+            if (active && list.scrollWidth > list.clientWidth) {
+                list.scrollTo({ left: link.offsetLeft - 16, behavior: 'smooth' });
+            }
+        });
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) setActive(entry.target.id); });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    chapters.forEach((chapter) => observer.observe(chapter));
+})();

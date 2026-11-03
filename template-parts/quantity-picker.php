@@ -2,6 +2,7 @@
 /**
  * Quantity buttons for a variable product. Clicking one updates the price shown in the same [data-iva-qcard].
  * Args: product (WC_Product). Buttons are rendered as "N Tabs".
+ * Each button also carries the add-to-cart link and the price per tablet for that pack, for cards that show them.
  */
 defined('ABSPATH') || exit;
 
@@ -36,7 +37,13 @@ if (!$variations) {
         if ($label !== '' && stripos($label, 'tab') === false) {
             $label .= ' Tabs';
         }
+        $cart_url = add_query_arg(array_merge(
+            ['add-to-cart' => $product->get_id(), 'variation_id' => $variation['variation_id']],
+            array_map('rawurlencode', array_filter($variation['attributes']))
+        ), wc_get_cart_url());
+        $tab_count = preg_match('/\d+/', $label, $count_match) ? (int) $count_match[0] : 0;
+        $per_tab   = $tab_count > 0 ? wc_price($variation['display_price'] / $tab_count, ['decimals' => 2]) : '';
         ?>
-        <button type="button" class="iva-qbtn" aria-pressed="<?= $index === 0 ? 'true' : 'false' ?>" data-iva-amount="<?= esc_attr(wc_price($variation['display_price'])) ?>"><?= esc_html($label) ?></button>
+        <button type="button" class="iva-qbtn" aria-pressed="<?= $index === 0 ? 'true' : 'false' ?>" data-iva-amount="<?= esc_attr(wc_price($variation['display_price'])) ?>" data-iva-cart-url="<?= esc_url($cart_url) ?>" data-iva-unit="<?= esc_attr($per_tab) ?>"><?= esc_html($label) ?></button>
     <?php endforeach; ?>
 </div>

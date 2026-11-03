@@ -20,6 +20,8 @@ function ivermectin_output_pattern_rings($extra_class = '') {
 require_once IVERMECTIN_THEME_DIR . '/inc/theme-setup.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/nav-walkers.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/icon-library.php';
+require_once IVERMECTIN_THEME_DIR . '/inc/section-head.php';
+require_once IVERMECTIN_THEME_DIR . '/inc/rich-article.php';
 
 // 2. Assets
 require_once IVERMECTIN_THEME_DIR . '/inc/enqueue.php';
@@ -44,6 +46,7 @@ require_once IVERMECTIN_THEME_DIR . '/inc/ajax-reviews.php';
 
 // 8. Existing site content (old modules, old options, old product fields)
 require_once IVERMECTIN_THEME_DIR . '/inc/legacy-content.php';
+require_once IVERMECTIN_THEME_DIR . '/inc/content-seed.php';
 
 // ACF fallbacks so templates never fatal if ACF is deactivated.
 if (!function_exists('get_field')) {
