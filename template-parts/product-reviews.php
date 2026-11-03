@@ -61,19 +61,19 @@ if ($average_rating !== null) {
 }
 ?>
 
-<section id="product-reviews" class="scroll-mt-24 border-t border-slate-200 bg-slate-50 py-8 md:py-12" data-testid="section-reviews">
+<section id="product-reviews" class="iva-section scroll-mt-24 bg-surface" data-testid="section-reviews">
     <div class="container-site max-w-6xl">
         <header class="mb-10 flex flex-col items-center justify-center text-center">
-            <span class="mb-4 inline-flex items-center gap-1.5 rounded-full bg-primary-softer px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-dark">
+            <span class="iva-pill-tag mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-accent" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.2 6.8 1-4.9 4.8L18 21l-6-3.2L5.9 21l1.2-7-5-4.8 6.9-1L12 2Z"/></svg>
                 Verified reviews
             </span>
-            <h2 class="mb-2 font-heading text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">What our customers say</h2>
+            <h2 class="iva-h2 mb-2 text-primary">What our customers say</h2>
             
         </header>
 
         <?php if ($review_count > 0 && $rating_count > 0): ?>
-            <div class="mb-8 flex flex-col gap-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:flex-row md:gap-16 md:p-10">
+            <div class="mb-8 flex flex-col gap-8 rounded-[1.75rem] border border-border bg-white p-6 md:flex-row md:gap-16 md:p-10">
                 <div class="flex shrink-0 flex-col justify-center">
                     <div class="mb-2 text-sm font-semibold text-slate-500">Customer rating</div>
                     <div class="mb-3 text-5xl font-extrabold text-slate-900"><?= esc_html(number_format((float) $average_rating, 1)) ?></div>

@@ -566,13 +566,7 @@ if ($acf_main) {
 
 if (!empty(trim(strip_tags($main_desc)))): 
 ?>
-<section class="section-padding relative overflow-hidden bg-gradient-to-b from-primary-soft via-primary-soft to-[#f8fafc] bg-pattern-dots border-t border-sky-200/80" data-testid="section-product-description">
-    <div class="container-site relative z-10 max-w-5xl">
-        <div class="bg-white rounded-3xl shadow-sm border border-sky-300/80 p-6 md:p-12 prose prose-slate max-w-none">
-            <?= apply_filters('the_content', $main_desc); ?>
-        </div>
-    </div>
-</section>
+<?php ivermectin_render_article_section((string) apply_filters('the_content', $main_desc), true, 'default', true); ?>
 <?php endif; ?>
 
 <?php
@@ -581,30 +575,20 @@ $legacy_tabs = have_rows('extra_tabs', $product_id) ? get_field('extra_tabs', $p
 $legacy_faqs = have_rows('faqs', $product_id) ? get_field('faqs', $product_id) : [];
 ?>
 <?php if ($legacy_tabs) : ?>
-<section class="py-6 md:py-8">
-    <div class="container-site max-w-5xl space-y-4">
+<section class="iva-section-tight bg-white">
+    <div class="container-site max-w-5xl space-y-5">
         <?php foreach ($legacy_tabs as $legacy_tab) : if (empty($legacy_tab['tab_content'])) { continue; } ?>
-            <div class="lcard">
-                <?php if (!empty($legacy_tab['tab_title'])) : ?><span class="lcard-tab"><?= esc_html($legacy_tab['tab_title']) ?></span><?php endif; ?>
-                <div class="prose max-w-none p-5"><?= wp_kses_post($legacy_tab['tab_content']) ?></div>
+            <div class="iva-panel">
+                <?php if (!empty($legacy_tab['tab_title'])) : ?><h2 class="iva-h3"><?= esc_html($legacy_tab['tab_title']) ?></h2><?php endif; ?>
+                <div class="prose iva-prose mt-4 max-w-none"><?= wp_kses_post($legacy_tab['tab_content']) ?></div>
             </div>
         <?php endforeach; ?>
     </div>
 </section>
 <?php endif; ?>
-<?php if ($legacy_faqs) : ?>
-<section class="py-6 md:py-8">
-    <div class="container-site max-w-3xl">
-        <?php if (get_field('faq_title', $product_id)) : ?><h2 class="mb-4 font-heading text-2xl font-extrabold text-primary"><?= esc_html(get_field('faq_title', $product_id)) ?></h2><?php endif; ?>
-        <?php foreach ($legacy_faqs as $legacy_faq) : if (empty($legacy_faq['question'])) { continue; } ?>
-            <details class="iva-faq">
-                <summary><?= esc_html($legacy_faq['question']) ?></summary>
-                <div class="prose max-w-none"><?= wp_kses_post($legacy_faq['answer'] ?? '') ?></div>
-            </details>
-        <?php endforeach; ?>
-    </div>
-</section>
-<?php endif; ?>
+<?php if ($legacy_faqs) {
+    ivermectin_render_faq_section((string) get_field('faq_title', $product_id), $legacy_faqs, 'bg-surface');
+} ?>
 
 <?php
 // Product reviews (reviews linked to this product).

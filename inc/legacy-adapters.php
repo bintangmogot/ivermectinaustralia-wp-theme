@@ -136,18 +136,27 @@ function ivermectin_legacy_render_intro_black_background(array $row, int $index)
 
 /** Questions as two columns of open cards. The schema.org markup of the previous theme is kept. */
 function ivermectin_legacy_render_faqs(array $row, int $index): void {
-    if (!$row['items']) {
+    ivermectin_render_faq_section($row['title'], $row['items']);
+}
+
+/**
+ * FAQ cards in two columns, open by default. $items: [['question' => ..., 'answer' => ...], ...]
+ * $background: 'bg-surface' or 'bg-white'.
+ */
+function ivermectin_render_faq_section(string $title, array $items, string $background = 'bg-surface'): void {
+    $items = array_values(array_filter($items, static fn($item) => trim((string) ($item['question'] ?? '')) !== ''));
+    if (!$items) {
         return;
     }
     ?>
-    <section class="iva-section iva-faqs bg-surface">
+    <section class="iva-section iva-faqs <?= esc_attr($background) ?>">
         <div class="container-site">
-            <?php ivermectin_section_head('', $row['title'], '', 'light', 'left'); ?>
+            <?php ivermectin_section_head('', $title, '', 'light', 'left'); ?>
             <div class="iva-qa-grid" data-iva-stagger>
-                <?php foreach ($row['items'] as $item) : ?>
+                <?php foreach ($items as $item) : ?>
                     <details class="iva-qa-item" open itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                         <summary><span itemprop="name"><?= wp_kses_post($item['question']) ?></span><span class="iva-qa-icon" aria-hidden="true"></span></summary>
-                        <div class="iva-qa-answer entry-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><?= $item['answer'] ?></div></div>
+                        <div class="iva-qa-answer entry-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><?= wp_kses_post($item['answer'] ?? '') ?></div></div>
                     </details>
                 <?php endforeach; ?>
             </div>
