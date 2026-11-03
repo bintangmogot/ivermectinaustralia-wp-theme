@@ -3603,3 +3603,7 @@ footer .site-logo-img,
 @media (min-width: 1024px) { .iva-footer-about { column-count: 2; column-gap: 3rem; } .iva-footer-about p { break-inside: avoid; } }
 .iva-footer-about a { color: rgb(255 255 255 / 0.85); text-decoration: underline; text-underline-offset: 3px; }
 .iva-footer-about strong, .iva-footer-about b { color: rgb(255 255 255 / 0.85); }
+
+/* Checkout: the checkout fields plugin leaves a hidden select positioned beyond the form on phones */
+.iva-woo .form-row { position: relative; }
+.iva-woo select.select2-hidden-accessible { left: 0 !important; right: auto !important; width: 1px !important; max-width: 1px !important; }
