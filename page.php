@@ -1,6 +1,7 @@
 <?php
 /**
- * Pages. New pages use "page_modules". Pages built with the previous theme keep their "modules".
+ * Pages. New pages use "page_modules". Pages built with the previous theme keep their "modules",
+ * rendered in the current design with their page header. Other pages show the page title and content.
  */
 get_header();
 ?>
@@ -10,25 +11,17 @@ get_header();
 if (!ivermectin_render_modules()) :
     $is_shop_flow = class_exists('WooCommerce') && (is_cart() || is_checkout() || is_account_page());
     while (have_posts()) : the_post();
-        if (!$is_shop_flow) : ?>
-            <header class="relative isolate overflow-hidden bg-primary text-white">
-                <?php ivermectin_output_pattern_rings(); ?>
-                <div class="container-site relative z-10 py-8 md:py-10">
-                    <nav aria-label="Breadcrumb" class="mb-2 text-sm text-white/70">
-                        <a href="<?= esc_url(home_url('/')) ?>" class="hover:text-white"><?= esc_html__('Home', 'ivermectin-australia') ?></a>
-                        <span aria-hidden="true" class="mx-1.5">/</span>
-                        <span aria-current="page" class="text-white"><?php the_title(); ?></span>
-                    </nav>
-                    <h1 class="font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl"><?php the_title(); ?></h1>
+        ivermectin_page_hero(['title' => get_the_title()]);
+        if ($is_shop_flow) : ?>
+            <section class="iva-section-tight bg-white">
+                <div class="container-site max-w-7xl">
+                    <div class="prose max-w-none iva-woo"><?php the_content(); ?></div>
                 </div>
-            </header>
-        <?php endif; ?>
-        <div class="py-8 md:py-10">
-            <div class="container-site <?= $is_shop_flow ? 'max-w-7xl' : 'max-w-4xl' ?>">
-                <div class="prose max-w-none"><?php the_content(); ?></div>
-            </div>
-        </div>
-    <?php endwhile;
+            </section>
+        <?php else :
+            ivermectin_render_article_section((string) apply_filters('the_content', get_the_content()), true, 'default', true);
+        endif;
+    endwhile;
 endif;
 ?>
 </main>

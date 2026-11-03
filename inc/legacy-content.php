@@ -12,9 +12,10 @@ defined('ABSPATH') || exit;
 
 /**
  * Render the modules for a post. Returns true when something was rendered.
- * New "page_modules" win. Otherwise the previous theme's "modules" are rendered unchanged.
+ * New "page_modules" win. Otherwise the previous theme's "modules" are rendered in the current design
+ * (inc/legacy-adapters.php), or with the old markup when a layout has no adapter. $opts is passed to the adapters.
  */
-function ivermectin_render_modules($post_id = false) {
+function ivermectin_render_modules($post_id = false, array $opts = []) {
     if (have_rows('page_modules', $post_id)) {
         while (have_rows('page_modules', $post_id)) {
             the_row();
@@ -24,7 +25,10 @@ function ivermectin_render_modules($post_id = false) {
     }
 
     if (have_rows('modules', $post_id)) {
-        // The old template ran in global scope and loops like "foreach (... as $post)" relied on it.
+        if (ivermectin_render_legacy_modules($post_id, $opts)) {
+            return true;
+        }
+        // A layout without an adapter: the old markup keeps the content visible. The old template ran in global scope and loops like "foreach (... as $post)" relied on it.
         global $post, $product;
         echo '<div class="iva-legacy">';
         include get_theme_file_path('legacy/modules.php');

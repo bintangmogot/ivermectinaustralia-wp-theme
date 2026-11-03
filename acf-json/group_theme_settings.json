@@ -1140,6 +1140,304 @@
             "placeholder": ""
         },
         {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_tab_page_labels",
+            "label": "Page Labels",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_home",
+            "label": "Breadcrumb: Home",
+            "name": "breadcrumb_home_label",
+            "type": "text",
+            "instructions": "First link of the breadcrumb at the top of every inner page.",
+            "default_value": "Home",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_mascot",
+            "label": "Show the mascot in page headers",
+            "name": "page_hero_mascot",
+            "type": "true_false",
+            "instructions": "The tablet character peeking over the bottom edge of the header on inner pages.",
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_pager",
+            "label": "Pagination: screen reader label",
+            "name": "pagination_label",
+            "type": "text",
+            "instructions": "Read aloud for page numbers under article and review lists.",
+            "default_value": "Pagination",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_prev",
+            "label": "Pagination: Previous",
+            "name": "pagination_previous_label",
+            "type": "text",
+            "instructions": "Link to the previous page of articles or reviews.",
+            "default_value": "Previous",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_next",
+            "label": "Pagination: Next",
+            "name": "pagination_next_label",
+            "type": "text",
+            "instructions": "Link to the next page of articles or reviews.",
+            "default_value": "Next",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_contact_email",
+            "label": "Contact page: email label",
+            "name": "contact_label_email",
+            "type": "text",
+            "instructions": "Above the email address on the Contact page.",
+            "default_value": "Email us",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_contact_phone",
+            "label": "Contact page: phone label",
+            "name": "contact_label_phone",
+            "type": "text",
+            "instructions": "Above the phone number on the Contact page.",
+            "default_value": "Phone / SMS",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_contact_address",
+            "label": "Contact page: address label",
+            "name": "contact_label_address",
+            "type": "text",
+            "instructions": "Above the address on the Contact page.",
+            "default_value": "Address",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_reviews_heading",
+            "label": "Reviews page: heading",
+            "name": "reviews_page_heading",
+            "type": "text",
+            "instructions": "Page header of the Reviews page.",
+            "default_value": "Latest reviews from our customers",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_reviews_summary",
+            "label": "Reviews page: score line",
+            "name": "reviews_page_summary",
+            "type": "text",
+            "instructions": "Under the average score. {score} is the average and {count} the number of published reviews.",
+            "default_value": "{score} rating of {count} reviews",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_reviews_form",
+            "label": "Reviews page: form heading and button",
+            "name": "reviews_form_heading",
+            "type": "text",
+            "instructions": "Heading above the review form, and the button in the score panel that jumps to it. The form only shows when Gravity Forms is active.",
+            "default_value": "Leave us a review",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_blog_all",
+            "label": "Articles page: All link",
+            "name": "blog_all_label",
+            "type": "text",
+            "instructions": "First category link above the article list.",
+            "default_value": "All articles",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_blog_cats",
+            "label": "Articles page: categories (screen reader label)",
+            "name": "blog_categories_label",
+            "type": "text",
+            "instructions": "Read aloud for the row of category links.",
+            "default_value": "Article categories",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "aria-label": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_iva_pl_related",
+            "label": "Article page: related articles heading",
+            "name": "article_related_heading",
+            "type": "text",
+            "instructions": "Heading above the related articles at the bottom of an article. Leave empty to hide them.",
+            "default_value": "Keep reading",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_iva_tab_404",
             "label": "404 Page",
             "name": "",
@@ -1239,5 +1537,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793232849
+    "modified": 1793706610
 }

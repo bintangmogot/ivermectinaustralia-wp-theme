@@ -64,6 +64,11 @@
             });
         });
 
+        // Single blocks (score panel, form card) rise in once.
+        gsap.utils.toArray('[data-iva-reveal-item]').forEach((block) => {
+            gsap.from(block, { y: 40, autoAlpha: 0, duration: 0.8, ease, clearProps: 'transform', scrollTrigger: { trigger: block, start: 'top 88%', once: true } });
+        });
+
         // How to order: cards pop in, the dashed line draws across, the numbers bounce.
         // Transforms are cleared afterwards so the cards do not form their own layers and the line stays behind the numbers.
         gsap.utils.toArray('[data-iva-steps]').forEach((steps) => {

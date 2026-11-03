@@ -16,12 +16,13 @@ defined('ABSPATH') || exit;
  * @return array{chapters: array<int, array{id: string, title: string, html: string}>}|null
  *         null when the content has fewer than three H2 headings (caller renders plain prose instead).
  */
-function ivermectin_build_rich_article(string $content, bool $faq_open = true): ?array {
+function ivermectin_build_rich_article(string $content, bool $faq_open = true, bool $trusted = false): ?array {
     if (substr_count(strtolower($content), '<h2') < 3 || !class_exists('DOMDocument')) {
         return null;
     }
 
-    $html = wp_kses_post(wpautop($content));
+    // Content from the editor is filtered; saved legacy page content is shown as it was written.
+    $html = $trusted ? wpautop($content) : wp_kses_post(wpautop($content));
     $html = preg_replace('/\sdata-[a-z-]+="[^"]*"/i', '', $html);
 
     $dom = new DOMDocument();
@@ -32,6 +33,8 @@ function ivermectin_build_rich_article(string $content, bool $faq_open = true): 
     if (!$root) {
         return null;
     }
+
+    ivermectin_unwrap_root($root);
 
     // Split top-level nodes into chapters at each H2.
     $chapters = [];
@@ -245,4 +248,48 @@ function ivermectin_rich_article_list(DOMDocument $dom, DOMElement $list, bool $
             . '</span><p class="iva-point-title">' . esc_html($item['label']) . '</p><p class="iva-point-text">' . $item['text'] . '</p></div>';
     }
     return $html . '</div>';
+}
+
+/**
+ * A text section: guide layout (contents rail, chapters) for long content with three or more H2 headings,
+ * otherwise a prose section. $trusted skips the editor filter for saved page content.
+ */
+function ivermectin_render_article_section(string $content, bool $faq_open = true, string $width = 'default', bool $trusted = false): void {
+    $article = ivermectin_build_rich_article($content, $faq_open, $trusted);
+    $max_width_class = match ($width) {
+        'narrow' => 'max-w-3xl',
+        'full' => 'max-w-none',
+        default => 'max-w-6xl',
+    };
+    $toc = $article ? array_values(array_filter($article['chapters'], static fn($chapter) => $chapter['id'] !== '')) : [];
+    ?>
+    <?php $short = !$article && mb_strlen(trim(wp_strip_all_tags($content))) < 900; ?>
+    <section class="<?= $short ? 'iva-section-tight' : 'iva-section' ?> iva-guide bg-white">
+        <?php if ($article) : ?>
+            <div class="container-site grid grid-cols-1 gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16 xl:grid-cols-[17rem_minmax(0,1fr)]">
+                <?php if (count($toc) > 1) : ?>
+                    <nav class="iva-toc" data-iva-toc>
+                        <ol>
+                            <?php foreach ($toc as $chapter) : ?>
+                                <li><a href="#<?= esc_attr($chapter['id']) ?>"><?= esc_html($chapter['title']) ?></a></li>
+                            <?php endforeach; ?>
+                        </ol>
+                    </nav>
+                <?php endif; ?>
+                <div class="iva-guide-body">
+                    <?php foreach ($article['chapters'] as $chapter) : ?>
+                        <article class="iva-chapter"<?= $chapter['id'] !== '' ? ' id="' . esc_attr($chapter['id']) . '"' : '' ?>>
+                            <?php if ($chapter['title'] !== '') : ?><h2 class="iva-chapter-title"><?= esc_html($chapter['title']) ?></h2><?php endif; ?>
+                            <div class="iva-chapter-content"><?= $chapter['html'] ?></div>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php else : ?>
+            <div class="container-site <?= esc_attr($max_width_class) ?>">
+                <div class="prose prose-slate iva-prose max-w-none"><?= $trusted ? $content : wp_kses_post($content) ?></div>
+            </div>
+        <?php endif; ?>
+    </section>
+    <?php
 }
