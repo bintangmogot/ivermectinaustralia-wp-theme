@@ -11,7 +11,7 @@
 
 defined('ABSPATH') || exit;
 
-const IVERMECTIN_CONTENT_SEED_VERSION = 7;
+const IVERMECTIN_CONTENT_SEED_VERSION = 8;
 
 add_action('acf/init', 'ivermectin_run_content_seed', 99);
 
@@ -23,7 +23,29 @@ function ivermectin_run_content_seed(bool $force = false): void {
     ivermectin_seed_logo_images();
     ivermectin_seed_homepage($force);
     ivermectin_fill_module_defaults();
+    ivermectin_seed_side_cart_text();
     update_option('ivermectin_content_seed_version', IVERMECTIN_CONTENT_SEED_VERSION, false);
+}
+
+/**
+ * Side Cart plugin: the third trust badge under the items says "Easy Returns" by default. This shop offers shipping
+ * insurance instead, so that exact default text is replaced in the plugin's saved settings. Edited text is left alone.
+ */
+function ivermectin_seed_side_cart_text(): void {
+    $options = get_option('xoo-wsc-gl-options');
+    if (!is_array($options)) {
+        return;
+    }
+    $changed = false;
+    foreach ($options as $key => $value) {
+        if (is_string($value) && strpos($value, '<b>Easy Returns</b>') !== false) {
+            $options[$key] = str_replace('<b>Easy Returns</b>', '<b>Shipping Insurance Available</b>', $value);
+            $changed = true;
+        }
+    }
+    if ($changed) {
+        update_option('xoo-wsc-gl-options', $options);
+    }
 }
 
 /**
