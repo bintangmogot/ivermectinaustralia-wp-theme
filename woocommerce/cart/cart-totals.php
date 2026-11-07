@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
-	<h2 class="text-xl font-bold font-heading text-primary mb-5"><?php esc_html_e( 'Carts Totals', 'woocommerce' ); ?></h2>
+	<h2 class="text-xl font-bold font-heading text-primary mb-5"><?php esc_html_e( 'Cart totals', 'woocommerce' ); ?></h2>
 
 
 

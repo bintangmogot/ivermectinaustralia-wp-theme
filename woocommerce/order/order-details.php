@@ -40,7 +40,7 @@ if ( $show_downloads ) {
 	);
 }
 ?>
-<section class="woocommerce-order-details bg-card border border-border/80 rounded-2xl p-3 sm:px-5 sm:py-4 shadow-xs mb-3.5 sm:mb-5">
+<section class="woocommerce-order-details bg-card border border-border/80 rounded-2xl p-3 sm:px-5 sm:py-4 shadow-xs mt-4 mb-3.5 sm:mb-5">
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
 	<h2 class="woocommerce-order-details__title font-heading text-lg sm:text-xl font-extrabold text-primary mb-3 pb-2 border-b border-border/80 flex items-center justify-between">

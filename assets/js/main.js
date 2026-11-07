@@ -222,8 +222,41 @@ document.addEventListener('click', (event) => {
     const button = event.target.closest('[data-iva-copy]');
     if (!button) return;
     const value = button.parentElement.querySelector('[data-iva-copy-value]');
-    if (!value || !navigator.clipboard) return;
-    navigator.clipboard.writeText(value.textContent.trim()).then(() => {
+    if (!value) return;
+
+    const text = value.textContent.trim();
+    const copyWithFallback = () => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.setAttribute('aria-hidden', 'true');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        textarea.setSelectionRange(0, textarea.value.length);
+
+        let copied = false;
+        try {
+            copied = document.execCommand('copy');
+        } catch (error) {}
+
+        textarea.remove();
+        return copied;
+    };
+
+    let copyPromise;
+    try {
+        copyPromise = navigator.clipboard && typeof navigator.clipboard.writeText === 'function'
+            ? navigator.clipboard.writeText(text).then(() => true).catch(copyWithFallback)
+            : Promise.resolve(copyWithFallback());
+    } catch (error) {
+        copyPromise = Promise.resolve(copyWithFallback());
+    }
+
+    copyPromise.then((copied) => {
+        if (!copied) return;
         const label = button.textContent;
         button.textContent = button.dataset.ivaCopied || label;
         setTimeout(() => { button.textContent = label; }, 1200);

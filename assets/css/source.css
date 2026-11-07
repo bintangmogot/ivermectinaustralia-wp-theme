@@ -3533,6 +3533,7 @@ footer .site-logo-img,
 .iva-woo .wc-block-cart { margin: 0; }
 .iva-woo table.wc-block-cart-items { overflow: hidden; border: 1px solid var(--color-border); border-radius: 1.5rem; border-collapse: separate; border-spacing: 0; background: #fff; }
 .iva-woo .wc-block-cart-items__header th { padding: 1rem 1.25rem; background: var(--color-primary-softer); color: var(--color-primary); font-family: var(--font-heading); font-size: 0.875rem; font-weight: 700; text-transform: none; letter-spacing: 0; }
+.iva-woo .wc-block-cart__main .wc-block-cart-items .wc-block-cart-items__header-total { padding-right: 1.25rem; text-align: right; white-space: nowrap; }
 /* Wide layout: items are table cells */
 .iva-woo .wc-block-cart.is-large .wc-block-cart-items__row td { padding: 1.5rem 1.25rem; border-top: 1px solid var(--color-border); vertical-align: top; }
 .iva-woo .wc-block-cart.is-large .wc-block-cart-items__header + .wc-block-cart-items__row td { border-top: 0; }
