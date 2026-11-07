@@ -24,6 +24,9 @@ require_once IVERMECTIN_THEME_DIR . '/inc/section-head.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/rich-article.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/components.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/hero-variants.php';
+if (is_admin()) {
+    require_once IVERMECTIN_THEME_DIR . '/inc/admin-notes.php';
+}
 
 // 2. Assets
 require_once IVERMECTIN_THEME_DIR . '/inc/enqueue.php';
