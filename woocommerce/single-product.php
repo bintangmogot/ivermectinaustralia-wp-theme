@@ -570,6 +570,18 @@ if (!empty(trim(strip_tags($main_desc)))):
 <?php endif; ?>
 
 <?php
+// Product Tabs modules (Page Modules) sit right under the description.
+if (have_rows('page_modules', $product->get_id())) {
+    while (have_rows('page_modules', $product->get_id())) {
+        the_row();
+        if (get_row_layout() === 'product_tabs') {
+            get_template_part('modules/content', 'product_tabs');
+        }
+    }
+}
+?>
+
+<?php
 // Content stored by the previous theme: extra tabs and product FAQs.
 $legacy_tabs = have_rows('extra_tabs', $product_id) ? get_field('extra_tabs', $product_id) : [];
 $legacy_faqs = have_rows('faqs', $product_id) ? get_field('faqs', $product_id) : [];
@@ -606,7 +618,7 @@ if (have_rows('page_modules', $product->get_id())) {
     while (have_rows('page_modules', $product->get_id())) {
         the_row();
         $layout = get_row_layout();
-        if (in_array($layout, ['product_summary', 'product_description', 'reviews', 'reviews_carousel'], true)) {
+        if (in_array($layout, ['product_summary', 'product_description', 'product_tabs', 'reviews', 'reviews_carousel'], true)) {
             continue;
         }
         get_template_part('modules/content', $layout);

@@ -77,6 +77,87 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_product_tabs": {
+                    "key": "layout_product_tabs",
+                    "name": "product_tabs",
+                    "label": "Product Tabs",
+                    "display": "block",
+                    "min": "",
+                    "max": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_product_tabs_heading",
+                            "label": "Heading (optional)",
+                            "name": "heading",
+                            "type": "text",
+                            "instructions": "Shown above the tabs. Leave empty for no heading.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_product_tabs_items",
+                            "label": "Tabs",
+                            "name": "tabs",
+                            "type": "repeater",
+                            "instructions": "Each row becomes one tab on the product page. One row shows as a plain section with no tab bar.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "button_label": "Add tab",
+                            "min": 0,
+                            "max": 0,
+                            "rows_per_page": 20,
+                            "collapsed": "field_product_tabs_title",
+                            "sub_fields": [
+                                {
+                                    "key": "field_product_tabs_title",
+                                    "label": "Tab title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "parent_repeater": "field_product_tabs_items"
+                                },
+                                {
+                                    "key": "field_product_tabs_content",
+                                    "label": "Tab content",
+                                    "name": "content",
+                                    "type": "wysiwyg",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0,
+                                    "parent_repeater": "field_product_tabs_items"
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "layout_hero_section": {
                     "key": "layout_hero_section",
                     "name": "hero_section",
