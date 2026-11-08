@@ -3492,11 +3492,6 @@ footer .site-logo-img,
 
 /* Panels and tables inside article chapters */
 .iva-panel { padding: 1.75rem; border: 1px solid var(--color-border); border-radius: 1.75rem; background: #fff; }
-.iva-tablist { display: flex; gap: .5rem; margin-bottom: 1rem; overflow-x: auto; padding-bottom: .25rem; }
-.iva-tab { flex: none; padding: .625rem 1.125rem; border: 1px solid var(--color-border); border-radius: 999px; background: #fff; color: var(--color-muted-foreground); font-weight: 600; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
-.iva-tab:hover { border-color: var(--color-sky-300); color: var(--color-link); }
-.iva-tab.is-active { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
-.iva-tab:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; }
 @media (min-width: 768px) { .iva-panel { padding: 2.5rem; } }
 .iva-chapter-content table { width: 100%; max-width: 52rem; margin-top: 1.75rem; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--color-border); border-radius: 1.25rem; font-size: 0.9375rem; }
 .iva-chapter-content th { padding: 0.875rem 1.25rem; background: var(--color-primary); color: #fff; font-family: var(--font-heading); font-weight: 700; text-align: left; }

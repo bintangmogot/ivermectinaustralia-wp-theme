@@ -6,13 +6,12 @@
  * It never overwrites content someone edited in WP admin:
  * - Theme Settings: only empty options are filled, from the field's ACF default.
  * - Homepage page_modules: written when empty, or when unchanged since the last seed.
- * - Products without Page Modules: a Product Description row is filled from the existing description.
  * The previous theme's "modules" field is only read, never written.
  */
 
 defined('ABSPATH') || exit;
 
-const IVERMECTIN_CONTENT_SEED_VERSION = 9;
+const IVERMECTIN_CONTENT_SEED_VERSION = 8;
 
 // ACF passes its major version to acf/init, so the seed must not take that as its $force argument:
 // forcing would rewrite the homepage modules on every page load and undo edits made in wp-admin.
@@ -29,7 +28,6 @@ function ivermectin_run_content_seed(bool $force = false): void {
     ivermectin_seed_homepage($force);
     ivermectin_fill_module_defaults();
     ivermectin_seed_side_cart_text();
-    ivermectin_seed_product_description_modules();
     update_option('ivermectin_content_seed_version', IVERMECTIN_CONTENT_SEED_VERSION, false);
 }
 
@@ -51,31 +49,6 @@ function ivermectin_seed_side_cart_text(): void {
     }
     if ($changed) {
         update_option('xoo-wsc-gl-options', $options);
-    }
-}
-
-/**
- * Products show their description from the "Product Description" row in Page Modules. Products that have no Page Modules
- * yet get that row filled from the description they already had (the classic editor text), so the text can be edited
- * next to the Product Tabs and FAQ rows. Products that already have Page Modules rows are left alone, and the original
- * description stays saved as it was.
- */
-function ivermectin_seed_product_description_modules(): void {
-    $ids = get_posts([
-        'post_type'      => 'product',
-        'post_status'    => ['publish', 'draft', 'private', 'pending'],
-        'posts_per_page' => -1,
-        'fields'         => 'ids',
-    ]);
-    foreach ($ids as $id) {
-        if (have_rows('page_modules', $id)) {
-            continue;
-        }
-        $body = (string) get_post_field('post_content', $id);
-        if (trim(wp_strip_all_tags($body)) === '') {
-            continue;
-        }
-        update_field('page_modules', [['acf_fc_layout' => 'product_description', 'content' => $body]], $id);
     }
 }
 

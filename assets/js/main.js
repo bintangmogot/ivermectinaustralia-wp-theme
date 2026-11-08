@@ -297,27 +297,3 @@ document.addEventListener('click', (event) => {
     }, { rootMargin: '-30% 0px -60% 0px' });
     chapters.forEach((chapter) => observer.observe(chapter));
 })();
-
-// Product Tabs module: accessible tab buttons that show one panel at a time.
-(() => {
-    document.querySelectorAll('[data-iva-tabs]').forEach((root) => {
-        const tabs = [...root.querySelectorAll('[role="tab"]')];
-        if (!tabs.length) return;
-        const show = (tab) => {
-            tabs.forEach((t) => {
-                const on = t === tab;
-                t.classList.toggle('is-active', on);
-                t.setAttribute('aria-selected', on ? 'true' : 'false');
-                const panel = document.getElementById(t.getAttribute('aria-controls'));
-                if (panel) panel.hidden = !on;
-            });
-        };
-        tabs.forEach((tab, i) => {
-            tab.addEventListener('click', () => show(tab));
-            tab.addEventListener('keydown', (e) => {
-                const next = e.key === 'ArrowRight' ? tabs[(i + 1) % tabs.length] : e.key === 'ArrowLeft' ? tabs[(i - 1 + tabs.length) % tabs.length] : null;
-                if (next) { e.preventDefault(); next.focus(); show(next); }
-            });
-        });
-    });
-})();
