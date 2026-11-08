@@ -6,12 +6,13 @@
  * It never overwrites content someone edited in WP admin:
  * - Theme Settings: only empty options are filled, from the field's ACF default.
  * - Homepage page_modules: written when empty, or when unchanged since the last seed.
+ * - Products with old FAQs and no Product FAQs row: a Product FAQs row is added, copied from the old field.
  * The previous theme's "modules" field is only read, never written.
  */
 
 defined('ABSPATH') || exit;
 
-const IVERMECTIN_CONTENT_SEED_VERSION = 8;
+const IVERMECTIN_CONTENT_SEED_VERSION = 9;
 
 // ACF passes its major version to acf/init, so the seed must not take that as its $force argument:
 // forcing would rewrite the homepage modules on every page load and undo edits made in wp-admin.
@@ -28,6 +29,7 @@ function ivermectin_run_content_seed(bool $force = false): void {
     ivermectin_seed_homepage($force);
     ivermectin_fill_module_defaults();
     ivermectin_seed_side_cart_text();
+    ivermectin_seed_product_faq_modules();
     update_option('ivermectin_content_seed_version', IVERMECTIN_CONTENT_SEED_VERSION, false);
 }
 
@@ -49,6 +51,38 @@ function ivermectin_seed_side_cart_text(): void {
     }
     if ($changed) {
         update_option('xoo-wsc-gl-options', $options);
+    }
+}
+
+/**
+ * Products keep their FAQs in the old "faqs" field. Each product that has them and no Product FAQs row yet gets one,
+ * copied from the old field and added after any rows it already has, so the FAQs can be edited in Page Modules. The old
+ * field is left as it was, and the product page shows only the module once it exists.
+ */
+function ivermectin_seed_product_faq_modules(): void {
+    $ids = get_posts([
+        'post_type'      => 'product',
+        'post_status'    => ['publish', 'draft', 'private', 'pending'],
+        'posts_per_page' => -1,
+        'fields'         => 'ids',
+    ]);
+    foreach ($ids as $id) {
+        $rows = have_rows('page_modules', $id) ? (array) get_field('page_modules', $id) : [];
+        if (in_array('product_faqs', array_column($rows, 'acf_fc_layout'), true)) {
+            continue;
+        }
+        $legacy = have_rows('faqs', $id) ? (array) get_field('faqs', $id) : [];
+        $items = [];
+        foreach ($legacy as $faq) {
+            if (!empty($faq['question'])) {
+                $items[] = ['question' => $faq['question'], 'answer' => $faq['answer'] ?? ''];
+            }
+        }
+        if (!$items) {
+            continue;
+        }
+        $rows[] = ['acf_fc_layout' => 'product_faqs', 'heading' => (string) get_field('faq_title', $id), 'faq_items' => $items];
+        update_field('page_modules', $rows, $id);
     }
 }
 

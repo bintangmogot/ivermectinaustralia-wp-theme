@@ -572,7 +572,15 @@ if (!empty(trim(strip_tags($main_desc)))):
 <?php
 // Content stored by the previous theme: extra tabs and product FAQs.
 $legacy_tabs = have_rows('extra_tabs', $product_id) ? get_field('extra_tabs', $product_id) : [];
-$legacy_faqs = have_rows('faqs', $product_id) ? get_field('faqs', $product_id) : [];
+// The FAQs module (Page Modules > Product FAQs) replaces the old FAQ field once a product has one.
+$has_faq_module = false;
+if (have_rows('page_modules', $product_id)) {
+    while (have_rows('page_modules', $product_id)) {
+        the_row();
+        if (get_row_layout() === 'product_faqs') { $has_faq_module = true; }
+    }
+}
+$legacy_faqs = (!$has_faq_module && have_rows('faqs', $product_id)) ? get_field('faqs', $product_id) : [];
 ?>
 <?php if ($legacy_tabs) : ?>
 <section class="iva-section-tight bg-white">
