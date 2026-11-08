@@ -120,7 +120,7 @@ function ivermectin_hero_variant_args(string $variant, array $ctx = []): array {
             break;
 
         case 'shop':
-            if (class_exists('WooCommerce') && function_exists('ivermectin_get_product_strength')) {
+            if (class_exists('WooCommerce') && !is_shop() && function_exists('ivermectin_get_product_strength')) {
                 $html = '';
                 foreach (wc_get_products(['limit' => 24, 'status' => 'publish', 'orderby' => 'menu_order', 'order' => 'ASC']) as $product) {
                     if (!preg_match('/^\s*([\d.]+)\s*([a-z]+)\s*$/i', ivermectin_get_product_strength($product), $parts)) {

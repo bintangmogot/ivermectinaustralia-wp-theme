@@ -26,6 +26,35 @@ if (function_exists('acf_add_options_page')) {
             'icon_url'   => 'dashicons-archive',
             'position'   => 31,
         ));
+
+        // Resolve the assigned WooCommerce page in each environment, rather than storing a local page ID in JSON.
+        $shop_page_id = function_exists('wc_get_page_id') ? wc_get_page_id('shop') : -1;
+        if ($shop_page_id > 0) {
+            acf_add_local_field_group([
+                'key' => 'group_iva_shop_header',
+                'title' => 'Shop Page Header',
+                'fields' => [
+                    [
+                        'key' => 'field_iva_shop_heading',
+                        'name' => 'shop_page_heading',
+                        'label' => 'Shop H1 heading',
+                        'type' => 'text',
+                        'instructions' => 'Heading above the standard catalogue. Leave empty to use this page title. If Page Modules are enabled, edit the heading in its hero module instead.',
+                    ],
+                    [
+                        'key' => 'field_iva_shop_intro',
+                        'name' => 'shop_page_text',
+                        'label' => 'Shop introductory text',
+                        'type' => 'wysiwyg',
+                        'tabs' => 'all',
+                        'toolbar' => 'basic',
+                        'media_upload' => 0,
+                        'instructions' => 'Optional text directly below the catalogue heading. Existing content modules remain below the products.',
+                    ],
+                ],
+                'location' => [[['param' => 'page', 'operator' => '==', 'value' => (string) $shop_page_id]]],
+            ]);
+        }
     });
 }
 

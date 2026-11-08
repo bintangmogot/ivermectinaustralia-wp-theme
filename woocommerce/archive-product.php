@@ -12,6 +12,7 @@ get_header('shop');
 $shop_page_id = wc_get_page_id('shop');
 $has_new      = $shop_page_id > 0 && is_shop() && have_rows('page_modules', $shop_page_id);
 $intro_text   = $shop_page_id > 0 && is_shop() ? (string) get_field('shop_page_text', $shop_page_id) : '';
+$shop_heading = $shop_page_id > 0 && is_shop() ? trim((string) get_field('shop_page_heading', $shop_page_id)) : '';
 
 echo '<main id="main-content">';
 
@@ -19,7 +20,7 @@ if ($has_new) {
     ivermectin_render_modules($shop_page_id);
 } else {
     ivermectin_page_hero([
-        'title' => woocommerce_page_title(false),
+        'title' => $shop_heading !== '' ? $shop_heading : woocommerce_page_title(false),
         'lead'  => $intro_text !== '' ? $intro_text : (is_shop() ? '' : term_description()),
     ] + ivermectin_hero_variant_args('shop'));
     ?>
