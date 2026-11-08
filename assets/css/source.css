@@ -249,6 +249,12 @@ html {
   width: 100% !important;
 }
 
+/* Keep each side-cart trust icon centered above its label. */
+.xoo-wsc-container .iva-sidecart-trust { width: 100% !important; table-layout: fixed; }
+.xoo-wsc-container .iva-sidecart-trust td { width: 33.333%; vertical-align: top; text-align: center; padding: 5px 8px !important; }
+.xoo-wsc-container .iva-sidecart-trust td > div { display: flex; justify-content: center; align-items: center; min-height: 38px; }
+.xoo-wsc-container .iva-sidecart-trust img { display: block; float: none; margin: 0 auto !important; width: 30px !important; height: 30px !important; object-fit: contain; }
+
 /* Keep the checkout label and total on one line in the cart footer across all viewports. */
 .xoo-wsc-ft-buttons-cont > a.xoo-wsc-ft-btn {
   flex-wrap: nowrap !important;

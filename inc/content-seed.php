@@ -20,6 +20,14 @@ add_action('acf/init', static function (): void {
     ivermectin_run_content_seed();
 }, 99);
 
+// Upgrade only the plugin's original trust-badge artwork; custom images remain editable in Side Cart settings.
+add_action('acf/init', static function (): void {
+    if (!get_option('ivermectin_side_cart_insurance_icon_seeded')) {
+        ivermectin_seed_side_cart_text();
+        update_option('ivermectin_side_cart_insurance_icon_seeded', 1, false);
+    }
+}, 100);
+
 function ivermectin_run_content_seed(bool $force = false): void {
     if (!function_exists('update_field') || (!$force && (int) get_option('ivermectin_content_seed_version') >= IVERMECTIN_CONTENT_SEED_VERSION)) {
         return;
@@ -47,6 +55,20 @@ function ivermectin_seed_side_cart_text(): void {
         if (is_string($value) && strpos($value, '<b>Easy Returns</b>') !== false) {
             $options[$key] = str_replace('<b>Easy Returns</b>', '<b>Shipping Insurance Available</b>', $value);
             $changed = true;
+        }
+        if (is_string($options[$key]) && strpos($options[$key], 'Shipping Insurance Available') !== false) {
+            $updated = preg_replace(
+                '~https?://[^\s"\'<>]+/side-cart-woocommerce/admin/assets/images/info/returns\.png~i',
+                esc_url_raw(get_theme_file_uri('assets/images/shipping-insurance.svg')),
+                $options[$key]
+            );
+            if (strpos($updated, 'iva-sidecart-trust') === false) {
+                $updated = preg_replace('/<table\b(?![^>]*\bclass=)/i', '<table class="iva-sidecart-trust"', $updated, 1);
+            }
+            if ($updated !== $options[$key]) {
+                $options[$key] = $updated;
+                $changed = true;
+            }
         }
     }
     if ($changed) {
