@@ -393,6 +393,20 @@
                             "parent": "field_iva_page_modules"
                         },
                         {
+                            "key": "field_iva_hero_review_badge_link",
+                            "label": "Review badge destination",
+                            "name": "review_badge_link",
+                            "type": "page_link",
+                            "post_type": [
+                                "page"
+                            ],
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "instructions": "Choose the page opened by the rating badge. Defaults to the published Our Reviews page.",
+                            "parent_layout": "layout_hero_section",
+                            "parent": "field_iva_page_modules"
+                        },
+                        {
                             "key": "field_iva_hero_show_mascot",
                             "label": "Show the mascot",
                             "name": "show_mascot",

@@ -16,6 +16,11 @@ $second_btn  = trim((string) get_sub_field('secondary_button_text'));
 $second_url  = trim((string) get_sub_field('secondary_button_link'));
 $stats       = get_sub_field('stats') ?: [];
 $badge_text  = trim((string) get_sub_field('review_badge_text'));
+$reviews_url = (string) get_sub_field('review_badge_link');
+if ($reviews_url === '') {
+    $reviews_page = get_page_by_path('our-reviews');
+    $reviews_url = $reviews_page && $reviews_page->post_status === 'publish' ? get_permalink($reviews_page) : '';
+}
 $show_mascot = (bool) get_sub_field('show_mascot');
 $product     = class_exists('WooCommerce') && get_sub_field('hero_product') ? wc_get_product((int) get_sub_field('hero_product')) : null;
 
@@ -73,13 +78,13 @@ $qty_heading = $option('quantity_heading');
                     <?= wp_get_attachment_image($image_id, 'large', false, ['class' => 'w-full', 'alt' => '', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(min-width: 1024px) 560px, 100vw']) ?>
                 </div>
                 <?php if ($review_count > 0 && $badge_text !== '') : ?>
-                    <div class="iva-float-badge">
+                    <<?= $reviews_url !== '' ? 'a href="' . esc_url($reviews_url) . '"' : 'div' ?> class="iva-float-badge">
                         <span class="grid h-11 w-11 place-items-center rounded-xl bg-primary-soft"><?= ivermectin_icon('verified_reviews', 'h-7 w-7') ?></span>
                         <span>
                             <span class="iva-stars block text-sm leading-none" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                             <span class="mt-1 block font-heading text-sm font-bold text-primary"><?= esc_html(str_replace(['{score}', '{count}'], [number_format($review_average, 1), (string) $review_count], $badge_text)) ?></span>
                         </span>
-                    </div>
+                    </<?= $reviews_url !== '' ? 'a' : 'div' ?>>
                 <?php endif; ?>
                 <?php if ($show_mascot) { get_template_part('template-parts/mascot', null, ['pose' => 'deliver', 'class' => 'iva-hero-mascot']); } ?>
             </div>
