@@ -3493,12 +3493,18 @@ footer .site-logo-img,
 /* Panels and tables inside article chapters */
 .iva-panel { padding: 1.75rem; border: 1px solid var(--color-border); border-radius: 1.75rem; background: #fff; }
 @media (min-width: 768px) { .iva-panel { padding: 2.5rem; } }
-.iva-chapter-content table { width: 100%; max-width: 52rem; margin-top: 1.75rem; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--color-border); border-radius: 1.25rem; font-size: 0.9375rem; }
+.iva-chapter-content table { width: 100%; max-width: none; margin-top: 0; margin-bottom: 0; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--color-border); border-radius: 1.25rem; font-size: 0.9375rem; }
 .iva-chapter-content th { padding: 0.875rem 1.25rem; background: var(--color-primary); color: #fff; font-family: var(--font-heading); font-weight: 700; text-align: left; }
 .iva-chapter-content td { padding: 0.875rem 1.25rem; border-top: 1px solid var(--color-border); vertical-align: top; }
 .iva-chapter-content tbody tr:nth-child(even) td { background: var(--color-primary-softer); }
 .iva-chapter-content td strong, .iva-chapter-content td b { color: var(--color-primary); }
 @media (max-width: 639px) { .iva-chapter-content table { display: block; overflow-x: auto; } }
+/* Tables pasted from the editor carry inline widths (for example 70%); the table always fills the column and the columns share it. */
+.iva-chapter-content .table-wrapper, .prose .table-wrapper { width: 100%; max-width: 100%; margin: 1.75rem 0; overflow-x: auto; border: 0; border-radius: 1.25rem; background: none; box-shadow: none; }
+.iva-chapter-content table, .prose table { width: 100% !important; min-width: 32rem; table-layout: auto; }
+.iva-chapter-content th, .iva-chapter-content td, .prose th, .prose td { width: auto !important; }
+.iva-chapter-content td:first-child { font-family: var(--font-heading); font-weight: 700; color: var(--color-primary); }
+.iva-chapter-content th:first-child:empty { padding: 0; }
 
 /* Cart, checkout and account pages */
 .iva-woo { color: var(--color-foreground); }
