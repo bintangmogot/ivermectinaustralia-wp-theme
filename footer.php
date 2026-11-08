@@ -94,6 +94,7 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
         <div class="iva-footer-grid grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[minmax(15.5rem,1.3fr)_1.6fr_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-x-10">
             <div>
                 <?php ivermectin_the_logo('h-11 w-auto object-contain', 'footer'); ?>
+                <?php if (trim($description) !== '') : ?><div class="iva-footer-description mt-4 text-sm leading-relaxed text-white/80"><?= wp_kses_post(wpautop($description)) ?></div><?php endif; ?>
                 <?php if ($contact_head !== '') : ?><p class="mt-6 font-heading text-base font-bold text-white"><?= esc_html($contact_head) ?></p><?php endif; ?>
                 <?php if ($address !== '' || $email !== '' || $phone_label !== '') : ?>
                     <ul class="mt-3 space-y-3 text-sm text-white/80">
