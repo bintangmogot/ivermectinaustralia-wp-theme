@@ -157,19 +157,7 @@ $summary = array_filter([
 </section>
 <?php endif; ?>
 
-<?php if ($faqs) : ?>
-<section class="py-6 md:py-8">
-    <div class="container-site max-w-3xl">
-        <?php if ($text('faq_heading') !== '') : ?><h2 class="mb-4 font-heading text-2xl font-extrabold text-primary"><?= esc_html($text('faq_heading')) ?></h2><?php endif; ?>
-        <?php foreach ($faqs as $row) : if (empty($row['question'])) { continue; } ?>
-            <details class="iva-faq">
-                <summary><?= esc_html($row['question']) ?></summary>
-                <div class="prose max-w-none"><?= wp_kses_post($row['answer'] ?? '') ?></div>
-            </details>
-        <?php endforeach; ?>
-    </div>
-</section>
-<?php endif; ?>
+<?php if ($faqs) { ivermectin_render_faq_section((string) $text('faq_heading'), $faqs, 'bg-surface'); } ?>
 
 <?php if ($text('cta_heading') !== '') : ?>
 <section class="py-6 md:py-8">

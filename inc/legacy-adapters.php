@@ -141,10 +141,10 @@ function ivermectin_legacy_render_faqs(array $row, int $index): void {
 }
 
 /**
- * FAQ cards in two columns, open by default. $items: [['question' => ..., 'answer' => ...], ...]
+ * FAQ cards in two columns, open by default (used by every FAQ module). $items: [['question' => ..., 'answer' => ...], ...]
  * $background: 'bg-surface' or 'bg-white'. $id becomes the section's anchor (the FAQ page header links to it).
  */
-function ivermectin_render_faq_section(string $title, array $items, string $background = 'bg-surface', string $id = ''): void {
+function ivermectin_render_faq_section(string $title, array $items, string $background = 'bg-surface', string $id = '', string $eyebrow = '', string $link_text = '', string $link_url = ''): void {
     $items = array_values(array_filter($items, static fn($item) => trim((string) ($item['question'] ?? '')) !== ''));
     if (!$items) {
         return;
@@ -152,7 +152,7 @@ function ivermectin_render_faq_section(string $title, array $items, string $back
     ?>
     <section class="iva-section iva-faqs <?= esc_attr($background) ?>"<?= $id !== '' ? ' id="' . esc_attr($id) . '"' : '' ?>>
         <div class="container-site">
-            <?php ivermectin_section_head('', $title, '', 'light', 'left'); ?>
+            <?php ivermectin_section_head($eyebrow, $title, '', 'light', 'left'); ?>
             <div class="iva-qa-grid" data-iva-stagger>
                 <?php foreach ($items as $item) : ?>
                     <details class="iva-qa-item" open itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -161,6 +161,9 @@ function ivermectin_render_faq_section(string $title, array $items, string $back
                     </details>
                 <?php endforeach; ?>
             </div>
+            <?php if ($link_text !== '' && $link_url !== '') : ?>
+                <p class="mt-6"><a href="<?= esc_url($link_url) ?>" class="font-bold text-link hover:underline"><?= esc_html($link_text) ?></a></p>
+            <?php endif; ?>
         </div>
     </section>
     <?php

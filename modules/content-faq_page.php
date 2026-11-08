@@ -103,8 +103,8 @@ $whatsapp_clean = $whatsapp_number ? preg_replace('/[^0-9]/', '', $whatsapp_numb
                     <?php foreach ($items as $i_idx => $item): 
                         $q = $item['question'] ?? '';
                         $a = $item['answer'] ?? '';
-                        // First item in first category starts open for quick preview
-                        $is_open = ($c_idx === 0 && $i_idx === 0) ? 'open' : '';
+                        // Every question starts open
+                        $is_open = 'open';
                     ?>
                     <details <?= $is_open ?> class="group rounded-2xl border border-sky-200/80 bg-white overflow-hidden shadow-xs hover:border-sky-300 transition-all duration-200 open:border-sky-300 open:shadow-sm">
                         <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none bg-white transition-colors hover:bg-sky-50/40 group-open:bg-sky-50/50">
