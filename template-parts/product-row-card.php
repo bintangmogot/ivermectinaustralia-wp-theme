@@ -99,7 +99,7 @@ if ($strength !== '' && preg_match('/^\s*([\d.]+)\s*([a-z]+)\s*$/i', $strength, 
             <?php else : ?>
                 <span class="grid place-items-center rounded-full bg-destructive-soft py-2.5 text-sm font-bold text-destructive"><?= esc_html($labels['out_of_stock']) ?></span>
             <?php endif; ?>
-            <a href="<?= esc_url($link) ?>" class="hidden items-center rounded-full border-2 border-primary px-4 py-2 font-heading md:inline-flex text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white"><?= esc_html($labels['details']) ?></a>
+            <a href="<?= esc_url($link) ?>" target="_blank" rel="noopener noreferrer" class="hidden items-center rounded-full border-2 border-primary px-4 py-2 font-heading md:inline-flex text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white"><?= esc_html($labels['details']) ?></a>
         </div>
     </div>
 </article>
