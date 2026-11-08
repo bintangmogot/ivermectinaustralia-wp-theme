@@ -13,7 +13,11 @@ defined('ABSPATH') || exit;
 
 const IVERMECTIN_CONTENT_SEED_VERSION = 8;
 
-add_action('acf/init', 'ivermectin_run_content_seed', 99);
+// ACF passes its major version to acf/init, so the seed must not take that as its $force argument:
+// forcing would rewrite the homepage modules on every page load and undo edits made in wp-admin.
+add_action('acf/init', static function (): void {
+    ivermectin_run_content_seed();
+}, 99);
 
 function ivermectin_run_content_seed(bool $force = false): void {
     if (!function_exists('update_field') || (!$force && (int) get_option('ivermectin_content_seed_version') >= IVERMECTIN_CONTENT_SEED_VERSION)) {
