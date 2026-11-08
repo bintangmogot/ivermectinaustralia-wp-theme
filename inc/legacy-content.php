@@ -53,6 +53,13 @@ function ivermectin_get_footer_description() {
     $value = function_exists('get_field') ? get_field('footer_description', 'option') : '';
     if (!$value && function_exists('get_field')) {
         $value = get_field('footer_text', 'option');
+        // The old rich-text footer included its own leading logo. The current footer renders the
+        // configured logo separately, so omit that image on display without changing saved content.
+        $value = preg_replace_callback(
+            '~\A\s*(?:<p\b[^>]*>\s*(?:<a\b[^>]*>\s*)?<img\b[^>]*>(?:\s*</a>)?\s*</p>|(?:<a\b[^>]*>\s*)?<img\b[^>]*>(?:\s*</a>)?)~i',
+            static fn($match) => preg_match('/\blogo\b/i', $match[0]) ? '' : $match[0],
+            (string) $value
+        );
     }
     return (string) $value;
 }

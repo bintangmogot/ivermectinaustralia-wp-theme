@@ -91,7 +91,7 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
     <?php endif; ?>
 
     <div class="container-site relative z-10 py-12 md:py-16">
-        <div class="iva-footer-grid grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[minmax(15.5rem,1.3fr)_1.6fr_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-x-10">
+        <div class="iva-footer-grid grid grid-cols-2 gap-x-6 gap-y-10 xl:grid-cols-[minmax(22rem,2.3fr)_minmax(0,1.25fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] xl:gap-x-10">
             <div>
                 <?php ivermectin_the_logo('h-11 w-auto object-contain', 'footer'); ?>
                 <?php if (trim($description) !== '') : ?><div class="iva-footer-description mt-4 text-sm leading-relaxed text-white/80"><?= wp_kses_post(wpautop($description)) ?></div><?php endif; ?>
@@ -122,7 +122,7 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
             <?php foreach ($legacy_groups as $group) : ?>
                 <nav aria-label="<?= esc_attr($group['title']) ?>"<?= count($group['links']) > 9 ? ' class="iva-footer-wide"' : '' ?>>
                     <?php if ($group['title'] !== '') : ?><h4 class="iva-footer-head"><?= esc_html($group['title']) ?></h4><?php endif; ?>
-                    <ul class="iva-footer-links<?= count($group['links']) > 9 ? ' iva-footer-links-split' : '' ?>">
+                    <ul class="iva-footer-links">
                         <?php foreach ($group['links'] as $link) : ?>
                             <li><a href="<?= esc_url($link['href']) ?>"<?= $link['target'] !== '' ? ' target="' . esc_attr($link['target']) . '"' : '' ?><?= $link['rel'] !== '' ? ' rel="' . esc_attr($link['rel']) . '"' : '' ?>><?= esc_html($link['label']) ?></a></li>
                         <?php endforeach; ?>

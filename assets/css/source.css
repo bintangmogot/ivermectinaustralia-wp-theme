@@ -3702,9 +3702,7 @@ footer .site-logo-img,
 .iva-footer-links a, .iva-footer-menu a { position: relative; display: inline-block; padding: 0.3125rem 0; color: rgb(255 255 255 / 0.72); font-size: 0.9375rem; line-height: 1.4; transition: color 0.15s ease, transform 0.2s ease; }
 .iva-footer-links a:hover, .iva-footer-menu a:hover { color: #fff; transform: translateX(3px); }
 .iva-footer-links a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; border-radius: 0.25rem; }
-.iva-footer-links-split { column-gap: 2rem; }
-.iva-footer-links-split { columns: 2; }
-@media (max-width: 1023px) { .iva-footer-grid > :first-child, .iva-footer-grid > .iva-footer-wide { grid-column: 1 / -1; } }
+@media (max-width: 1279px) { .iva-footer-grid > :first-child, .iva-footer-grid > .iva-footer-wide { grid-column: 1 / -1; } }
 @media (prefers-reduced-motion: reduce) { .iva-footer-links a:hover, .iva-footer-menu a:hover { transform: none; transition: none; } }
 
 /*

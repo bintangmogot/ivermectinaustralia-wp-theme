@@ -221,11 +221,7 @@ function ivermectin_the_logo($classes = 'h-12 sm:h-[53px] w-auto max-w-[264px] s
         );
 
         if ($location === 'footer') {
-            // Check if it's the main logo (with dark text) on a dark footer background
-            $has_footer_specific = function_exists('get_field') && get_field('footer_logo', 'option');
-            $wrapper_class = $has_footer_specific
-                ? 'inline-flex shrink-0 items-center'
-                : 'inline-flex shrink-0 items-center rounded-xl bg-white px-3.5 py-1.5 shadow-sm hover:opacity-95 transition-opacity';
+            $wrapper_class = 'inline-flex shrink-0 items-center rounded-xl bg-white px-3.5 py-1.5 shadow-sm hover:opacity-95 transition-opacity';
             echo sprintf('<a href="%s" class="%s" aria-label="%s">%s</a>', $home_url, $wrapper_class, $site_name, $img_html);
         } else {
             echo sprintf('<a href="%s" class="flex shrink-0 items-center" aria-label="%s">%s</a>', $home_url, $site_name, $img_html);
