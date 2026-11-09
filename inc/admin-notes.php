@@ -2,6 +2,12 @@
 /** Editing guidance only. Never hide existing content fields or change saved values. */
 defined('ABSPATH') || exit;
 
+// Restore content panels also hidden through Screen Options during the earlier workaround.
+add_filter('hidden_meta_boxes', static function (array $hidden, $screen): array {
+    if (!in_array($screen->post_type ?? '', ['page', 'product'], true)) { return $hidden; }
+    return array_values(array_filter($hidden, static fn($id) => strpos((string) $id, 'acf-') !== 0));
+}, 20, 2);
+
 function ivermectin_admin_uses_page_modules(): bool {
     $post_id = isset($_GET['post']) ? (int) $_GET['post'] : 0;
     return $post_id > 0 && function_exists('have_rows') && have_rows('page_modules', $post_id);

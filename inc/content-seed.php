@@ -2,7 +2,8 @@
 /**
  * Versioned content seed, so admin fields are filled in every environment after a git pull.
  *
- * Runs once per environment per IVERMECTIN_CONTENT_SEED_VERSION on acf/init.
+ * New scalar/module controls are initialized in authenticated admin requests only.
+ * Homepage replacement and FAQ migration require an explicit call to the migration helpers.
  * It never overwrites content someone edited in WP admin:
  * - Theme Settings: only empty options are filled, from the field's ACF default.
  * - Homepage page_modules: written when empty, or when unchanged since the last seed.
@@ -14,15 +15,18 @@ defined('ABSPATH') || exit;
 
 const IVERMECTIN_CONTENT_SEED_VERSION = 9;
 
-// ACF passes its major version to acf/init, so the seed must not take that as its $force argument:
-// forcing would rewrite the homepage modules on every page load and undo edits made in wp-admin.
-add_action('acf/init', static function (): void {
-    ivermectin_run_content_seed();
+// Like Waklert, frontend requests never install or migrate saved editorial content.
+add_action('admin_init', static function (): void {
+    if (!current_user_can('manage_options') || !function_exists('update_field')
+        || (int) get_option('ivermectin_content_seed_version') >= IVERMECTIN_CONTENT_SEED_VERSION) { return; }
+    ivermectin_seed_theme_settings();
+    ivermectin_fill_module_defaults();
+    update_option('ivermectin_content_seed_version', IVERMECTIN_CONTENT_SEED_VERSION, false);
 }, 99);
 
 // Upgrade only the plugin's original trust-badge artwork; custom images remain editable in Side Cart settings.
-add_action('acf/init', static function (): void {
-    if (!get_option('ivermectin_side_cart_insurance_icon_seeded')) {
+add_action('admin_init', static function (): void {
+    if (current_user_can('manage_options') && !get_option('ivermectin_side_cart_insurance_icon_seeded')) {
         ivermectin_seed_side_cart_text();
         update_option('ivermectin_side_cart_insurance_icon_seeded', 1, false);
     }
@@ -227,10 +231,7 @@ function ivermectin_seed_homepage(bool $force = false): void {
         return;
     }
 
-    $current      = get_field($field['key'], $page_id, false);
-    $current_hash = $current ? md5(serialize($current)) : '';
-    $seeded_hash  = (string) get_option('ivermectin_homepage_seed_hash');
-    if (!$force && $current && $current_hash !== $seeded_hash) {
+    if (!$force && metadata_exists('post', $page_id, 'page_modules')) {
         return;
     }
 
