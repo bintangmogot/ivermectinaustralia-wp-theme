@@ -139,6 +139,11 @@ $product_specs = [
         'value' => get_field('product_delivery_time', $product_id),
     ],
 ];
+// Count only the populated specifications that the list below actually displays.
+$product_specs = array_values(array_filter($product_specs, static function (array $spec): bool {
+    return trim((string) ($spec['label'] ?? '')) !== ''
+        && trim(wp_strip_all_tags((string) ($spec['value'] ?? ''))) !== '';
+}));
 ?>
 
 <div class="relative overflow-hidden bg-gradient-to-b from-primary-soft via-primary-soft to-white bg-pattern-dots py-4 md:py-6 border-b border-sky-100">
