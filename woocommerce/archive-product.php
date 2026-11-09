@@ -2,7 +2,7 @@
 /**
  * Product archive and shop page.
  * A shop page built with "page_modules" renders those modules. Otherwise: page header, the product grid,
- * then the shop page's content from the previous theme (FAQs and text) below the products.
+ * native editor text above the products, and legacy modules (FAQs and text) below them.
  */
 
 defined('ABSPATH') || exit;
@@ -19,10 +19,29 @@ echo '<main id="main-content">';
 if ($has_new) {
     ivermectin_render_modules($shop_page_id);
 } else {
+    $editor = ['title' => '', 'lead' => '', 'rest' => ''];
+    if (is_shop() && $shop_page_id > 0) {
+        $shop_post = get_post($shop_page_id);
+        if ($shop_post && trim($shop_post->post_content) !== '') {
+            // Render blocks and shortcodes in the Shop page context, then restore the product query.
+            $GLOBALS['post'] = $shop_post;
+            setup_postdata($shop_post);
+            try {
+                $editor = ivermectin_split_leading_heading((string) apply_filters('the_content', $shop_post->post_content));
+            } finally {
+                wp_reset_postdata();
+            }
+        }
+    }
     ivermectin_page_hero([
-        'title' => $shop_heading !== '' ? $shop_heading : woocommerce_page_title(false),
-        'lead'  => $intro_text !== '' ? $intro_text : (is_shop() ? '' : term_description()),
+        'title' => $shop_heading !== '' ? $shop_heading : ($editor['title'] !== '' ? $editor['title'] : woocommerce_page_title(false)),
+        'lead'  => $intro_text !== '' ? $intro_text : (is_shop() ? $editor['lead'] : term_description()),
     ] + ivermectin_hero_variant_args('shop'));
+    // An explicit header intro must not discard the first paragraph from the native editor.
+    $editor_body = ($intro_text !== '' ? $editor['lead'] : '') . $editor['rest'];
+    if (trim(wp_strip_all_tags($editor_body)) !== '' || preg_match('/<(img|video|audio|iframe|figure|table|form)\b/i', $editor_body)) {
+        ivermectin_render_article_section(ivermectin_demote_h1($editor_body), true, 'default', true);
+    }
     ?>
     <section class="iva-section-tight bg-white" id="products">
         <div class="container-site">
