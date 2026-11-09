@@ -40,6 +40,10 @@ try {
     $html = $render();
     $check((bool) preg_match('/<h1[^>]*>ACF heading fixture<\/h1>/', $html), 'Explicit ACF heading must take priority');
     $check(strpos($html, 'ACF intro fixture.') !== false && strpos($html, 'Editor intro fixture.') !== false && strpos($html, 'Editor body fixture.') !== false, 'ACF overrides discarded saved native text');
+    update_field('field_iva_shop_intro', '<p>Editor intro <strong>fixture.</strong></p>', $fixture);
+    $html = $render();
+    $check(substr_count(wp_strip_all_tags($html), 'Editor intro fixture.') === 1, 'Matching ACF and editor intros must display only once');
+    $check(strpos($html, 'Editor body fixture.') !== false, 'Removing a repeated intro discarded distinct body content');
     $check(get_post_field('post_content', $fixture) === '<h1>Editor heading fixture</h1><p>Editor intro fixture.</p><h2>Editor details fixture</h2><p>Editor body fixture.</p>', 'Rendering altered saved content');
     echo "PASS: native Shop heading, intro and body render; ACF overrides retain native text; products and saved content are preserved.\n";
 } finally { wp_delete_post($fixture, true); }

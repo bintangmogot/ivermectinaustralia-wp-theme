@@ -37,8 +37,10 @@ if ($has_new) {
         'title' => $shop_heading !== '' ? $shop_heading : ($editor['title'] !== '' ? $editor['title'] : woocommerce_page_title(false)),
         'lead'  => $intro_text !== '' ? $intro_text : (is_shop() ? $editor['lead'] : term_description()),
     ] + ivermectin_hero_variant_args('shop'));
-    // An explicit header intro must not discard the first paragraph from the native editor.
-    $editor_body = ($intro_text !== '' ? $editor['lead'] : '') . $editor['rest'];
+    // Preserve distinct editor text, but show an intro only once when both editors contain the same copy.
+    $plain_text = static fn(string $html): string => trim((string) preg_replace('/\s+/u', ' ', html_entity_decode(wp_strip_all_tags($html), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+    $repeat_intro = $intro_text !== '' && $plain_text($intro_text) === $plain_text($editor['lead']);
+    $editor_body = ($intro_text !== '' && !$repeat_intro ? $editor['lead'] : '') . $editor['rest'];
     if (trim(wp_strip_all_tags($editor_body)) !== '' || preg_match('/<(img|video|audio|iframe|figure|table|form)\b/i', $editor_body)) {
         ivermectin_render_article_section(ivermectin_demote_h1($editor_body), true, 'default', true);
     }
