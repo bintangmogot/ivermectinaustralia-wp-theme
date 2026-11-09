@@ -111,22 +111,6 @@ if ($product_badge === '' && $product->is_featured()) {
 $free_shipping_message = ivermectin_get_product_presentation_option('free_shipping_message');
 $free_shipping_threshold = get_field('free_shipping_threshold', 'option');
 $free_shipping_threshold = is_numeric($free_shipping_threshold) ? $free_shipping_threshold : 0;
-$trust_items = array_values(array_filter([
-    [
-        'label' => ivermectin_get_product_presentation_option('product_trust_dispatch', 'AU-wide dispatch'),
-        'icon' => 'fi-rr-truck-side',
-    ],
-    [
-        'label' => ivermectin_get_product_presentation_option('product_trust_checkout', 'Encrypted checkout'),
-        'icon' => 'fi-rr-lock',
-    ],
-    [
-        'label' => ivermectin_get_product_presentation_option('product_trust_quality', 'Quality verified'),
-        'icon' => 'fi-rr-shield-check',
-    ],
-], static function ($item) {
-    return trim((string) $item['label']) !== '';
-}));
 $product_specs_heading = ivermectin_get_product_presentation_option('product_specs_heading', 'Product specs');
 $no_reviews_text = ivermectin_get_product_presentation_option('product_no_reviews_text', 'No reviews yet');
 $product_specs = [
@@ -474,17 +458,6 @@ $product_specs = [
                         class="w-full flex items-center justify-center rounded-md bg-destructive-soft px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-destructive">
                         <?= "Out of Stock" ?>
                     </span>
-                </div>
-            <?php endif; ?>
-
-            <?php if ($trust_items): ?>
-                <div class="grid grid-cols-3 gap-3 border-t border-border pt-6">
-                    <?php foreach ($trust_items as $trust_index => $trust_item) : ?>
-                        <div class="flex flex-col items-center gap-2 rounded-xl border border-border bg-white p-3 text-center">
-                            <?= ivermectin_icon(['express_shipping', 'secure_lock', 'shield_insurance'][$trust_index] ?? 'no_customs', 'h-10 w-10') ?>
-                            <p class="text-xs font-bold leading-snug text-foreground sm:text-[13px]"><?= esc_html($trust_item['label']) ?></p>
-                        </div>
-                    <?php endforeach; ?>
                 </div>
             <?php endif; ?>
 
