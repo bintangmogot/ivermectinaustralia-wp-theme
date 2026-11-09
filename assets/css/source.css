@@ -3440,7 +3440,7 @@ footer .site-logo-img,
 .iva-pagehero-lead { max-width: 42rem; margin-top: 1rem; font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem); line-height: 1.6; color: var(--color-muted-foreground); text-wrap: pretty; }
 .iva-pagehero-lead p { margin: 0; color: inherit; font-size: inherit; line-height: inherit; }
 .iva-pagehero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 1.25rem; font-size: 0.9375rem; color: var(--color-muted-foreground); }
-.iva-pagehero-mascot { display: none; position: absolute; right: 3rem; bottom: -1px; z-index: 1; width: 8rem; height: auto; }
+.iva-pagehero-mascot { display: none; position: absolute; right: 3rem; bottom: 1rem; z-index: 1; width: 8rem; height: auto; overflow: visible; }
 @media (min-width: 900px) { .iva-pagehero-mascot { display: block; } }
 @media (min-width: 1280px) { .iva-pagehero-mascot { right: max(3rem, calc((100vw - 80rem) / 2 + 2rem)); width: 9rem; } }
 

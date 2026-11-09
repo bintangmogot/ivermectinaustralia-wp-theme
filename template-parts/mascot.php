@@ -1,13 +1,13 @@
 <?php
 /**
  * Decorative mascot: a scored tablet carrying a parcel. No text, hidden from screen readers.
- * Args: pose ('deliver' stands with the parcel and waves, 'peek' shows the top half waving), class.
+ * Args: pose ('deliver' stands with the parcel and waves, 'peek' is a compact waving tablet), class.
  */
 defined('ABSPATH') || exit;
 
 $pose  = ($args['pose'] ?? 'deliver') === 'peek' ? 'peek' : 'deliver';
 $class = trim('iva-mascot iva-mascot-' . $pose . ' ' . ($args['class'] ?? ''));
-$view  = $pose === 'peek' ? '0 0 160 112' : '0 0 160 190';
+$view  = $pose === 'peek' ? '-20 0 200 166' : '0 0 160 190';
 ?>
 <svg class="<?= esc_attr($class) ?>" viewBox="<?= esc_attr($view) ?>" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
     <g class="iva-mascot-body">
