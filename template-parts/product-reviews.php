@@ -170,7 +170,7 @@ if ($average_rating !== null) {
             </div>
         <?php endif; ?>
 
-        <div class="relative mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+        <div class="iva-product-review-box relative mx-auto mt-8 max-w-[21rem] overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
             <div class="mb-5 flex items-center gap-3 border-b border-slate-100 pb-5">
                 <span class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-softer text-primary-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -195,7 +195,7 @@ if ($average_rating !== null) {
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 gap-3 md:grid-cols-3">
+                <div class="grid grid-cols-1 gap-3">
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_name_label')) ?>
                         <input type="text" name="reviewer_name" required autocomplete="name" placeholder="<?= esc_attr($t('form_name_placeholder')) ?>" class="mt-1.5 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
                     </label>
