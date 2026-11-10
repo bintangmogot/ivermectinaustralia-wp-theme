@@ -3274,7 +3274,7 @@ footer .site-logo-img,
 }
 .iva-point:hover { border-color: var(--color-sky-200); transform: translateY(-3px); }
 .iva-points:not(.iva-points-3) > .iva-point:last-child:nth-child(odd) { grid-column: 1 / -1; }
-.iva-point-icon { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; border-radius: 1rem; }
+.iva-point-icon { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; border-radius: 1rem; background: var(--color-primary); }
 .iva-point-title { margin-top: 1.125rem; font-family: var(--font-heading); font-size: 1.1875rem; font-weight: 700; line-height: 1.25; color: var(--color-primary); }
 .iva-point-text { margin-top: 0.5rem; font-size: 0.9875rem; line-height: 1.6; color: var(--color-muted-foreground); }
 
