@@ -21,7 +21,7 @@ if (!$products) {
     return;
 }
 ?>
-<section class="iva-section bg-white" id="products">
+<section class="iva-section iva-section-tight bg-white" id="products">
     <div class="container-site">
         <?php ivermectin_section_head($tag, $heading, $description); ?>
 

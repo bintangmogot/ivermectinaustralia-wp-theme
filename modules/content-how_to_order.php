@@ -27,7 +27,7 @@ if (get_sub_field('show_payment_logos')) {
 }
 $columns  = ['md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'md:grid-cols-4'][min(4, count($steps)) - 1];
 ?>
-<section class="iva-section iva-steps bg-surface">
+<section class="iva-section iva-section-tight iva-steps bg-surface">
     <div class="container-site">
         <?php ivermectin_section_head($tag, $heading, $description); ?>
 
