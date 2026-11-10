@@ -148,7 +148,7 @@ $product_specs = array_values(array_filter($product_specs, static function (arra
 
 <div class="relative overflow-hidden bg-gradient-to-b from-primary-soft via-primary-soft to-white bg-pattern-dots py-4 md:py-6 border-b border-sky-100">
     <div class="container-site">
-        <nav class="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-500 rounded-full border border-sky-300/80 bg-white/90 px-4 py-1.5 shadow-sm backdrop-blur" data-testid="breadcrumb">
+        <nav class="iva-product-breadcrumb inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-500 rounded-full border border-sky-300/80 bg-white/90 px-4 py-1.5 shadow-sm backdrop-blur" data-testid="breadcrumb">
             <a href="<?= home_url('/') ?>"
                 class="hover:text-primary transition-colors font-bold"><?= "Home" ?></a>
             <span class="text-sky-300">/</span>
@@ -161,9 +161,9 @@ $product_specs = array_values(array_filter($product_specs, static function (arra
 </div>
 
 <section class="container-site py-7 md:py-10">
-    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+    <div class="iva-product-layout grid md:grid-cols-2 gap-8 lg:gap-12">
         <!-- Left Column: Image Area -->
-        <div class="md:sticky md:top-24 md:self-start">
+        <div class="min-w-0 md:sticky md:top-24 md:self-start">
             <div class="rounded-3xl overflow-hidden bg-[radial-gradient(ellipse_at_center,rgba(186,230,253,0.35)_0%,rgba(255,255,255,0.95)_70%)] border border-sky-300/80 p-6 md:p-10 flex items-center justify-center relative shadow-sm group hover:shadow-xl hover:border-primary transition-all duration-300"
                 data-testid="product-image">
                 <img src="<?= esc_url($image) ?>"
@@ -180,7 +180,7 @@ $product_specs = array_values(array_filter($product_specs, static function (arra
         </div>
 
         <!-- Right Column: Info Area -->
-        <div>
+        <div class="min-w-0">
             <div class="mb-3 flex flex-wrap items-center gap-2">
                 <?php if ($product_badge !== ''): ?>
                     <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-500 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-white shadow-sm">
