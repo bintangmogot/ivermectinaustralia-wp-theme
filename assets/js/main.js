@@ -275,6 +275,70 @@ document.addEventListener('click', (event) => {
     row.scrollBy({ left: step * Number(arrow.dataset.dir || 1), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 });
 
+// Star picker for the general reviews form; the native select remains the submitted value.
+(() => {
+    const initializeRating = (group) => {
+        if (group.dataset.initialized === 'true') return;
+        const field = group.closest('.gfield');
+        const select = field && field.querySelector('select');
+        const buttons = [...group.querySelectorAll('[data-rating]')];
+        if (!select || !buttons.length) return;
+
+        group.dataset.initialized = 'true';
+        select.setAttribute('aria-hidden', 'true');
+        select.tabIndex = -1;
+
+        const paint = (value) => {
+            const rating = Number(value) || 0;
+            buttons.forEach((button, index) => {
+                const buttonRating = Number(button.dataset.rating);
+                button.setAttribute('aria-checked', String(buttonRating === rating));
+                button.tabIndex = buttonRating === rating || (!rating && index === 0) ? 0 : -1;
+                button.classList.toggle('is-filled', buttonRating <= rating);
+            });
+        };
+        const setRating = (button, moveFocus = false) => {
+            select.value = button.dataset.rating;
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+            paint(select.value);
+            if (moveFocus) button.focus();
+        };
+
+        paint(select.value);
+        group.addEventListener('click', (event) => {
+            const button = event.target.closest('[data-rating]');
+            if (button && group.contains(button)) setRating(button);
+        });
+        group.addEventListener('pointerover', (event) => {
+            const button = event.target.closest('[data-rating]');
+            if (!button || !group.contains(button)) return;
+            const hoverRating = Number(button.dataset.rating);
+            buttons.forEach((item) => item.classList.toggle('is-filled', Number(item.dataset.rating) <= hoverRating));
+        });
+        group.addEventListener('pointerleave', () => paint(select.value));
+        group.addEventListener('keydown', (event) => {
+            const currentIndex = buttons.indexOf(document.activeElement);
+            if (currentIndex < 0) return;
+            let nextIndex = currentIndex;
+            if (event.key === 'ArrowRight' || event.key === 'ArrowUp') nextIndex = Math.min(buttons.length - 1, currentIndex + 1);
+            else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') nextIndex = Math.max(0, currentIndex - 1);
+            else if (event.key === 'Home') nextIndex = 0;
+            else if (event.key === 'End') nextIndex = buttons.length - 1;
+            else return;
+            event.preventDefault();
+            setRating(buttons[nextIndex], true);
+        });
+    };
+
+    const initialize = () => {
+        document.querySelectorAll('[data-iva-review-rating]').forEach(initializeRating);
+    };
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize, { once: true });
+    } else {
+        initialize();
+    }
+})();
 
 // Guide contents rail: mark the chapter being read; on phones keep the active chip in view.
 (() => {

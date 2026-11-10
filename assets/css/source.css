@@ -1992,6 +1992,52 @@ label, .variations label { cursor: pointer !important; }
   @apply !inline-flex !rounded-full !bg-primary !px-8 !py-3 !text-sm !font-bold !uppercase !tracking-wider !text-primary-foreground !shadow-pill !transition-all hover:!bg-primary-dark hover:!-translate-y-0.5 !cursor-pointer !border-none;
 }
 
+/* Compact and accessible rating control for the general reviews form. */
+#gform_wrapper_1 .gform_required_legend { display: none !important; }
+#gform_wrapper_1 #field_1_8 .ginput_container_select {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+#gform_wrapper_1 .iva-review-rating-stars {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  min-height: 2.5rem;
+}
+#gform_wrapper_1 .iva-review-rating-star {
+  display: inline-grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: .375rem;
+  background: transparent;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: color .15s ease, transform .15s ease;
+}
+#gform_wrapper_1 .iva-review-rating-star svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: currentColor;
+}
+#gform_wrapper_1 .iva-review-rating-star.is-filled,
+#gform_wrapper_1 .iva-review-rating-star:hover { color: var(--color-accent); }
+#gform_wrapper_1 .iva-review-rating-star:hover { transform: translateY(-1px); }
+#gform_wrapper_1 .iva-review-rating-star:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  #gform_wrapper_1 .iva-review-rating-star { transition: none; }
+}
+
 /* Keep the swipeable product review cards clean on touch screens. */
 .iva-review-slider {
   scrollbar-width: none;
@@ -2780,9 +2826,8 @@ footer .site-logo-img,
 .iva-body { font-size: 1.0625rem; line-height: 1.6; color: var(--color-muted-foreground); }
 
 /* Section rhythm */
-.iva-section { padding-block: 4.5rem; }
-@media (min-width: 768px) { .iva-section { padding-block: 6.5rem; } }
-@media (min-width: 1024px) { .iva-section { padding-block: 7.5rem; } }
+.iva-section { padding-block: 2.5rem; }
+@media (min-width: 768px) { .iva-section { padding-block: 3.5rem; } }
 .iva-section.bg-white + .iva-section.bg-white { padding-top: 0; }
 
 .iva-head { max-width: 47.5rem; margin-bottom: 3rem; }

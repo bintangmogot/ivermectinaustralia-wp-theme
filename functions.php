@@ -88,6 +88,64 @@ add_filter('gform_submit_button', function ($button, $form) {
     );
 }, 10, 2);
 
+// Remove Gravity Forms' required-fields legend on the general reviews form.
+add_filter('gform_required_legend_1', static function () {
+    return '';
+});
+
+// Keep the saved Gravity Forms select as the submitted value, with a star UI for visitors.
+add_filter('gform_field_content', static function ($content, $field, $value, $entry_id, $form_id) {
+    if ((int) $form_id !== 1 || (int) ($field->id ?? 0) !== 8) {
+        return $content;
+    }
+
+    $ratings = [];
+    foreach ((array) ($field->choices ?? []) as $choice) {
+        $rating = isset($choice['value']) ? (int) $choice['value'] : 0;
+        if ($rating >= 1 && $rating <= 5) {
+            $ratings[] = $rating;
+        }
+    }
+    $ratings = array_values(array_unique($ratings));
+    sort($ratings, SORT_NUMERIC);
+    if (!$ratings) {
+        return $content;
+    }
+
+    $current_rating = trim((string) $value);
+    if ($current_rating === '' && trim((string) ($field->defaultValue ?? '')) === '') {
+        $content = preg_replace(
+            '/(<select\\b[^>]*>)/i',
+            '$1<option value="" selected="selected" disabled="disabled"></option>',
+            $content,
+            1
+        );
+    }
+
+    $buttons = '';
+    foreach ($ratings as $rating) {
+        $selected = $current_rating === (string) $rating;
+        $label = sprintf(_n('%d star', '%d stars', $rating, 'ivermectin-australia'), $rating);
+        $buttons .= sprintf(
+            '<button type="button" class="iva-review-rating-star" role="radio" aria-checked="%1$s" tabindex="%2$d" aria-label="%3$s" data-rating="%4$d"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.9 6.2 6.8 1-4.9 4.8L18 21l-6-3.2L5.9 21l1.2-7-5-4.8 6.9-1L12 2Z"/></svg></button>',
+            $selected ? 'true' : 'false',
+            $selected || (!$current_rating && $rating === $ratings[0]) ? 0 : -1,
+            esc_attr($label),
+            $rating
+        );
+    }
+
+    $rating_group = sprintf(
+        '<div class="iva-review-rating-stars" role="radiogroup" aria-labelledby="gfield_label_%1$d_%2$d" aria-required="%3$s" data-iva-review-rating>%4$s</div>',
+        (int) $form_id,
+        (int) $field->id,
+        !empty($field->isRequired) ? 'true' : 'false',
+        $buttons
+    );
+
+    return $content . $rating_group;
+}, 10, 5);
+
 // Reviews: extra fields. Registered only when the site has no existing group with a "rating" field.
 add_action('acf/init', function () {
     if (!function_exists('acf_add_local_field_group')) {
