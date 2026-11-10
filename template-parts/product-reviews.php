@@ -170,55 +170,55 @@ if ($average_rating !== null) {
             </div>
         <?php endif; ?>
 
-        <div class="iva-product-review-box relative mx-auto mt-8 max-w-[21rem] overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-            <div class="mb-5 flex items-center gap-3 border-b border-slate-100 pb-5">
-                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-softer text-primary-dark">
+        <div class="iva-product-review-box relative mx-auto mt-6 max-w-[28rem] overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="mb-3 flex items-center gap-2.5 border-b border-slate-100 pb-3">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary-softer text-primary-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 </span>
-                <h3 class="font-bold text-slate-900"><?= esc_html($t('form_heading')) ?> <span class="font-normal text-slate-400"><?= esc_html($t('form_for', ['product' => $product_name])) ?></span></h3>
+                <h3 class="text-sm font-bold leading-snug text-slate-900"><?= esc_html($t('form_heading')) ?> <span class="font-normal text-slate-400"><?= esc_html($t('form_for', ['product' => $product_name])) ?></span></h3>
             </div>
 
-            <form id="iva-product-review-form" class="space-y-4" data-endpoint="<?= esc_url(admin_url('admin-ajax.php')) ?>" data-messages="<?= esc_attr(wp_json_encode(['pickRating' => $t('msg_pick_rating'), 'submitting' => $t('msg_submitting'), 'failed' => $t('msg_failed'), 'network' => $t('msg_network')])) ?>">
+            <form id="iva-product-review-form" class="space-y-3" data-endpoint="<?= esc_url(admin_url('admin-ajax.php')) ?>" data-messages="<?= esc_attr(wp_json_encode(['pickRating' => $t('msg_pick_rating'), 'submitting' => $t('msg_submitting'), 'failed' => $t('msg_failed'), 'network' => $t('msg_network')])) ?>">
                 <input type="hidden" name="action" value="ivermectin_submit_product_review">
                 <input type="hidden" name="product_id" value="<?= esc_attr($product_id) ?>">
                 <input type="hidden" name="rating" value="0" required>
                 <?php wp_nonce_field('ivermectin_submit_product_review', 'review_nonce'); ?>
 
                 <div>
-                    <label class="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_rating_label')) ?></label>
-                    <div class="flex items-center gap-1" role="group" aria-label="<?= esc_attr($t('form_rating_aria')) ?>">
+                    <label class="mb-1 block text-[10px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_rating_label')) ?></label>
+                    <div class="flex items-center gap-0.5" role="group" aria-label="<?= esc_attr($t('form_rating_aria')) ?>">
                         <?php for ($star = 1; $star <= 5; $star++): ?>
                             <button type="button" class="iva-review-star text-slate-300 transition-colors hover:text-accent" data-rating="<?= esc_attr($star) ?>" aria-label="<?= esc_attr($t('form_star_aria', ['star' => $star])) ?>" aria-pressed="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.2 6.8 1-4.9 4.8L18 21l-6-3.2L5.9 21l1.2-7-5-4.8 6.9-1L12 2Z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.2 6.8 1-4.9 4.8L18 21l-6-3.2L5.9 21l1.2-7-5-4.8 6.9-1L12 2Z"/></svg>
                             </button>
                         <?php endfor; ?>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 gap-3">
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_name_label')) ?>
-                        <input type="text" name="reviewer_name" required autocomplete="name" placeholder="<?= esc_attr($t('form_name_placeholder')) ?>" class="mt-1.5 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+                <div class="grid grid-cols-1 gap-2">
+                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_name_label')) ?>
+                        <input type="text" name="reviewer_name" required autocomplete="name" placeholder="<?= esc_attr($t('form_name_placeholder')) ?>" class="mt-1 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
                     </label>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_email_label')) ?>
-                        <input type="email" name="reviewer_email" required autocomplete="email" placeholder="<?= esc_attr($t('form_email_placeholder')) ?>" class="mt-1.5 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_email_label')) ?>
+                        <input type="email" name="reviewer_email" required autocomplete="email" placeholder="<?= esc_attr($t('form_email_placeholder')) ?>" class="mt-1 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
                     </label>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_title_label')) ?>
-                        <input type="text" name="review_title" required placeholder="<?= esc_attr($t('form_title_placeholder')) ?>" class="mt-1.5 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_title_label')) ?>
+                        <input type="text" name="review_title" required placeholder="<?= esc_attr($t('form_title_placeholder')) ?>" class="mt-1 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
                     </label>
                 </div>
 
-                <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_review_label')) ?>
-                    <textarea name="review_content" required rows="4" placeholder="<?= esc_attr($t('form_review_placeholder')) ?>" class="mt-1.5 w-full resize-y rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"></textarea>
+                <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-700"><?= esc_html($t('form_review_label')) ?>
+                    <textarea name="review_content" required rows="3" placeholder="<?= esc_attr($t('form_review_placeholder')) ?>" class="mt-1 h-16 min-h-16 w-full resize-y rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-normal normal-case tracking-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"></textarea>
                 </label>
 
-                <div class="flex flex-col items-center justify-between gap-4 pt-2 sm:flex-row">
-                    <p class="w-full text-left text-[10px] text-slate-400 sm:w-auto"><?= esc_html($t('form_required_note')) ?></p>
-                    <div class="flex w-full flex-col items-end sm:w-auto">
-                        <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 sm:px-8 sm:py-3.5 text-xs sm:text-sm font-bold text-primary-foreground transition-colors hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-primary/20 disabled:cursor-wait disabled:opacity-70 sm:w-auto">
+                <div class="flex items-center justify-between gap-2 pt-1">
+                    <p class="min-w-0 flex-1 text-left text-[9px] leading-snug text-slate-400"><?= esc_html($t('form_required_note')) ?></p>
+                    <div class="flex shrink-0 flex-col items-end">
+                        <button type="submit" class="inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary px-3.5 py-2.5 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-primary/20 disabled:cursor-wait disabled:opacity-70">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m22 2-7 20-4-9-9-4 20-7ZM22 2 11 13"/></svg>
                             <?= esc_html($t('form_submit')) ?>
                         </button>
-                        <span class="mt-2 text-[10px] font-medium text-slate-400"><?= esc_html($t('form_moderated')) ?></span>
+                        <span class="mt-1 text-right text-[9px] font-medium leading-tight text-slate-400"><?= esc_html($t('form_moderated')) ?></span>
                     </div>
                 </div>
 
