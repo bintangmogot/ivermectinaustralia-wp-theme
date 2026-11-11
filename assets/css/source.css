@@ -3252,7 +3252,19 @@ footer .site-logo-img,
 .iva-chapter-content > h3 { max-width: 46rem; }
 .iva-chapter-content > * + * { margin-top: 1.25rem; }
 .iva-chapter-content > p { color: rgb(19 32 57 / 0.82); }
-.iva-chapter-content > h3 { margin-top: 2rem; font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--color-primary); }
+/* Editor wrappers must not make saved headings look like body text. */
+.iva-chapter-content h2 {
+  max-width: 46rem;
+  margin-block: 2rem 1.25rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.625rem, 1.35rem + 1vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--color-primary);
+  text-wrap: balance;
+}
+.iva-chapter-content h3 { margin-top: 2rem; font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--color-primary); }
 .iva-chapter-content a { color: var(--color-link); text-decoration: underline; text-underline-offset: 3px; }
 .iva-guide-lead { font-size: clamp(1.1875rem, 1.05rem + 0.5vw, 1.4375rem); line-height: 1.55; color: var(--color-primary) !important; }
 
