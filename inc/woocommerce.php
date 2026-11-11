@@ -24,6 +24,27 @@ add_filter('loop_shop_per_page', function () {
     return 16;
 }, 20);
 
+// Match Products > Re-Order without changing any saved products or store settings.
+add_action('woocommerce_product_query', function ($query, $wc_query) {
+    if (is_admin() || !$query->is_main_query() || !is_shop() || is_search()) {
+        return;
+    }
+    $wc_query->remove_ordering_args();
+    $query->set('orderby', ['menu_order' => 'ASC', 'date' => 'DESC']);
+    $query->set('order', 'ASC');
+    $query->set('meta_key', '');
+    // The plugin has already saved menu_order. Avoid a second SQL sort rewrite.
+    $query->set('ignore_custom_sort', true);
+}, 20, 2);
+
+// Keep one ordering interface when the existing Re-Order plugin is available.
+add_filter('views_edit-product', function ($views) {
+    if (class_exists('CPTO')) {
+        unset($views['byorder']);
+    }
+    return $views;
+}, 20);
+
 add_action('wp', 'ivermectin_remove_wc_elements');
 function ivermectin_remove_wc_elements() {
     remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
