@@ -2835,6 +2835,8 @@ footer .site-logo-img,
 .iva-head-center { margin-inline: auto; text-align: center; }
 .iva-head > * + * { margin-top: 1.25rem; }
 .iva-head-center .iva-lead { margin-inline: auto; max-width: 40rem; }
+/* Center the homepage band intro while retaining its existing paragraph width. */
+.home .iva-band .iva-head-center .iva-lead { max-width: none; }
 
 /* Pill tag above section headings */
 .iva-pill-tag {

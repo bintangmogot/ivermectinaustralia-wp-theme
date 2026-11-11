@@ -1,7 +1,7 @@
 <?php
 /**
  * Module: why_choose_us. Sub fields: tag, heading, description, audiences (icon_preset, icon_image, title, desc, icon_svg), image.
- * The page's one navy band: heading on the left, items in a grid split by hairlines.
+ * The page's navy band: homepage intro centered, items in a grid split by hairlines.
  * With an image, the photo sits beside the grid and drifts slowly on scroll.
  */
 $tag         = trim((string) get_sub_field('tag'));
@@ -18,7 +18,7 @@ $grid_columns = count($items) === 1 ? '' : 'sm:grid-cols-2';
 ?>
 <section class="iva-section iva-band bg-ink text-white">
     <div class="container-site">
-        <?php ivermectin_section_head($tag, $heading, $description, 'dark', 'left'); ?>
+        <?php ivermectin_section_head($tag, $heading, $description, 'dark', is_front_page() ? 'center' : 'left'); ?>
 
         <div class="grid gap-6 <?= $image_id ? 'lg:grid-cols-[5fr_7fr] lg:gap-8' : '' ?>">
             <?php if ($image_id) : ?>
