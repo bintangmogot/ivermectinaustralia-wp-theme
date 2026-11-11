@@ -3257,12 +3257,15 @@ footer .site-logo-img,
   max-width: 46rem;
   margin-block: 2rem 1.25rem;
   font-family: var(--font-heading);
-  font-size: clamp(1.625rem, 1.35rem + 1vw, 2.25rem);
+  font-size: 1.5rem;
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.25;
   letter-spacing: -0.015em;
   color: var(--color-primary);
   text-wrap: balance;
+}
+@media (min-width: 768px) {
+  .iva-chapter-content h2 { font-size: 1.875rem; }
 }
 .iva-chapter-content h3 { margin-top: 2rem; font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--color-primary); }
 .iva-chapter-content a { color: var(--color-link); text-decoration: underline; text-underline-offset: 3px; }
