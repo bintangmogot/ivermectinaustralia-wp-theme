@@ -20,7 +20,7 @@ $grid_columns = count($items) === 1 ? '' : 'sm:grid-cols-2';
     <div class="container-site">
         <?php ivermectin_section_head($tag, $heading, $description, 'dark', is_front_page() ? 'center' : 'left'); ?>
 
-        <div class="grid gap-6 <?= $image_id ? 'lg:grid-cols-[5fr_7fr] lg:gap-8' : '' ?>">
+        <div class="grid gap-6">
             <?php if ($image_id) : ?>
                 <div class="iva-band-photo" data-iva-parallax>
                     <?= wp_get_attachment_image($image_id, 'large', false, ['class' => 'h-full w-full object-cover', 'alt' => '', 'loading' => 'lazy']) ?>

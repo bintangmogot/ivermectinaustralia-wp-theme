@@ -90,16 +90,16 @@ if ($strength !== '' && preg_match('/^\s*([\d.]+)\s*([a-z]+)\s*$/i', $strength, 
             <?php if ($per_tab !== '') : ?><span class="text-right text-xs text-muted-foreground"><span class="font-bold text-foreground" data-iva-unit-out><?= wp_kses_post($per_tab) ?></span> <?= esc_html($labels['per_tab']) ?></span><?php endif; ?>
         </div>
 
-        <div class="mt-3 grid gap-2 md:grid-cols-[1fr_auto]">
+        <div class="mt-3 flex flex-col gap-2 lg:grid lg:grid-cols-[1fr_auto]">
             <?php if ($product->is_in_stock() && $cart_url !== '') : ?>
-                <a href="<?= esc_url($cart_url) ?>" class="btn-navy rounded-full py-2.5 text-sm" data-iva-cart rel="nofollow">
+                <a href="<?= esc_url($cart_url) ?>" class="btn-navy w-full justify-center rounded-full py-2.5 text-sm lg:w-auto" data-iva-cart rel="nofollow">
                     <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
                     <?= esc_html($labels['add_to_cart']) ?>
                 </a>
             <?php else : ?>
                 <span class="grid place-items-center rounded-full bg-destructive-soft py-2.5 text-sm font-bold text-destructive"><?= esc_html($labels['out_of_stock']) ?></span>
             <?php endif; ?>
-            <a href="<?= esc_url($link) ?>" target="_blank" rel="noopener noreferrer" class="hidden items-center rounded-full border-2 border-primary px-4 py-2 font-heading md:inline-flex text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white"><?= esc_html($labels['details']) ?></a>
+            <a href="<?= esc_url($link) ?>" target="_blank" rel="noopener noreferrer" class="hidden w-full items-center justify-center rounded-full border-2 border-primary px-4 py-2 font-heading md:inline-flex text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white lg:w-auto"><?= esc_html($labels['details']) ?></a>
         </div>
     </div>
 </article>
