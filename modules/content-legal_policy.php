@@ -135,12 +135,12 @@ foreach ($sections as $index => $section) {
 
                     <?php if ($contact_email) : ?>
                         <div class="rounded-2xl border border-sky-200/80 bg-gradient-to-br from-sky-50/50 to-white p-4 shadow-xs text-center">
-                            <p class="text-xs font-black uppercase tracking-wider text-primary mb-1">Need Clarification?</p>
+                            <p class="text-xs font-black uppercase tracking-wider text-primary mb-1"><?= esc_html((string) get_sub_field('help_label')) ?></p>
                             <a href="mailto:<?php echo esc_attr($contact_email); ?>" class="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-primary hover:bg-primary-dark px-3.5 py-2 text-xs font-bold text-white transition-colors">
                                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                                 </svg>
-                                Contact Policy Desk
+                                <?= esc_html((string) get_sub_field('button_label')) ?>
                             </a>
                         </div>
                     <?php endif; ?>

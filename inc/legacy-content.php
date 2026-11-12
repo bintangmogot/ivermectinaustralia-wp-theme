@@ -16,16 +16,17 @@ defined('ABSPATH') || exit;
  * (inc/legacy-adapters.php), or with the old markup when a layout has no adapter. $opts is passed to the adapters.
  */
 function ivermectin_render_modules($post_id = false, array $opts = []) {
-    if (have_rows('page_modules', $post_id)) {
+    $iva_legacy_field = ivermectin_uses_transferred_modules($post_id) ? 'page_modules' : 'modules';
+    if ($iva_legacy_field !== 'page_modules' && have_rows('page_modules', $post_id)) {
         while (have_rows('page_modules', $post_id)) {
             the_row();
-            get_template_part('modules/content', get_row_layout());
+            ivermectin_render_page_module((string) get_row_layout());
         }
         return true;
     }
 
-    if (have_rows('modules', $post_id)) {
-        if (ivermectin_render_legacy_modules($post_id, $opts)) {
+    if (have_rows($iva_legacy_field, $post_id)) {
+        if (ivermectin_render_legacy_modules($post_id, $opts, $iva_legacy_field)) {
             return true;
         }
         // A layout without an adapter: the old markup keeps the content visible. The old template ran in global scope and loops like "foreach (... as $post)" relied on it.

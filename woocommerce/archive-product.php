@@ -10,7 +10,7 @@ defined('ABSPATH') || exit;
 get_header('shop');
 
 $shop_page_id = wc_get_page_id('shop');
-$has_new      = $shop_page_id > 0 && is_shop() && have_rows('page_modules', $shop_page_id);
+$has_new      = $shop_page_id > 0 && is_shop() && !ivermectin_uses_transferred_modules($shop_page_id) && have_rows('page_modules', $shop_page_id);
 $intro_text   = $shop_page_id > 0 && is_shop() ? (string) get_field('shop_page_text', $shop_page_id) : '';
 $shop_heading = $shop_page_id > 0 && is_shop() ? trim((string) get_field('shop_page_heading', $shop_page_id)) : '';
 

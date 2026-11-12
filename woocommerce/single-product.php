@@ -28,24 +28,39 @@ if (!$product) {
 }
 
 $product_modules = get_field('page_modules', $product->get_id()) ?: [];
+$product_modules_raw = get_field('page_modules', $product->get_id(), false) ?: [];
+$has_product_summary_module = false;
+$has_product_description_module = false;
+$has_product_tabs_module = false;
 $product_summary_module = '';
 $product_description_module = '';
 
-foreach ($product_modules as $module) {
+foreach ($product_modules as $module_index => $module) {
     $layout = $module['acf_fc_layout'] ?? '';
 
-    if ($layout === 'product_summary' && $product_summary_module === '') {
-        $product_summary_module = $module['content'] ?? '';
-    } elseif ($layout === 'product_description' && $product_description_module === '') {
+    if ($layout === 'product_summary' && !$has_product_summary_module) {
+        $has_product_summary_module = true;
+        $product_summary_module = !empty($module['preserve_raw'])
+            ? ($product_modules_raw[$module_index]['field_wa_product_summary_content'] ?? '')
+            : ($module['content'] ?? '');
+    } elseif ($layout === 'product_description' && !$has_product_description_module) {
+        $has_product_description_module = true;
         $product_description_module = $module['content'] ?? '';
+    } elseif ($layout === 'product_tabs') {
+        $has_product_tabs_module = true;
     }
 }
 
 // Retain the former ACF fields as a fallback for products that have not been migrated.
-$acf_short = $product_summary_module ?: get_field('short_description', $product->get_id()) ?: get_post_meta($product->get_id(), 'short_desc', true);
+$acf_short = $has_product_summary_module
+    ? $product_summary_module
+    : (get_field('short_description', $product->get_id()) ?: get_post_meta($product->get_id(), 'short_desc', true));
 
-if ($acf_short) {
-    $summary = $acf_short ?: '';
+if ($has_product_summary_module) {
+    // An explicitly added, empty module stays empty and must not reveal older copy.
+    $summary = (string) $acf_short;
+} elseif ($acf_short) {
+    $summary = (string) $acf_short;
 } else {
 // Parse the product summary from legacy HTML comments when present.
     $summary_raw = $product->get_short_description();
@@ -533,10 +548,15 @@ $product_specs = array_values(array_filter($product_specs, static function (arra
 
 <!-- Product Description Section -->
 <?php
-$acf_main = $product_description_module ?: get_post_meta($product->get_id(), 'main_desc', true);
+$acf_main = $has_product_description_module
+    ? $product_description_module
+    : get_post_meta($product->get_id(), 'main_desc', true);
 $main_desc = '';
 
-if ($acf_main) {
+if ($has_product_description_module) {
+    // An explicitly added, empty module remains empty instead of falling through to old content.
+    $main_desc = (string) $acf_main;
+} elseif ($acf_main) {
     $main_desc = $acf_main;
 } else {
     $main_desc = get_the_content();
@@ -549,7 +569,7 @@ if (!empty(trim(strip_tags($main_desc)))):
 
 <?php
 // Content stored by the previous theme: extra tabs and product FAQs.
-$legacy_tabs = have_rows('extra_tabs', $product_id) ? get_field('extra_tabs', $product_id) : [];
+$legacy_tabs = !$has_product_tabs_module && have_rows('extra_tabs', $product_id) ? get_field('extra_tabs', $product_id) : [];
 // The FAQs module (Page Modules > Product FAQs) replaces the old FAQ field once a product has one.
 $has_faq_module = false;
 if (have_rows('page_modules', $product_id)) {
@@ -572,9 +592,19 @@ $legacy_faqs = (!$has_faq_module && have_rows('faqs', $product_id)) ? get_field(
     </div>
 </section>
 <?php endif; ?>
+<?php if ($has_product_tabs_module && have_rows('page_modules', $product_id)) : ?>
+    <?php while (have_rows('page_modules', $product_id)) : the_row(); ?>
+        <?php if (get_row_layout() === 'product_tabs') { get_template_part('modules/content-product_tabs'); } ?>
+    <?php endwhile; ?>
+<?php endif; ?>
 <?php if ($legacy_faqs) {
     ivermectin_render_faq_section((string) get_field('faq_title', $product_id), $legacy_faqs, 'bg-surface');
 } ?>
+<?php if ($has_faq_module && have_rows('page_modules', $product_id)) : ?>
+    <?php while (have_rows('page_modules', $product_id)) : the_row(); ?>
+        <?php if (get_row_layout() === 'product_faqs' && get_sub_field('legacy_position')) { get_template_part('modules/content-product_faqs'); } ?>
+    <?php endwhile; ?>
+<?php endif; ?>
 
 <?php
 // Product reviews (reviews linked to this product).
@@ -588,14 +618,15 @@ if ($show_product_reviews) {
 ?>
 
 <?php
-if (have_rows('page_modules', $product->get_id())) {
+if (!ivermectin_uses_transferred_modules($product->get_id()) && have_rows('page_modules', $product->get_id())) {
     while (have_rows('page_modules', $product->get_id())) {
         the_row();
         $layout = get_row_layout();
-        if (in_array($layout, ['product_summary', 'product_description', 'reviews', 'reviews_carousel'], true)) {
+        if (in_array($layout, ['product_summary', 'product_description', 'product_tabs', 'reviews', 'reviews_carousel'], true)) {
             continue;
         }
-        get_template_part('modules/content', $layout);
+        if ($layout === 'product_faqs' && get_sub_field('legacy_position')) { continue; }
+        ivermectin_render_page_module($layout);
     }
 } else {
     ivermectin_render_modules($product->get_id());

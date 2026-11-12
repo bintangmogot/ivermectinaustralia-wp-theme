@@ -7,6 +7,10 @@
 $heading = get_sub_field('heading') ?: '';
 $desc = get_sub_field('desc') ?: '';
 $products = get_sub_field('products') ?: [];
+$eyebrow = (string) get_sub_field('eyebrow');
+$badge = (string) get_sub_field('badge_text');
+$catalogue_label = (string) get_sub_field('catalogue_label');
+$catalogue_url = trim((string) get_sub_field('catalogue_url')) ?: (function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/'));
 
 if (!$heading && !$desc && !$products) {
     return;
@@ -17,7 +21,7 @@ if (!$heading && !$desc && !$products) {
     <div class="container-site max-w-5xl">
         <div class="text-center max-w-3xl mx-auto mb-8">
             <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-100/90 border border-sky-300/80 px-3 py-0.5 text-[11px] font-black uppercase tracking-[0.16em] text-primary">
-                Product Portfolio
+                <?= esc_html($eyebrow) ?>
             </span>
             <h2 class="mt-2 font-heading font-black text-2xl sm:text-3xl md:text-4xl text-primary"><?= esc_html($heading) ?></h2>
             <?php if ($desc): ?>
@@ -35,7 +39,7 @@ if (!$heading && !$desc && !$products) {
                             <?= sprintf('%02d', $idx + 1) ?>
                         </span>
                         <span class="inline-flex items-center gap-1 rounded-full bg-amber-50 border border-amber-200 px-2.5 py-0.5 text-[10px] font-bold text-amber-700">
-                            100% Genuine
+                            <?= esc_html($badge) ?>
                         </span>
                     </div>
                     <?php if (!empty($product['title'])): ?>
@@ -46,8 +50,8 @@ if (!$heading && !$desc && !$products) {
                     <?php endif; ?>
                 </div>
                 <div class="pt-2 border-t border-slate-100 mt-auto">
-                    <a href="<?= esc_url(home_url('/shop/')) ?>" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary group-hover:text-amber-600 transition-colors">
-                        <span>View in catalogue</span>
+                    <a href="<?= esc_url($catalogue_url) ?>" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary group-hover:text-amber-600 transition-colors">
+                        <span><?= esc_html($catalogue_label) ?></span>
                         <span aria-hidden="true">&rarr;</span>
                     </a>
                 </div>

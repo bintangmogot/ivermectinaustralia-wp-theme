@@ -50,6 +50,7 @@ require_once IVERMECTIN_THEME_DIR . '/inc/product-presentation.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/ajax-reviews.php';
 
 // 8. Existing site content (old modules, old options, old product fields)
+require_once IVERMECTIN_THEME_DIR . '/inc/module-transfer.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/legacy-content.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/legacy-adapters.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/content-seed.php';

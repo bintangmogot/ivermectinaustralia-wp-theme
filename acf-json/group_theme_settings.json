@@ -1774,6 +1774,62 @@
             "placeholder": "Express Domestic Shipping",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_iva_tab_email_content",
+            "label": "Email Content",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {"key":"field_iva_email_header_subheading","name":"email_header_subheading","label":"Email header subheading","type":"text","default_value":"Thank you for shopping with Ivermectin Australia"},
+        {"key":"field_iva_email_shipping_message","name":"email_shipping_message","label":"Email footer shipping message","type":"textarea","default_value":"All orders are dispatched discreetly in plain packaging via Australia Post Express with unique tracking."},
+        {"key":"field_iva_email_footer_store_name","name":"email_footer_store_name","label":"Email footer store name","type":"text","default_value":"Ivermectin Australia"},
+        {"key":"field_iva_email_footer_rights","name":"email_footer_rights","label":"Email footer rights text","type":"text","default_value":"All rights reserved."},
+        {
+            "key": "field_iva_tab_media",
+            "label": "Media",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_iva_default_video_poster_url",
+            "label": "Default video poster image URL",
+            "name": "default_video_poster_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Default image shown before a video plays. A Video module can override this value.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "https://modafinilaustraliaxpress.com/wp-content/uploads/2026/02/video-img.jpg",
+            "placeholder": "https://",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_iva_default_shop_button_label",
+            "label": "Default shop button label",
+            "name": "default_shop_button_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Used by the Icons 2 module when its own button label is empty.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "Order Now - Fast delivery",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [

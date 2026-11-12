@@ -1,4 +1,6 @@
 <?php 
+$iva_legacy_field = $iva_legacy_field ?? 'modules';
+$iva_legacy_single = $iva_legacy_single ?? false;
 $post_id = false;
 if(is_tax()){
 	$post_id=get_queried_object();
@@ -6,13 +8,13 @@ if(is_tax()){
 	$post_id=wc_get_page_id( 'shop' );
 }
 ?>
-<?php if( have_rows('modules',$post_id) ):?>
-<?php $section=1;?>
-<?php while ( have_rows('modules',$post_id) ) : the_row();?>
+<?php if( $iva_legacy_single || have_rows($iva_legacy_field,$post_id) ):?>
+<?php $section = $iva_legacy_single ? get_row_index() : 1; ?>
+<?php while ( $iva_legacy_single || have_rows($iva_legacy_field,$post_id) ) : if (!$iva_legacy_single) { the_row(); }?>
 
 	<div class='anchor-tag' id='section-<?php echo $section;?>'></div>
 	
-	<?php if( get_row_layout() == 'header_image' ):?>
+	<?php if( ivermectin_original_module_layout((string) get_row_layout()) == 'header_image' ):?>
 		<div class='header-img-section section section-<?php echo $section;?>'>		
 			
 			<div class='header-img' style='background-image:url(<?php the_sub_field('image')?>)'></div>	
@@ -23,7 +25,7 @@ if(is_tax()){
 			</div>
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'intro_black_background' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'intro_black_background' ):?>
 		<div class='intro-section section wowo fadeInUp section-<?php echo $section;?>' style='background-color:<?php the_sub_field('bg_color')?>'>
 			<div class='container'>	
 				<div class='entry-content'>
@@ -32,7 +34,7 @@ if(is_tax()){
 			</div>
 		</div>	
 	
-	<?php elseif( get_row_layout() == 'dosage_header_content' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'dosage_header_content' ):?>
 		<div class='dosage-header-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container'>	
 				<div class='entry-content'>
@@ -41,14 +43,15 @@ if(is_tax()){
 			</div>
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'video' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'video' ):?>
 		<div class='video-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container'>	
 				<div class='row align-items-center'>	
 					<div class='col-md-5'>	
 						<div class='video entry-content'>
 							<?php $file = get_sub_field('video');?>
-							 <video width="350"  controls poster='https://modafinilaustraliaxpress.com/wp-content/uploads/2026/02/video-img.jpg'>
+							<?php $poster = trim((string) get_sub_field('poster_url')) ?: ivermectin_label('field_iva_default_video_poster_url'); ?>
+							 <video width="350" controls<?php if ($poster !== ''): ?> poster='<?php echo esc_url($poster); ?>'<?php endif; ?>>
 							  <source src="<?php echo $file['url']?>" type="video/mp4">
 							Your browser does not support the video tag.
 							</video> 
@@ -63,7 +66,7 @@ if(is_tax()){
 			</div>
 		</div>
 		
-	<?php elseif( get_row_layout() == 'breadcrumb' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'breadcrumb' ):?>
 		<div class='breadcrumb-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container'>	
 				<?php
@@ -74,7 +77,7 @@ if(is_tax()){
 			</div>
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'text_-_full_width' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'text_-_full_width' ):?>
 		<div class='text-fullwidth-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container'>	
 				<div class='entry-content'>
@@ -83,7 +86,7 @@ if(is_tax()){
 			</div>
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'text_-_12_&_12' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'text_-_12_&_12' ):?>
 		<div class='text-2-cols-section section section-<?php echo $section;?> <?php the_sub_field('background_color')?>'>
 			<div class='container wowo fadeInUp px-4'>			
 				<div class='text-content-wrapper'>	
@@ -99,7 +102,7 @@ if(is_tax()){
 			</div>				
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'text_-_23_&_13' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'text_-_23_&_13' ):?>
 		<div class='text-2-3-cols-section section section-<?php echo $section;?> <?php the_sub_field('background_color')?>'>
 			<div class='container wowo fadeInUp px-4'>			
 				<div class='row g-5'>	
@@ -113,7 +116,7 @@ if(is_tax()){
 			</div>				
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'text_-_side_image' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'text_-_side_image' ):?>
 		<div class='text-side-image-section section section-<?php echo $section;?> '>
 			<div class='container wowo fadeInUp'>			
 				<div class='text-side-image-wrapper row <?php if(get_sub_field('image_position')=='right'){echo 'reverse';}?>'>	
@@ -127,14 +130,14 @@ if(is_tax()){
 			</div>				
 		</div>
 		
-	<?php elseif( get_row_layout() == 'html' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'html' ):?>
 		<div class='html-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container'>	
 				<?php echo get_sub_field('content')?>
 			</div>
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'why_choose' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'why_choose' ):?>
 		<div class='location-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container'>	
 				<div class='intro-content-wrapper'><div class='intro-content entry-content'><?php the_sub_field('intro')?></div></div>
@@ -146,7 +149,7 @@ if(is_tax()){
 			</div>
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'review_page' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'review_page' ):?>
 		<div class='review-page-section section section-<?php echo $section;?> '>
 			<div class='container wowo fadeInUp '>	
 				
@@ -180,7 +183,8 @@ if(is_tax()){
 					wp_reset_postdata();
 					wp_reset_query();
 				?>
-				<h1>Latest reviews from our customers</h1>
+				<?php $page_heading = trim((string) get_sub_field('page_heading')) ?: ivermectin_label('reviews_page_heading'); ?>
+				<?php if ($page_heading !== ''): ?><h1><?php echo esc_html($page_heading); ?></h1><?php endif; ?>
 				<div class='review-page-sumary'>
 					<div class='star-rating-wrapper'>
 						<div class='star-rating'><span style='width:<?php echo $total_star/(5*$total_review)*100?>%;'></span></div>
@@ -217,7 +221,8 @@ if(is_tax()){
 				<?php wp_reset_postdata();?>
 				<?php wp_reset_query();?>
 				</div>
-				<h3 class='review-form-title'>Leave us a review</h3>
+				<?php $form_heading = trim((string) get_sub_field('form_heading')) ?: ivermectin_label('reviews_form_heading'); ?>
+				<?php if ($form_heading !== ''): ?><h3 class='review-form-title'><?php echo esc_html($form_heading); ?></h3><?php endif; ?>
 				<div class='review-page-form'>
 					<?php echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="false"]');?>
 				</div>
@@ -225,7 +230,7 @@ if(is_tax()){
 			
 		</div>
 	
-	<?php elseif( get_row_layout() == 'feature_product' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'feature_product' ):?>
 		<div class='feature-product-section section section-<?php echo $section;?>'>
 			<div class='container'>	
 				<h3 class='sub-heading'><?php the_sub_field('heading')?></h3>
@@ -272,7 +277,7 @@ if(is_tax()){
 			</div>	
 		</div>			
 		
-	<?php elseif( get_row_layout() == 'icons' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'icons' ):?>
 		<div class='icons-section section section-<?php echo $section;?>'>
 			<div class='container'>	
 				<div class='entry-content intro-content'><?php the_sub_field('intro_content')?></div>
@@ -287,7 +292,7 @@ if(is_tax()){
 			</div>	
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'icons_2' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'icons_2' ):?>
 		<div class='icons-2-section section section-<?php echo $section;?>'>
 			<div class='container'>	
 				<h3 class='sub-heading'><?php the_sub_field('heading')?></h3>
@@ -299,11 +304,12 @@ if(is_tax()){
 						</div>
 					<?php endwhile?>
 				</div>	
-				<div class='btn-wrapper'><a class='btn btn-red' href='<?php echo wc_get_page_permalink( 'shop' )?>'>Order Now - Fast delivery</a></div>
+				<?php $button_text = trim((string) get_sub_field('button_text')) ?: ivermectin_label('field_iva_default_shop_button_label'); ?>
+				<?php if ($button_text !== ''): ?><div class='btn-wrapper'><a class='btn btn-red' href='<?php echo esc_url(wc_get_page_permalink('shop')); ?>'><?php echo esc_html($button_text); ?></a></div><?php endif; ?>
 			</div>	
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'icons_3' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'icons_3' ):?>
 		<div class='icons-3-section section section-<?php echo $section;?>'>
 			<div class='container'>	
 				<div class='icon-3-list wowo fadeInRight'>
@@ -318,7 +324,7 @@ if(is_tax()){
 			</div>	
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'product_delivery_intro' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'product_delivery_intro' ):?>
 		<div class='product-delivery-content-wrapper'>
 			<div class='container'>
 				<div class='row'>
@@ -332,7 +338,7 @@ if(is_tax()){
 			</div>
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'benefit' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'benefit' ):?>
 		<div class='benefit-section section section-<?php echo $section;?>'>
 			<div class='container'>	
 				<div class='benefit-intro entry-content'><?php the_sub_field('intro')?></div>	
@@ -349,7 +355,7 @@ if(is_tax()){
 			</div>	
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'dosage' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'dosage' ):?>
 		<div class='dosage-section section section-<?php echo $section;?>'>
 			<div class='container'>		
 				<div class=' row'>
@@ -373,7 +379,7 @@ if(is_tax()){
 			</div>	
 		</div>
 
-	<?php elseif( get_row_layout() == 'tips' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'tips' ):?>
 		<div class='tips-section section section-<?php echo $section;?>'>
 			<div class='container'>		
 				<div class=' row'>
@@ -393,7 +399,7 @@ if(is_tax()){
 			</div>					
 		</div>					
 				
-	<?php elseif( get_row_layout() == 'how_to_order' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'how_to_order' ):?>
 		<div class='how-to-order-section section section-<?php echo $section;?>'>
 			<div class='container px-4'>	
 				<div class='how-to-order-intro'><?php the_sub_field('intro')?></div>	
@@ -409,7 +415,7 @@ if(is_tax()){
 			</div>	
 		</div>
 	
-	<?php elseif( get_row_layout() == 'featured_blog' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'featured_blog' ):?>
 		<div class='latest-blog-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container '>
 				<div class='entry-content intro-content'><?php the_sub_field('intro_content')?></div>
@@ -431,10 +437,10 @@ if(is_tax()){
 										<?php if(get_the_excerpt()){
 											the_excerpt();
 										}else{											
-											$rows = get_field('modules');
+											$rows = get_field('page_modules') ?: get_field('modules');
 											if($rows){
 												foreach( $rows as $row ){
-													if( $row['acf_fc_layout'] == 'text_-_full_width' ){
+													if( ivermectin_original_module_layout($row['acf_fc_layout']) == 'text_-_full_width' ){
 														echo force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( $row['content'] ), 20, '' ) ) );
 														break;
 													}
@@ -462,7 +468,7 @@ if(is_tax()){
 			</div>
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'blog' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'blog' ):?>
 		<div class='all-news-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container'>				
 				<div class='row'>
@@ -495,10 +501,10 @@ if(is_tax()){
 										<?php if(get_the_excerpt()){
 											the_excerpt();
 										}else{											
-											$rows = get_field('modules');
+											$rows = get_field('page_modules') ?: get_field('modules');
 											if($rows){
 												foreach( $rows as $row ){
-													if( $row['acf_fc_layout'] == 'text_-_full_width' ){
+													if( ivermectin_original_module_layout($row['acf_fc_layout']) == 'text_-_full_width' ){
 														echo  wp_trim_words( wp_strip_all_tags( $row['content'] ), 20, '' ) ;
 														break;
 													}
@@ -533,7 +539,7 @@ if(is_tax()){
 			</div>
 		</div>
 		
-	<?php elseif( get_row_layout() == 'reviews' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'reviews' ):?>
 		<div class='reviews-section section section-<?php echo $section;?>'>
 			<div class='reviews-wrapper  wowo fadeInUp'>			
 				<div class=' container '>			
@@ -566,21 +572,21 @@ if(is_tax()){
 			</div>				
 		</div>			
 		
-	<?php elseif( get_row_layout() == 'cta' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'cta' ):?>
 		<div class='cta-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container'>	
 				<div class='cta-content'><?php the_sub_field('content')?></div>			
 			</div>				
 		</div>	
 		
-	<?php elseif( get_row_layout() == 'cta_2' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'cta_2' ):?>
 		<div class='cta-2-section section wowo fadeInUp section-<?php echo $section;?>'>
 			<div class='container'>	
 				<div class='cta-2-content'><?php the_sub_field('content')?></div>			
 			</div>				
 		</div>	
 				
-	<?php elseif( get_row_layout() == 'contact' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'contact' ):?>
 		<div class='contact-section section section-<?php echo $section;?>'>
 			<div class='container wowo fadeInUp'>			
 				<div class='row'>	
@@ -601,7 +607,7 @@ if(is_tax()){
 			</div>				
 		</div>
 		
-	<?php elseif( get_row_layout() == 'faqs' ):?>
+	<?php elseif( ivermectin_original_module_layout((string) get_row_layout()) == 'faqs' ):?>
 		<div class='product-faqs accordion-section section wowo fadeInUp '>
 			<div class='container '>					
 				<h3 class='sub-heading'><?php the_sub_field('faq_title')?></h3>			
@@ -621,7 +627,7 @@ if(is_tax()){
 				
 	<?php endif?>
 	
-	<?php $section++;?>
+	<?php $section++; if ($iva_legacy_single) { break; } ?>
 	
 <?php endwhile?>
 <?php endif?>

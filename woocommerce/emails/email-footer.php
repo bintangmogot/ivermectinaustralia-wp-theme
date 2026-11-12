@@ -35,12 +35,12 @@ $site_url = home_url( '/' );
 
 												<!-- Australia Post Express Guarantee -->
 												<p style="margin: 0 0 10px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; color: #64748B; line-height: 1.5;">
-													All orders are dispatched discreetly in plain packaging via Australia Post Express with unique tracking.
+													<?php echo esc_html( ivermectin_label( 'field_iva_email_shipping_message' ) ); ?>
 												</p>
 
 												<!-- Copyright -->
 												<p style="margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; color: #94A3B8;">
-													&copy; <?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( $site_url ); ?>" style="color: #64748B; text-decoration: underline; font-weight: 600;">Ivermectin Australia</a>. All rights reserved.
+													&copy; <?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( $site_url ); ?>" style="color: #64748B; text-decoration: underline; font-weight: 600;"><?php echo esc_html( ivermectin_label( 'field_iva_email_footer_store_name' ) ); ?></a>. <?php echo esc_html( ivermectin_label( 'field_iva_email_footer_rights' ) ); ?>
 												</p>
 
 											</td>

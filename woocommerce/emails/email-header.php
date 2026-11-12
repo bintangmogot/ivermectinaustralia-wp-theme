@@ -74,7 +74,7 @@ $header_image_url = home_url( '/' );
 													<tr>
 														<td id="header_wrapper" align="center">
 															<h1><?php echo esc_html( $email_heading ); ?></h1>
-															<p class="email-subheading">Thank you for shopping with Ivermectin Australia</p>
+									<p class="email-subheading"><?php echo esc_html( ivermectin_label( 'field_iva_email_header_subheading' ) ); ?></p>
 														</td>
 													</tr>
 												</table>

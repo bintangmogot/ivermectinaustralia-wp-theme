@@ -8,7 +8,7 @@
 get_header();
 
 $blog_page_id = is_home() ? (int) get_option('page_for_posts') : 0;
-$has_modules  = $blog_page_id && have_rows('page_modules', $blog_page_id);
+$has_modules  = $blog_page_id && !ivermectin_uses_transferred_modules($blog_page_id) && have_rows('page_modules', $blog_page_id);
 
 /** The article list: category chips, cards, page numbers, or an empty state. */
 function ivermectin_render_blog_loop() {
@@ -46,7 +46,7 @@ if (is_home() && $has_modules) {
             ivermectin_render_blog_loop();
             $rendered_loop = true;
         } else {
-            get_template_part('modules/content', $layout);
+            ivermectin_render_page_module($layout);
             if ($layout === 'page_hero' && !$has_grid && !$rendered_loop) {
                 ivermectin_render_blog_loop();
                 $rendered_loop = true;

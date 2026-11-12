@@ -15,50 +15,60 @@ function ivermectin_legacy_supported_layouts(): array {
 }
 
 /**
- * Read the "modules" rows of a post into plain arrays. Returns null when the post has none or uses an unsupported layout.
+ * Read the current section into the same adapter shape used before transfer.
  */
-function ivermectin_legacy_rows($post_id = false): ?array {
-    if (!have_rows('modules', $post_id)) {
-        return null;
+function ivermectin_current_legacy_row(): ?array {
+    $layout = ivermectin_original_module_layout((string) get_row_layout());
+    if (!in_array($layout, ivermectin_legacy_supported_layouts(), true)) { return null; }
+    $row = ['layout' => $layout];
+    switch ($layout) {
+        case 'text_-_full_width':
+        case 'intro_black_background':
+            $row['content'] = (string) get_sub_field('content');
+            break;
+        case 'faqs':
+            $row['title'] = trim((string) get_sub_field('faq_title'));
+            $row['items'] = array_values(array_filter((array) get_sub_field('faqs'), static fn($item) => trim((string) ($item['question'] ?? '')) !== ''));
+            break;
+        case 'contact':
+            foreach (['email', 'phone', 'address', 'map', 'form'] as $name) {
+                $row[$name] = (string) get_sub_field($name);
+            }
+            break;
+        case 'reviews':
+            $row['heading'] = trim((string) get_sub_field('heading'));
+            break;
+        case 'review_page':
+            $row['page_heading'] = trim((string) get_sub_field('page_heading'));
+            $row['form_heading'] = trim((string) get_sub_field('form_heading'));
+            break;
+        case 'feature_product':
+            $row['heading']  = trim((string) get_sub_field('heading'));
+            $row['products'] = array_filter((array) get_sub_field('feature_product'));
+            break;
+        case 'icons_3':
+            $row['items'] = (array) get_sub_field('icon_3');
+            break;
+        case 'how_to_order':
+            $row['intro'] = (string) get_sub_field('intro');
+            $row['steps'] = (array) get_sub_field('how_to_order');
+            break;
+    }
+    return $row;
+}
+
+/** Read either parent, checking unsupported layouts before opening an ACF loop. */
+function ivermectin_legacy_rows($post_id = false, string $field_name = 'modules'): ?array {
+    $saved = get_field($field_name, $post_id, false);
+    if (!is_array($saved) || !$saved) { return null; }
+    foreach ($saved as $row) {
+        $layout = ivermectin_original_module_layout((string) ($row['acf_fc_layout'] ?? ''));
+        if (!in_array($layout, ivermectin_legacy_supported_layouts(), true)) { return null; }
     }
     $rows = [];
-    while (have_rows('modules', $post_id)) {
+    while (have_rows($field_name, $post_id)) {
         the_row();
-        $layout = (string) get_row_layout();
-        if (!in_array($layout, ivermectin_legacy_supported_layouts(), true)) {
-            return null;
-        }
-        $row = ['layout' => $layout];
-        switch ($layout) {
-            case 'text_-_full_width':
-            case 'intro_black_background':
-                $row['content'] = (string) get_sub_field('content');
-                break;
-            case 'faqs':
-                $row['title'] = trim((string) get_sub_field('faq_title'));
-                $row['items'] = array_values(array_filter((array) get_sub_field('faqs'), static fn($item) => trim((string) ($item['question'] ?? '')) !== ''));
-                break;
-            case 'contact':
-                foreach (['email', 'phone', 'address', 'map', 'form'] as $name) {
-                    $row[$name] = (string) get_sub_field($name);
-                }
-                break;
-            case 'reviews':
-                $row['heading'] = trim((string) get_sub_field('heading'));
-                break;
-            case 'feature_product':
-                $row['heading']  = trim((string) get_sub_field('heading'));
-                $row['products'] = array_filter((array) get_sub_field('feature_product'));
-                break;
-            case 'icons_3':
-                $row['items'] = (array) get_sub_field('icon_3');
-                break;
-            case 'how_to_order':
-                $row['intro'] = (string) get_sub_field('intro');
-                $row['steps'] = (array) get_sub_field('how_to_order');
-                break;
-        }
-        $rows[] = $row;
+        $rows[] = ivermectin_current_legacy_row();
     }
     return $rows;
 }
@@ -70,8 +80,8 @@ function ivermectin_legacy_rows($post_id = false): ?array {
  *   @type array|false $hero  false for no page header; an array overrides title, lead, meta, crumbs.
  * }
  */
-function ivermectin_render_legacy_modules($post_id = false, array $opts = []): bool {
-    $rows = ivermectin_legacy_rows($post_id);
+function ivermectin_render_legacy_modules($post_id = false, array $opts = [], string $field_name = 'modules'): bool {
+    $rows = ivermectin_legacy_rows($post_id, $field_name);
     if ($rows === null) {
         return false;
     }
@@ -102,8 +112,12 @@ function ivermectin_render_legacy_rows(array $rows, array $opts = []): void {
         }
         // The reviews page has no heading in its content: it uses the Reviews page heading label.
         if (empty($hero['title']) && !$hero_html_taken) {
-            if (in_array('review_page', array_column($rows, 'layout'), true)) {
-                $hero['title'] = ivermectin_label('reviews_page_heading') ?: get_the_title();
+            foreach ($rows as $row) {
+                if ($row['layout'] !== 'review_page') { continue; }
+                $hero['title'] = $row['page_heading'] !== ''
+                    ? $row['page_heading']
+                    : (ivermectin_label('reviews_page_heading') ?: get_the_title());
+                break;
             }
         }
         $variant = (string) ($hero['variant'] ?? ivermectin_detect_hero_variant($rows));
@@ -253,7 +267,7 @@ function ivermectin_legacy_render_review_page(array $row, int $index): void {
     $stats  = ivermectin_review_stats();
     $paged  = max(1, (int) get_query_var('paged'), (int) get_query_var('page'));
     $query  = new WP_Query(['post_type' => 'reviews', 'post_status' => 'publish', 'posts_per_page' => 12, 'paged' => $paged]);
-    $form_heading = ivermectin_label('reviews_form_heading');
+    $form_heading = $row['form_heading'] !== '' ? $row['form_heading'] : ivermectin_label('reviews_form_heading');
     $has_form     = shortcode_exists('gravityform');
     ?>
     <section class="iva-section iva-reviews-page bg-surface">
