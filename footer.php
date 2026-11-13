@@ -39,21 +39,26 @@ $social_paths = [
     'LinkedIn'  => 'M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.85h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75z',
 ];
 
-$footer_menus = [];
-$locations    = get_nav_menu_locations();
-foreach (['footer_quick', 'footer_info', 'footer_trending', 'footer_cities'] as $location) {
-    if (empty($locations[$location])) {
-        continue;
+$locations = get_nav_menu_locations();
+$footer_sections = [];
+$footer_sources = [
+    'footer_menu' => ['footer_trending'],
+    'footer_menu_2' => ['footer_quick', 'footer_cities'],
+    'footer_menu_3' => ['footer_info'],
+];
+foreach ($footer_sources as $field => $slots) {
+    $groups = ivermectin_parse_footer_links((string) $opt($field));
+    foreach ($slots as $index => $location) {
+        $menu = !empty($locations[$location]) ? wp_get_nav_menu_object($locations[$location]) : false;
+        if ($menu && !is_wp_error($menu)) {
+            $footer_sections[] = ['location' => $location, 'title' => $menu->name, 'wide' => count((array) wp_get_nav_menu_items($menu->term_id)) > 9];
+        } elseif (isset($groups[$index])) {
+            $footer_sections[] = $groups[$index];
+        }
     }
-    $menu = wp_get_nav_menu_object($locations[$location]);
-    if ($menu) {
-        $footer_menus[] = ['location' => $location, 'title' => $menu->name];
-    }
-}
-$legacy_groups = [];
-if (!$footer_menus) {
-    foreach (['footer_menu', 'footer_menu_2', 'footer_menu_3'] as $legacy_field) {
-        $legacy_groups = array_merge($legacy_groups, ivermectin_parse_footer_links((string) $opt($legacy_field)));
+    // Preserve any additional saved groups, even when an editor assigns a menu.
+    foreach (array_slice($groups, count($slots)) as $group) {
+        $footer_sections[] = $group;
     }
 }
 
@@ -113,20 +118,18 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
                 <?php endif; ?>
             </div>
 
-            <?php foreach ($footer_menus as $footer_menu) : ?>
-                <nav aria-label="<?= esc_attr($footer_menu['title']) ?>">
-                    <h4 class="iva-footer-head"><?= esc_html($footer_menu['title']) ?></h4>
-                    <?php wp_nav_menu(['theme_location' => $footer_menu['location'], 'container' => false, 'menu_class' => 'iva-footer-menu space-y-2.5 text-sm text-white/75', 'fallback_cb' => false, 'depth' => 1]); ?>
-                </nav>
-            <?php endforeach; ?>
-            <?php foreach ($legacy_groups as $group) : ?>
-                <nav aria-label="<?= esc_attr($group['title']) ?>"<?= count($group['links']) > 9 ? ' class="iva-footer-wide"' : '' ?>>
+            <?php foreach ($footer_sections as $group) : ?>
+                <nav aria-label="<?= esc_attr($group['title']) ?>"<?= (!empty($group['wide']) || count($group['links'] ?? []) > 9) ? ' class="iva-footer-wide"' : '' ?>>
                     <?php if ($group['title'] !== '') : ?><h4 class="iva-footer-head"><?= esc_html($group['title']) ?></h4><?php endif; ?>
+                    <?php if (isset($group['location'])) : ?>
+                        <?php wp_nav_menu(['theme_location' => $group['location'], 'container' => false, 'menu_class' => 'iva-footer-links iva-footer-menu', 'fallback_cb' => false, 'depth' => 1]); ?>
+                    <?php else : ?>
                     <ul class="iva-footer-links">
                         <?php foreach ($group['links'] as $link) : ?>
                             <li><a href="<?= esc_url($link['href']) ?>"<?= $link['target'] !== '' ? ' target="' . esc_attr($link['target']) . '"' : '' ?><?= $link['rel'] !== '' ? ' rel="' . esc_attr($link['rel']) . '"' : '' ?>><?= esc_html($link['label']) ?></a></li>
                         <?php endforeach; ?>
                     </ul>
+                    <?php endif; ?>
                 </nav>
             <?php endforeach; ?>
         </div>
