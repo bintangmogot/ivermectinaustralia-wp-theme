@@ -20,8 +20,9 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 
 add_filter('wc_get_product_category_list', '__return_empty_string');
 
+// Show every product on one shop page (no pagination).
 add_filter('loop_shop_per_page', function () {
-    return 16;
+    return -1;
 }, 20);
 
 // Match Products > Re-Order without changing any saved products or store settings.

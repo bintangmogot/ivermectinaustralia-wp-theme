@@ -432,7 +432,12 @@ function ivermectin_legacy_render_how_to_order(array $row, int $index): void {
     <section class="iva-section iva-steps bg-surface">
         <div class="container-site">
             <?php if (trim($row['intro']) !== '') : ?><div class="iva-head iva-head-center prose max-w-none" data-iva-head><?= $row['intro'] ?></div><?php endif; ?>
-            <ol class="iva-steps-list mx-auto grid max-w-5xl gap-5 <?= esc_attr(['md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3'][min(3, count($steps)) - 1]) ?>" data-iva-stagger>
+            <?php
+            // Four steps sit on one row from the large breakpoint up; two per row on tablets.
+            $columns = ['md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'md:grid-cols-2 lg:grid-cols-4'][min(4, count($steps)) - 1];
+            $width   = count($steps) >= 4 ? 'max-w-6xl' : 'max-w-5xl';
+            ?>
+            <ol class="iva-steps-list mx-auto grid <?= esc_attr($width) ?> gap-5 <?= esc_attr($columns) ?>" data-iva-stagger>
                 <?php foreach ($steps as $number => $step) : ?>
                     <li class="iva-step">
                         <span class="iva-step-num"><?= esc_html(str_pad((string) ($number + 1), 2, '0', STR_PAD_LEFT)) ?></span>

@@ -2837,6 +2837,12 @@ footer .site-logo-img,
 .iva-head-center .iva-lead { margin-inline: auto; max-width: 40rem; }
 /* Center the homepage band intro while retaining its existing paragraph width. */
 .home .iva-band .iva-head-center .iva-lead { max-width: none; }
+/* City pages: section heads and intro copy start on the left edge, in line with the page header and breadcrumb. */
+.iva-pagehero-place ~ section .iva-head-center { max-width: none; margin-inline: 0; text-align: left; }
+.iva-pagehero-place ~ section .iva-head-center .iva-lead { max-width: none; margin-inline: 0; }
+.iva-pagehero-place ~ .iva-guide .iva-prose { max-width: none; }
+.iva-pagehero-place ~ section .iva-prose [style*="text-align"] { text-align: left !important; }
+.iva-pagehero-place ~ .iva-guide > .container-site.max-w-6xl { max-width: 80rem; }
 
 /* Pill tag above section headings */
 .iva-pill-tag {

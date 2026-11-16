@@ -210,7 +210,7 @@ function ivermectin_import_theme_image(string $file, string $alt): int {
 /** Fill empty Theme Settings options from their ACF defaults. The shipping note waits for the client's decision. */
 function ivermectin_seed_theme_settings(): void {
     $skip_types = ['tab', 'message', 'accordion', 'repeater', 'flexible_content', 'group', 'clone', 'image', 'file', 'gallery', 'post_object', 'relationship'];
-    foreach (['group_theme_settings', 'group_product_presentation_settings'] as $group_key) {
+    foreach (['group_theme_settings'] as $group_key) {
         foreach ((array) acf_get_fields($group_key) as $field) {
             $default = $field['default_value'] ?? '';
             if (in_array($field['type'], $skip_types, true) || $default === '' || $default === null || $field['name'] === 'checkout_shipping_note') {
