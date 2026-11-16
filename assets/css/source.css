@@ -2843,6 +2843,25 @@ footer .site-logo-img,
 .iva-pagehero-place ~ .iva-guide .iva-prose { max-width: none; }
 /* City pages, How to order: larger title, tighter gap to the cards, left aligned like the other headings. */
 .iva-pagehero-place ~ .iva-steps .iva-head { margin-bottom: 1.5rem; }
+/* City pages, How to order on phones: one compact row per step (number, icon, left aligned text). */
+@media (max-width: 767px) {
+  .iva-pagehero-place ~ .iva-steps .iva-steps-list { gap: 0.75rem; }
+  .iva-pagehero-place ~ .iva-steps .iva-step {
+    display: grid;
+    grid-template-columns: 2.25rem 2.75rem minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-radius: 1.25rem;
+    text-align: left;
+  }
+  .iva-pagehero-place ~ .iva-steps .iva-step:not(:has(.iva-icon-tile)) { grid-template-columns: 2.25rem minmax(0, 1fr); }
+  .iva-pagehero-place ~ .iva-steps .iva-step-num { width: 2.25rem; height: 2.25rem; margin: 0; font-size: 0.9375rem; }
+  .iva-pagehero-place ~ .iva-steps .iva-step .iva-icon-tile { width: 2.75rem; height: 2.75rem; margin: 0; border-radius: 0.875rem; }
+  .iva-pagehero-place ~ .iva-steps .iva-step .iva-icon-tile img, .iva-pagehero-place ~ .iva-steps .iva-step .iva-icon-tile svg { width: 1.75rem; height: 1.75rem; }
+  .iva-pagehero-place ~ .iva-steps .iva-step .iva-body { margin: 0; text-align: left; }
+  .iva-pagehero-place ~ .iva-steps .iva-step .iva-body > :is(p, div) { margin: 0; }
+}
 .iva-pagehero-place ~ .iva-steps .iva-head :is(h2, h3) { font-size: clamp(1.875rem, 1.5rem + 1.6vw, 2.75rem); line-height: 1.15; text-align: left !important; }
 .iva-pagehero-place ~ section .iva-prose [style*="text-align"] { text-align: left !important; }
 .iva-pagehero-place ~ .iva-guide > .container-site.max-w-6xl { max-width: 80rem; }
