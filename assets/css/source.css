@@ -4016,3 +4016,8 @@ body.woocommerce-checkout .xoo-wsc-basket { display: none !important; }
     border-radius: 0 !important;
   }
 }
+
+/* Side cart: long product names wrap inside their column instead of running under the delete icon */
+.xoo-wsc-sum-col, .xoo-wsc-sm-info, .xoo-wsc-sm-left { min-width: 0; }
+.xoo-wsc-sm-left { flex: 1 1 0%; }
+.xoo-wsc-pname, .xoo-wsc-pname a { overflow-wrap: anywhere; }
