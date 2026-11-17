@@ -614,20 +614,84 @@
             "label": "Footer Description",
             "name": "footer_description",
             "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "type": "wysiwyg",
+            "instructions": "Text under the footer logo. Leave empty to hide it.",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_footer_phone_label",
+            "label": "Footer Phone: Text",
+            "name": "footer_phone_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Phone number as shown in the footer, e.g. 0488 841 833. Leave empty to hide the phone line. Independent from the header.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_footer_phone_number",
+            "label": "Footer Phone: Number for the call link",
+            "name": "footer_phone_number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Digits used for the tap-to-call link, e.g. 0488841833. If empty, the phone text is shown without a link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_footer_email",
+            "label": "Footer Email",
+            "name": "footer_email",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Email shown in the footer. Leave empty to hide it. Independent from the Contact Info tab.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_footer_hours",
+            "label": "Footer Working Days & Hours",
+            "name": "footer_hours",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "e.g. Monday - Friday 9:00 AM - 5:00 PM. Leave empty to hide it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
         },
         {
             "key": "field_ivermectin_ssl_text",
@@ -908,6 +972,66 @@
                     "parent_repeater": "field_ivermectin_footer_shipping_images"
                 }
             ]
+        },
+        {
+            "key": "field_footer_menu_1",
+            "label": "Footer Links: Column 1",
+            "name": "footer_menu",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "A heading followed by links (e.g. Best Sellers). If a WordPress menu is assigned to the \"Footer Trending Products\" location, the menu is used instead.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_footer_menu_2",
+            "label": "Footer Links: Column 2",
+            "name": "footer_menu_2",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "A heading followed by links (e.g. Quick Links). Menus assigned to \"Footer Quick Links\" or \"Footer Delivery Cities\" are used instead.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_footer_menu_3",
+            "label": "Footer Links: Column 3",
+            "name": "footer_menu_3",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "A heading followed by links (e.g. Important Information). A menu assigned to \"Footer Information\" is used instead.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_ivermectin_copyright_text",
@@ -1782,10 +1906,34 @@
             "type": "tab",
             "placement": "top"
         },
-        {"key":"field_iva_email_header_subheading","name":"email_header_subheading","label":"Email header subheading","type":"text","default_value":"Thank you for shopping with Ivermectin Australia"},
-        {"key":"field_iva_email_shipping_message","name":"email_shipping_message","label":"Email footer shipping message","type":"textarea","default_value":"All orders are dispatched discreetly in plain packaging via Australia Post Express with unique tracking."},
-        {"key":"field_iva_email_footer_store_name","name":"email_footer_store_name","label":"Email footer store name","type":"text","default_value":"Ivermectin Australia"},
-        {"key":"field_iva_email_footer_rights","name":"email_footer_rights","label":"Email footer rights text","type":"text","default_value":"All rights reserved."},
+        {
+            "key": "field_iva_email_header_subheading",
+            "name": "email_header_subheading",
+            "label": "Email header subheading",
+            "type": "text",
+            "default_value": "Thank you for shopping with Ivermectin Australia"
+        },
+        {
+            "key": "field_iva_email_shipping_message",
+            "name": "email_shipping_message",
+            "label": "Email footer shipping message",
+            "type": "textarea",
+            "default_value": "All orders are dispatched discreetly in plain packaging via Australia Post Express with unique tracking."
+        },
+        {
+            "key": "field_iva_email_footer_store_name",
+            "name": "email_footer_store_name",
+            "label": "Email footer store name",
+            "type": "text",
+            "default_value": "Ivermectin Australia"
+        },
+        {
+            "key": "field_iva_email_footer_rights",
+            "name": "email_footer_rights",
+            "label": "Email footer rights text",
+            "type": "text",
+            "default_value": "All rights reserved."
+        },
         {
             "key": "field_iva_tab_media",
             "label": "Media",
@@ -1795,7 +1943,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
             "endpoint": 0,
             "selected": 0
@@ -1809,7 +1961,11 @@
             "instructions": "Default image shown before a video plays. A Video module can override this value.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "https://modafinilaustraliaxpress.com/wp-content/uploads/2026/02/video-img.jpg",
             "placeholder": "https://",
             "prepend": "",
@@ -1824,7 +1980,11 @@
             "instructions": "Used by the Icons 2 module when its own button label is empty.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "Order Now - Fast delivery",
             "maxlength": "",
             "placeholder": "",

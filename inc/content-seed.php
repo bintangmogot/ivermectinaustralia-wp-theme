@@ -13,7 +13,7 @@
 
 defined('ABSPATH') || exit;
 
-const IVERMECTIN_CONTENT_SEED_VERSION = 9;
+const IVERMECTIN_CONTENT_SEED_VERSION = 10;
 
 // Like Waklert, frontend requests never install or migrate saved editorial content.
 add_action('admin_init', static function (): void {
@@ -219,6 +219,37 @@ function ivermectin_seed_theme_settings(): void {
             if (get_option('options_' . $field['name'], '__unset__') === '__unset__') {
                 update_field($field['key'], $default, 'option');
             }
+        }
+    }
+    ivermectin_seed_footer_settings();
+}
+
+/**
+ * The footer has its own phone, email, hours, description and link columns in Theme Settings > Footer.
+ * Empty footer fields start from the values the footer used to borrow (header phone, Contact Info email and hours,
+ * the previous theme's footer text). After that they are independent, and an empty field hides its line.
+ */
+function ivermectin_seed_footer_settings(): void {
+    $get = static function (string $name): string {
+        return trim((string) get_option('options_' . $name, ''));
+    };
+    $description = $get('footer_text');
+    // The old rich-text footer began with its own logo image; the footer shows the configured logo separately.
+    $description = preg_replace_callback(
+        '~\A\s*(?:<p\b[^>]*>\s*(?:<a\b[^>]*>\s*)?<img\b[^>]*>(?:\s*</a>)?\s*</p>|(?:<a\b[^>]*>\s*)?<img\b[^>]*>(?:\s*</a>)?)~i',
+        static fn($match) => preg_match('/\blogo\b/i', $match[0]) ? '' : $match[0],
+        $description
+    );
+    $values = [
+        'footer_description'  => trim((string) $description),
+        'footer_phone_label'  => $get('whatsapp_button_text') ?: $get('whatsapp_number'),
+        'footer_phone_number' => $get('whatsapp_number'),
+        'footer_email'        => $get('support_email'),
+        'footer_hours'        => trim($get('working_days') . ' ' . $get('office_hours')),
+    ];
+    foreach ($values as $name => $value) {
+        if ($value !== '' && $get($name) === '') {
+            update_field($name, $value, 'option');
         }
     }
 }

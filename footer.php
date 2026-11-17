@@ -12,13 +12,12 @@ $img_url = static function ($image) {
     return is_numeric($image) ? (string) wp_get_attachment_image_url((int) $image, 'full') : (string) $image;
 };
 
-$description   = ivermectin_get_footer_description();
+$description   = (string) $opt('footer_description');
 $address       = trim((string) $opt('location_text'));
-$email         = trim((string) ($opt('support_email') ?: $opt('footer_email')));
-$phone_label   = trim((string) ($opt('whatsapp_button_text') ?: $opt('whatsapp_number')));
-$phone_href    = preg_replace('/\D+/', '', (string) $opt('whatsapp_number'));
-$working_days  = trim((string) $opt('working_days'));
-$office_hours  = trim((string) $opt('office_hours'));
+$email         = trim((string) $opt('footer_email'));
+$phone_label   = trim((string) $opt('footer_phone_label'));
+$phone_href    = preg_replace('/\D+/', '', (string) $opt('footer_phone_number'));
+$hours         = trim((string) $opt('footer_hours'));
 $contact_head  = trim((string) $opt('footer_contact_heading'));
 $disclaimer    = trim((string) $opt('disclaimer_en'));
 $copyright     = trim((string) $opt('copyright_text'));
@@ -101,12 +100,12 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
                 <?php ivermectin_the_logo('h-11 w-auto object-contain', 'footer'); ?>
                 <?php if (trim($description) !== '') : ?><div class="iva-footer-description mt-4 text-sm leading-relaxed text-white/80"><?= wp_kses_post(wpautop($description)) ?></div><?php endif; ?>
                 <?php if ($contact_head !== '') : ?><p class="mt-6 font-heading text-base font-bold text-white"><?= esc_html($contact_head) ?></p><?php endif; ?>
-                <?php if ($address !== '' || $email !== '' || $phone_label !== '') : ?>
+                <?php if ($address !== '' || $email !== '' || $phone_label !== '' || $hours !== '') : ?>
                     <ul class="mt-3 space-y-3 text-sm text-white/80">
                         <?php if ($address !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('australia_delivery', 'h-6 w-6') ?><span><?= esc_html($address) ?></span></li><?php endif; ?>
                         <?php if ($phone_label !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('live_chat_support', 'h-6 w-6') ?><?php if ($phone_href !== '') : ?><a href="<?= esc_url(ivermectin_tel_url($phone_href)) ?>" class="hover:text-white"><?= esc_html($phone_label) ?></a><?php else : ?><span><?= esc_html($phone_label) ?></span><?php endif; ?></li><?php endif; ?>
                         <?php if ($email !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('email_support', 'h-6 w-6') ?><a href="mailto:<?= esc_attr($email) ?>" class="[overflow-wrap:anywhere] hover:text-white"><?= esc_html($email) ?></a></li><?php endif; ?>
-                        <?php if ($working_days !== '' || $office_hours !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('clock_hours', 'h-6 w-6') ?><span><?= esc_html(trim($working_days . ' ' . $office_hours)) ?></span></li><?php endif; ?>
+                        <?php if ($hours !== '') : ?><li class="flex items-start gap-3"><?= ivermectin_icon('clock_hours', 'h-6 w-6') ?><span><?= esc_html($hours) ?></span></li><?php endif; ?>
                     </ul>
                 <?php endif; ?>
                 <?php if ($socials) : ?>
@@ -153,7 +152,7 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
                     <?php if ($group_heading !== '') : ?><p class="mb-2 text-sm font-semibold text-white/70"><?= esc_html($group_heading) ?></p><?php endif; ?>
                     <ul class="flex flex-wrap items-center gap-2">
                         <?php foreach ($group_images as $row) : $url = $img_url($row['image'] ?? ''); if ($url === '') { continue; } ?>
-                            <li class="rounded-lg bg-white px-3.5 py-2"><img src="<?= esc_url($url) ?>" alt="<?= esc_attr($row['alt_text'] ?? '') ?>" class="h-6 w-auto object-contain" loading="lazy"></li>
+                            <li class="flex items-center justify-center rounded-lg bg-white px-3.5 py-2"><img src="<?= esc_url($url) ?>" alt="<?= esc_attr($row['alt_text'] ?? '') ?>" class="object-contain" style="width:80px;height:24px;object-fit:contain;" loading="lazy"></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -164,10 +163,6 @@ if (is_front_page() && empty($GLOBALS['ivermectin_support_cta_rendered'])) {
                 </ul>
             <?php endif; ?>
         </div>
-        <?php endif; ?>
-
-        <?php if ($description !== '') : ?>
-            <div class="iva-footer-about mt-8 border-t border-white/10 pt-8 text-sm leading-relaxed text-white/60"><?= wp_kses_post($description) ?></div>
         <?php endif; ?>
 
         <?php if ($disclaimer !== '' || $copyright !== '') : ?>
