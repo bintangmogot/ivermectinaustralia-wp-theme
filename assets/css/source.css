@@ -3984,3 +3984,9 @@ body.woocommerce-checkout .xoo-wsc-basket { display: none !important; }
 /* Bank detail values (account name and the others) line up on the right */
 .iva-ty-bank dd { min-width: 0; }
 .iva-ty-bank dd > span[data-iva-copy-value] { text-align: right; }
+
+/* Contact page hero on phones: the email in the pill is smaller and stays on one line */
+@media (max-width: 639px) {
+  .iva-hero-action { gap: 0.5rem; padding-right: 1rem; font-size: clamp(0.6875rem, 3.4vw, 1rem); }
+  .iva-hero-action > span:last-child { white-space: nowrap; min-width: 0; }
+}
