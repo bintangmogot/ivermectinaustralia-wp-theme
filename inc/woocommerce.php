@@ -72,3 +72,12 @@ add_action('woocommerce_email_before_order_table', function ($order, $sent_to_ad
 }, 11, 3);
 
 require_once __DIR__ . '/cart-shipping-insurance.php';
+
+/**
+ * Product descriptions are written in Page Modules (Product Description module) only.
+ * The default WordPress editor box is hidden on products so there is one place to edit.
+ * The product page does not read the editor text, and saving a product leaves any text in it untouched.
+ */
+add_action('init', static function (): void {
+    remove_post_type_support('product', 'editor');
+}, 20);
