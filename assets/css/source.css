@@ -3969,3 +3969,18 @@ body.woocommerce-checkout .xoo-wsc-basket { display: none !important; }
   display: inline !important;
   margin-left: 0.125rem;
 }
+
+/* Thank-you page on phones */
+@media (max-width: 767px) {
+  /* Order number and total share the first row; date and payment method each get a full row so the text stays on one line */
+  .iva-ty-summary .iva-ty-order { order: 1; }
+  .iva-ty-summary .iva-ty-total { order: 2; }
+  .iva-ty-summary .iva-ty-date { order: 3; grid-column: 1 / -1; }
+  .iva-ty-summary .iva-ty-method { order: 4; grid-column: 1 / -1; }
+  .iva-ty-summary .iva-ty-value { font-size: 0.875rem; white-space: nowrap; }
+  .iva-ty-bank dd { font-size: 0.875rem; }
+  .iva-ty-bank dt { white-space: nowrap; flex-shrink: 0; }
+}
+/* Bank detail values (account name and the others) line up on the right */
+.iva-ty-bank dd { min-width: 0; }
+.iva-ty-bank dd > span[data-iva-copy-value] { text-align: right; }

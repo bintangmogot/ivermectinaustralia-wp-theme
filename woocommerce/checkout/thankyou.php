@@ -53,17 +53,17 @@ if ($order && $order->get_payment_method() === 'bacs' && function_exists('WC') &
             <?php if ($intro !== '') : ?><p class="mx-auto mt-2 max-w-xl text-muted-foreground"><?= esc_html($intro) ?></p><?php endif; ?>
         </div>
 
-        <div class="mt-6 grid grid-cols-2 gap-4 rounded-2xl border border-border bg-white p-4 md:grid-cols-4">
-            <div><p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"><?= esc_html__('Order Number', 'ivermectin-australia') ?></p><p class="font-mono text-lg font-bold">#<?= esc_html($order->get_order_number()) ?></p></div>
-            <div><p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"><?= esc_html__('Date', 'ivermectin-australia') ?></p><p class="font-bold"><?= esc_html(wc_format_datetime($order->get_date_created())) ?></p></div>
-            <div><p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"><?= esc_html__('Total', 'ivermectin-australia') ?></p><p class="font-heading text-xl font-extrabold text-primary"><?= wp_kses_post($order->get_formatted_order_total()) ?></p></div>
-            <div><p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"><?= esc_html__('Payment Method', 'ivermectin-australia') ?></p><p class="font-bold"><?= wp_kses_post($order->get_payment_method_title()) ?></p></div>
+        <div class="iva-ty-summary mt-6 grid grid-cols-2 gap-4 rounded-2xl border border-border bg-white p-4 md:grid-cols-4">
+            <div class="iva-ty-order"><p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"><?= esc_html__('Order Number', 'ivermectin-australia') ?></p><p class="font-mono text-lg font-bold">#<?= esc_html($order->get_order_number()) ?></p></div>
+            <div class="iva-ty-date"><p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"><?= esc_html__('Date', 'ivermectin-australia') ?></p><p class="iva-ty-value font-bold"><?= esc_html(wc_format_datetime($order->get_date_created())) ?></p></div>
+            <div class="iva-ty-total"><p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"><?= esc_html__('Total', 'ivermectin-australia') ?></p><p class="font-heading text-xl font-extrabold text-primary"><?= wp_kses_post($order->get_formatted_order_total()) ?></p></div>
+            <div class="iva-ty-method"><p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"><?= esc_html__('Payment Method', 'ivermectin-australia') ?></p><p class="iva-ty-value font-bold"><?= wp_kses_post($order->get_payment_method_title()) ?></p></div>
         </div>
 
         <?php if ($accounts || $payid !== '') : ?>
             <div class="mt-5 rounded-2xl border border-border bg-primary-softer p-6">
                 <h2 class="mb-4 flex items-center gap-3 font-heading text-xl font-extrabold text-primary"><?= ivermectin_icon('bank_transfer', 'h-9 w-9') ?><?= esc_html__('Payment Details', 'ivermectin-australia') ?></h2>
-                <dl class="divide-y divide-border">
+                <dl class="iva-ty-bank divide-y divide-border">
                     <?php if ($payid !== '') : ?>
                         <div class="flex items-center justify-between gap-3 py-2.5"><dt class="text-sm text-muted-foreground"><?= esc_html__('PayID', 'ivermectin-australia') ?></dt><dd class="flex items-center gap-2 font-bold"><span data-iva-copy-value><?= esc_html($payid) ?></span><button type="button" class="rounded-md border border-border bg-white px-2 py-1 text-xs font-bold text-primary" data-iva-copy data-iva-copied="<?= esc_attr__('Copied', 'ivermectin-australia') ?>"><?= esc_html__('Copy', 'ivermectin-australia') ?></button></dd></div>
                     <?php endif; ?>
