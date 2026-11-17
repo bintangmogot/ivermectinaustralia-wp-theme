@@ -333,3 +333,22 @@ function ivermectin_cart_insurance_checkout_script() {
 	<?php
 }
 add_action( 'wp_footer', 'ivermectin_cart_insurance_checkout_script', 45 );
+
+/**
+ * The plugin names its fee "Shipping Insurance (<package name>)". With a package called "Shipping Insurance"
+ * this reads "Shipping Insurance (Shipping Insurance)". Show just the package name instead, in the cart,
+ * checkout, thank-you page and emails. The package name itself stays editable in the plugin settings.
+ *
+ * @param WC_Cart $cart WooCommerce cart.
+ */
+function ivermectin_cart_insurance_clean_fee_name( $cart ) {
+	if ( ! $cart || ! method_exists( $cart, 'fees_api' ) ) {
+		return;
+	}
+	foreach ( $cart->fees_api()->get_fees() as $fee ) {
+		if ( isset( $fee->name ) && preg_match( '/^Shipping Insurance \((.+)\)$/', (string) $fee->name, $match ) ) {
+			$fee->name = $match[1];
+		}
+	}
+}
+add_action( 'woocommerce_cart_calculate_fees', 'ivermectin_cart_insurance_clean_fee_name', 99 );
