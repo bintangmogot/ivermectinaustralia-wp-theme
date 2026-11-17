@@ -3952,3 +3952,20 @@ body.woocommerce-checkout .xoo-wsc-basket { display: none !important; }
 
 /* Long product names (for example "(Fenbendazole/Ivermectin)") wrap inside the card instead of being cut off */
 .iva-card-title { min-width: 0; overflow-wrap: anywhere; }
+
+/* Required star on checkbox labels (terms and conditions): it follows the end of the text instead of sitting at the far right */
+.woocommerce form .form-row label.checkbox {
+  display: block !important;
+  position: relative !important;
+  padding-left: 2rem !important;
+}
+.woocommerce form .form-row label.checkbox input[type="checkbox"] {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.2rem !important;
+  margin: 0 !important;
+}
+.woocommerce form .form-row label.checkbox .required {
+  display: inline !important;
+  margin-left: 0.125rem;
+}
