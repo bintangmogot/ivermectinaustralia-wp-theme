@@ -3990,3 +3990,12 @@ body.woocommerce-checkout .xoo-wsc-basket { display: none !important; }
   .iva-hero-action { gap: 0.5rem; padding-right: 1rem; font-size: clamp(0.6875rem, 3.4vw, 1rem); }
   .iva-hero-action > span:last-child { white-space: nowrap; min-width: 0; }
 }
+
+/* Contact page cards on phones: smaller text, the email stays on one line */
+@media (max-width: 639px) {
+  .iva-contact-card { gap: 0.75rem; padding: 1rem; }
+  .iva-contact-card a[href^="mailto"] { font-size: clamp(0.6875rem, 3.2vw, 0.9375rem); white-space: nowrap; }
+  .iva-contact-card a[href^="tel"] { font-size: 1rem; }
+  .iva-contact-card .min-w-0 > div { font-size: 0.9375rem; line-height: 1.35; }
+  .iva-contact-card .min-w-0 > div p + p { font-size: 0.8125rem; }
+}
