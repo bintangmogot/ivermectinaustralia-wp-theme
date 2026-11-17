@@ -974,66 +974,6 @@
             ]
         },
         {
-            "key": "field_footer_menu_1",
-            "label": "Footer Links: Column 1",
-            "name": "footer_menu",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "A heading followed by links (e.g. Best Sellers). If a WordPress menu is assigned to the \"Footer Trending Products\" location, the menu is used instead.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_footer_menu_2",
-            "label": "Footer Links: Column 2",
-            "name": "footer_menu_2",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "A heading followed by links (e.g. Quick Links). Menus assigned to \"Footer Quick Links\" or \"Footer Delivery Cities\" are used instead.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_footer_menu_3",
-            "label": "Footer Links: Column 3",
-            "name": "footer_menu_3",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "A heading followed by links (e.g. Important Information). A menu assigned to \"Footer Information\" is used instead.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
             "key": "field_ivermectin_copyright_text",
             "label": "Copyright Text",
             "name": "copyright_text",

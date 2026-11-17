@@ -225,7 +225,7 @@ function ivermectin_seed_theme_settings(): void {
 }
 
 /**
- * The footer has its own phone, email, hours, description and link columns in Theme Settings > Footer.
+ * The footer has its own phone, email, hours and description in Theme Settings > Footer (link columns stay in Appearance > Menus).
  * Empty footer fields start from the values the footer used to borrow (header phone, Contact Info email and hours,
  * the previous theme's footer text). After that they are independent, and an empty field hides its line.
  */
