@@ -3944,3 +3944,11 @@ body.woocommerce-checkout .xoo-wsc-basket { display: none !important; }
   .woocommerce table.shop_table.woocommerce-checkout-review-order-table tr :is(th, td) { border: 0 !important; }
   .woocommerce table.shop_table.woocommerce-checkout-review-order-table tr.order-total { border-top: 2px solid #e2e8f0 !important; }
 }
+/* Checkout on phones: the insurance fee row keeps its name on the left and the amount on the right, like the other rows */
+@media (max-width: 767px) {
+  .woocommerce table.shop_table.woocommerce-checkout-review-order-table tr.fee th { width: 60% !important; margin-bottom: 0 !important; }
+  .woocommerce table.shop_table.woocommerce-checkout-review-order-table tr.fee td { width: 40% !important; text-align: right !important; font-weight: 600 !important; color: var(--primary) !important; }
+}
+
+/* Long product names (for example "(Fenbendazole/Ivermectin)") wrap inside the card instead of being cut off */
+.iva-card-title { min-width: 0; overflow-wrap: anywhere; }

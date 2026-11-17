@@ -74,7 +74,7 @@ if ($strength !== '' && preg_match('/^\s*([\d.]+)\s*([a-z]+)\s*$/i', $strength, 
 
     <div class="iva-prow-body flex min-w-0 flex-1 flex-col">
         <div class="iva-prow-head flex items-start justify-between gap-3">
-            <h3 class="font-heading text-[0.9375rem] font-bold leading-snug text-primary sm:text-lg md:text-xl"><a href="<?= esc_url($link) ?>" class="hover:text-link"><?= esc_html($title) ?></a></h3>
+            <h3 class="iva-card-title font-heading text-[0.9375rem] font-bold leading-snug text-primary sm:text-lg md:text-xl"><a href="<?= esc_url($link) ?>" class="hover:text-link"><?= str_replace('/', '/<wbr>', esc_html($title)) ?></a></h3>
             <?php if ($product->is_in_stock() && $labels['in_stock'] !== '') : ?><span class="mt-1 inline-flex shrink-0 items-center gap-1.5 text-xs font-bold text-emerald-700"><span class="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true"></span><?= esc_html($labels['in_stock']) ?></span><?php endif; ?>
         </div>
 
