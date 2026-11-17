@@ -3999,3 +3999,8 @@ body.woocommerce-checkout .xoo-wsc-basket { display: none !important; }
   .iva-contact-card .min-w-0 > div { font-size: 0.9375rem; line-height: 1.35; }
   .iva-contact-card .min-w-0 > div p + p { font-size: 0.8125rem; }
 }
+
+/* Phones: smaller left and right page padding (16px instead of 24px) */
+@media (max-width: 639px) {
+  .container-site, .container-custom { padding-inline: 1rem; }
+}

@@ -33,7 +33,7 @@ if ($order && $order->get_payment_method() === 'bacs' && function_exists('WC') &
     }
 }
 ?>
-<div class="woocommerce-order mx-auto max-w-3xl px-3 py-6 sm:px-6 sm:py-8">
+<div class="woocommerce-order mx-auto max-w-3xl px-0 py-6 sm:px-6 sm:py-8">
 <?php if ($order) : ?>
     <?php do_action('woocommerce_before_thankyou', $order->get_id()); ?>
 
@@ -61,7 +61,7 @@ if ($order && $order->get_payment_method() === 'bacs' && function_exists('WC') &
         </div>
 
         <?php if ($accounts || $payid !== '') : ?>
-            <div class="mt-5 rounded-2xl border border-border bg-primary-softer p-6">
+            <div class="mt-5 rounded-2xl border border-border bg-primary-softer p-4 sm:p-6">
                 <h2 class="mb-4 flex items-center gap-3 font-heading text-xl font-extrabold text-primary"><?= ivermectin_icon('bank_transfer', 'h-9 w-9') ?><?= esc_html__('Payment Details', 'ivermectin-australia') ?></h2>
                 <dl class="iva-ty-bank divide-y divide-border">
                     <?php if ($payid !== '') : ?>
