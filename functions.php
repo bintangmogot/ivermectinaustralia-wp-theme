@@ -40,6 +40,7 @@ require_once IVERMECTIN_THEME_DIR . '/inc/shortcodes.php';
 // 5. WooCommerce
 require_once IVERMECTIN_THEME_DIR . '/inc/woocommerce.php';
 require_once IVERMECTIN_THEME_DIR . '/inc/currency.php';
+require_once IVERMECTIN_THEME_DIR . '/inc/variation-attribute-fix.php';
 
 // 6. Post types and delivery areas
 require_once IVERMECTIN_THEME_DIR . '/inc/post-types.php';
