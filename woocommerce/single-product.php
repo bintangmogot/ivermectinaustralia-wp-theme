@@ -548,19 +548,10 @@ $product_specs = array_values(array_filter($product_specs, static function (arra
 
 <!-- Product Description Section -->
 <?php
-$acf_main = $has_product_description_module
-    ? $product_description_module
-    : get_post_meta($product->get_id(), 'main_desc', true);
-$main_desc = '';
-
-if ($has_product_description_module) {
-    // An explicitly added, empty module remains empty instead of falling through to old content.
-    $main_desc = (string) $acf_main;
-} elseif ($acf_main) {
-    $main_desc = $acf_main;
-} else {
-    $main_desc = get_the_content();
-}
+// The description comes only from the Product Description module (Page Modules). The default WordPress
+// editor text and the old main_desc field are not used, so deleting them changes nothing on the page.
+// An empty or missing module shows no description section.
+$main_desc = $has_product_description_module ? (string) $product_description_module : '';
 
 if (!empty(trim(strip_tags($main_desc)))): 
 ?>
