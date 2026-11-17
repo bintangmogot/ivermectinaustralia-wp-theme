@@ -4004,3 +4004,15 @@ body.woocommerce-checkout .xoo-wsc-basket { display: none !important; }
 @media (max-width: 639px) {
   .container-site, .container-custom { padding-inline: 1rem; }
 }
+
+/* Checkout payment on phones: no box inside the box, the payment text sits directly in the payment card */
+@media (max-width: 767px) {
+  #payment ul.payment_methods li { padding: 1rem !important; }
+  #payment div.payment_box {
+    margin-top: 0.5rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+}
