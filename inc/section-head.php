@@ -17,12 +17,30 @@ function ivermectin_section_head(string $tag, string $heading, string $descripti
     $on_dark = $tone === 'dark';
     $classes = trim('iva-head ' . ($align === 'left' ? '' : 'iva-head-center ') . $class);
     $lead_classes = 'iva-lead ' . ($on_dark ? 'text-white/70' : 'text-muted-foreground');
+    if ($rich_description) {
+        // Keep editor formatting without rendering layout wrappers pasted from a webpage.
+        $description = trim(wp_kses($description, [
+            'a' => ['href' => true, 'title' => true, 'target' => true, 'rel' => true],
+            'p' => [],
+            'br' => [],
+            'strong' => [],
+            'b' => [],
+            'em' => [],
+            'i' => [],
+            'u' => [],
+            's' => [],
+            'ul' => [],
+            'ol' => ['start' => true],
+            'li' => [],
+            'blockquote' => [],
+        ]));
+    }
     ?>
     <header class="<?= esc_attr($classes) ?>" data-iva-head>
         <?php if ($tag !== '') : ?><p class="iva-pill-tag <?= $on_dark ? 'iva-pill-tag-dark' : '' ?>"><?= esc_html($tag) ?></p><?php endif; ?>
         <?php if ($heading !== '') : ?><h2 class="iva-h2 <?= $on_dark ? 'text-white' : 'text-primary' ?>"><?= esc_html($heading) ?></h2><?php endif; ?>
         <?php if ($description !== '' && $rich_description) : ?>
-            <div class="<?= esc_attr($lead_classes) ?> iva-lead-rich"><?= wp_kses_post(wpautop($description)) ?></div>
+            <div class="<?= esc_attr($lead_classes) ?> iva-lead-rich"><?= wpautop($description) ?></div>
         <?php elseif ($description !== '') : ?>
             <p class="<?= esc_attr($lead_classes) ?>"><?= esc_html($description) ?></p>
         <?php endif; ?>
