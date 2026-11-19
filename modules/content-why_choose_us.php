@@ -6,7 +6,7 @@
  */
 $tag         = trim((string) get_sub_field('tag'));
 $heading     = trim((string) get_sub_field('heading'));
-$description = trim((string) get_sub_field('description'));
+$description = trim((string) get_sub_field('description', false));
 $image_id    = (int) get_sub_field('image');
 $items       = array_values(array_filter(get_sub_field('audiences') ?: [], static function ($item) {
     return !empty($item['title']);
@@ -18,7 +18,7 @@ $grid_columns = count($items) === 1 ? '' : 'sm:grid-cols-2';
 ?>
 <section class="iva-section iva-band bg-ink text-white">
     <div class="container-site">
-        <?php ivermectin_section_head($tag, $heading, $description, 'dark', is_front_page() ? 'center' : 'left'); ?>
+        <?php ivermectin_section_head($tag, $heading, $description, 'dark', is_front_page() ? 'center' : 'left', '', true); ?>
 
         <div class="grid gap-6">
             <?php if ($image_id) : ?>

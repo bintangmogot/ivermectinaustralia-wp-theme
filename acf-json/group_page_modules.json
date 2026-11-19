@@ -786,11 +786,11 @@
                         },
                         {
                             "key": "field_wcu_desc_en",
-                            "label": "Desc",
+                            "label": "Description",
                             "name": "description",
                             "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
+                            "type": "wysiwyg",
+                            "instructions": "Select text and use Insert/edit link to add a link.",
                             "required": false,
                             "conditional_logic": false,
                             "wrapper": {
@@ -799,10 +799,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "new_lines": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "rows": ""
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
                         },
                         {
                             "key": "field_wcu_audiences",
@@ -6126,5 +6126,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793705189
+    "modified": 1795044937
 }
